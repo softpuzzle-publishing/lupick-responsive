@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>(modal)Lupick</title>
+  @@include('@@webRoot/html/_include/_head.html')
+  <style>
+    body {
+      padding: 20px 0 100px;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal {
+      display: block !important;
+      position: static !important;
+      height: auto !important;
+      margin-bottom: 1rem !important;
+    }
+
+    .modal.fullscreen {
+      width: 100%;
+    }
+
+    .modal.slide-up {
+      display: flex !important;
+      width: 100% !important;
+    }
+
+    .modal.slide-up .modal-content {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  @@include('@@webRoot/html/_include/_modal.html')
+
+</body>
+
+</html>

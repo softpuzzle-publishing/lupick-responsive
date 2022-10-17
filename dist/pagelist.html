@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>(pagelist)Lupick</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-Compatible" content="IE=edge" />
+    <title>Lupick</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no, viewport-fit=cover" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <link rel="icon" type="image/png" href="./assets/images/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="./assets/images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./assets/images/favicon-152x152.png" sizes="152x152" />
+    <link rel="icon" type="image/png" href="./assets/images/favicon-512x512.png" sizes="512x512" />
+
+    <!-- library css -->
+    <link rel="stylesheet" href="./assets/lib/jquery-ui/jquery-ui.min.css" />
+    <link rel="stylesheet" href="./assets/lib/swiper/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/lib/select2/css/select2.min.css" />
+
+    <!-- publilshing css -->
+    <link rel="stylesheet" href="./assets/css/bootstrap-grid.css" />
+    <link rel="stylesheet" href="./assets/css/bootstrap-utilities.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- library js -->
+    <script src="./assets/lib/jquery/jquery.min.js"></script>
+    <script src="./assets/lib/jquery-ui/jquery-ui.min.js"></script>
+    <script src="./assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/lib/select2/js/select2.min.js"></script>
+    <script src="./assets/lib/swiper/js/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+
+    <!-- publishing js -->
+    <script src="./assets/js/ui.js" async></script>
+    <style>
+      body {
+        padding: 20px;
+        position: relative;
+        background: #fff;
+        overflow-y: auto;
+        height: auto !important;
+        padding-bottom: calc(constant(safe-area-inset-bottom) + 20px);
+        padding-bottom: calc(env(safe-area-inset-bottom) + 20px);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        font-size: 12px;
+        color: #222;
+        line-height: 1.5em;
+        font-family: 'NanumGothic';
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        font-size: 24px;
+        text-align: center;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0 auto;
+        max-width: 1500px;
+      }
+
+      table th,
+      table td {
+        border: 1px solid #959b97;
+        padding: 2px 10px;
+        word-break: keep-all;
+      }
+
+      table th {
+        background: #000000;
+        color: rgb(255, 246, 152);
+        padding: 10px;
+        font-size: 14px;
+      }
+
+      table td a {
+        color: #1f5a2c;
+        text-decoration: none;
+      }
+
+      table td a:hover {
+        text-decoration: underline;
+      }
+
+      table tbody tr:hover {
+        background-color: #fffcea;
+      }
+
+      .noteTable {
+        display: table;
+        width: 100%;
+      }
+
+      .noteTable.date {
+        display: table-cell;
+        color: #ff523c;
+        width: 40px;
+      }
+
+      .noteTable.note {
+        display: table-cell;
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      .bg {
+        background: #fff5f5;
+      }
+
+      ul.float {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+      }
+
+      ul.floatli {
+        list-style: none;
+        border: 1px solid #ccc;
+        padding: 2px 5px;
+        display: inline-block;
+      }
+
+      .end {
+        background: #ffffcc;
+      }
+
+      .ing {
+        background: #f6b1a6;
+      }
+
+      .list {
+        text-align: center;
+        padding: 0 0 20px;
+      }
+
+      .lista {
+        text-decoration: none;
+        margin: 0 10px;
+      }
+
+      .lista:hover {
+        text-decoration: underline;
+      }
+
+      .box {
+        border: 2px dotted #aaa;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        line-height: 1.6;
+      }
+
+      .box > ul {
+        display: inline-block;
+        text-align-last: left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Lupick Responsive Web PAGELIST</h1>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Depth 1</th>
+          <th>Depth 2</th>
+          <th>Depth 3</th>
+          <th>Depth 4</th>
+          <th>File</th>
+          <th>pageLink</th>
+          <th></th>
+          <th>Popup&Modal</th>
+        </tr>
+      </thead>
+      <tbody id="pageList">
+        <tr>
+          <td></td>
+          <td>* Guide</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="./guide/guide.html">guide.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>* Layout</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="./guide/layout.html">layout.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>* Modal</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="./guide/modal.html">modal.html</a></td>
+          <td></td>
+          <td>fullscreen/center/slideup/alert</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>에러페이지</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="./html/util/error.html">error.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>HOME</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="./html/main/main.html">main.html</a></td>
+          <td></td>
+          <td>이벤트슬라이드, 알림</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>브랜드관</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="./html/brand/brand.html">brand.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>프리&amp;포인트 모아보기</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="./html/free_point/free_point.html">free_point.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>로그인</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="./html/login/login.html">login.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>아이디 찾기</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="./html/login/id_find.html">id_find.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>아이디 찾기 완료</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="./html/login/id_find_result.html">id_find_result.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>비밀번호 찾기</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="./html/login/password_find.html">password_find.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>이메일 인증번호 확인하기</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="./html/login/email_number_confirm.html">email_number_confirm.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>이메일 인증번호 입력하기</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="./html/login/email_number_input.html">email_number_input.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>새 비밀번호 등록</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="./html/login/password_reset.html">password_reset.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>회원가입</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="./html/join/join.html">join.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      var leng = document.querySelectorAll('tbody td a');
+      console.log(leng.length);
+
+      // var rows = document.getElementById("pageList").getElementsByTagName("tr");
+      // console.log(rows.length);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+/* button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  color: $body-color;
+  text-align: center;
+  font-size: 14px;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  height: 40px;
+  padding-left: 16px;padding-right: 16px;
+  border-radius: 7px;
+  @media (max-width: 320px) {
+    font-size: 15px;
+  }
+  &:disabled{
+    pointer-events: none;background: #bfbfbf !important;border-color: #bfbfbf !important;
+  }
+}
+
+/* button color */
+@mixin button-variant($color) {
+  color: #fff;
+  background-color: $color;
+  border-color: $color;
+}
+@mixin button-outline-variant($color) {
+  color: $color;
+  border-color: $color;
+}
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    @include button-variant($value);
+
+  }
+  .btn-outline-#{$color} {
+    @include button-outline-variant($value);
+  }
+}
+
+/* button size */
+.btn-sm {
+  padding-left: 16px;padding-right: 16px;height: 35px;
+  font-size: 13px;font-weight: 700;
+}
+.btn-lg {
+  padding-left: 20px;padding-right: 20px;height: 50px;
+  font-size: 18px;font-weight: 700;
+}
+.btn-xl {
+  height: 60px;
+  font-size: 18px;
+}
+
+/* button style */
+.btn-link {
+  color: $body-color;
+}
+.btn-flat{
+  border-radius: 0;
+  &.justify-content-start{font-size: 16px;font-weight: 400;}
+}
+
+/* button display */
+.btn-block{
+  display: flex;width: 100%;
+}
+
+/* button custom */
+[class*="btn-outline-"]{
+  &:disabled{background: transparent !important;color: $muted;}
+}
+.btn-light,
+.btn-outline-light{
+  color: #000;
+}

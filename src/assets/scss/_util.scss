@@ -1,0 +1,7 @@
+.error-wrap{
+  display: flex;align-items: center;justify-content: center;height: 100vh;text-align: center;overflow: hidden;
+  .error-icon{display: inline-block;background: url('../images/icon-error.svg') no-repeat 0 0;width: 70px;height: 70px;}
+  strong{font-size: 18px;font-weight: 700;color: #000;line-height: 1.111;margin-top: 23px;display: block;}
+  p{font-size: 14px;color: rgba(0,0,0,0.4);line-height: 1.428;margin-top: 16px;}
+  .btn{width: 200px;margin-top: 40px;}
+}

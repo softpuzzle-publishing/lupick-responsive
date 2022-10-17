@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  @@include('@@webRoot/html/_include/_head.html')
+</head>
+
+<body>
+  <div id="wrap">
+    @@include('@@webRoot/html/_include/_header.html', { "title": "" })
+    <div id="container">
+      <main id="main">
+        <!-- 실컨텐츠 -->
+
+        <div class="bg-circle">
+          <span class="circle"></span>
+        </div>
+
+        <div class="container">
+          <h1 class="page-title">아이디 찾기.</h1>
+          <div class="form">
+            <form action="/html/login/id_find_result.html">
+              <fieldset>
+                <legend>아이디 찾기</legend>
+                <input type="text" class="form-control form-control-lg" placeholder="이름을 입력해주세요">
+                <input type="email" class="form-control form-control-lg" placeholder="이메일을 입력해주세요">
+                <button type="submit" class="btn btn-dark btn-lg w-100">확인</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+
+        <!-- //실컨텐츠 -->
+      </main>
+    </div>
+  </div>
+
+</body>
+
+</html>

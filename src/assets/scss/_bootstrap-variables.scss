@@ -1,0 +1,39 @@
+$yellow: #ffec00 !default;
+$blue: #426bf2 !default;
+$sky: #4ac0ff !default;
+$red: #ff0100 !default;
+$green: #07c200 !default;
+$gray: #666 !default; //opacity 60
+$gray-light: #999 !default; //opacity 40
+$light: #d0cfd0 !default; //opacity 15
+$dark: #000 !default;
+
+$primary: $yellow !default;
+$secondary: $sky !default;
+$daner: $red !default;
+$success: $green !default;
+$info: $blue !default;
+$muted: rgba(0,0,0,0.25) !default;
+
+$font-family-base: 'NanumBarunGothic', 'NanumGothic', system-ui, -apple-system, arial !default;
+$font-family-eng: 'Gilroy' !default;
+
+$line-height-base: 1.42857 !default;
+
+$body-color: $dark !default;
+$border-color: rgba(0,0,0,0.15) !default;
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "info":       $info,
+  "danger":     $daner,
+  "success":    $success,
+  "dark":       $dark,
+  "light":      $light,
+  "gray":       $gray,
+  "gray-light":       $gray-light
+) !default;
+
+$header-height: 60px !default;
+$navbar-height: 70px !default;

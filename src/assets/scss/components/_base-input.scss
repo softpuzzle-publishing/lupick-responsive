@@ -1,0 +1,32 @@
+input.form-control{
+  font-size: 14px;color: $dark;height: 40px;line-height: 40px;display: block;width: 100%;background: transparent;padding: 0;
+  border: 0;border-bottom: 1px solid $border-color;
+  appearance: none;
+  border-radius: 0;
+  transition: border-color .15s ease-in-out;
+  &[type="file"] {
+    overflow: hidden;
+    &:not(:disabled):not([readonly]) {
+      cursor: pointer;
+    }
+  }
+
+  &:focus {
+    outline: 0;
+    &:not([readonly]){
+      border-color: $dark !important;
+    }
+  }
+
+  &::placeholder {
+    color: $gray-light;
+  }
+
+  &.border{
+    padding-left: 15px;padding-right: 15px;
+  }
+
+  &.form-control-lg{
+    height: 50px;line-height: 50px;
+  }
+}
