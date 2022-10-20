@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-Compatible" content="IE=edge" />
+    <title>Lupick</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no, viewport-fit=cover" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <link rel="icon" type="image/png" href="../../assets/images/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../../assets/images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../../assets/images/favicon-152x152.png" sizes="152x152" />
+    <link rel="icon" type="image/png" href="../../assets/images/favicon-512x512.png" sizes="512x512" />
+
+    <!-- library css -->
+    <link rel="stylesheet" href="../../assets/lib/jquery-ui/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../../assets/lib/swiper/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../../assets/lib/select2/css/select2.min.css" />
+
+    <!-- publilshing css -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap-grid.css" />
+    <link rel="stylesheet" href="../../assets/css/bootstrap-utilities.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+    <!-- library js -->
+    <script src="../../assets/lib/jquery/jquery.min.js"></script>
+    <script src="../../assets/lib/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../../assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/lib/select2/js/select2.min.js"></script>
+    <script src="../../assets/lib/swiper/js/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+
+    <!-- publishing js -->
+    <script src="../../assets/js/ui.js" async></script>
+  </head>
+
+  <body class="body-main">
+    <!-- 메인페이지에만 body-main 추가 -->
+    <div id="wrap">
+      <header id="header">
+        <div class="inner">
+          <div class="header-sub">
+            <button type="button" class="btn-back" aria-label="뒤로" onclick="window.history.back()">
+              <i class="icon-back"></i>
+            </button>
+            <h1 class="header-title">FEED</h1>
+          </div>
+          <div class="header-main">
+            <div class="logo"><span class="visually-hidden">Lupick Logo</span></div>
+            <div class="logo-feed"><span class="visually-hidden">Feed</span></div>
+            <div class="logo-my"><span class="visually-hidden">My</span></div>
+            <div class="util">
+              <button type="button" aria-label="알림" data-bs-toggle="modal" data-bs-target="#modal-alarm"><i class="icon-bell"></i></button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main id="main">
+        <!-- 실컨텐츠 -->
+
+        <!-- FEED 상단 배너 -->
+        <div class="feed-top-banner">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" data-feed-title="Ep.08 루픽 시그니처 컬러를 담은 뉴 아이맥 이벤트 루피커 ‘긴유니’님의 소감!">
+                <div class="item">
+                  <div class="img"><img src="../../assets/images/@lupicker.png" alt="" /></div>
+                </div>
+              </div>
+              <div class="swiper-slide" data-feed-title="Ep.09 건강한 삶이 내 손목에! 애플워치 시리즈6 이벤트 루피커 ‘대가’님의 소감!">
+                <div class="item">
+                  <div class="img"><img src="../../assets/images/@lupicker.png" alt="" /></div>
+                </div>
+              </div>
+              <div class="swiper-slide" data-feed-title="Ep.10 핫한 텐트 받고 가을 캠핑 떠나자! 이벤트의 주인공 루피커 ‘토끼’님의 소감!">
+                <div class="item">
+                  <div class="img"><img src="../../assets/images/@lupicker.png" alt="" /></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="info">
+            <div class="swiper-pagination swiper-pagination-feed-top-banner"></div>
+            <div class="title">Ep.08 루픽 시그니처 컬러를 담은 뉴 아이맥 이벤트 루피커 ‘긴유니’님의 소감!</div>
+          </div>
+          <script>
+            const feedTopBannerSwiper = new Swiper('.feed-top-banner .swiper-container', {
+              // eslint-disable-line
+              observeParent: true,
+              observeSlideChildren: true,
+              observer: true,
+              pagination: {
+                el: '.swiper-pagination-feed-top-banner',
+                type: 'fraction',
+              },
+              on: {
+                slideChangeTransitionEnd: function () {
+                  let activeIdx = $('.feed-top-banner .swiper-slide-active');
+                  //슬라이드 변경될 때 각 슬라이드의 타이틀 변경
+                  $('.feed-top-banner .title').html(activeIdx.attr('data-feed-title'));
+                },
+              },
+            });
+          </script>
+        </div>
+        <!-- //FEED 상단 배너 -->
+
+        <!-- 루픽스토리 -->
+        <div class="container">
+          <div class="row align-items-center justify-content-between mb-15px mt-30px">
+            <div class="col-auto">
+              <div class="section-title mb-0 mt-0">루픽스토리</div>
+            </div>
+            <div class="col-auto">
+              <a href="feed_lupick_story.html" class="text-secondary font-14px fw-bold">전체보기</a>
+            </div>
+          </div>
+        </div>
+        <div class="story-list">
+          <div class="swiper-container" id="lupick-story">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="item">
+                  <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                  <div class="title">[OFF-WHITE] 현시대의 예술, 그래피티 작가 ‘로니나’와 오프화이트의 만남</div>
+                  <div class="info">
+                    <div class="hit">조회수 10만회</div>
+                    <div class="date">2022.05.20 작성</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="item">
+                  <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                  <div class="title">[OFF-WHITE] 현시대의 예술, 그래피티 작가 ‘로니나’와 오프화이트의 만남</div>
+                  <div class="info">
+                    <div class="hit">조회수 10만회</div>
+                    <div class="date">2022.05.20 작성</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="item">
+                  <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                  <div class="title">[OFF-WHITE] 현시대의 예술, 그래피티 작가 ‘로니나’와 오프화이트의 만남</div>
+                  <div class="info">
+                    <div class="hit">조회수 10만회</div>
+                    <div class="date">2022.05.20 작성</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <script>
+            const lupickStorySwiper = new Swiper('#lupick-story', {
+              // eslint-disable-line
+              spaceBetween: 10,
+              slidesOffsetBefore: 20,
+              slidesOffsetAfter: 20,
+              observeParent: true,
+              observeSlideChildren: true,
+              observer: true,
+            });
+          </script>
+        </div>
+        <!-- //루픽스토리 -->
+
+        <div class="hr"></div>
+
+        <!-- 루피커 인터뷰 -->
+        <div class="container">
+          <div class="row align-items-center justify-content-between mb-15px mt-30px">
+            <div class="col-auto">
+              <div class="section-title mb-0 mt-0">루피커 인터뷰</div>
+            </div>
+            <div class="col-auto">
+              <a href="feed_lupicker_interview.html" class="text-secondary font-14px fw-bold">전체보기</a>
+            </div>
+          </div>
+        </div>
+        <div class="story-list">
+          <div class="swiper-container" id="lupicker-interview">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="item">
+                  <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                  <div class="title">Ep.10 핫한 텐트 받고 가을 캠핑 떠나자! 이벤트의 주인공 루피커 ‘토끼’님의 소감!</div>
+                  <div class="info">
+                    <div class="hit">조회수 10만회</div>
+                    <div class="date">2022.05.20 작성</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="item">
+                  <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                  <div class="title">Ep.10 핫한 텐트 받고 가을 캠핑 떠나자! 이벤트의 주인공 루피커 ‘토끼’님의 소감!</div>
+                  <div class="info">
+                    <div class="hit">조회수 10만회</div>
+                    <div class="date">2022.05.20 작성</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="item">
+                  <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                  <div class="title">Ep.10 핫한 텐트 받고 가을 캠핑 떠나자! 이벤트의 주인공 루피커 ‘토끼’님의 소감!</div>
+                  <div class="info">
+                    <div class="hit">조회수 10만회</div>
+                    <div class="date">2022.05.20 작성</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <script>
+            const lupickerInterviewSwiper = new Swiper('#lupicker-interview', {
+              // eslint-disable-line
+              spaceBetween: 10,
+              slidesOffsetBefore: 20,
+              slidesOffsetAfter: 20,
+              observeParent: true,
+              observeSlideChildren: true,
+              observer: true,
+            });
+          </script>
+        </div>
+        <!-- //루피커 인터뷰 -->
+
+        <div class="hr"></div>
+
+        <!-- 인기 피드 -->
+        <div class="container">
+          <div class="section-title">인기 피드</div>
+          <ul class="nav nav-badges" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="tab">루픽스토리</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" href="#" data-bs-toggle="tab">루픽스토리</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" href="#" data-bs-toggle="tab">루피커 인터뷰</a>
+            </li>
+          </ul>
+          <div class="popular-list">
+            <a href="#none" class="item">
+              <div class="img">
+                <img src="../../assets/images/@portrait.jpg" alt="" />
+                <span>1위</span>
+              </div>
+              <div class="info">
+                <div class="d-flex flex-column justify-content-between h-100">
+                  <div>
+                    <div class="title">랜드로버 뉴 디펜더를 타고 캠핑 간 루피커의 생생한 후기!</div>
+                    <span class="badge outline-gray">루픽스토리</span>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div class="hit">조회수 10만회</div>
+                    <div class="date">2022.05.20 작성</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="#none" class="item">
+              <div class="img">
+                <img src="../../assets/images/@landscape.jpg" alt="" />
+                <span>2위</span>
+              </div>
+              <div class="info">
+                <div class="d-flex flex-column justify-content-between h-100">
+                  <div>
+                    <div class="title">랜드로버 뉴 디펜더를 타고 캠핑 간 루피커의 생생한 후기!</div>
+                    <span class="badge outline-gray">루픽스토리</span>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div class="hit">조회수 10만회</div>
+                    <div class="date">2022.05.20 작성</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <!-- //인기 피드 -->
+
+        <!-- //실컨텐츠 -->
+      </main>
+      <div id="navbar">
+        <div class="inner">
+          <nav class="navbar">
+            <div class="navbar-item">
+              <a href="#none">
+                <i class="icon-navbar-feed"></i>
+                <span>FEED</span>
+              </a>
+            </div>
+            <div class="navbar-item">
+              <a href="#none" class="active">
+                <i class="icon-navbar-home"></i>
+                <span>HOME</span>
+              </a>
+            </div>
+            <div class="navbar-item">
+              <a href="#none">
+                <i class="icon-navbar-my"></i>
+                <span>MY</span>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <!-- alert: 새 비밀번호 등록 확인  -->
+    <div class="modal alert" tabindex="-1" id="alert-confirm">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="alert-text">
+              루픽 비밀번호 변경이 <br />
+              완료되었습니다! <br />
+              행운의 주인공이 되어볼까요?
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="row gx-0">
+              <div class="col">
+                <button type="button" class="btn btn-outline-light btn-lg w-100" data-bs-dismiss="modal">확인</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 메인 슬라이드업 배너 -->
+    <div class="modal slide-up" tabindex="-1" id="modal-main-slideup">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body p-0">
+            <button type="button" class="btn-close circle" aria-label="Close" data-bs-dismiss="modal"><i class="icon-x-white"></i></button>
+            <div class="main-slideup-banner">
+              <img src="../../assets/images/@banner-slideup.png" alt="" />
+              <button type="button" class="btn btn-dark btn-round btn-lg w-100">이벤트 확인하기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 알림 -->
+    <div class="modal" tabindex="-1" id="modal-alarm">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="d-flex align-items-center">
+              <h5 class="modal-title">알림</h5>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="top-sort">
+              <select class="form-select w-100">
+                <option selected>전체</option>
+                <option value="">이벤트 알림</option>
+                <option value="">배송 알림</option>
+                <option value="">투표 알림</option>
+                <option value="">루픽 알림</option>
+              </select>
+            </div>
+            <div class="alarm-list">
+              <div class="alarm-list-item">
+                <div class="img"><img src="../../assets/images/@profile.jpg" alt="" /></div>
+                <div class="text">
+                  <div class="title">알림</div>
+                  <div class="desc">투표 시작! 거대벽화 그리기에 참여하는 911명 중 9명은 포르쉐 911 타고 귀가하자 투표에 참여해주세요.</div>
+                  <div class="time">1시간 전</div>
+                </div>
+              </div>
+
+              <div class="alarm-list-item">
+                <div class="img"><img src="../../assets/images/@profile.jpg" alt="" /></div>
+                <div class="text">
+                  <div class="title">알림</div>
+                  <div class="desc">투표 시작! 거대벽화 그리기에 참여하는 911명 중 9명은 포르쉐 911 타고 귀가하자 투표에 참여해주세요.</div>
+                  <div class="time">1시간 전</div>
+                </div>
+              </div>
+
+              <div class="alarm-list-item">
+                <div class="img"><img src="../../assets/images/@profile.jpg" alt="" /></div>
+                <div class="text">
+                  <div class="title">알림</div>
+                  <div class="desc">투표 시작! 거대벽화 그리기에 참여하는 911명 중 9명은 포르쉐 911 타고 귀가하자 투표에 참여해주세요.</div>
+                  <div class="time">1시간 전</div>
+                </div>
+              </div>
+
+              <div class="alarm-list-item">
+                <div class="img"><img src="../../assets/images/@profile.jpg" alt="" /></div>
+                <div class="text">
+                  <div class="title">알림</div>
+                  <div class="desc">투표 시작! 거대벽화 그리기에 참여하는 911명 중 9명은 포르쉐 911 타고 귀가하자 투표에 참여해주세요.</div>
+                  <div class="time">1시간 전</div>
+                </div>
+              </div>
+
+              <div class="alarm-list-item">
+                <div class="img"><img src="../../assets/images/@profile.jpg" alt="" /></div>
+                <div class="text">
+                  <div class="title">알림</div>
+                  <div class="desc">투표 시작! 거대벽화 그리기에 참여하는 911명 중 9명은 포르쉐 911 타고 귀가하자 투표에 참여해주세요.</div>
+                  <div class="time">1시간 전</div>
+                </div>
+              </div>
+
+              <div class="alarm-list-item">
+                <div class="img"><img src="../../assets/images/@profile.jpg" alt="" /></div>
+                <div class="text">
+                  <div class="title">알림</div>
+                  <div class="desc">투표 시작! 거대벽화 그리기에 참여하는 911명 중 9명은 포르쉐 911 타고 귀가하자 투표에 참여해주세요.</div>
+                  <div class="time">1시간 전</div>
+                </div>
+              </div>
+
+              <div class="alarm-list-item">
+                <div class="img"><img src="../../assets/images/@profile.jpg" alt="" /></div>
+                <div class="text">
+                  <div class="title">알림</div>
+                  <div class="desc">투표 시작! 거대벽화 그리기에 참여하는 911명 중 9명은 포르쉐 911 타고 귀가하자 투표에 참여해주세요.</div>
+                  <div class="time">1시간 전</div>
+                </div>
+              </div>
+            </div>
+            <div class="more-text">
+              <a href="javascript:;" role="button">더보기</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

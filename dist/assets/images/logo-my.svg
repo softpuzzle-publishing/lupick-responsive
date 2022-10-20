@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="39px" height="24px" viewBox="0 0 39 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Top-Bar---My" transform="translate(-20.000000, -20.000000)" fill="#000000">
+            <g id="Group" transform="translate(20.000000, 20.000000)">
+                <polygon id="Combined-Shape" points="35.178 18.9108333 38.8238333 18.9108333 38.8238333 15.265 35.178 15.265"></polygon>
+                <path d="M3.588,18.2 L3.588,6.422 L8.71,14.846 L9.126,14.846 L14.248,6.396 L14.248,18.2 L17.81,18.2 L17.81,-5.32907052e-14 L14.118,-5.32907052e-14 L8.918,8.606 L3.692,-5.32907052e-14 L-2.13162821e-14,-5.32907052e-14 L-2.13162821e-14,18.2 L3.588,18.2 Z M28.366,18.2 L33.098,5.2 L29.51,5.2 L26.624,13.936 L23.244,5.2 L19.578,5.2 L24.908,17.784 C24.284,19.526 23.348,20.306 21.502,20.28 L21.502,23.4 C24.804,23.582 27.014,21.944 28.366,18.2 Z" id="My" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

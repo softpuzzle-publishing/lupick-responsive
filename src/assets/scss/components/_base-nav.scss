@@ -4,7 +4,7 @@
     top: 0;padding-top: 5px;transition-duration: .3s;
   }
 }
-.nav {
+.nav-tabs {
   &::before{content: '';height: 200px;background: #fff;position: absolute;top: -200px;left: 0;right: 0;z-index: -1;}
   display: flex;
   flex-wrap: wrap;
@@ -12,12 +12,21 @@
   margin-bottom: 0;
   list-style: none;
   gap: 10px;
+  .nav-item{flex: 1;}
+  .nav-link{
+    color: $gray-light;font-size: 14px;line-height: 1.1574;text-align: center;display: block;padding: 10px 0 15px;position: relative;
+    &.active{
+      color: $dark;font-weight: 700;
+      &::before{content: '';height: 2px;position: absolute;left: 0;bottom: 0;right: 0;background: $dark;}
+    }
+  }
 }
-.nav-item{flex: 1;}
-.nav-link{
-  color: $gray-light;font-size: 14px;line-height: 1.1574;text-align: center;display: block;padding: 10px 0 15px;position: relative;
-  &.active{
-    color: $dark;font-weight: 700;
-    &::before{content: '';height: 2px;position: absolute;left: 0;bottom: 0;right: 0;background: $dark;}
+
+.nav-badges{
+  display: flex;align-items: center;gap: 5px;
+  .nav-link{
+    display: inline-block;height: 24px;font-size: 12px;font-weight:700;line-height: 24px;color: #fff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: 7px;padding: 0 7px;
+    border: 1px solid $gray;color: $gray;
+    &.active{background: $dark;color: #fff;border-color: $dark;}
   }
 }

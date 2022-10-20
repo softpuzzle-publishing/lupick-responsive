@@ -3,6 +3,10 @@
 }
 
 .section-title{
+  font-size: 20px;font-weight: 700;line-height: 1.11;margin-bottom: 15px;margin-top: 30px;
+}
+
+.section-title-lg{
   font-size: 24px;font-weight: 700;line-height: 1.45;margin-bottom: 30px;
   &.has-border-top{border-top: 2px solid #000;padding-top: 15px;}
 }
@@ -15,6 +19,8 @@
     &::after{content: '';display: inline-block;width: 12px;height: 6px;background: url('../images/icon-arr-down-gray.svg') no-repeat 0 0;margin-left: 8px;}
   }
 }
+
+.hr{background-color: rgba(0, 0, 0, 0.051);height: 10px;}
 
 .bar{display: inline-block;width: 1px;height: 14px;background: #979797;margin: 0 18px;}
 

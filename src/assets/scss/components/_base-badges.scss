@@ -3,7 +3,7 @@
   display: inline-block;
   height: 24px;
   font-size: 12px;
-  font-weight:7400;
+  font-weight:700;
   line-height: 24px;
   color: #fff;
   text-align: center;
@@ -20,5 +20,10 @@
 
   &.outline-gray{
     border: 1px solid $gray;color: $gray;
+    &.active{background: $dark;color: #fff;border-color: $dark;}
+  }
+
+  &.dark{
+    background: $dark;color: #fff;
   }
 }

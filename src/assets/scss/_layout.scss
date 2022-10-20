@@ -14,6 +14,12 @@ $container-max-width: 560px;
   .logo{
     display: block;width: 80px;height: 25px;background: url('../images/logo.svg') no-repeat 0 0;background-size: contain;
   }
+  .logo-feed{
+    display: block;width: 63px;height: 20px;background: url('../images/logo-feed.svg') no-repeat 0 0;background-size: contain;
+  }
+  .logo-my{
+    display: block;width: 39px;height: 24px;background: url('../images/logo-my.svg') no-repeat 0 0;background-size: contain;
+  }
   .header-main{
     display: flex;align-items: center;height: 100%;justify-content: space-between;display: none;
   }
