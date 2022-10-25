@@ -23,7 +23,15 @@
     &.active{background: $dark;color: #fff;border-color: $dark;}
   }
 
+  &.outline-dark{
+    border: 1px solid $dark;color: $dark;
+  }
+
   &.dark{
     background: $dark;color: #fff;
+  }
+
+  &.event{
+    height: 32px;line-height: 32px;width: 84px;
   }
 }

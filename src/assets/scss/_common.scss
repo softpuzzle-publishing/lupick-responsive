@@ -82,4 +82,19 @@
   text-align: center;padding-top: 50px;
   strong{display: block;font-size: 18px;font-weight: 700;margin-top: 30px;}
   p{font-size: 13px;color: $gray;margin-top: 15px;margin-bottom: 30px;}
+  .btn-lg{font-size: 14px;padding-left: 45px;padding-right: 45px;}
+}
+
+.full-menu{
+  border-top: 1px solid $border-color;
+  li{border-bottom: 1px solid $border-color;}
+  a{
+    display: flex;align-items: center;font-size: 16px;padding: 19px 20px;font-weight: 700;
+    span{color: $secondary;margin-left: 10px;}
+  }
+}
+
+.data-empty{
+  display: flex;flex-direction: column;justify-content: center;align-items: center;height: calc(100vh - 120px);
+  p{font-size: 18px;color: $muted;font-weight: 700;margin-top: 30px;}
 }

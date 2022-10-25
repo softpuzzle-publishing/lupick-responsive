@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-Compatible" content="IE=edge" />
+    <title>Lupick</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no, viewport-fit=cover" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <link rel="icon" type="image/png" href="../../assets/images/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../../assets/images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../../assets/images/favicon-152x152.png" sizes="152x152" />
+    <link rel="icon" type="image/png" href="../../assets/images/favicon-512x512.png" sizes="512x512" />
+
+    <!-- library css -->
+    <link rel="stylesheet" href="../../assets/lib/jquery-ui/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../../assets/lib/swiper/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../../assets/lib/select2/css/select2.min.css" />
+
+    <!-- publilshing css -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap-grid.css" />
+    <link rel="stylesheet" href="../../assets/css/bootstrap-utilities.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+    <!-- library js -->
+    <script src="../../assets/lib/jquery/jquery.min.js"></script>
+    <script src="../../assets/lib/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../../assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/lib/select2/js/select2.min.js"></script>
+    <script src="../../assets/lib/swiper/js/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+
+    <!-- publishing js -->
+    <script src="../../assets/js/ui.js" async></script>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <header id="header">
+        <div class="inner">
+          <div class="header-sub">
+            <button type="button" class="btn-back" aria-label="뒤로" onclick="window.history.back()">
+              <i class="icon-back"></i>
+            </button>
+            <h1 class="header-title">상품 배송중</h1>
+          </div>
+          <div class="header-main">
+            <div class="logo"><span class="visually-hidden">Lupick Logo</span></div>
+            <div class="logo-feed"><span class="visually-hidden">Feed</span></div>
+            <div class="logo-my"><span class="visually-hidden">My</span></div>
+            <div class="util">
+              <button type="button" aria-label="알림" data-bs-toggle="modal" data-bs-target="#modal-alarm"><i class="icon-bell"></i></button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div id="container">
+        <main id="main">
+          <!-- 실컨텐츠 -->
+
+          <div class="my-event-list mt-n10px">
+            <div class="item">
+              <div class="item-top">
+                <a href="#none" class="row gx-10px">
+                  <div class="col-auto">
+                    <span class="badge outline-dark event">쇼핑 이벤트</span>
+                  </div>
+                  <div class="col">
+                    <div class="number">주문번호 ORD20210409-0000010</div>
+                    <div class="date">2020.07.14</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="icon-arr-down-gray"></i>
+                  </div>
+                </a>
+              </div>
+              <div class="item-body">
+                <a href="#none">
+                  <div class="d-flex align-items-center">
+                    <div class="info">
+                      <div class="state">결제완료</div>
+                      <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
+                      <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
+                    </div>
+                    <div class="img">
+                      <img src="../../assets/images/@landscape.jpg" alt="" />
+                    </div>
+                  </div>
+                  <div class="price">20,000원</div>
+                </a>
+                <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100 mt-20px">배송 조회</button>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-top">
+                <a href="#none" class="row gx-10px">
+                  <div class="col-auto">
+                    <span class="badge dark event text-primary">프리 이벤트</span>
+                  </div>
+                  <div class="col">
+                    <div class="number">주문번호 ORD20210409-0000010</div>
+                    <div class="date">2020.07.14</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="icon-arr-down-gray"></i>
+                  </div>
+                </a>
+              </div>
+              <div class="item-body">
+                <a href="#none">
+                  <div class="d-flex align-items-center">
+                    <div class="info">
+                      <div class="state">결제완료</div>
+                      <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
+                      <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
+                    </div>
+                    <div class="img">
+                      <img src="../../assets/images/@landscape.jpg" alt="" />
+                    </div>
+                  </div>
+                  <div class="price">무료 참여</div>
+                </a>
+                <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100 mt-20px">배송 조회</button>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-top">
+                <a href="#none" class="row gx-10px align-items-center">
+                  <div class="col-auto">
+                    <span class="badge outline-dark event bg-primary">포인트 이벤트</span>
+                  </div>
+                  <div class="col">
+                    <div class="number">주문번호 ORD20210409-0000010</div>
+                    <div class="date">2020.07.14</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="icon-arr-down-gray"></i>
+                  </div>
+                </a>
+              </div>
+              <div class="item-body">
+                <a href="#none">
+                  <div class="d-flex align-items-center">
+                    <div class="info">
+                      <div class="state">결제완료</div>
+                      <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
+                      <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
+                    </div>
+                    <div class="img">
+                      <img src="../../assets/images/@landscape.jpg" alt="" />
+                    </div>
+                  </div>
+                  <div class="price">100P</div>
+                </a>
+                <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100 mt-20px">배송 조회</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- //실컨텐츠 -->
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  @@include('@@webRoot/html/_include/_head.html')
+</head>
+
+<body>
+  <div id="wrap">
+    @@include('@@webRoot/html/_include/_header.html', { "title": "참여중 이벤트" })
+    <div id="container">
+      <main id="main">
+        <!-- 실컨텐츠 -->
+
+        <div class="tab">
+          <ul class="nav nav-tabs justify-content-around" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a href="#t1" class="nav-link active" data-bs-toggle="tab" role="tab">전체</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a href="#t2" class="nav-link" data-bs-toggle="tab" role="tab">쇼핑 이벤트</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a href="#t3" class="nav-link" data-bs-toggle="tab" role="tab">포인트 이벤트</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a href="#t4" class="nav-link" data-bs-toggle="tab" role="tab">프리 이벤트</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="my-event-list">
+          <div class="item">
+            <div class="item-top">
+              <a href="#none" class="row gx-10px">
+                <div class="col-auto">
+                  <span class="badge outline-dark event">쇼핑 이벤트</span>
+                </div>
+                <div class="col">
+                  <div class="number">주문번호 ORD20210409-0000010</div>
+                  <div class="date">2020.07.14</div>
+                </div>
+                <div class="col-auto">
+                  <i class="icon-arr-down-gray"></i>
+                </div>
+              </a>
+            </div>
+            <div class="item-body">
+              <a href="#none">
+                <div class="d-flex align-items-center">
+                  <div class="info">
+                    <div class="state">결제완료</div>
+                    <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명 </div>
+                    <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
+                  </div>
+                  <div class="img">
+                    <img src="@@webRoot/assets/images/@landscape.jpg" alt="">
+                  </div>
+                </div>
+                <div class="price">20,000원</div>
+              </a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-top">
+              <a href="#none" class="row gx-10px">
+                <div class="col-auto">
+                  <span class="badge dark event text-primary">프리 이벤트</span>
+                </div>
+                <div class="col">
+                  <div class="number">주문번호 ORD20210409-0000010</div>
+                  <div class="date">2020.07.14</div>
+                </div>
+                <div class="col-auto">
+                  <i class="icon-arr-down-gray"></i>
+                </div>
+              </a>
+            </div>
+            <div class="item-body">
+              <a href="#none">
+                <div class="d-flex align-items-center">
+                  <div class="info">
+                    <div class="state">결제완료</div>
+                    <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명 </div>
+                    <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
+                  </div>
+                  <div class="img">
+                    <img src="@@webRoot/assets/images/@landscape.jpg" alt="">
+                  </div>
+                </div>
+                <div class="price">무료 참여</div>
+              </a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-top">
+              <a href="#none" class="row gx-10px align-items-center">
+                <div class="col-auto">
+                  <span class="badge outline-dark event bg-primary">포인트 이벤트</span>
+                </div>
+                <div class="col">
+                  <div class="number">주문번호 ORD20210409-0000010</div>
+                  <div class="date">2020.07.14</div>
+                </div>
+                <div class="col-auto">
+                  <i class="icon-arr-down-gray"></i>
+                </div>
+              </a>
+            </div>
+            <div class="item-body">
+              <a href="#none">
+                <div class="d-flex align-items-center">
+                  <div class="info">
+                    <div class="state">결제완료</div>
+                    <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명 </div>
+                    <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
+                  </div>
+                  <div class="img">
+                    <img src="@@webRoot/assets/images/@landscape.jpg" alt="">
+                  </div>
+                </div>
+                <div class="price">100P</div>
+              </a>
+            </div>
+          </div>
+          <div class="data-empty">
+            <i class="icon-exclaimation-light"></i>
+            <p>참여한 이벤트가 없습니다</p>
+          </div>
+        </div>
+
+        <!-- //실컨텐츠 -->
+      </main>
+    </div>
+  </div>
+
+</body>
+
+</html>

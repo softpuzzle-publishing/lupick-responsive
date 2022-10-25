@@ -42,7 +42,7 @@
             <button type="button" class="btn-back" aria-label="뒤로" onclick="window.history.back()">
               <i class="icon-back"></i>
             </button>
-            <h1 class="header-title"></h1>
+            <h1 class="header-title">구매확정 확인</h1>
           </div>
           <div class="header-main">
             <div class="logo"><span class="visually-hidden">Lupick Logo</span></div>
@@ -58,26 +58,126 @@
         <main id="main">
           <!-- 실컨텐츠 -->
 
-          <div class="bg-circle">
-            <span class="circle"></span>
-          </div>
-
-          <div class="container">
-            <h1 class="page-title">새 비밀번호 등록.</h1>
-            <div class="form-group">
-              <label for="formPwReset" class="form-label">새 비밀번호 등록</label>
-              <input type="password" class="form-control" placeholder="새 비밀번호 입력" id="formPwReset" />
-              <p class="form-text">* 최소 10글자 이상으로 영문, 숫자, 특수문자 2개 이상 조합 동일한 숫자</p>
-            </div>
-            <div class="form-group">
-              <label for="formPwResetRe" class="form-label">새 비밀번호 확인</label>
-              <input type="password" class="form-control" placeholder="새 비밀번호 입력" id="formPwResetRe" />
-            </div>
-            <div class="form">
-              <div class="re-send">
-                <a href="javascript:;">인증번호 재전송</a>
+          <div class="my-event-list mt-n10px">
+            <div class="item">
+              <div class="item-top">
+                <a href="#none" class="row gx-10px">
+                  <div class="col-auto">
+                    <span class="badge outline-dark event">쇼핑 이벤트</span>
+                  </div>
+                  <div class="col">
+                    <div class="number">주문번호 ORD20210409-0000010</div>
+                    <div class="date">2020.07.14</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="icon-arr-down-gray"></i>
+                  </div>
+                </a>
               </div>
-              <button type="button" class="btn btn-dark btn-lg w-100" data-bs-toggle="modal" data-bs-target="#alert-confirm">확인</button>
+              <div class="item-body">
+                <a href="#none">
+                  <div class="d-flex align-items-center">
+                    <div class="info">
+                      <div class="state">결제완료</div>
+                      <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
+                      <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
+                    </div>
+                    <div class="img">
+                      <img src="../../assets/images/@landscape.jpg" alt="" />
+                    </div>
+                  </div>
+                  <div class="price">20,000원</div>
+                </a>
+                <div class="row gx-10px mt-20px">
+                  <div class="col">
+                    <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100">배송 조회</button>
+                  </div>
+                  <div class="col">
+                    <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100">교환 및 반품 신청</button>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-outline-secondary btn-round btn-lg w-100 mt-10px" data-bs-toggle="modal" data-bs-target="#alert-purchasing-confirmation">구매확정</button>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-top">
+                <a href="#none" class="row gx-10px">
+                  <div class="col-auto">
+                    <span class="badge dark event text-primary">프리 이벤트</span>
+                  </div>
+                  <div class="col">
+                    <div class="number">주문번호 ORD20210409-0000010</div>
+                    <div class="date">2020.07.14</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="icon-arr-down-gray"></i>
+                  </div>
+                </a>
+              </div>
+              <div class="item-body">
+                <a href="#none">
+                  <div class="d-flex align-items-center">
+                    <div class="info">
+                      <div class="state">결제완료</div>
+                      <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
+                      <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
+                    </div>
+                    <div class="img">
+                      <img src="../../assets/images/@landscape.jpg" alt="" />
+                    </div>
+                  </div>
+                  <div class="price">무료 참여</div>
+                </a>
+                <div class="row gx-10px mt-20px">
+                  <div class="col">
+                    <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100">배송 조회</button>
+                  </div>
+                  <div class="col">
+                    <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100">교환 및 반품 신청</button>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-outline-secondary btn-round btn-lg w-100 mt-10px" data-bs-toggle="modal" data-bs-target="#alert-purchasing-confirmation">구매확정</button>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-top">
+                <a href="#none" class="row gx-10px align-items-center">
+                  <div class="col-auto">
+                    <span class="badge outline-dark event bg-primary">포인트 이벤트</span>
+                  </div>
+                  <div class="col">
+                    <div class="number">주문번호 ORD20210409-0000010</div>
+                    <div class="date">2020.07.14</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="icon-arr-down-gray"></i>
+                  </div>
+                </a>
+              </div>
+              <div class="item-body">
+                <a href="#none">
+                  <div class="d-flex align-items-center">
+                    <div class="info">
+                      <div class="state">결제완료</div>
+                      <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
+                      <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
+                    </div>
+                    <div class="img">
+                      <img src="../../assets/images/@landscape.jpg" alt="" />
+                    </div>
+                  </div>
+                  <div class="price">100P</div>
+                </a>
+                <div class="row gx-10px mt-20px">
+                  <div class="col">
+                    <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100">배송 조회</button>
+                  </div>
+                  <div class="col">
+                    <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100">교환 및 반품 신청</button>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-outline-secondary btn-round btn-lg w-100 mt-10px" data-bs-toggle="modal" data-bs-target="#alert-purchasing-confirmation">구매확정</button>
+              </div>
             </div>
           </div>
 
@@ -85,6 +185,7 @@
         </main>
       </div>
     </div>
+
     <!-- alert: 새 비밀번호 등록 확인  -->
     <div class="modal alert" tabindex="-1" id="alert-confirm">
       <div class="modal-dialog">

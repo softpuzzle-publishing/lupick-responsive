@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 37</title>
+    <g id="-iOS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.25">
+        <g id="문의-내역---없음" transform="translate(-162.000000, -355.000000)" fill="#000000">
+            <g id="Group" transform="translate(111.000000, 355.000000)">
+                <g id="Group-48" transform="translate(51.000000, 0.000000)">
+                    <g id="Group-9" transform="translate(24.227273, 14.181818)">
+                        <path d="M3.54545455,18.9090909 L3.54545455,22.4545455 L0,22.4545455 L0,18.9090909 L3.54545455,18.9090909 Z M3.54545455,0 L3.54545455,14.1818182 L0,14.1818182 L0,0 L3.54545455,0 Z" id="Combined-Shape"></path>
+                    </g>
+                    <path d="M49.6363636,0 C50.941764,0 52,1.05823605 52,2.36363636 L52,49.6363636 C52,50.941764 50.941764,52 49.6363636,52 L2.36363636,52 C1.05823605,52 0,50.941764 0,49.6363636 L0,2.36363636 C0,1.05823605 1.05823605,0 2.36363636,0 L49.6363636,0 Z M48.4545455,3.54545455 L3.54545455,3.54545455 L3.54545455,48.4545455 L48.4545455,48.4545455 L48.4545455,3.54545455 Z" id="Rectangle" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

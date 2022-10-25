@@ -73,6 +73,12 @@
   background-image: url("../images/icon-exclamation.svg");
 }
 
+.icon-exclaimation-light {
+  width: 52px;
+  height: 52px;
+  background-image: url("../images/icon-exclamation-light.svg");
+}
+
 /* button */
 .btn {
   display: inline-flex;
@@ -608,9 +614,18 @@ textarea.form-control::placeholder {
   color: #fff;
   border-color: #000;
 }
+.badge.outline-dark {
+  border: 1px solid #000;
+  color: #000;
+}
 .badge.dark {
   background: #000;
   color: #fff;
+}
+.badge.event {
+  height: 32px;
+  line-height: 32px;
+  width: 84px;
 }
 
 .progress {
@@ -968,9 +983,13 @@ textarea.form-control::placeholder {
 }
 @font-face {
   font-family: "Gilroy";
+  font-weight: 500;
+  src: url(../fonts/Gilroy/Gilroy-Medium.woff) format("woff"), url(../fonts/Gilroy/Gilroy-Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Gilroy";
   font-weight: 700;
-  src: url(../fonts/Gilroy/Gilroy-Bold.eot);
-  src: url(../fonts/Gilroy/Gilroy-Bold.eot?#iefix) format("embedded-opentype"), url(../fonts/Gilroy/Gilroy-Bold.woff) format("woff"), url(../fonts/Gilroy/Gilroy-Bold.ttf) format("truetype");
+  src: url(../fonts/Gilroy/Gilroy-Medium.woff) format("woff"), url(../fonts/Gilroy/Gilroy-Medium.ttf) format("truetype");
 }
 *,
 *::before,
@@ -1288,6 +1307,10 @@ progress {
   margin-top: 10px;
 }
 
+.mt-20px {
+  margin-top: 20px;
+}
+
 .mt-30px {
   margin-top: 30px;
 }
@@ -1310,6 +1333,10 @@ progress {
 
 .pt-50px {
   padding-top: 50px;
+}
+
+.mt-n10px {
+  margin-top: -10px;
 }
 
 .gx-10px {
@@ -1658,6 +1685,43 @@ progress {
   color: #666;
   margin-top: 15px;
   margin-bottom: 30px;
+}
+.fail-message .btn-lg {
+  font-size: 14px;
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.full-menu {
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+.full-menu li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+.full-menu a {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  padding: 19px 20px;
+  font-weight: 700;
+}
+.full-menu a span {
+  color: #4ac0ff;
+  margin-left: 10px;
+}
+
+.data-empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 120px);
+}
+.data-empty p {
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.25);
+  font-weight: 700;
+  margin-top: 30px;
 }
 
 .event-item {
@@ -2499,7 +2563,210 @@ body.body-main #main {
   margin-top: 40px;
 }
 
+.my-profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-top: 10px;
+}
+.my-profile .img {
+  flex: 0 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 50rem;
+}
+.my-profile .img img {
+  max-width: 100%;
+  max-height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.my-profile .info {
+  flex-grow: 1;
+  margin-left: 15px;
+}
+.my-profile .info .username {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.16666;
+  margin-bottom: 3px;
+  transform: translateY(-6px);
+}
+.my-profile .info .btn-friend-invite {
+  padding: 9px 15px;
+  font-size: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 10rem;
+}
+
+.my-point {
+  background: #f4f4f4;
+  border-radius: 10px;
+  padding: 20px 0;
+}
+.my-point .point {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.my-point .point .icon-point {
+  width: 25px;
+  height: 25px;
+  margin-right: 7.5px;
+}
+.my-point .point strong {
+  font-size: 30px;
+  font-family: "Gilroy";
+  font-weight: 500;
+  line-height: 1.1666;
+}
+.my-point .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.my-point .menu a {
+  font-size: 16px;
+  font-weight: 700;
+  flex: 1;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.my-event-state {
+  margin-bottom: 30px;
+}
+.my-event-state .section-title {
+  font-size: 16px;
+}
+.my-event-state .my-event-step {
+  margin-bottom: 20px;
+}
+.my-event-state .event-count {
+  border-radius: 50%;
+  background: #f4f4f4;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  position: relative;
+}
+.my-event-state .event-count span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 15px;
+  font-weight: 700;
+  color: #8c8c8c;
+}
+.my-event-state .event-order {
+  font-size: 12px;
+  line-height: 1.3333;
+  text-align: center;
+  margin-top: 9px;
+}
 .my-event-state .icon-step-arr-right {
+  width: 8px;
+  height: 100%;
   background-image: url("../images/icon-step-arrow-right.svg");
+}
+.my-event-state .col-auto {
+  padding-bottom: 41px;
+}
+
+.my-event-list .item {
+  border-bottom: 8px solid rgba(0, 0, 0, 0.05);
+  padding: 30px 20px;
+}
+.my-event-list .item:last-of-type {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.my-event-list .item-top {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+.my-event-list .item-body > a {
+  display: block;
+}
+.my-event-list .number {
+  font-size: 12px;
+  color: #666;
+}
+.my-event-list .date {
+  font-size: 12px;
+  color: #666;
+}
+.my-event-list .icon-arr-down-gray {
+  transform: rotate(-90deg);
+  margin: 0;
+}
+.my-event-list .info {
+  margin-right: 30px;
+  flex: 1 0 0%;
+  min-width: 0;
+}
+.my-event-list .info .state {
+  color: #4ac0ff;
+  font-size: 16px;
+  font-weight: 700;
+}
+.my-event-list .info .title {
+  font-size: 12px;
+  font-weight: 700;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  margin-top: 12px;
+}
+.my-event-list .info .product {
+  font-size: 14px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  margin-top: 3px;
+}
+.my-event-list .img {
+  flex: 0 0 80px;
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+.my-event-list .img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+}
+.my-event-list .price {
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+.my-event-list.img-first .item {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.my-event-list.img-first .info {
+  margin-right: 0;
+  margin-left: 10px;
+}
+.my-event-list.img-first .title {
+  margin-top: 0;
+}
+.my-event-list.img-first .product {
+  font-size: 12px;
+  margin-bottom: 3px;
 }
 /*# sourceMappingURL=maps/style.css.map */
