@@ -527,7 +527,7 @@
           <div class="modal-footer">
             <div class="row gx-0">
               <div class="col">
-                <button type="button" class="btn btn-outline-light btn-lg w-100" data-bs-dismiss="modal">확인</button>
+                <button type="button" class="btn btn-outline-light btn-lg w-100 fw-bold" data-bs-dismiss="modal">확인</button>
               </div>
             </div>
           </div>
@@ -535,15 +535,45 @@
       </div>
     </div>
 
-    <!-- modal: 메인 슬라이드업 배너 -->
-    <div class="modal slide-up" tabindex="-1" id="modal-main-slideup">
+    <!-- alert: 구매확정 확인  -->
+    <div class="modal alert" tabindex="-1" id="alert-buy-confirm">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-body p-0">
-            <button type="button" class="btn-close circle" aria-label="Close" data-bs-dismiss="modal"><i class="icon-x-white"></i></button>
-            <div class="main-slideup-banner">
-              <img src="../../assets/images/@banner-slideup.png" alt="" />
-              <button type="button" class="btn btn-dark btn-round btn-lg w-100">이벤트 확인하기</button>
+          <div class="modal-body">
+            <div class="alert-text">
+              구매확정 시 이벤트상품의 <br />
+              교환 및 반품 신청이 불가합니다. <br />
+              구매확정 하시겠습니까?
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="row gx-0">
+              <div class="col">
+                <button type="button" class="btn btn-outline-light btn-lg w-100" data-bs-dismiss="modal">아니오</button>
+              </div>
+              <div class="col">
+                <button type="button" class="btn btn-outline-light btn-lg w-100 fw-bold">구매확정</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 인증 실패 -->
+    <div class="modal" tabindex="-1" id="modal-certification-fail">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="fail-message">
+              <i class="icon-exclaimation"></i>
+              <strong>인증에 실패하였습니다</strong>
+              <p>
+                인증 번호를 잘못 입력했거나 <br />
+                유효 시간이 초과되었습니다. <br />
+                인증을 다시 시도해주세요.
+              </p>
+              <button type="button" class="btn btn-dark btn-lg btn-round">인증 재시도</button>
             </div>
           </div>
         </div>
@@ -636,6 +666,21 @@
             </div>
             <div class="more-text">
               <a href="javascript:;" role="button">더보기</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 메인 슬라이드업 배너 -->
+    <div class="modal slide-up" tabindex="-1" id="modal-main-slideup">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body p-0">
+            <button type="button" class="btn-close circle" aria-label="Close" data-bs-dismiss="modal"><i class="icon-x-white"></i></button>
+            <div class="main-slideup-banner">
+              <img src="../../assets/images/@banner-slideup.png" alt="" />
+              <button type="button" class="btn btn-dark btn-round btn-lg w-100">이벤트 확인하기</button>
             </div>
           </div>
         </div>

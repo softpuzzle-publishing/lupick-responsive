@@ -4,6 +4,7 @@
 
 .section-title{
   font-size: 20px;font-weight: 700;line-height: 1.11;margin-bottom: 15px;margin-top: 30px;
+  small{color: rgba(0,0,0,0.3);font-size: 12px;vertical-align: middle;}
 }
 
 .section-title-lg{
@@ -68,3 +69,17 @@
   .circle:nth-of-type(1){left: -20px;top: 0;}
 }
 
+.full-video{
+  position: relative;height: 0;padding-bottom: 56.25%;
+  > video,
+  > iframe{position: absolute;left: 0;top: 0;width: 100% !important;height: 100% !important;}
+  .container &{
+    margin-left: -20px;margin-right: -20px;
+  }
+}
+
+.fail-message{
+  text-align: center;padding-top: 50px;
+  strong{display: block;font-size: 18px;font-weight: 700;margin-top: 30px;}
+  p{font-size: 13px;color: $gray;margin-top: 15px;margin-bottom: 30px;}
+}

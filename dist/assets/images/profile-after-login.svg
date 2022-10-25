@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>프로필1</title>
+    <g id="-iOS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="마이---default" transform="translate(-36.000000, -130.000000)">
+            <g id="Photo-ID" transform="translate(20.000000, 114.000000)">
+                <g id="프로필1" transform="translate(16.000000, 16.000000)">
+                    <g id="Group-2">
+                        <rect id="Rectangle" x="0" y="0" width="48" height="48"></rect>
+                    </g>
+                    <g id="Group-19" transform="translate(1.500000, 1.500000)">
+                        <path d="M45,22.5 C45,34.926 34.926,45 22.5,45 C10.074,45 0,34.926 0,22.5 C0,10.074 10.074,0 22.5,0 C34.926,0 45,10.074 45,22.5" id="Fill-1" fill="#FFEC00" fill-rule="nonzero"></path>
+                        <path d="M23.5213,15.5096 C23.1663,15.9696 22.5183,16.0646 22.0723,15.7206 C21.6273,15.3776 21.5533,14.7256 21.9083,14.2656 C22.2623,13.8056 22.9113,13.7116 23.3563,14.0546 C23.8023,14.3986 23.8763,15.0496 23.5213,15.5096" id="Fill-3" fill="#000000" fill-rule="nonzero"></path>
+                        <path d="M23.5213,15.5096 C24.2943,14.4156 22.7693,13.2256 21.9293,14.2826 C21.1213,15.3646 22.6603,16.5356 23.5213,15.5096 M23.5213,15.5096 C22.6603,16.6516 21.0393,15.3686 21.8873,14.2496 C22.7533,13.1456 24.4063,14.3856 23.5213,15.5096" id="Fill-5" fill="#000000" fill-rule="nonzero"></path>
+                        <path d="M14.849,16.1584 C14.494,16.6184 13.846,16.7134 13.4,16.3694 C12.955,16.0264 12.881,15.3744 13.236,14.9144 C13.59,14.4544 14.239,14.3604 14.684,14.7034 C15.13,15.0474 15.204,15.6984 14.849,16.1584" id="Fill-7" fill="#000000" fill-rule="nonzero"></path>
+                        <path d="M14.849,16.1584 C15.622,15.0644 14.097,13.8744 13.257,14.9314 C12.449,16.0134 13.988,17.1844 14.849,16.1584 M14.849,16.1584 C13.988,17.3004 12.367,16.0164 13.215,14.8984 C14.081,13.7944 15.734,15.0344 14.849,16.1584" id="Fill-9" fill="#000000" fill-rule="nonzero"></path>
+                        <path d="M45,22.5 C45,34.926 34.926,45 22.5,45 C10.074,45 0,34.926 0,22.5 C0,10.074 10.074,0 22.5,0 C34.926,0 45,10.074 45,22.5 Z" id="Stroke-11" stroke="#000000" stroke-width="1.348" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12.2599,10.9391 C13.8529,11.3031 14.7709,12.1231 15.4459,13.1321" id="Stroke-13" stroke="#000000" stroke-width="1.011" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M20.5492,9.0209 C21.6112,7.3069 23.1652,5.9009 24.9762,5.0139" id="Stroke-15" stroke="#000000" stroke-width="1.011" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M16.3591,19.1967 C17.7881,18.9927 19.2301,18.8727 20.6731,18.8397" id="Stroke-17" stroke="#000000" stroke-width="1.011" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
