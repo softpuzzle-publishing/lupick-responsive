@@ -25,7 +25,15 @@
 
 .bar{display: inline-block;width: 1px;height: 14px;background: #979797;margin: 0 18px;}
 
-.top-sort{margin-bottom: 10px;position: sticky;top: 0;}
+.top-sort{
+  position: sticky;top: 0;z-index: 1;
+  &.is-tab-next{
+    padding: 20px 20px 0;background: #fff;
+    html.scroll-down &{
+      top: 46px
+    }
+  }
+}
 
 .form-text{margin-top: 4px;font-size: 10px;color: $gray-light;}
 

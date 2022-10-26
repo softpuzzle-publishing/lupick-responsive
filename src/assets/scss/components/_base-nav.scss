@@ -14,7 +14,7 @@
   gap: 10px;
   .nav-item{flex: 1;}
   .nav-link{
-    color: $gray-light;font-size: 14px;line-height: 1.1574;text-align: center;display: block;padding: 10px 0 15px;position: relative;
+    color: $gray-light;font-size: 14px;line-height: 1.1574;text-align: center;display: block;padding: 10px 0 15px;position: relative;letter-spacing: -0.02em;
     &.active{
       color: $dark;font-weight: 700;
       &::before{content: '';height: 2px;position: absolute;left: 0;bottom: 0;right: 0;background: $dark;}

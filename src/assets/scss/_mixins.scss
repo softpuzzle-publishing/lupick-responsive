@@ -11,7 +11,7 @@
   word-wrap: normal;
 }
 
-@mixin ellipsis-multiline($font-size, $line-height, $lines-to-show) {
+@mixin ellipsis-multiline($font-size, $line-height, $lines-to-show, $height-fix:false) {
   $height-calc: $font-size*$line-height*$lines-to-show;
   display: block;
   display: -webkit-box;
@@ -23,6 +23,10 @@
   text-overflow: ellipsis;
   -webkit-line-clamp: $lines-to-show;
   -webkit-box-orient: vertical;
+  white-space: normal;
+  @if $height-fix{
+    height: ($line-height * $lines-to-show) * 1em;
+  }
 
   p:not(:first-of-type) {
     display: none;
