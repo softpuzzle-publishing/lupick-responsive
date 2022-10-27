@@ -127,3 +127,30 @@
   margin-top: 40px;
   .form-check{margin-top: 15px;}
 }
+
+.address-delete{
+  padding-top: 10px;margin-top: 25px;border-top: 2px solid #000;
+  a{font-size: 14px;font-weight: 700;text-decoration: underline;}
+}
+
+.customer-main-top{
+  margin-top: 34px;padding: 0 10px;
+  .top-text{font-size: 24px;line-height: 1.333;margin-bottom: 7px;}
+  .info{font-size: 13px;line-height: 1.5384;color: $gray-light;margin-bottom: 15px;}
+}
+
+.btn-kakao{
+  width: 100%;height: 60px;line-height: 60px;text-align: center;color: #3a1b1b;font-weight: 700;background: #fae300;border-radius: 7px;
+  i{display: inline-block;vertical-align: middle ;background: url('../images/icon-kakao.svg');width: 30px;height: 30px;margin-right: 8px;}
+}
+
+.customer-main-menu{
+  margin-top: 30px;
+  .item{
+    display: block;border: 1px solid $border-color;border-radius: 7px;padding: 25px 20px;
+    .title{display: block;font-size: 18px;font-weight: 700;line-height: 1.111;}
+    .desc{display: block;font-size: 13px;margin-top: 7px;}
+    .desc-sub{display: block;font-size: 13px;margin-top: 12px;color: $gray-light;}
+  }
+  .item + .item{margin-top: 15px;}
+}

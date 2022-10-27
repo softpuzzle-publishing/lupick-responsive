@@ -108,3 +108,31 @@
   display: flex;flex-direction: column;justify-content: center;align-items: center;height: calc(100vh - 120px);
   p{font-size: 18px;color: $muted;font-weight: 700;margin-top: 30px;}
 }
+
+.address-item{
+  padding: 30px 0;
+  .zipcode{font-weight: 700;font-size: 16px;line-height: 1.5;}
+  .addr{font-size: 16px;line-height: 1.5;}
+  .name{font-size: 13px;color: $gray;font-weight: 700;line-height: 1.153;margin-top: 5px;}
+  .badge{margin-top: 10px;}
+  & + .address-item{border-top: 1px solid $border-color;}
+}
+
+.accordion{
+  .item{
+    position: relative;
+    &::after{content: '';height: 1px;background-color: $border-color;position: absolute;left: 20px;bottom: 0;right: 20px;}
+  }
+  .item-header{
+    padding: 20px 0;margin: 0 20px;display: block;
+    .title{font-size: 15px;font-weight: 700;}
+    .date{font-size: 12px;line-height: 1.1666;color: $gray-light;margin-top: 10px;}
+  }
+  .item-body{
+    background: rgba(0,0,0,0.05);padding: 20px;font-size: 13px;line-height: 1.69;
+  }
+  .icon-arr-down{transition: transform .2s;}
+  .expanded{
+    .icon-arr-down{transform: rotate(180deg);}
+  }
+}

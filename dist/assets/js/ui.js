@@ -2,8 +2,16 @@
 
 var Common = {
   init: function init() {
+    this.accordion();
     this.select();
     this["byte"]();
+  },
+  accordion: function accordion() {
+    $(".accordion .item-header").on("click", function (e) {
+      e.preventDefault();
+      $(this).toggleClass("expanded");
+      $(this).siblings().collapse("toggle");
+    });
   },
   select: function select() {
     /* select */

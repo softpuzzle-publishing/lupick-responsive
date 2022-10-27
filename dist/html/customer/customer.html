@@ -42,7 +42,7 @@
             <button type="button" class="btn-back" aria-label="뒤로" onclick="window.history.back()">
               <i class="icon-back"></i>
             </button>
-            <h1 class="header-title">내 정보 수정</h1>
+            <h1 class="header-title">고객센터</h1>
           </div>
           <div class="header-main">
             <div class="logo"><span class="visually-hidden">Lupick Logo</span></div>
@@ -59,33 +59,43 @@
         <main id="main">
           <!-- 실컨텐츠 -->
 
-          <div class="container">
-            <div class="form pt-20px">
-              <form>
-                <fieldset>
-                  <legend>내 정보 수정 비밀번호 입력</legend>
-                  <div class="form-group">
-                    <div class="form-label">비밀번호 다시 확인</div>
-                    <p class="form-desc">
-                      회원님의 소중한 정보를 안전하게 보호하기 위해서 <br />
-                      비밀번호를 다시 한번 확인하고 있습니다 : )
-                    </p>
-                  </div>
-                  <div class="form-group">
-                    <label for="formId" class="form-label">아이디</label>
-                    <input type="text" class="form-control" id="formId" value="lupick01" />
-                  </div>
-                  <div class="form-group">
-                    <label for="formPw" class="form-label">현재 비밀번호</label>
-                    <input type="password" class="form-control" placeholder="비밀번호를 입력해주세요" id="formPw" />
-                  </div>
+          <div class="bg-circle">
+            <span class="circle"></span>
+          </div>
 
-                  <div class="bottom-buttons">
-                    <button type="button" class="btn btn-dark btn-lg w-100" onclick="location.href='my_info.html'">확인</button>
-                    <button type="button" class="btn btn-outline-light btn-round btn-lg w-100" onclick="location.href='../main/main.html'">로그아웃</button>
-                  </div>
-                </fieldset>
-              </form>
+          <div class="container">
+            <div class="customer-main">
+              <div class="customer-main-top">
+                <p class="top-text">간편하고 빠르게 <br />카카오톡 문의로</p>
+                <div class="info">
+                  <strong>고객센터 : 02-6951-0507</strong> <br />
+                  모든 상담 업무는 오전 10시 ~ 오후 6시 <br />
+                  (OFF 12:30 ~ 13:30) 토/일/공휴일 휴무
+                </div>
+                <button type="button" class="btn-kakao"><i></i>간편하게 카카오톡 문의</button>
+              </div>
+              <div class="customer-main-menu">
+                <a href="" class="item">
+                  <span class="title">이벤트 문의</span>
+                  <span class="desc">내가 참여한 이벤트에 대해서 문의해요.</span>
+                  <span class="desc-sub">이벤트, 일반상품, 럭키상품, 배송, 루피커선정</span>
+                </a>
+                <a href="" class="item">
+                  <span class="title">루픽 문의</span>
+                  <span class="desc">루픽 서비스에 대해서 문의해요.</span>
+                  <span class="desc-sub">이용안내, 회원문의, 포인트, 투표, 오류, 기타</span>
+                </a>
+                <a href="" class="item">
+                  <span class="row">
+                    <span class="col">
+                      <span class="title">루픽 문의</span>
+                    </span>
+                    <span class="col-auto">
+                      <i class="icon-full-menu-arr"></i>
+                    </span>
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
 

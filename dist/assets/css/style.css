@@ -42,6 +42,13 @@
   margin-left: 5px;
 }
 
+.icon-arr-down {
+  width: 12px;
+  height: 6px;
+  background-image: url("../images/icon-arr-down.svg");
+  margin-left: 5px;
+}
+
 .icon-arr-down-gray {
   width: 12px;
   height: 6px;
@@ -89,6 +96,12 @@
   width: 7px;
   height: 10px;
   background-image: url("../images/icon-full-menu-arr.svg");
+}
+
+.icon-edit {
+  width: 18px;
+  height: 18px;
+  background-image: url("../images/icon-edit.svg");
 }
 
 /* button */
@@ -689,7 +702,7 @@ textarea.form-control::placeholder {
   pointer-events: none;
   display: flex;
   align-items: center;
-  min-height: calc(100% - 1rem);
+  min-height: 100%;
   margin: 0 auto;
   max-width: 280px;
 }
@@ -1367,6 +1380,31 @@ progress {
   padding-right: 5px;
 }
 
+.collapse:not(.show) {
+  display: none;
+}
+
+.collapsing {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .collapsing {
+    transition: none;
+  }
+}
+.collapsing.collapse-horizontal {
+  width: 0;
+  height: auto;
+  transition: width 0.35s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .collapsing.collapse-horizontal {
+    transition: none;
+  }
+}
+
 .container,
 .container-fluid {
   padding-left: 20px;
@@ -1756,6 +1794,72 @@ html.scroll-down .top-sort.is-tab-next {
   margin-top: 30px;
 }
 
+.address-item {
+  padding: 30px 0;
+}
+.address-item .zipcode {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.address-item .addr {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.address-item .name {
+  font-size: 13px;
+  color: #666;
+  font-weight: 700;
+  line-height: 1.153;
+  margin-top: 5px;
+}
+.address-item .badge {
+  margin-top: 10px;
+}
+.address-item + .address-item {
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.accordion .item {
+  position: relative;
+}
+.accordion .item::after {
+  content: "";
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.15);
+  position: absolute;
+  left: 20px;
+  bottom: 0;
+  right: 20px;
+}
+.accordion .item-header {
+  padding: 20px 0;
+  margin: 0 20px;
+  display: block;
+}
+.accordion .item-header .title {
+  font-size: 15px;
+  font-weight: 700;
+}
+.accordion .item-header .date {
+  font-size: 12px;
+  line-height: 1.1666;
+  color: #999;
+  margin-top: 10px;
+}
+.accordion .item-body {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  font-size: 13px;
+  line-height: 1.69;
+}
+.accordion .icon-arr-down {
+  transition: transform 0.2s;
+}
+.accordion .expanded .icon-arr-down {
+  transform: rotate(180deg);
+}
+
 .event-item {
   margin-top: 40px;
   position: relative;
@@ -2086,6 +2190,82 @@ html.scroll-down .top-sort.is-tab-next {
   margin-top: 40px;
 }
 .agree-area .form-check {
+  margin-top: 15px;
+}
+
+.address-delete {
+  padding-top: 10px;
+  margin-top: 25px;
+  border-top: 2px solid #000;
+}
+.address-delete a {
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.customer-main-top {
+  margin-top: 34px;
+  padding: 0 10px;
+}
+.customer-main-top .top-text {
+  font-size: 24px;
+  line-height: 1.333;
+  margin-bottom: 7px;
+}
+.customer-main-top .info {
+  font-size: 13px;
+  line-height: 1.5384;
+  color: #999;
+  margin-bottom: 15px;
+}
+
+.btn-kakao {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  color: #3a1b1b;
+  font-weight: 700;
+  background: #fae300;
+  border-radius: 7px;
+}
+.btn-kakao i {
+  display: inline-block;
+  vertical-align: middle;
+  background: url("../images/icon-kakao.svg");
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+}
+
+.customer-main-menu {
+  margin-top: 30px;
+}
+.customer-main-menu .item {
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 7px;
+  padding: 25px 20px;
+}
+.customer-main-menu .item .title {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.111;
+}
+.customer-main-menu .item .desc {
+  display: block;
+  font-size: 13px;
+  margin-top: 7px;
+}
+.customer-main-menu .item .desc-sub {
+  display: block;
+  font-size: 13px;
+  margin-top: 12px;
+  color: #999;
+}
+.customer-main-menu .item + .item {
   margin-top: 15px;
 }
 

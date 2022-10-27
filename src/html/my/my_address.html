@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  @@include('@@webRoot/html/_include/_head.html')
+</head>
+
+<body>
+  <div id="wrap">
+    @@include('@@webRoot/html/_include/_header.html', { "title": "배송지 관리" })
+    <div id="container">
+      <main id="main">
+        <!-- 실컨텐츠 -->
+
+        <div class="container pt-20px">
+          <button type="button" class="btn btn-outline-light btn-flat btn-lg w-100 justify-content-start text-gray-light" data-bs-toggle="modal" data-bs-target="#modal-address-add">+ 배송지 추가</button>
+          <address class="address-item">
+            <div class="row gx-5">
+              <div class="col">
+                <div class="zipcode">04720</div>
+                <div class="addr">서울시 강남구 도산대로 54길 32 (도산아파트) 도산아파트 101동 202호</div>
+                <div class="name">이정후, 010-1234-5678</div>
+                <span class="badge dark">기본 배송지</span>
+              </div>
+              <div class="col-auto">
+                <button type="button" aria-label="수정" data-bs-toggle="modal" data-bs-target="#modal-address-edit"><i class="icon-edit"></i></button>
+              </div>
+            </div>
+          </address>
+          <address class="address-item">
+            <div class="row gx-5">
+              <div class="col">
+                <div class="zipcode">04720</div>
+                <div class="addr">서울시 강남구 도산대로 54길 32 (도산아파트) 도산아파트 101동 202호</div>
+                <div class="name">이정후, 010-1234-5678</div>
+              </div>
+              <div class="col-auto">
+                <button type="button" aria-label="수정" data-bs-toggle="modal" data-bs-target="#modal-address-edit"><i class="icon-edit"></i></button>
+              </div>
+            </div>
+          </address>
+        </div>
+
+        <!-- //실컨텐츠 -->
+      </main>
+    </div>
+  </div>
+
+  @@include('@@webRoot/html/_include/_modal.html')
+
+</body>
+
+</html>

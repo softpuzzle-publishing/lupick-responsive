@@ -34,8 +34,7 @@
     <script src="../../assets/js/ui.js" async></script>
   </head>
 
-  <body class="body-main">
-    <!-- 메인페이지에만 body-main 추가 -->
+  <body>
     <div id="wrap">
       <header id="header">
         <div class="inner">
@@ -43,7 +42,7 @@
             <button type="button" class="btn-back" aria-label="뒤로" onclick="window.history.back()">
               <i class="icon-back"></i>
             </button>
-            <h1 class="header-title">FEED</h1>
+            <h1 class="header-title">공지사항</h1>
           </div>
           <div class="header-main">
             <div class="logo"><span class="visually-hidden">Lupick Logo</span></div>
@@ -56,266 +55,187 @@
           </div>
         </div>
       </header>
-      <main id="main">
-        <!-- 실컨텐츠 -->
+      <div id="container">
+        <main id="main">
+          <!-- 실컨텐츠 -->
 
-        <!-- FEED 상단 배너 -->
-        <div class="feed-top-banner">
-          <div class="swiper-container">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide" data-feed-title="Ep.08 루픽 시그니처 컬러를 담은 뉴 아이맥 이벤트 루피커 ‘긴유니’님의 소감!">
-                <div class="item">
-                  <div class="img"><img src="../../assets/images/@lupicker.png" alt="" /></div>
-                </div>
-              </div>
-              <div class="swiper-slide" data-feed-title="Ep.09 건강한 삶이 내 손목에! 애플워치 시리즈6 이벤트 루피커 ‘대가’님의 소감!">
-                <div class="item">
-                  <div class="img"><img src="../../assets/images/@lupicker.png" alt="" /></div>
-                </div>
-              </div>
-              <div class="swiper-slide" data-feed-title="Ep.10 핫한 텐트 받고 가을 캠핑 떠나자! 이벤트의 주인공 루피커 ‘토끼’님의 소감!">
-                <div class="item">
-                  <div class="img"><img src="../../assets/images/@lupicker.png" alt="" /></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="info">
-            <div class="swiper-pagination swiper-pagination-feed-top-banner"></div>
-            <div class="title">Ep.08 루픽 시그니처 컬러를 담은 뉴 아이맥 이벤트 루피커 ‘긴유니’님의 소감!</div>
-          </div>
-          <script>
-            const feedTopBannerSwiper = new Swiper('.feed-top-banner .swiper-container', {
-              // eslint-disable-line
-              observeParent: true,
-              observeSlideChildren: true,
-              observer: true,
-              pagination: {
-                el: '.swiper-pagination-feed-top-banner',
-                type: 'fraction',
-              },
-              on: {
-                slideChangeTransitionEnd: function () {
-                  let activeIdx = $('.feed-top-banner .swiper-slide-active');
-                  //슬라이드 변경될 때 각 슬라이드의 타이틀 변경
-                  $('.feed-top-banner .title').html(activeIdx.attr('data-feed-title'));
-                },
-              },
-            });
-          </script>
-        </div>
-        <!-- //FEED 상단 배너 -->
-
-        <!-- 루픽스토리 -->
-        <div class="container">
-          <div class="row align-items-center justify-content-between mb-15px mt-30px">
-            <div class="col-auto">
-              <div class="section-title mb-0 mt-0">루픽스토리</div>
-            </div>
-            <div class="col-auto">
-              <a href="feed_lupick_story.html" class="text-secondary font-14px fw-bold">전체보기</a>
-            </div>
-          </div>
-        </div>
-        <div class="story-list">
-          <div class="swiper-container" id="lupick-story">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="item">
-                  <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                  <div class="title">[OFF-WHITE] 현시대의 예술, 그래피티 작가 ‘로니나’와 오프화이트의 만남</div>
-                  <div class="info">
-                    <div class="hit">조회수 10만회</div>
-                    <div class="date">2022.05.20 작성</div>
+          <div class="accordion">
+            <div class="item">
+              <a href="javascript:;" class="item-header" role="button" aria-expanded="false">
+                <div class="row">
+                  <div class="col">
+                    <div class="title">개인정보 처리방침 변경 고지</div>
+                    <div class="date">2020.08.21</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="icon-arr-down"></i>
                   </div>
                 </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="item">
-                  <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                  <div class="title">[OFF-WHITE] 현시대의 예술, 그래피티 작가 ‘로니나’와 오프화이트의 만남</div>
-                  <div class="info">
-                    <div class="hit">조회수 10만회</div>
-                    <div class="date">2022.05.20 작성</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="item">
-                  <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                  <div class="title">[OFF-WHITE] 현시대의 예술, 그래피티 작가 ‘로니나’와 오프화이트의 만남</div>
-                  <div class="info">
-                    <div class="hit">조회수 10만회</div>
-                    <div class="date">2022.05.20 작성</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <script>
-            const lupickStorySwiper = new Swiper('#lupick-story', {
-              // eslint-disable-line
-              spaceBetween: 10,
-              slidesOffsetBefore: 20,
-              slidesOffsetAfter: 20,
-              observeParent: true,
-              observeSlideChildren: true,
-              observer: true,
-            });
-          </script>
-        </div>
-        <!-- //루픽스토리 -->
-
-        <div class="hr"></div>
-
-        <!-- 루피커 인터뷰 -->
-        <div class="container">
-          <div class="row align-items-center justify-content-between mb-15px mt-30px">
-            <div class="col-auto">
-              <div class="section-title mb-0 mt-0">루피커 인터뷰</div>
-            </div>
-            <div class="col-auto">
-              <a href="feed_lupicker_interview.html" class="text-secondary font-14px fw-bold">전체보기</a>
-            </div>
-          </div>
-        </div>
-        <div class="story-list">
-          <div class="swiper-container" id="lupicker-interview">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="item">
-                  <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                  <div class="title">Ep.10 핫한 텐트 받고 가을 캠핑 떠나자! 이벤트의 주인공 루피커 ‘토끼’님의 소감!</div>
-                  <div class="info">
-                    <div class="hit">조회수 10만회</div>
-                    <div class="date">2022.05.20 작성</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="item">
-                  <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                  <div class="title">Ep.10 핫한 텐트 받고 가을 캠핑 떠나자! 이벤트의 주인공 루피커 ‘토끼’님의 소감!</div>
-                  <div class="info">
-                    <div class="hit">조회수 10만회</div>
-                    <div class="date">2022.05.20 작성</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="item">
-                  <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                  <div class="title">Ep.10 핫한 텐트 받고 가을 캠핑 떠나자! 이벤트의 주인공 루피커 ‘토끼’님의 소감!</div>
-                  <div class="info">
-                    <div class="hit">조회수 10만회</div>
-                    <div class="date">2022.05.20 작성</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <script>
-            const lupickerInterviewSwiper = new Swiper('#lupicker-interview', {
-              // eslint-disable-line
-              spaceBetween: 10,
-              slidesOffsetBefore: 20,
-              slidesOffsetAfter: 20,
-              observeParent: true,
-              observeSlideChildren: true,
-              observer: true,
-            });
-          </script>
-        </div>
-        <!-- //루피커 인터뷰 -->
-
-        <div class="hr"></div>
-
-        <!-- 인기 피드 -->
-        <div class="container">
-          <div class="section-title">인기 피드</div>
-          <ul class="nav nav-badges" role="tablist">
-            <li class="nav-item" role="presentation">
-              <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="tab">루픽스토리</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a class="nav-link" href="#" data-bs-toggle="tab">루픽스토리</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a class="nav-link" href="#" data-bs-toggle="tab">루피커 인터뷰</a>
-            </li>
-          </ul>
-          <div class="popular-list">
-            <a href="#none" class="item">
-              <div class="img">
-                <img src="../../assets/images/@portrait.jpg" alt="" />
-                <span>1위</span>
-              </div>
-              <div class="info">
-                <div class="d-flex flex-column justify-content-between h-100">
-                  <div>
-                    <div class="title">랜드로버 뉴 디펜더를 타고 캠핑 간 루피커의 생생한 후기!</div>
-                    <span class="badge outline-gray">루픽스토리</span>
-                  </div>
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="hit">조회수 10만회</div>
-                    <div class="date">2022.05.20 작성</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-            <a href="#none" class="item">
-              <div class="img">
-                <img src="../../assets/images/@landscape.jpg" alt="" />
-                <span>2위</span>
-              </div>
-              <div class="info">
-                <div class="d-flex flex-column justify-content-between h-100">
-                  <div>
-                    <div class="title">랜드로버 뉴 디펜더를 타고 캠핑 간 루피커의 생생한 후기!</div>
-                    <span class="badge outline-gray">루픽스토리</span>
-                  </div>
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="hit">조회수 10만회</div>
-                    <div class="date">2022.05.20 작성</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <!-- //인기 피드 -->
-
-        <!-- //실컨텐츠 -->
-      </main>
-      <div id="navbar">
-        <div class="inner">
-          <nav class="navbar">
-            <div class="navbar-item">
-              <a href="#none">
-                <i class="icon-navbar-feed"></i>
-                <span>FEED</span>
               </a>
+              <div class="collapse">
+                <div class="item-body">개인정보보호책임자 및 관리 담당자가 8월 31일부터 변경 예정으로 고지 드립니다. 관련 내용은 ‘마이페이지 > 설정 > 개인정보 이용 및 수집’에서 확인하실 수 있습니다. 감사합니다 :)</div>
+              </div>
             </div>
-            <div class="navbar-item">
-              <a href="#none" class="active">
-                <i class="icon-navbar-home"></i>
-                <span>HOME</span>
+
+            <div class="item">
+              <a href="javascript:;" class="item-header" role="button" aria-expanded="false">
+                <div class="row">
+                  <div class="col">
+                    <div class="title">개인정보 처리방침 변경 고지</div>
+                    <div class="date">2020.08.21</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="icon-arr-down"></i>
+                  </div>
+                </div>
               </a>
+              <div class="collapse">
+                <div class="item-body">개인정보보호책임자 및 관리 담당자가 8월 31일부터 변경 예정으로 고지 드립니다. 관련 내용은 ‘마이페이지 > 설정 > 개인정보 이용 및 수집’에서 확인하실 수 있습니다. 감사합니다 :)</div>
+              </div>
             </div>
-            <div class="navbar-item">
-              <a href="#none">
-                <i class="icon-navbar-my"></i>
-                <span>MY</span>
+
+            <div class="item">
+              <a href="javascript:;" class="item-header" role="button" aria-expanded="false">
+                <div class="row">
+                  <div class="col">
+                    <div class="title">개인정보 처리방침 변경 고지</div>
+                    <div class="date">2020.08.21</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="icon-arr-down"></i>
+                  </div>
+                </div>
               </a>
+              <div class="collapse">
+                <div class="item-body">개인정보보호책임자 및 관리 담당자가 8월 31일부터 변경 예정으로 고지 드립니다. 관련 내용은 ‘마이페이지 > 설정 > 개인정보 이용 및 수집’에서 확인하실 수 있습니다. 감사합니다 :)</div>
+              </div>
             </div>
-          </nav>
-        </div>
+
+            <div class="item">
+              <a href="javascript:;" class="item-header" role="button" aria-expanded="false">
+                <div class="row">
+                  <div class="col">
+                    <div class="title">개인정보 처리방침 변경 고지</div>
+                    <div class="date">2020.08.21</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="icon-arr-down"></i>
+                  </div>
+                </div>
+              </a>
+              <div class="collapse">
+                <div class="item-body">개인정보보호책임자 및 관리 담당자가 8월 31일부터 변경 예정으로 고지 드립니다. 관련 내용은 ‘마이페이지 > 설정 > 개인정보 이용 및 수집’에서 확인하실 수 있습니다. 감사합니다 :)</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <a href="javascript:;" class="item-header" role="button" aria-expanded="false">
+                <div class="row">
+                  <div class="col">
+                    <div class="title">개인정보 처리방침 변경 고지</div>
+                    <div class="date">2020.08.21</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="icon-arr-down"></i>
+                  </div>
+                </div>
+              </a>
+              <div class="collapse">
+                <div class="item-body">개인정보보호책임자 및 관리 담당자가 8월 31일부터 변경 예정으로 고지 드립니다. 관련 내용은 ‘마이페이지 > 설정 > 개인정보 이용 및 수집’에서 확인하실 수 있습니다. 감사합니다 :)</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <a href="javascript:;" class="item-header" role="button" aria-expanded="false">
+                <div class="row">
+                  <div class="col">
+                    <div class="title">개인정보 처리방침 변경 고지</div>
+                    <div class="date">2020.08.21</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="icon-arr-down"></i>
+                  </div>
+                </div>
+              </a>
+              <div class="collapse">
+                <div class="item-body">개인정보보호책임자 및 관리 담당자가 8월 31일부터 변경 예정으로 고지 드립니다. 관련 내용은 ‘마이페이지 > 설정 > 개인정보 이용 및 수집’에서 확인하실 수 있습니다. 감사합니다 :)</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <a href="javascript:;" class="item-header" role="button" aria-expanded="false">
+                <div class="row">
+                  <div class="col">
+                    <div class="title">개인정보 처리방침 변경 고지</div>
+                    <div class="date">2020.08.21</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="icon-arr-down"></i>
+                  </div>
+                </div>
+              </a>
+              <div class="collapse">
+                <div class="item-body">개인정보보호책임자 및 관리 담당자가 8월 31일부터 변경 예정으로 고지 드립니다. 관련 내용은 ‘마이페이지 > 설정 > 개인정보 이용 및 수집’에서 확인하실 수 있습니다. 감사합니다 :)</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <a href="javascript:;" class="item-header" role="button" aria-expanded="false">
+                <div class="row">
+                  <div class="col">
+                    <div class="title">개인정보 처리방침 변경 고지</div>
+                    <div class="date">2020.08.21</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="icon-arr-down"></i>
+                  </div>
+                </div>
+              </a>
+              <div class="collapse">
+                <div class="item-body">개인정보보호책임자 및 관리 담당자가 8월 31일부터 변경 예정으로 고지 드립니다. 관련 내용은 ‘마이페이지 > 설정 > 개인정보 이용 및 수집’에서 확인하실 수 있습니다. 감사합니다 :)</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <a href="javascript:;" class="item-header" role="button" aria-expanded="false">
+                <div class="row">
+                  <div class="col">
+                    <div class="title">개인정보 처리방침 변경 고지</div>
+                    <div class="date">2020.08.21</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="icon-arr-down"></i>
+                  </div>
+                </div>
+              </a>
+              <div class="collapse">
+                <div class="item-body">개인정보보호책임자 및 관리 담당자가 8월 31일부터 변경 예정으로 고지 드립니다. 관련 내용은 ‘마이페이지 > 설정 > 개인정보 이용 및 수집’에서 확인하실 수 있습니다. 감사합니다 :)</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <a href="javascript:;" class="item-header" role="button" aria-expanded="false">
+                <div class="row">
+                  <div class="col">
+                    <div class="title">개인정보 처리방침 변경 고지</div>
+                    <div class="date">2020.08.21</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="icon-arr-down"></i>
+                  </div>
+                </div>
+              </a>
+              <div class="collapse">
+                <div class="item-body">개인정보보호책임자 및 관리 담당자가 8월 31일부터 변경 예정으로 고지 드립니다. 관련 내용은 ‘마이페이지 > 설정 > 개인정보 이용 및 수집’에서 확인하실 수 있습니다. 감사합니다 :)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- //실컨텐츠 -->
+        </main>
       </div>
     </div>
+
     <!-- alert: 새 비밀번호 등록 확인  -->
     <div class="modal alert" tabindex="-1" id="alert-confirm">
       <div class="modal-dialog">

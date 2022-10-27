@@ -1,7 +1,15 @@
 var Common = {
   init: function () {
+    this.accordion();
     this.select();
     this.byte();
+  },
+  accordion: function () {
+    $(".accordion .item-header").on("click", function (e) {
+      e.preventDefault();
+      $(this).toggleClass("expanded");
+      $(this).siblings().collapse("toggle");
+    });
   },
   select: function () {
     /* select */

@@ -21,3 +21,21 @@
   margin-left: -5px;margin-right: -5px;
   > *{padding-left: 5px;padding-right: 5px;}
 }
+
+.collapse {
+  &:not(.show) {
+    display: none;
+  }
+}
+
+.collapsing {
+  height: 0;
+  overflow: hidden;
+  @include transition($transition-collapse);
+
+  &.collapse-horizontal {
+    width: 0;
+    height: auto;
+    @include transition($transition-collapse-width);
+  }
+}
