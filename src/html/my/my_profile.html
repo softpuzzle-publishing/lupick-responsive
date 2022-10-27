@@ -12,23 +12,68 @@
       <main id="main">
         <!-- 실컨텐츠 -->
 
-        <div class="my-event-list img-first">
-          @@for (var i = 3; i > 0; i--) {
-          <div class="item">
-            <div class="item-body">
-              <div class="d-flex align-items-center">
-                <div class="img">
-                  <img src="@@webRoot/assets/images/@portrait.jpg" alt="">
+        <div class="container">
+          <div class="my-profile-edit">
+            <div class="img">
+              <!-- <img src="@@webRoot/assets/images/profile-before-login.svg" alt="프로필 사진 없음(로그인 전)" class="default">
+              <img src="@@webRoot/assets/images/profile-after-login.svg" alt="프로필 사진 없음(로그인 후)" class="default"> -->
+              <img src="@@webRoot/assets/images/@profile.jpg" alt="조이 프로필 사진">
+              <button type="button" class="btn-profile-edit" aria-label="사진 변경"></button>
+              <input type="file" class="visually-hidden">
+              <script>
+                $('.btn-profile-edit').on('click', function (e) {
+                  e.preventDefault();
+                  $(this).siblings('input[type=file]').click();
+                });
+              </script>
+            </div>
+            <div class="form-group">
+              <label for="formUserNickname" class="form-label">닉네임</label>
+              <input type="text" class="form-control" placeholder="닉네임을 입력해주세요." id="formUserNickname" value="조이">
+            </div>
+            <div class="form-group">
+              <label for="formUserBirthYear" class="form-label">생년월일</label>
+              <div class="row gx-0 align-items-center border-bottom">
+                <div class="col">
+                  <input type="text" class="form-control text-center border-0" placeholder="YYYY" id="formUserBirthYear" value="1966" inputmode="numeric">
                 </div>
-                <div class="info">
-                  <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명 </div>
-                  <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
-                  <button type="button" class="btn btn-outline-dark btn-round btn-md w-100 font-14px fw-bold">리뷰쓰기</button>
+                <div class="col-auto text-gray-light">/</div>
+                <div class="col">
+                  <input type="text" class="form-control text-center border-0" placeholder="MM" id="formUserBirthMonth" value="09" inputmode="numeric">
+                </div>
+                <div class="col-auto text-gray-light">/</div>
+                <div class="col">
+                  <input type="text" class="form-control text-center border-0" placeholder="MM" id="formUserBirthDay" value="03" inputmode="numeric">
                 </div>
               </div>
             </div>
+            <div class="form-group">
+              <label for="formUserBirthYear" class="form-label">성별</label>
+              <div class="row gx-10px">
+                <div class="col">
+                  <div class="form-check button w-100">
+                    <input type="radio" value="" id="formGenderMail" name="formGender">
+                    <label for="formGenderMail">남성</label>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-check button w-100">
+                    <input type="radio" value="" id="formGenderFemail" name="formGender">
+                    <label for="formGenderFemail">여성</label>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-check button w-100">
+                    <input type="radio" value="" id="formGenderNone" name="formGender">
+                    <label for="formGenderNone">선택안함</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bottom-buttons">
+              <button type="button" class="btn btn-dark btn-round btn-lg w-100">저장</button>
+            </div>
           </div>
-          }
         </div>
 
         <!-- //실컨텐츠 -->

@@ -42,7 +42,7 @@
             <button type="button" class="btn-back" aria-label="뒤로" onclick="window.history.back()">
               <i class="icon-back"></i>
             </button>
-            <h1 class="header-title">리뷰쓰기</h1>
+            <h1 class="header-title">환경설정</h1>
           </div>
           <div class="header-main">
             <div class="logo"><span class="visually-hidden">Lupick Logo</span></div>
@@ -50,6 +50,7 @@
             <div class="logo-my"><span class="visually-hidden">My</span></div>
             <div class="util">
               <button type="button" aria-label="알림" data-bs-toggle="modal" data-bs-target="#modal-alarm"><i class="icon-bell"></i></button>
+              <button type="button" aria-label="환경설정" onclick="location.href='../../html/my/my_setting.html'"><i class="icon-gear"></i></button>
             </div>
           </div>
         </div>
@@ -58,50 +59,45 @@
         <main id="main">
           <!-- 실컨텐츠 -->
 
-          <div class="my-event-list img-first">
-            <div class="item">
-              <div class="item-body">
-                <div class="d-flex align-items-center">
-                  <div class="img">
-                    <img src="../../assets/images/@portrait.jpg" alt="" />
-                  </div>
-                  <div class="info">
-                    <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
-                    <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
-                    <button type="button" class="btn btn-outline-dark btn-round btn-md w-100 font-14px fw-bold">리뷰쓰기</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="item">
-              <div class="item-body">
-                <div class="d-flex align-items-center">
-                  <div class="img">
-                    <img src="../../assets/images/@portrait.jpg" alt="" />
-                  </div>
-                  <div class="info">
-                    <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
-                    <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
-                    <button type="button" class="btn btn-outline-dark btn-round btn-md w-100 font-14px fw-bold">리뷰쓰기</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="item">
-              <div class="item-body">
-                <div class="d-flex align-items-center">
-                  <div class="img">
-                    <img src="../../assets/images/@portrait.jpg" alt="" />
-                  </div>
-                  <div class="info">
-                    <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
-                    <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
-                    <button type="button" class="btn btn-outline-dark btn-round btn-md w-100 font-14px fw-bold">리뷰쓰기</button>
-                  </div>
-                </div>
-              </div>
+          <div class="setting-menu">
+            <ul>
+              <li>
+                <a href="my_profile.html">프로필 편집 <i class="icon-full-menu-arr"></i></a>
+              </li>
+              <li>
+                <a href="my_info_password.html">내 정보 관리 <i class="icon-full-menu-arr"></i></a>
+              </li>
+              <li>
+                <a href="">배송지 관리 <i class="icon-full-menu-arr"></i></a>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <a href="">공지사항 <i class="icon-full-menu-arr"></i></a>
+              </li>
+              <li>
+                <a href="">고객센터 <i class="icon-full-menu-arr"></i></a>
+              </li>
+              <li>
+                <a href="">알림설정 <small>휴대폰 설정에서 루픽 알림을 켜주세요</small></a>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <a href="">약관 및 정책 <i class="icon-full-menu-arr"></i></a>
+              </li>
+              <li>
+                <a href="">개인정보 수집 및 이용 <i class="icon-full-menu-arr"></i></a>
+              </li>
+            </ul>
+            <div class="collaboration">
+              <a href="#none">
+                <span class="d-block">
+                  <span class="logo"></span>
+                  <span class="txt">콜라보 문의</span>
+                </span>
+                <i class="icon-full-menu-arr"></i>
+              </a>
             </div>
           </div>
 

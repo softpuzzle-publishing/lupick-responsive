@@ -85,7 +85,19 @@
   background-image: url("../images/icon-exclamation-light.svg");
 }
 
+.icon-full-menu-arr {
+  width: 7px;
+  height: 10px;
+  background-image: url("../images/icon-full-menu-arr.svg");
+}
+
 /* button */
+.bottom-buttons {
+  margin-top: 30px;
+  display: grid;
+  gap: 15px;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -1583,6 +1595,12 @@ html.scroll-down .top-sort.is-tab-next {
   color: #999;
 }
 
+.form-desc {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 1.714;
+}
+
 .form-group + .form-group {
   margin-top: 30px;
 }
@@ -2027,9 +2045,6 @@ html.scroll-down .top-sort.is-tab-next {
 
 .form .form-control + .form-control {
   margin-top: 10px;
-}
-.form .btn.w-100 {
-  margin-top: 30px;
 }
 
 .login-menu {
@@ -2596,14 +2611,32 @@ body.body-main #main {
   justify-content: center;
   width: 80px;
   height: 80px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 50rem;
+  position: relative;
+  overflow: hidden;
+}
+.my-profile .img::before {
+  content: "";
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
 .my-profile .img img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: relative;
+}
+.my-profile .img img.default {
   -o-object-fit: contain;
      object-fit: contain;
+  width: auto;
+  height: auto;
 }
 .my-profile .info {
   flex-grow: 1;
@@ -2822,5 +2855,113 @@ body.body-main #main {
   color: #4ac0ff;
   font-weight: 700;
   margin: 30px 0 10px;
+}
+
+.setting-menu {
+  padding-top: 10px;
+}
+.setting-menu ul {
+  border-bottom: 4px solid rgba(0, 0, 0, 0.05);
+}
+.setting-menu ul li {
+  padding: 0 20px;
+}
+.setting-menu ul li > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  padding: 19px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.setting-menu ul li > a small {
+  font-size: 10px;
+  color: #999;
+  font-weight: 700;
+}
+
+.collaboration {
+  padding: 20px 20px 0;
+}
+.collaboration a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 23px 15px;
+  border-radius: 7px;
+}
+.collaboration .logo {
+  background: url("../images/logo.svg") no-repeat 20px 50%;
+  background-size: contain;
+  width: 100px;
+  height: 25px;
+  position: relative;
+  padding-left: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.collaboration .logo::before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background: #ffec00;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+.collaboration .txt {
+  font-size: 15px;
+  font-weight: 700;
+  vertical-align: middle;
+  margin-left: 7px;
+}
+
+.my-profile-edit {
+  margin-top: 30px;
+  margin-bottom: 35px;
+}
+.my-profile-edit .img {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.my-profile-edit .img::before {
+  content: "";
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.my-profile-edit .img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+.my-profile-edit .img img.default {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: auto;
+  height: auto;
+}
+.my-profile-edit .btn-profile-edit {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  background: url("../images/icon-camera.svg") no-repeat 0 0;
+  width: 30px;
+  height: 30px;
 }
 /*# sourceMappingURL=maps/style.css.map */

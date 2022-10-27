@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ic_photo</title>
+    <g id="-iOS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="프로필-편집" transform="translate(-218.000000, -210.000000)">
+            <g id="ic_photo" transform="translate(218.000000, 210.000000)">
+                <circle id="Oval-2-Copy" fill="#000000" fill-rule="nonzero" cx="15" cy="15" r="15"></circle>
+                <path d="M12,8 L18,8 L19,10 L23,10 L23,22 L7,22 L7,10 L11,10 L12,8 Z M15,11.5 C12.5147186,11.5 10.5,13.5147186 10.5,16 C10.5,18.4852814 12.5147186,20.5 15,20.5 C17.4852814,20.5 19.5,18.4852814 19.5,16 C19.5,13.5147186 17.4852814,11.5 15,11.5 Z M15,13.5 C16.3807119,13.5 17.5,14.6192881 17.5,16 C17.5,17.3807119 16.3807119,18.5 15,18.5 C13.6192881,18.5 12.5,17.3807119 12.5,16 C12.5,14.6192881 13.6192881,13.5 15,13.5 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

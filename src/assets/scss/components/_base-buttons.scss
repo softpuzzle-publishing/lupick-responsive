@@ -1,4 +1,9 @@
 /* button */
+.bottom-buttons{
+  margin-top: 30px;
+  display: grid;gap: 15px
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
