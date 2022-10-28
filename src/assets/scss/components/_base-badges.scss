@@ -31,6 +31,10 @@
     background: $dark;color: #fff;
   }
 
+  &.muted{
+    background: $muted;color: #fff;
+  }
+
   &.event{
     height: 32px;line-height: 32px;width: 84px;
   }

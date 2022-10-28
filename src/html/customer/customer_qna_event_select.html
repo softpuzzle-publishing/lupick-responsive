@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  @@include('@@webRoot/html/_include/_head.html')
+</head>
+
+<body>
+  <div id="wrap"> @@include('@@webRoot/html/_include/_header.html', { "title": "이벤트 선택" })
+    <div id="container">
+      <main id="main">
+        <!-- 실컨텐츠 -->
+
+        <div class="tab">
+          <ul class="nav nav-tabs justify-content-around" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a href="#t1" class="nav-link active" data-bs-toggle="tab" role="tab">전체</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a href="#t2" class="nav-link" data-bs-toggle="tab" role="tab">쇼핑 이벤트</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a href="#t3" class="nav-link" data-bs-toggle="tab" role="tab">포인트 이벤트</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a href="#t4" class="nav-link" data-bs-toggle="tab" role="tab">프리 이벤트</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="top-sort is-tab-next">
+          <select class="form-select w-100">
+            <option selected>3개월</option>
+          </select>
+        </div>
+
+        <!-- <div class="data-empty">
+          <i class="icon-exclaimation-light"></i>
+          <p>참여한 이벤트가 없습니다</p>
+        </div> -->
+
+        <div class="my-event-list img-first">
+          <div class="item">
+            <a href="customer_qna_event_form.html" class="item-body">
+              <div class="d-flex">
+                <div class="img">
+                  <img src="@@webRoot/assets/images/@portrait.jpg" alt="">
+                </div>
+                <div class="info">
+                  <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명 </div>
+                  <div class="product">아이패드 프로 128GB 스페이스그레이</div>
+                  <div class="state text-dark">67% 참여 중</div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="customer_qna_event_form.html" class="item-body">
+              <div class="d-flex">
+                <div class="img">
+                  <img src="@@webRoot/assets/images/@portrait.jpg" alt="">
+                </div>
+                <div class="info">
+                  <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명 </div>
+                  <div class="product">아이패드 프로 128GB 스페이스그레이</div>
+                  <div class="state text-dark">67% 참여 중</div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- //실컨텐츠 -->
+      </main>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -25,13 +25,10 @@ $container-max-width: 560px;
   }
   .header-sub{
     display: flex;align-items: center;height: 100%;
-    .btn-back{margin-right: 9px;}
+    .btn-back{margin-right: 15px;}
     .header-title{
       font-size: 18px;font-weight: 700;transform: translateY(1px);
     }
-  }
-  .scroll-down &{
-    transform: translateY(-$header-height);
   }
 }
 

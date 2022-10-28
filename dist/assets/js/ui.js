@@ -37,8 +37,6 @@ var Common = {
   "byte": function byte() {
     /* byte check */
     $("textarea, input").on("input", function (e) {
-      console.log(e);
-
       if ($(this).attr("maxlength") !== "") {
         var maxlength = $(this).attr("maxlength");
         var content = $(this).val();

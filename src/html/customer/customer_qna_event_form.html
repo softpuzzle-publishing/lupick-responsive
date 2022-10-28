@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  @@include('@@webRoot/html/_include/_head.html')
+</head>
+
+<body>
+  <div id="wrap"> @@include('@@webRoot/html/_include/_header.html', { "title": "이벤트 문의" })
+    <div id="container">
+      <main id="main">
+        <!-- 실컨텐츠 -->
+
+        <div class="container pt-20px">
+
+          <!-- 선택한 이벤트 -->
+          <div class="qna-seleted-event">
+            <div class="d-flex align-items-center">
+              <div class="img">
+                <img src="@@webRoot/assets/images/@portrait.jpg" alt="">
+              </div>
+              <div class="title">
+                거대벽화 그리기에 참여하는 911명 중 9명은 포르쉐 911 타고 귀가하자
+              </div>
+            </div>
+          </div>
+          <!-- //선택한 이벤트 -->
+
+          <!-- 이벤트 문의 form -->
+          <div class="form-group">
+            <label for="formQnaType" class="form-label visually-hidden">문의유형</label>
+            <select class="form-select w-100" id="formQnaType">
+              <option selected>문의유형</option>
+              <option value="">이벤트</option>
+              <option value="">이벤트상품</option>
+              <option value="">루픽리워드</option>
+              <option value="">배송</option>
+              <option value="">루피커선정</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="formQnaTitle" class="form-label">제목</label>
+            <input type="text" class="form-control border form-control-lg" placeholder="제목을 입력해주세요 (35자 제한)" id="formQnaTitle" maxlength="35">
+          </div>
+          <div class="form-group">
+            <label for="formQnaContent" class="form-label">문의내용</label>
+            <div class="textarea">
+              <textarea rows="2" class="form-control" placeholder="내용을 입력해주세요" maxlength="300" id="formQnaContent"></textarea>
+              <div class="byte"><span>0</span>/300자</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="uploaded-file">
+              <div class="row align-items-center h-100">
+                <div class="col">
+                  <div class="file-name">img0456.jpg</div>
+                </div>
+                <div class="col-auto">
+                  <button type="button" class="btn-file-delete"><i class="icon-file-delete"></i></button>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn btn-outline-light btn-flat btn-lg w-100 justify-content-start text-gray-light" id="btn-file">+ 첨부파일 추가</button>
+            <input type="file" class="visually-hidden">
+            <script>
+              $('#btn-file').on('click', function () {
+                $(this).siblings('input[type=file]').click();
+              })
+            </script>
+            <p class="form-text font-13px">포맷 jpg/png/gif, 최대 3개, 개당 5MB, 총 10MB 등록 가능</p>
+          </div>
+          <!-- //이벤트 문의 form -->
+
+          <div class="bottom-buttons">
+            <button type="button" class="btn btn-dark btn-round btn-lg w-100">등록</button>
+          </div>
+
+        </div>
+
+        <!-- //실컨텐츠 -->
+      </main>
+    </div>
+  </div>
+
+</body>
+
+</html>

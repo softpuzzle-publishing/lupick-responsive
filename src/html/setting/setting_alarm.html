@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  @@include('@@webRoot/html/_include/_head.html')
+</head>
+
+<body>
+  <div id="wrap">
+    @@include('@@webRoot/html/_include/_header.html', { "title": "알림 설정" })
+    <div id="container">
+      <main id="main">
+        <!-- 실컨텐츠 -->
+
+        <div class="container">
+          <div class="alarm-setting">
+            <div class="item">
+              <div class="row align-items-center">
+                <div class="col">
+                  <div class="title">이벤트 예고</div>
+                  <div class="desc">예고된 이벤트가 시작될 때 알림을 받습니다.</div>
+                </div>
+                <div class="col-auto">
+                  <div class="form-check switch label-empty">
+                    <input type="checkbox" id="switch1" checked>
+                    <label for="switch1"></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="row align-items-center">
+                <div class="col">
+                  <div class="title">이벤트 알림</div>
+                  <div class="desc">내가 참여한 이벤트에 대한 알림을 받습니다.</div>
+                </div>
+                <div class="col-auto">
+                  <div class="form-check switch label-empty">
+                    <input type="checkbox" id="switch2" checked>
+                    <label for="switch2"></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="row align-items-center">
+                <div class="col">
+                  <div class="title">문의 알림</div>
+                  <div class="desc">내가 등록한 문의에 대한 알림을 받습니다.</div>
+                </div>
+                <div class="col-auto">
+                  <div class="form-check switch label-empty">
+                    <input type="checkbox" id="switch3">
+                    <label for="switch3"></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="row align-items-center">
+                <div class="col">
+                  <div class="title">루픽 알림</div>
+                  <div class="desc">루픽 내 기획전, 프로모션에 대한 알림을 받습니다.</div>
+                </div>
+                <div class="col-auto">
+                  <div class="form-check switch label-empty">
+                    <input type="checkbox" id="switch4">
+                    <label for="switch4"></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- //실컨텐츠 -->
+      </main>
+    </div>
+  </div>
+
+</body>
+
+</html>

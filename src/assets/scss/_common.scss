@@ -28,10 +28,7 @@
 .top-sort{
   position: sticky;top: 0;z-index: 1;
   &.is-tab-next{
-    padding: 20px 20px 0;background: #fff;
-    html.scroll-down &{
-      top: 46px
-    }
+    padding: 20px 20px 0;background: #fff;top: 100px;
   }
 }
 
@@ -70,13 +67,51 @@
     transform: translate3d(0, 0, 0);
   }
 }
+@keyframes bounce2 {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  35% {
+    transform: translate3d(35px, -10px, 0);
+  }
+  60% {
+    transform: translate3d(20px, 12px, 0);
+  }
+  90% {
+    transform: translate3d(-15px, 17px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes bounce3 {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  35% {
+    transform: translate3d(10px, 15px, 0);
+  }
+  60% {
+    transform: translate3d(-60px, -5px, 0);
+  }
+  90% {
+    transform: translate3d(-40px, 20px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
 .bg-circle{
   position: relative;
   .circle{
     width: 80px;height: 80px;border-radius: 50%;background: $primary;overflow: hidden;position: absolute;z-index: -1;
-    animation: bounce 15s 1s infinite alternate;
+    &.dark{background: $dark;}
+    &.light{background: #f2f2f2;}
   }
-  .circle:nth-of-type(1){left: -20px;top: 0;}
+  .circle:nth-of-type(1){left: -20px;top: 0;animation: bounce 15s 1s infinite alternate;}
+  .circle:nth-of-type(2){left: 80px;top: 10px;animation: bounce2 18s 1.5s infinite alternate;}
+  .circle:nth-of-type(3){right: -40px;top: 5px;animation: bounce3 20s .8s infinite alternate;}
+  .circle:nth-of-type(4){right: 100px;top: 10px;animation: bounce2 20s .8s infinite alternate;}
 }
 
 .full-video{
@@ -118,21 +153,3 @@
   & + .address-item{border-top: 1px solid $border-color;}
 }
 
-.accordion{
-  .item{
-    position: relative;
-    &::after{content: '';height: 1px;background-color: $border-color;position: absolute;left: 20px;bottom: 0;right: 20px;}
-  }
-  .item-header{
-    padding: 20px 0;margin: 0 20px;display: block;
-    .title{font-size: 15px;font-weight: 700;}
-    .date{font-size: 12px;line-height: 1.1666;color: $gray-light;margin-top: 10px;}
-  }
-  .item-body{
-    background: rgba(0,0,0,0.05);padding: 20px;font-size: 13px;line-height: 1.69;
-  }
-  .icon-arr-down{transition: transform .2s;}
-  .expanded{
-    .icon-arr-down{transform: rotate(180deg);}
-  }
-}
