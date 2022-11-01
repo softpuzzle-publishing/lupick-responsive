@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  @@include('@@webRoot/html/_include/_head.html')
+  <script>
+    $(document).ready(function () {
+      const myEventResultModal = document.querySelector('#modal-vote-card1');
+
+      //모달 열릴때 카운트 시작(겹쳐져 있는 div를 매초마다 하나씩 hide 하는 방식으로 구현)
+      myEventResultModal.addEventListener('shown.bs.modal', event => {
+        setTimeout(function () {
+          $('.result-open-animation > div:nth-of-type(3)').hide();
+        }, 1000);
+        setTimeout(function () {
+          $('.result-open-animation > div:nth-of-type(2)').hide();
+        }, 2000);
+        setTimeout(function () {
+          $('.result-open-animation').fadeOut(150);
+        }, 3000)
+      })
+
+      //모달 닫을때 카운트 애니메이션 활성화
+      myEventResultModal.addEventListener('hidden.bs.modal', event => {
+        $('.result-open-animation').show();
+        $('.result-open-animation > div').show();
+      });
+    })
+  </script>
+</head>
+
+<body>
+  <div id="wrap">
+    @@include('@@webRoot/html/_include/_header.html', { "title": "결과 확인하기" })
+    <div id="container">
+      <main id="main">
+        <!-- 실컨텐츠 -->
+
+        <div class="container pt-20px">
+
+          <div class="has-fixed-bottom-buttons">
+            <p class="top-text-lg has-border-bottom">투표 결과를 <br>확인해보세요!</p>
+
+            <div class="d-flex align-items-center justify-content-between">
+              <strong class="my-item-count">나의 리워드 카드 <span>3</span>개</strong>
+            </div>
+
+            <div class="system-guide">
+              ● 루픽의 유저참여형 투표시스템은 투명합니다!
+            </div>
+
+            <div class="my-items">
+              <div class="my-item-card" data-type="reward" data-winning="">
+                <div class="inner">
+                  <div class="my-item-card-head">
+                    <div class="title">리워드 카드</div>
+                    <div class="number">01</div>
+                  </div>
+                  <div class="my-item-card-body">
+                  </div>
+                  <div class="my-item-card-foot">
+                    <button type="button" class="btn btn-outline-light btn-md w-100" data-bs-toggle="modal" data-bs-target="#modal-vote-card1">결과 확인하기</button>
+                  </div>
+                </div>
+              </div>
+              <div class="my-item-card" data-type="reward" data-winning="Y">
+                <div class="inner">
+                  <div class="my-item-card-head">
+                    <div class="title">리워드 카드</div>
+                    <div class="number">02</div>
+                  </div>
+                  <div class="my-item-card-body">
+                    <div class="message">축하합니다!</div>
+                  </div>
+                  <div class="my-item-card-foot">
+                    <button type="button" class="btn btn-outline-light btn-md w-100" data-bs-toggle="modal" data-bs-target="#modal-vote-card1">다시 확인하기</button>
+                  </div>
+                </div>
+              </div>
+              <div class="my-item-card" data-type="reward" data-winning="N">
+                <div class="inner">
+                  <div class="my-item-card-head">
+                    <div class="title">리워드 카드</div>
+                    <div class="number">03</div>
+                  </div>
+                  <div class="my-item-card-body">
+                  </div>
+                  <div class="my-item-card-foot">
+                    <button type="button" class="btn btn-outline-light btn-md w-100" data-bs-toggle="modal" data-bs-target="#modal-vote-card2">다시 확인하기</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bottom-buttons horizontal">
+              <button type="button" class="btn btn-outline-dark btn-lg w-100 px-0">한 번에 확인하기</button>
+              <button type="button" class="btn btn-dark btn-lg w-100 px-0">홈으로 가기</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- //실컨텐츠 -->
+      </main>
+    </div>
+  </div>
+
+  @@include('@@webRoot/html/_include/_modal.html')
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <path d="M0 0H60V60H0z" transform="translate(-45 -314) translate(20 46) translate(20 177) translate(5 91)"/>
+                        <g>
+                            <path fill="#000" fill-rule="nonzero" stroke="#000" d="M45.5.5v15H.5V.5h45zm-1 1h-43v13h43v-13zm-39 2v9h-1v-9h1z" transform="translate(-45 -314) translate(20 46) translate(20 177) translate(5 91) translate(7 8)"/>
+                            <g>
+                                <path fill="#000" fill-rule="nonzero" stroke="#000" d="M.5.5h45v13H.5V.5z" transform="translate(-45 -314) translate(20 46) translate(20 177) translate(5 91) translate(7 8) translate(0 30)"/>
+                                <text fill="#FFF" font-family="Gilroy-Bold, Gilroy" font-size="7" font-weight="bold" transform="translate(-45 -314) translate(20 46) translate(20 177) translate(5 91) translate(7 8) translate(0 30)">
+                                    <tspan x="8.037" y="9.5">RANDOM</tspan>
+                                </text>
+                            </g>
+                            <text fill="#000" font-family="Gilroy-Bold, Gilroy" font-size="10" font-weight="bold" transform="translate(-45 -314) translate(20 46) translate(20 177) translate(5 91) translate(7 8)">
+                                <tspan x="18.25" y="26">or</tspan>
+                            </text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

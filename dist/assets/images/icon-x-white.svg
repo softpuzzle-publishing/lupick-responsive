@@ -1,13 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Combined Shape</title>
-    <g id="-iOS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="오픈-팝업---이벤트" transform="translate(-334.000000, -466.000000)" fill="#FFFFFF">
-            <g id="Untitled-1" transform="translate(0.000000, 437.000000)">
-                <g id="btn_exit" transform="translate(325.000000, 20.000000)">
-                    <path d="M19.6666667,9 L21,10.3333333 L16.333,15 L21,19.6666667 L19.6666667,21 L15,16.333 L10.3333333,21 L9,19.6666667 L13.667,15 L9,10.3333333 L10.3333333,9 L15,13.667 L19.6666667,9 Z" id="Combined-Shape"></path>
-                </g>
-            </g>
-        </g>
+<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" fill-rule="evenodd">
+        <path d="M0 0h20v20H0z"/>
+        <path fill="#FFF" d="m16.364 2.222 1.414 1.414L3.636 17.778l-1.414-1.414z"/>
+        <path fill="#FFF" d="m2.222 3.636 1.414-1.414 14.142 14.142-1.414 1.414z"/>
     </g>
 </svg>

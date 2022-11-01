@@ -1,12 +1,13 @@
 $yellow: #ffec00 !default;
 $blue: #426bf2 !default;
 $sky: #4ac0ff !default;
-$red: #ff0100 !default;
+$red: #ff4545 !default;
 $green: #07c200 !default;
 $gray: #666 !default; //opacity 60
 $gray-light: #999 !default; //opacity 40
 $light: #d0cfd0 !default; //opacity 15
 $dark: #000 !default;
+$white: #fff !default;
 
 $primary: $yellow !default;
 $secondary: $sky !default;
@@ -32,8 +33,10 @@ $theme-colors: (
   "dark":       $dark,
   "light":      $light,
   "gray":       $gray,
-  "gray-light":       $gray-light
+  "gray-light":       $gray-light,
+  "white":       $white
 ) !default;
 
 $header-height: 60px !default;
 $navbar-height: 70px !default;
+$container-max-width: 540px !default;

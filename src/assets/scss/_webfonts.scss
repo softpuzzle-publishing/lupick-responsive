@@ -36,6 +36,13 @@
 
 @font-face {
   font-family: 'Gilroy';
+  font-weight: 100;
+  src:   url(../fonts/Gilroy/Gilroy-UltraLight.woff) format("woff"),
+    url(../fonts/Gilroy/Gilroy-UltraLight.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: 'Gilroy';
   font-weight: 500;
   src:   url(../fonts/Gilroy/Gilroy-Medium.woff) format("woff"),
     url(../fonts/Gilroy/Gilroy-Medium.ttf) format("truetype");

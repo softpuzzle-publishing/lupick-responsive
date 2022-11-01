@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  @@include('@@webRoot/html/_include/_head.html')
+</head>
+
+<body>
+  <div id="wrap">
+    @@include('@@webRoot/html/_include/_header.html', { "title": "투표 요청" })
+    <div id="container">
+      <main id="main">
+        <!-- 실컨텐츠 -->
+
+        <div class="tab">
+          <ul class="nav nav-tabs justify-content-around" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a href="#t1" class="nav-link active" data-bs-toggle="tab" role="tab">전체</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a href="#t2" class="nav-link" data-bs-toggle="tab" role="tab">쇼핑 이벤트</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a href="#t3" class="nav-link" data-bs-toggle="tab" role="tab">포인트 이벤트</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a href="#t4" class="nav-link" data-bs-toggle="tab" role="tab">프리 이벤트</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="my-event-list img-first">
+          <div class="item">
+            <div class="item-body">
+              <div class="d-flex align-items-center">
+                <div class="img">
+                  <img src="@@webRoot/assets/images/@portrait.jpg" alt="">
+                </div>
+                <div class="info">
+                  <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명 </div>
+                  <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
+                  <button type="button" class="btn btn-outline-dark btn-round btn-md w-100 font-14px fw-bold" onclick="location.href='my_event_vote.html'">투표하기</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-body">
+              <div class="d-flex align-items-center">
+                <div class="img">
+                  <img src="@@webRoot/assets/images/@portrait.jpg" alt="">
+                </div>
+                <div class="info">
+                  <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명 </div>
+                  <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
+                  <button type="button" class="btn btn-outline-dark btn-round btn-md w-100 font-14px fw-bold" disabled>투표완료</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- //실컨텐츠 -->
+      </main>
+    </div>
+  </div>
+
+</body>
+
+</html>

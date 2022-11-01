@@ -45,6 +45,31 @@
   </div>
 </div>
 
+<!-- alert: 루픽리워드 포기 확인  -->
+<div class="modal alert" tabindex="-1" id="alert-giveup">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="alert-text">
+          리워드 포기 시 지급 예정인 루픽리워드가<br>
+          취소되어 <strong>지급되지 않습니다.</strong><br>
+          루픽리워드 포기 하시겠습니까?
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="row gx-0">
+          <div class="col">
+            <button type="button" class="btn btn-outline-light btn-lg w-100" data-bs-dismiss="modal">취소</button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-outline-light btn-lg w-100 fw-bold">루픽리워드 포기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- modal: 인증 실패 -->
 <div class="modal" tabindex="-1" id="modal-certification-fail">
   <div class="modal-dialog">
@@ -214,6 +239,159 @@
           <button type="button" class="btn btn-dark btn-round btn-lg w-100">저장</button>
         </div>
         <!-- //modal 내용 -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: 투표 결과 확인 - 당첨 -->
+<div class="modal modal-vote-card" tabindex="-1" data-bs-backdrop="static" id="modal-vote-card1" data-winning="Y">
+  <!-- 당첨 여부 data-winning Y/N -->
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header justify-content-between">
+        <div class="d-flex align-items-center">
+          <h5 class="modal-title font-eng">REWARD CARD</h5>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="img">
+          <img src="@@webRoot/assets/images/@landscape.jpg" alt="">
+        </div>
+        <div class="text-lg">
+          <strong>티도</strong>님 <br>루픽리워드 선정을 <br>축하합니다!
+        </div>
+        <div class="event-info">
+          <div class="won-reward">선정된 리워드</div>
+          <div class="product">패밀리 SUV의 진화, 현대 2022 SANTA FE</div>
+          <div class="price">34,750,000원</div>
+        </div>
+        <button type="button" class="btn btn-white btn-lg w-100">루피커 정보 입력하기</button>
+        <button type="button" class="btn btn-white btn-lg w-100" disabled>정보 입력 완료</button>
+        <button type="button" class="btn btn-white btn-lg w-100" disabled>루픽리워드 포기</button>
+      </div>
+      <div class="result-open-animation">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: 투표 결과 확인 - 낙첨 -->
+<div class="modal modal-vote-card" tabindex="-1" id="modal-vote-card2" data-winning="N">
+  <!-- 당첨 여부 data-winning Y/N -->
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header justify-content-between">
+        <div class="d-flex align-items-center">
+          <h5 class="modal-title font-eng">REWARD CARD</h5>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="img">
+          <img src="@@webRoot/assets/images/img-result-fail.png" alt="">
+        </div>
+        <div class="text-lg">
+          <strong>티비보는도라에몽</strong>님 <br>아쉽지만 다음 기회를 <br>기약해요!
+        </div>
+        <div class="event-info">
+          <div class="won-reward">투표 결과확인</div>
+          <div class="desc">모든 투표결과 데이터는 이벤트 결과보기를
+            참고하시면 상세하게 확인하실 수 있습니다.</div>
+        </div>
+        <button type="button" class="btn btn-white btn-lg w-100">확인</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: 루픽의 투표는 무엇인가요? -->
+<div class="modal" tabindex="-1" id="modal-vote-is">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-body">
+        <div class="modal-vote-is">
+          <p class="text">루픽의 투표는 무엇인가요?</p>
+          <strong class="text-lg">가장 많이 투표받은 숫자가 <br>곧 행운의 번호!</strong>
+          <ol class="vote-step">
+            <li>
+              <div><strong>구매한 아이템 개수만큼 투표</strong>할 수 있는 칸이 주어집니다. 아이템 5개를 구매했다면 투표칸이 5개!</div>
+            </li>
+            <li>
+              <div>제시된 범위 내에서 <strong>숫자를 직접 입력하거나 ‘랜덤투표’</strong>로 투표해요. 입력 후 ‘투표완료’ 버튼을 누르세요.</div>
+            </li>
+            <li>
+              <div>모두의 <strong>럭키번호는 발표 전까지 알 수 없어요.</strong> 투표가 끝날 때까지 설레는 마음으로 기다려봐요!</div>
+            </li>
+          </ol>
+          <div class="bottom-buttons">
+            <button type="button" class="btn btn-dark btn-round btn-lg w-100">다음부터 안볼래요</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: 나의 럭키번호란? -->
+<div class="modal" tabindex="-1" id="modal-vote-help">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="fail-message">
+          <strong>나의 럭키번호란?</strong>
+          <p class="text-dark">
+            럭키번호는 랜덤으로 생성되는 나만의 고유번호입니다. 구매 후 부여받은 투표권을 가지고 나의 럭키번호를 예측해서 투표를 해주시면 됩니다. <br><br>이제 투표하러 가볼까요?
+          </p>
+          <button type="button" class="btn btn-dark btn-lg btn-round" data-bs-dismiss="modal">확인</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: 루픽 투표권 -->
+<div class="modal" id="modal-vote" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body py-0">
+        <div class="modal-vote-input">
+          <div class="title">
+            <span>루픽 투표권<em>01</em></span>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <p class="feedback invalid" style="display: block">
+            입력가능한 숫자범위 <strong>1~10,000</strong>
+          </p>
+          <p class="feedback invalid">
+            <strong>! 입력 가능한 숫자범위가 아니에요</strong>
+          </p>
+          <input type="tel" class="form-control form-control-lg border" placeholder="투표 1 : 숫자를 입력해주세요">
+          <div class="button">
+            <button type="button" class="btn btn-dark btn-round btn-lg w-100">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: 투표 완료! -->
+<div class="modal slide-up" tabindex="-1" id="modal-voted">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-body">
+        <div class="modal-voted-ok">
+          <strong>투표 완료!</strong>
+          <p>투표를 완료하였습니다. 투표 결과가 나올 때까지 <br>조금만 기다려주세요.</p>
+          <button type="button" class="btn btn-dark btn-round btn-lg w-100" data-bs-dismiss="modal">확인</button>
+        </div>
       </div>
     </div>
   </div>

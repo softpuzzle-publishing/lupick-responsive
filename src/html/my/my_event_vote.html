@@ -3,67 +3,97 @@
 
 <head>
   @@include('@@webRoot/html/_include/_head.html')
+  <script>
+    $(document).ready(function () {
+      const modalVoteIs = new bootstrap.Modal(document.getElementById('modal-vote-is')); // eslint-disable-line
+      modalVoteIs.show()
+    })
+  </script>
 </head>
 
 <body>
   <div id="wrap">
-    @@include('@@webRoot/html/_include/_header.html', { "title": "투표 요청" })
+    @@include('@@webRoot/html/_include/_header.html', { "title": "투표하기" })
     <div id="container">
       <main id="main">
         <!-- 실컨텐츠 -->
 
-        <div class="tab">
-          <ul class="nav nav-tabs justify-content-around" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <a href="#t1" class="nav-link active" data-bs-toggle="tab" role="tab">전체</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a href="#t2" class="nav-link" data-bs-toggle="tab" role="tab">쇼핑 이벤트</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a href="#t3" class="nav-link" data-bs-toggle="tab" role="tab">포인트 이벤트</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a href="#t4" class="nav-link" data-bs-toggle="tab" role="tab">프리 이벤트</a>
-            </li>
-          </ul>
-        </div>
+        <div class="container pt-20px">
 
-        <div class="my-event-list img-first">
-          <div class="item">
-            <div class="item-body">
-              <div class="d-flex align-items-center">
-                <div class="img">
-                  <img src="@@webRoot/assets/images/@portrait.jpg" alt="">
+          <div class="has-fixed-bottom-buttons">
+            <p class="top-text-lg has-border-bottom">나의 럭키번호 예측해서 <br>투표해주세요!</p>
+
+            <div class="d-flex align-items-center justify-content-between">
+              <strong class="my-item-count">나의 투표권 <span>5</span>개</strong>
+              <p class="my-lucky-number-is">
+                <i class="icon-question-mark"></i>
+                <a href="#modal-vote-help" role="button" data-bs-toggle="modal">나의 럭키번호란?</a>
+              </p>
+            </div>
+
+            <div class="system-guide text-danger">
+              ● 입력가능한 숫자범위 <strong>1~10,000</strong>
+            </div>
+
+            <div class="my-items">
+              <div class="my-item-card" data-type="vote" data-voted="N">
+                <div class="inner">
+                  <div class="my-item-card-head">
+                    <div class="title">루픽 투표권</div>
+                    <div class="number">01</div>
+                  </div>
+                  <div class="my-item-card-body">
+                    <div class="status"></div>
+                  </div>
+                  <div class="my-item-card-foot">
+                    <input type="text" class="form-control border text-center" inputmode="numeric" placeholder="번호를 입력해주세요" readonly data-bs-toggle="modal" data-bs-target="#modal-vote">
+                  </div>
                 </div>
-                <div class="info">
-                  <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명 </div>
-                  <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
-                  <button type="button" class="btn btn-outline-dark btn-round btn-md w-100 font-14px fw-bold">투표하기</button>
+              </div>
+              <div class="my-item-card" data-type="vote" data-voted="Y">
+                <div class="inner">
+                  <div class="my-item-card-head">
+                    <div class="title">루픽 투표권</div>
+                    <div class="number">02</div>
+                  </div>
+                  <div class="my-item-card-body">
+                    <div class="status"></div>
+                  </div>
+                  <div class="my-item-card-foot">
+                    <input type="text" class="form-control border text-center" inputmode="numeric" placeholder="번호를 입력해주세요" readonly data-bs-toggle="modal" data-bs-target="#modal-vote" value="8,888">
+                  </div>
+                </div>
+              </div>
+              <div class="my-item-card" data-type="vote" data-voted="Y">
+                <div class="inner">
+                  <div class="my-item-card-head">
+                    <div class="title">루픽 투표권</div>
+                    <div class="number">03</div>
+                  </div>
+                  <div class="my-item-card-body">
+                    <div class="status"></div>
+                  </div>
+                  <div class="my-item-card-foot">
+                    <input type="text" class="form-control border text-center" inputmode="numeric" placeholder="번호를 입력해주세요" readonly data-bs-toggle="modal" data-bs-target="#modal-vote" value="777">
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="item">
-            <div class="item-body">
-              <div class="d-flex align-items-center">
-                <div class="img">
-                  <img src="@@webRoot/assets/images/@portrait.jpg" alt="">
-                </div>
-                <div class="info">
-                  <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명 </div>
-                  <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
-                  <button type="button" class="btn btn-outline-dark btn-round btn-md w-100 font-14px fw-bold" disabled>투표완료</button>
-                </div>
-              </div>
+
+            <div class="bottom-buttons horizontal">
+              <button type="button" class="btn btn-outline-dark btn-lg w-100 px-0">랜덤 입력</button>
+              <button type="button" class="btn btn-dark btn-lg w-100 px-0" data-bs-toggle="modal" data-bs-target="#modal-voted">투표 완료</button>
             </div>
           </div>
+
         </div>
 
         <!-- //실컨텐츠 -->
       </main>
     </div>
   </div>
+
+  @@include('@@webRoot/html/_include/_modal.html')
 
 </body>
 

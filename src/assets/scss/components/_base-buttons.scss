@@ -1,9 +1,4 @@
 /* button */
-.bottom-buttons{
-  margin-top: 30px;
-  display: grid;gap: 15px
-}
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -81,7 +76,13 @@
 [class*="btn-outline-"]{
   &:disabled{background: transparent !important;color: $muted;}
 }
+
+.btn-white,
 .btn-light,
 .btn-outline-light{
   color: #000;
+}
+
+.btn-white{
+  &:disabled{color: #fff;}
 }
