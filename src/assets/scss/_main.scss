@@ -163,58 +163,6 @@
   }
 }
 
-.event-item{
-  margin-top: 40px;position: relative;
-  &:first-child{margin-top: 0;}
-  .event-state{
-    padding: 0 20px;
-    .inner{position: relative;}
-    .img{
-      height: 0;padding-bottom: 100%;position: relative;
-      img{width: 100%;height: 100%;object-fit: cover;position: absolute;}
-      &.round{border-radius: 7px;overflow: hidden;
-        ~ .state{border-radius: 0 0 7px 7px;}
-      }
-    }
-    .state{background: rgba(0,0,0,0.2);position: absolute;left: 0;bottom: 0;right: 0;color: #fff;height: 26px;font-size: 12px;font-weight: 500;z-index: 1;}
-    .progress{margin-bottom: 4px;background: transparent !important;}
-    .icon-clock-white{transform: translateY(-1px);margin-right: 4px;}
-  }
-  .event-gift{
-    margin-top: 16px;
-    .img{
-      height: 0;padding-bottom: 100%;position: relative;
-      img{width: 100%;height: 100%;object-fit: cover;position: absolute;border-radius: 100rem;}
-  }
-    .swiper-container:not(.swiper-container-horizontal){
-      padding-left: 20px;padding-right: 20px;
-      .swiper-slide{width: calc((100% - 15px) / 4);margin-right: 5px; }
-    }
-  }
-  .event-gift ~ .event-info{margin-top: 16px;}
-  .event-info{
-    padding: 0 20px;margin-top: 20px;
-    .title{line-height: 1.44;}
-    .desc{color: rgba(0,0,0,0.5);font-size: 14px;margin-top: 2px;}
-    .price{
-        margin:15px 0 10px;line-height: 1.1818;
-        del{color: $muted;font-size: 14px;margin-bottom: 3px;display: inline-block;}
-        .icon-point{margin-right: 4px;transform: translateY(-1px);}
-        .discount{font-size: 22px;font-weight: 700;color: $secondary;margin-right: 5px;}
-        .final{font-size: 22px;font-weight: 700;}
-    }
-    .badges{display: flex;gap: 5px}
-  }
-  &.ended{
-    .event-state{
-      .img::after{content: '';background: $gray-light;position: absolute;left: 0;top: 0;bottom: 26px;right: 0;}
-      .img.round::after{
-        border-radius: 7px 7px 0 0;
-      }
-    }
-  }
-}
-
 .events-free{
   padding-top: 30px;
   .item + .item{margin-top: 20px;}

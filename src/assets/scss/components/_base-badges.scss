@@ -16,7 +16,11 @@
     display: none;
   }
 
+  &.lg{height: 32px;line-height: 32px;padding-left: 10px;padding-right: 10px;}
+
   &.flat{border-right: 0;}
+
+  &.round{border-radius: 50rem;}
 
   &.outline-gray{
     border: 1px solid $gray;color: $gray;
@@ -29,6 +33,10 @@
 
   &.dark{
     background: $dark;color: #fff;
+  }
+
+  &.secondary{
+    background: $secondary;color: #fff;
   }
 
   &.muted{

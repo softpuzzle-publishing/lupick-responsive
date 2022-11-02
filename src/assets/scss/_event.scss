@@ -1,0 +1,167 @@
+.event-item{
+  margin-top: 40px;position: relative;
+  &:first-child{margin-top: 0;}
+  .event-state{
+    padding: 0 20px;overflow: hidden;
+    .inner{position: relative;}
+    .img{
+      height: 0;padding-bottom: 100%;position: relative;
+      img{width: 100%;height: 100%;object-fit: cover;position: absolute;}
+      &.round{border-radius: 7px;overflow: hidden;
+        ~ .state{border-radius: 0 0 7px 7px;}
+      }
+    }
+    .badge{position: absolute;left: 15px;top: 15px;font-size: 16px;font-weight: 700;}
+    .state{background: rgba(0,0,0,0.2);position: absolute;left: 0;bottom: 0;right: 0;color: #fff;height: 26px;font-size: 12px;font-weight: 500;z-index: 1;}
+    .progress{margin-bottom: 4px;background: transparent !important;}
+    .icon-clock-white{transform: translateY(-1px);margin-right: 4px;}
+  }
+  .event-gift{
+    margin-top: 16px;
+    .img{
+      height: 0;padding-bottom: 100%;position: relative;
+      img{width: 100%;height: 100%;object-fit: cover;position: absolute;border-radius: 100rem;}
+  }
+    .swiper-container:not(.swiper-container-horizontal){
+      padding-left: 20px;padding-right: 20px;
+      .swiper-slide{width: calc((100% - 15px) / 4);margin-right: 5px; }
+    }
+  }
+  .event-gift ~ .event-info{margin-top: 16px;}
+  .event-info{
+    padding: 0 20px;margin-top: 20px;
+    .title{line-height: 1.44;}
+    .desc{color: rgba(0,0,0,0.5);font-size: 14px;margin-top: 2px;}
+    .price{
+        margin:15px 0 10px;line-height: 1.1818;
+        del{color: $muted;font-size: 14px;margin-bottom: 3px;display: inline-block;}
+        .icon-point{margin-right: 4px;transform: translateY(-1px);}
+        .discount{font-size: 22px;font-weight: 700;color: $secondary;margin-right: 5px;}
+        .final{font-size: 22px;font-weight: 700;}
+    }
+    .badges{display: flex;gap: 5px}
+  }
+  &.ended{
+    .event-state{
+      .img::after{content: '';background: rgba(0,0,0,0.2);position: absolute;left: 0;top: 0;bottom: 26px;right: 0;}
+      .img.round::after{
+        border-radius: 7px 7px 0 0;
+      }
+    }
+  }
+}
+
+.event-shipping-info{
+  border-top: 1px solid $border-color;padding: 20px 0 0;margin: 30px 20px 0;
+  .title{font-size: 22px;font-family: $font-family-eng;font-weight: 700; line-height: 1.35;}
+  > ul{
+    > li{
+      display:flex;font-size:16px;line-height: 1.1875;
+      margin-top: 10px;
+      span:nth-child(1){width:76px;flex: 0 0 76px;color: $gray-light;}
+      span:nth-child(2){flex: 1 1 100%;max-width: 100%}
+    }
+  }
+  .box{
+    background: rgba(241, 241, 241, 1);padding: 7px 8px 7px 9px;border-radius: 7px;margin-top: 20px;
+    p{
+      font-size: 12px;line-height: 1.666;color: rgba(0,0,0,0.5);padding-left: 9px;
+      &::before{content: '* ';margin-left: -9px;display: inline-block;width: 9px;}
+    }
+  }
+
+  .event-shipping-info-detail{
+    border-top: 1px solid $border-color;padding: 20px 0;position: relative;border-bottom: 1px solid $border-color;margin-top: 20px;
+    .toggler{
+      position: absolute;right: 10px;top: 22px;line-height: 1;display: inline-block;width: 20px;height: 20px;
+      &[aria-expanded=true]{
+        i{transform: scaleY(-1);}
+      }
+    }
+    .collapse-title{font-size: 16px;font-weight: 700;line-height: 1.14;transform: translateY(1px);}
+    ul{margin-top: 15px;}
+    li{
+      display:flex;font-size:12px;line-height: 1.666;
+      & + li{margin-top: 5px;}
+      span:nth-child(1){width:89px;flex: 0 0 89px;color: $gray-light;}
+      span:nth-child(2){flex: 1 1 100%;max-width: 100%}
+    }
+    &.bg{
+        background-color: #f7f7f7;border-color: #f7f7f7;
+    }
+  }
+}
+
+.event-review{
+  margin-top: 30px;
+}
+
+.review-header{
+  line-height: 1.1875;margin-bottom: 30px;display: flex;justify-content: space-between;
+  .title{font-size: 16px;font-weight: 700;}
+  .write{font-size: 16px;font-weight: 700;position: relative;text-decoration: underline;}
+}
+
+.review-graph{
+  margin-bottom: 30px;
+  .rating-item{
+    background: rgba(245, 245, 245, 1);border-radius: 7px;display: flex;align-items: center;justify-content: space-between;padding: 2px 15px 0;height: 35px;position: relative;
+    p{font-size: 14px;position: relative;}
+    span{font-size: 12px;color: $sky;font-weight: 700;}
+    & + .rating-item{margin-top: 10px;}
+    .graph-bar{height: 100%;position: absolute;left: 0;top: 0;border-radius: 7px;overflow: hidden;background-color: rgba(74, 192, 255, .2);}
+    &:nth-child(1) .graph-bar{background-color: rgba(74, 192, 255, 1);}
+    &:nth-child(2) .graph-bar{background-color: rgba(74, 192, 255, .6);}
+  }
+}
+
+.reviews{
+  .item{
+    padding: 20px 0 30px;
+    &:first-of-type{padding-top: 0;}
+    & + .item{border-top: 1px solid $border-color;}
+  }
+  .user{
+    display: flex;align-items: center;
+    .user-profile{
+      width: 36px;height: 36px;border-radius: 50%;overflow: hidden;margin-right: 5px;
+      img{width: 100%;height: 100%;object-fit: cover;border-radius: 50%;}
+    }
+    .user-info{
+      .name{
+        font-size: 14px;font-weight: 700;line-height: 1;margin-top: 2px;display: flex;align-items: center;
+        .badge{margin-left: 5px;}
+      }
+      .date{font-size: 12px;color: $gray-light;line-height: 1;margin-top: 5px;}
+    }
+  }
+
+  .photos{
+    margin-bottom: 20px;
+    .swiper-container{margin-left: -20px;margin-right: -20px;}
+    .swiper-slide{
+        .img{border-radius: 7px;height: 0;padding-bottom: 100%;position: relative;}
+        img{width: 100%;height: 100%;object-fit: cover;border-radius: 7px;position: absolute;}
+    }
+    .swiper-container:not(.swiper-container-initialized){
+        margin-left: 0;
+        .swiper-slide{
+            width: 22.35%;margin-right: 5px;
+        }
+    }
+  }
+  .option{font-size: 12px;color: $gray-light;margin-bottom: 5px;}
+  .content{font-size: 14px;line-height: 1.571;}
+  .declaration{font-size: 14px;color: $gray-light;text-decoration: underline;}
+  .refer-to{
+    .btn-refer{
+        height: 32px;font-size: 16px;padding-left: 8px;padding-right: 8px;padding-top: 5px;
+        &::after{content: '할게요';}
+        &.active{
+            color: #fff;background: $secondary;
+            &::after{content: '했어요';}
+        }
+    }
+    p{color: rgb(153,153,153);}
+  }
+}
