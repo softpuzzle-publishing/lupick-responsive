@@ -15,7 +15,7 @@
 
       <!-- FEED 상단 배너 -->
       <div class="feed-top-banner">
-        <div class="swiper-container">
+        <div class="swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide" data-feed-title="Ep.08 루픽 시그니처 컬러를 담은 뉴 아이맥 이벤트 루피커 ‘긴유니’님의 소감!">
               <div class="item">
@@ -41,8 +41,8 @@
           </div>
         </div>
         <script>
-          const feedTopBannerSwiper = new Swiper('.feed-top-banner .swiper-container', { // eslint-disable-line
-            observeParent: true,
+          const feedTopBannerSwiper = new Swiper('.feed-top-banner .swiper', { // eslint-disable-line
+            observeParents: true,
             observeSlideChildren: true,
             observer: true,
             pagination: {
@@ -73,7 +73,7 @@
         </div>
       </div>
       <div class="story-list">
-        <div class="swiper-container" id="lupick-story">
+        <div class="swiper" id="lupick-story">
           <div class="swiper-wrapper">
             @@for (var i = 3; i > 0; i--) {
             <div class="swiper-slide">
@@ -92,9 +92,8 @@
         <script>
           const lupickStorySwiper = new Swiper('#lupick-story', { // eslint-disable-line
             spaceBetween: 10,
-            slidesOffsetBefore: 20,
             slidesOffsetAfter: 20,
-            observeParent: true,
+            observeParents: true,
             observeSlideChildren: true,
             observer: true
           });
@@ -116,7 +115,7 @@
         </div>
       </div>
       <div class="story-list">
-        <div class="swiper-container" id="lupicker-interview">
+        <div class="swiper" id="lupicker-interview">
           <div class="swiper-wrapper">
             @@for (var i = 3; i > 0; i--) {
             <div class="swiper-slide">
@@ -135,9 +134,8 @@
         <script>
           const lupickerInterviewSwiper = new Swiper('#lupicker-interview', { // eslint-disable-line
             spaceBetween: 10,
-            slidesOffsetBefore: 20,
             slidesOffsetAfter: 20,
-            observeParent: true,
+            observeParents: true,
             observeSlideChildren: true,
             observer: true
           });

@@ -112,7 +112,7 @@
                 </div>
               </div>
               <div class="event-gift">
-                <div class="swiper-container">
+                <div class="swiper">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
                       <div class="item">
@@ -175,7 +175,7 @@
                 </div>
               </div>
               <div class="event-gift">
-                <div class="swiper-container">
+                <div class="swiper">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
                       <div class="item">
@@ -230,7 +230,7 @@
           </div>
           <script>
             var mainEventGiftSwiper = [];
-            $('.event-gift .swiper-container').each(function (i) {
+            $('.event-gift .swiper').each(function (i) {
               if ($(this).find('.swiper-slide').length > 4) {
                 mainEventGiftSwiper[i] = new Swiper($(this)[0], {
                   // eslint-disable-line
@@ -239,7 +239,7 @@
                   spaceBetween: 5,
                   slidesOffsetBefore: 20,
                   slidesOffsetAfter: 20,
-                  observeParent: true,
+                  observeParents: true,
                   observeSlideChildren: true,
                   observer: true,
                 });

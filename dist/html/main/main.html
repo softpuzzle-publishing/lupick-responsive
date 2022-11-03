@@ -68,7 +68,7 @@
 
         <!-- 메인 상단 이벤트 배너 -->
         <div class="main-top-banner">
-          <div class="swiper-container">
+          <div class="swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide" data-event-state="alarm-before" data-event-title="주먹감자라면이 온다. <br>이천수와 함께!">
                 <!-- 예약 이벤트 .reservation -->
@@ -111,9 +111,9 @@
           </div>
           <div class="swiper-pagination swiper-pagination-main-top-banner"></div>
           <script>
-            const mainTopBannerSwiper = new Swiper('.main-top-banner .swiper-container', {
+            const mainTopBannerSwiper = new Swiper('.main-top-banner .swiper', {
               // eslint-disable-line
-              observeParent: true,
+              observeParents: true,
               observeSlideChildren: true,
               observer: true,
               autoplay: {
@@ -146,7 +146,7 @@
         <!-- 브랜드관 -->
         <div class="main-brands">
           <h2 class="main-brands-title">Only Lupick.</h2>
-          <div class="swiper-container">
+          <div class="swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="item">
@@ -182,14 +182,14 @@
           </div>
           <script>
             if ($('.main-brands .swiper-slide').length > 4) {
-              const mainBrandSwiper = new Swiper('.main-brands .swiper-container', {
+              const mainBrandSwiper = new Swiper('.main-brands .swiper', {
                 // eslint-disable-line
                 slidesPerView: 4.4,
                 freeMode: true,
                 spaceBetween: 5,
                 slidesOffsetBefore: 20,
                 slidesOffsetAfter: 20,
-                observeParent: true,
+                observeParents: true,
                 observeSlideChildren: true,
                 observer: true,
               });
@@ -200,7 +200,7 @@
 
         <!-- 통이미지 배너 -->
         <div class="main-image-banner">
-          <div class="swiper-container">
+          <div class="swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <img src="../../assets/images/@banner.png" alt="" />
@@ -213,9 +213,9 @@
           </div>
           <script>
             if ($('.main-image-banner .swiper-slide').length > 1) {
-              const mainImageBannerrSwiper = new Swiper('.main-image-banner .swiper-container', {
+              const mainImageBannerrSwiper = new Swiper('.main-image-banner .swiper', {
                 // eslint-disable-line
-                observeParent: true,
+                observeParents: true,
                 observeSlideChildren: true,
                 observer: true,
                 spaceBetween: 5,
@@ -251,7 +251,7 @@
               </div>
             </div>
             <div class="event-gift">
-              <div class="swiper-container">
+              <div class="swiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
                     <div class="item">
@@ -313,7 +313,7 @@
               </div>
             </div>
             <div class="event-gift">
-              <div class="swiper-container">
+              <div class="swiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
                     <div class="item">
@@ -366,7 +366,7 @@
           </div>
           <script>
             var mainEventGiftSwiper = [];
-            $('.event-gift .swiper-container').each(function (i) {
+            $('.event-gift .swiper').each(function (i) {
               if ($(this).find('.swiper-slide').length > 4) {
                 mainEventGiftSwiper[i] = new Swiper($(this)[0], {
                   // eslint-disable-line
@@ -375,7 +375,7 @@
                   spaceBetween: 5,
                   slidesOffsetBefore: 20,
                   slidesOffsetAfter: 20,
-                  observeParent: true,
+                  observeParents: true,
                   observeSlideChildren: true,
                   observer: true,
                 });
@@ -921,7 +921,7 @@
     </div>
 
     <!-- modal: 루픽 투표권 -->
-    <div class="modal" id="modal-vote" tabindex="-1">
+    <div class="modal" tabindex="-1" id="modal-vote">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-body py-0">
@@ -954,6 +954,52 @@
               <strong>투표 완료!</strong>
               <p>투표를 완료하였습니다. 투표 결과가 나올 때까지 <br />조금만 기다려주세요.</p>
               <button type="button" class="btn btn-dark btn-round btn-lg w-100" data-bs-dismiss="modal">확인</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 리뷰 확대 보기 -->
+    <div class="modal modal-review" tabindex="-1" id="modal-review">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <button type="button" class="btn-close white" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-body">
+            <div class="user">
+              <div class="user-profile"><img src="../../assets/images/@profile.jpg" alt="티도" /></div>
+              <div class="user-info">
+                <div class="name">티도</div>
+                <div class="date">2022.05.20 작성</div>
+              </div>
+            </div>
+            <div class="photos">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination review-swiper-pagination"></div>
+            </div>
+            <div class="review-collapse">
+              <div class="option">[옵션] 감자볶음밥</div>
+              <div class="content">
+                <span id="reviewContent"></span> <a href="javascript:;" class="more"><span>더보기</span><i class="icon-more-arrow-down m-l-5"></i></a>
+              </div>
             </div>
           </div>
         </div>

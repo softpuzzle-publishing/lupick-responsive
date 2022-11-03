@@ -16,9 +16,10 @@
     display: none;
   }
 
+  &.sm{height: 13px;line-height: 13px;padding-left: 4px;padding-right: 4px;font-size: 9px;border-radius: 3px;}
   &.lg{height: 32px;line-height: 32px;padding-left: 10px;padding-right: 10px;}
 
-  &.flat{border-right: 0;}
+  &.flat{border-radius: 0;}
 
   &.round{border-radius: 50rem;}
 
@@ -29,6 +30,10 @@
 
   &.outline-dark{
     border: 1px solid $dark;color: $dark;
+  }
+
+  &.primary{
+    background: $primary;color: $dark;border: 1px solid $primary;
   }
 
   &.dark{

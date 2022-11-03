@@ -22,7 +22,7 @@
 
       <!-- 메인 상단 이벤트 배너 -->
       <div class="main-top-banner">
-        <div class="swiper-container">
+        <div class="swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide" data-event-state="alarm-before" data-event-title="주먹감자라면이 온다. <br>이천수와 함께!">
               <!-- 예약 이벤트 .reservation -->
@@ -65,8 +65,8 @@
         </div>
         <div class="swiper-pagination swiper-pagination-main-top-banner"></div>
         <script>
-          const mainTopBannerSwiper = new Swiper('.main-top-banner .swiper-container', { // eslint-disable-line
-            observeParent: true,
+          const mainTopBannerSwiper = new Swiper('.main-top-banner .swiper', { // eslint-disable-line
+            observeParents: true,
             observeSlideChildren: true,
             observer: true,
             autoplay: {
@@ -99,7 +99,7 @@
       <!-- 브랜드관 -->
       <div class="main-brands">
         <h2 class="main-brands-title">Only Lupick.</h2>
-        <div class="swiper-container">
+        <div class="swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="item">
@@ -135,13 +135,13 @@
         </div>
         <script>
           if ($('.main-brands .swiper-slide').length > 4) {
-            const mainBrandSwiper = new Swiper('.main-brands .swiper-container', { // eslint-disable-line
+            const mainBrandSwiper = new Swiper('.main-brands .swiper', { // eslint-disable-line
               slidesPerView: 4.4,
               freeMode: true,
               spaceBetween: 5,
               slidesOffsetBefore: 20,
               slidesOffsetAfter: 20,
-              observeParent: true,
+              observeParents: true,
               observeSlideChildren: true,
               observer: true
             });
@@ -152,7 +152,7 @@
 
       <!-- 통이미지 배너 -->
       <div class="main-image-banner">
-        <div class="swiper-container">
+        <div class="swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <img src="@@webRoot/assets/images/@banner.png" alt="">
@@ -165,8 +165,8 @@
         </div>
         <script>
           if ($('.main-image-banner .swiper-slide').length > 1) {
-            const mainImageBannerrSwiper = new Swiper('.main-image-banner .swiper-container', { // eslint-disable-line
-              observeParent: true,
+            const mainImageBannerrSwiper = new Swiper('.main-image-banner .swiper', { // eslint-disable-line
+              observeParents: true,
               observeSlideChildren: true,
               observer: true,
               spaceBetween: 5,
@@ -205,7 +205,7 @@
             </div>
           </div>
           <div class="event-gift">
-            <div class="swiper-container">
+            <div class="swiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <div class="item">
@@ -270,7 +270,7 @@
             </div>
           </div>
           <div class="event-gift">
-            <div class="swiper-container">
+            <div class="swiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <div class="item">
@@ -323,7 +323,7 @@
         </div>
         <script>
           var mainEventGiftSwiper = [];
-          $('.event-gift .swiper-container').each(function (i) {
+          $('.event-gift .swiper').each(function (i) {
             if ($(this).find('.swiper-slide').length > 4) {
               mainEventGiftSwiper[i] = new Swiper($(this)[0], {// eslint-disable-line
                 slidesPerView: 4.4,
@@ -331,7 +331,7 @@
                 spaceBetween: 5,
                 slidesOffsetBefore: 20,
                 slidesOffsetAfter: 20,
-                observeParent: true,
+                observeParents: true,
                 observeSlideChildren: true,
                 observer: true
               });
