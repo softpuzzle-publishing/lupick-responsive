@@ -164,17 +164,18 @@
   }
   .option{font-size: 12px;color: $gray-light;margin-bottom: 5px;}
   .content{font-size: 14px;line-height: 1.571;}
-  .declaration{font-size: 14px;color: $gray-light;text-decoration: underline;}
+  .declaration{font-size: 14px;color: $gray-light;text-decoration: underline;display: inline-block;margin-top: 9px;}
   .refer-to{
-    .btn-refer{
-      height: 32px;font-size: 16px;padding-left: 8px;padding-right: 8px;padding-top: 5px;
+    margin-top: 15px;
+    .btn{
+      height: 32px;line-height: 32px;font-size: 16px;padding-left: 8px;padding-right: 8px;
       &::after{content: '할게요';}
-      &.active{
+      &.clicked{
         color: #fff;background: $secondary;
         &::after{content: '했어요';}
       }
     }
-    p{color: rgb(153,153,153);}
+    p{font-size: 14px;color: rgb(153,153,153);}
   }
 }
 
@@ -215,6 +216,22 @@
   .content{
     font-size: 14px;line-height: 1.571;color: #fff;
     .more{color: rgba(255,255,255,.6);margin-left: 10px;}
+  }
+}
+
+.review-sort{
+  border-bottom: 1px solid $border-color;margin-bottom: 20px;padding-bottom: 20px;
+}
+.sort{
+  display: flex;align-items: center;
+  > a{
+    color: $muted;font-size: 14px;line-height: 1;
+    &::before{content: '•';display: inline-block;color: $muted;}
+    &.active{
+      color: #000;font-weight: 700;
+      &::before{color: $secondary;}
+    }
+    & + a{margin-left: 5px;}
   }
 }
 

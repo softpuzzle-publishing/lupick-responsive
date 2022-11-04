@@ -356,7 +356,7 @@
 </div>
 
 <!-- modal: 루픽 투표권 -->
-<div class="modal" id="modal-vote" tabindex="-1">
+<div class="modal" tabindex="-1" id="modal-vote">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-body py-0">
@@ -391,6 +391,50 @@
           <strong>투표 완료!</strong>
           <p>투표를 완료하였습니다. 투표 결과가 나올 때까지 <br>조금만 기다려주세요.</p>
           <button type="button" class="btn btn-dark btn-round btn-lg w-100" data-bs-dismiss="modal">확인</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: 리뷰 확대 보기 -->
+<div class="modal modal-review" tabindex="-1" id="modal-review">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <button type="button" class="btn-close white" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-body">
+        <div class="user">
+          <div class="user-profile"><img src="@@webRoot/assets/images/@profile.jpg" alt="티도"></div>
+          <div class="user-info">
+            <div class="name">티도</div>
+            <div class="date">2022.05.20 작성</div>
+          </div>
+        </div>
+        <div class="photos">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
+              </div>
+              <div class="swiper-slide">
+                <div class="img"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
+              </div>
+              <div class="swiper-slide">
+                <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
+              </div>
+              <div class="swiper-slide">
+                <div class="img"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
+              </div>
+              <div class="swiper-slide">
+                <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination review-swiper-pagination"></div>
+        </div>
+        <div class="review-collapse">
+          <div class="option">[옵션] 감자볶음밥</div>
+          <div class="content"><span id="reviewContent"></span> <a href="javascript:;" class="more"><span>더보기</span><i class="icon-more-arrow-down m-l-5"></i></a></div>
         </div>
       </div>
     </div>

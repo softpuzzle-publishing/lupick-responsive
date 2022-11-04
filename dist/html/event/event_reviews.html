@@ -32,6 +32,82 @@
 
     <!-- publishing js -->
     <script src="../../assets/js/ui.js" async></script>
+
+    <script>
+      $(document).ready(function () {
+        //포토리뷰 swiper
+        var photosSwiper = [];
+        $('.reviews .photos .swiper').each(function (i) {
+          if ($(this).find('.swiper-slide').length > 4) {
+            photosSwiper[i] = new Swiper($(this)[0], {
+              // eslint-disable-line
+              slidesPerView: 4.5,
+              freeMode: true,
+              spaceBetween: 5,
+              slidesOffsetBefore: 20,
+              slidesOffsetAfter: 20,
+              observeParents: true,
+              observeSlideChildren: true,
+              observer: true,
+            });
+          }
+        });
+
+        let photoIdx; //클릭한 사진의 인덱스
+        $('.reviews .photos .swiper-slide').on('click', function () {
+          photoIdx = $(this).index();
+          $('#modal-review').modal('show');
+        });
+
+        // 모달이 열릴때 swiper 실행
+        var modalReviewSwiper;
+        $('#modal-review').on('shown.bs.modal', function (event) {
+          modalReviewSwiper = new Swiper('.modal-review .swiper', {
+            // eslint-disable-line
+            initialSlide: photoIdx,
+            pagination: {
+              el: '.review-swiper-pagination',
+            },
+            observeParents: true,
+            observeSlideChildren: true,
+            observer: true,
+          });
+        });
+        // 모달이 닫힐때 swiper destroy
+        $('#modal-review').on('hidden.bs.modal', function (event) {
+          modalReviewSwiper.destroy(true, true);
+        });
+
+        //리뷰 내용 100자까지 ... 처리
+        const maxLength = 95;
+        let str =
+          '하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다. 하나를 둘이서 갈라먹어서 하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다. 하나를 둘이서 갈라먹어서 하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다.';
+        let strShort;
+        if (str.length > maxLength) {
+          strShort = str.substr(0, maxLength - 2) + '...';
+          $('#reviewContent').text(strShort);
+        } else {
+          $('.review-collapse .more').remove();
+        }
+        $('.review-collapse .more').on('click', function (e) {
+          e.preventDefault();
+          if (!$('.review-collapse').hasClass('expanded')) {
+            $('#reviewContent').text(str);
+            $('.review-collapse .more span').text('접기');
+          } else {
+            $('#reviewContent').text(strShort);
+            $('.review-collapse .more span').text('더보기');
+          }
+          $('.review-collapse').toggleClass('expanded');
+        });
+
+        //참고할게요 버튼
+        $('.refer-to .btn').on('click', function (e) {
+          e.preventDefault();
+          $(this).toggleClass('clicked');
+        });
+      });
+    </script>
   </head>
 
   <body>
@@ -42,7 +118,7 @@
             <button type="button" class="btn-back" aria-label="뒤로" onclick="window.history.back()">
               <i class="icon-back"></i>
             </button>
-            <h1 class="header-title">구매확정 확인</h1>
+            <h1 class="header-title">리뷰 더보기</h1>
           </div>
           <div class="header-main">
             <div class="logo"><span class="visually-hidden">Lupick Logo</span></div>
@@ -59,125 +135,188 @@
         <main id="main">
           <!-- 실컨텐츠 -->
 
-          <div class="my-event-list mt-n10px">
-            <div class="item">
-              <div class="item-top">
-                <a href="#none" class="row gx-10px">
-                  <div class="col-auto">
-                    <span class="badge outline-dark lg">쇼핑 이벤트</span>
-                  </div>
-                  <div class="col">
-                    <div class="number">주문번호 ORD20210409-0000010</div>
-                    <div class="date">2020.07.14</div>
-                  </div>
-                  <div class="col-auto">
-                    <i class="icon-arr-down-gray"></i>
-                  </div>
-                </a>
+          <div class="hr mb-30px"></div>
+
+          <div class="event-review">
+            <div class="container">
+              <div class="review-header">
+                <h2 class="title">실제 구매자 리뷰 <span class="text-secondary">2,392</span></h2>
+                <a href="#none" class="write text-secondary">리뷰쓰기</a>
               </div>
-              <div class="item-body">
-                <a href="#none">
-                  <div class="d-flex align-items-center">
-                    <div class="info">
-                      <div class="state">결제완료</div>
-                      <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
-                      <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
-                    </div>
-                    <div class="img">
-                      <img src="../../assets/images/@landscape.jpg" alt="" />
-                    </div>
-                  </div>
-                  <div class="price">20,000원</div>
-                </a>
-                <div class="row gx-10px mt-20px">
-                  <div class="col">
-                    <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100">배송 조회</button>
-                  </div>
-                  <div class="col">
-                    <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100">교환 및 반품 신청</button>
-                  </div>
+              <div class="review-graph">
+                <div class="rating-item">
+                  <div class="graph-bar" style="width: 60%"></div>
+                  <p>포장이 꼼꼼해요</p>
+                  <span>1,192</span>
                 </div>
-                <button type="button" class="btn btn-outline-secondary btn-round btn-lg w-100 mt-10px" data-bs-toggle="modal" data-bs-target="#alert-purchasing-confirmation">구매확정</button>
+                <div class="rating-item">
+                  <div class="graph-bar" style="width: 45%"></div>
+                  <p>조리 식품이 맛있어요</p>
+                  <span>836</span>
+                </div>
+                <div class="rating-item">
+                  <div class="graph-bar" style="width: 30%"></div>
+                  <p>배송이 빨랐어요</p>
+                  <span>622</span>
+                </div>
+                <div class="rating-item">
+                  <div class="graph-bar" style="width: 20%"></div>
+                  <p>가격이 합리적이에요</p>
+                  <span>292</span>
+                </div>
+                <div class="rating-item">
+                  <div class="graph-bar" style="width: 20%"></div>
+                  <p>배송이 빨라요</p>
+                  <span>44</span>
+                </div>
               </div>
             </div>
-            <div class="item">
-              <div class="item-top">
-                <a href="#none" class="row gx-10px">
+
+            <div class="hr mt-30px mb-30px"></div>
+
+            <div class="container">
+              <div class="review-sort">
+                <div class="row justify-content-between">
                   <div class="col-auto">
-                    <span class="badge dark lg text-primary">프리 이벤트</span>
-                  </div>
-                  <div class="col">
-                    <div class="number">주문번호 ORD20210409-0000010</div>
-                    <div class="date">2020.07.14</div>
-                  </div>
-                  <div class="col-auto">
-                    <i class="icon-arr-down-gray"></i>
-                  </div>
-                </a>
-              </div>
-              <div class="item-body">
-                <a href="#none">
-                  <div class="d-flex align-items-center">
-                    <div class="info">
-                      <div class="state">결제완료</div>
-                      <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
-                      <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
-                    </div>
-                    <div class="img">
-                      <img src="../../assets/images/@landscape.jpg" alt="" />
+                    <div class="form-check point-style">
+                      <input type="checkbox" value="" id="onlyPhoto" checked="" />
+                      <label for="onlyPhoto">사진 리뷰만</label>
                     </div>
                   </div>
-                  <div class="price">무료 참여</div>
-                </a>
-                <div class="row gx-10px mt-20px">
-                  <div class="col">
-                    <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100">배송 조회</button>
-                  </div>
-                  <div class="col">
-                    <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100">교환 및 반품 신청</button>
+                  <div class="col-auto">
+                    <div class="sort">
+                      <a href="javascript:;" class="active">전체</a>
+                      <a href="javascript:;">베스트순</a>
+                      <a href="javascript:;">최신순</a>
+                    </div>
                   </div>
                 </div>
-                <button type="button" class="btn btn-outline-secondary btn-round btn-lg w-100 mt-10px" data-bs-toggle="modal" data-bs-target="#alert-purchasing-confirmation">구매확정</button>
+                <script>
+                  $('.sort > a').click(function (e) {
+                    e.preventDefault();
+                    $(this).addClass('active');
+                    $(this).siblings().removeClass('active');
+                  });
+                </script>
               </div>
-            </div>
-            <div class="item">
-              <div class="item-top">
-                <a href="#none" class="row gx-10px align-items-center">
-                  <div class="col-auto">
-                    <span class="badge outline-dark lg bg-primary">포인트 이벤트</span>
-                  </div>
-                  <div class="col">
-                    <div class="number">주문번호 ORD20210409-0000010</div>
-                    <div class="date">2020.07.14</div>
-                  </div>
-                  <div class="col-auto">
-                    <i class="icon-arr-down-gray"></i>
-                  </div>
-                </a>
-              </div>
-              <div class="item-body">
-                <a href="#none">
-                  <div class="d-flex align-items-center">
-                    <div class="info">
-                      <div class="state">결제완료</div>
-                      <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
-                      <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
+              <div class="reviews">
+                <div class="item">
+                  <div class="row">
+                    <div class="col">
+                      <div class="user">
+                        <div class="user-profile"><img src="../../assets/images/@profile.jpg" alt="티도" /></div>
+                        <div class="user-info">
+                          <div class="name">티도 <span class="badge primary sm font-eng">BEST</span></div>
+                          <div class="date">2022.05.20 작성</div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="img">
-                      <img src="../../assets/images/@landscape.jpg" alt="" />
+                    <div class="col-auto">
+                      <a href="javascript:;" class="declaration">신고</a>
                     </div>
                   </div>
-                  <div class="price">100P</div>
-                </a>
-                <div class="row gx-10px mt-20px">
-                  <div class="col">
-                    <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100">배송 조회</button>
+                  <div class="photos">
+                    <div class="swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="col">
-                    <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100">교환 및 반품 신청</button>
+                  <div class="option">[옵션] 감자볶음밥</div>
+                  <div class="content">하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다</div>
+                  <div class="refer-to">
+                    <div class="row justify-content-between align-items-center">
+                      <div class="col-auto">
+                        <button type="button" class="btn btn-outline-secondary btn-round btn-sm w-100">참고</button>
+                      </div>
+                      <div class="col-auto">
+                        <p><strong class="text-secondary">108</strong>명이 참고하였습니다.</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <button type="button" class="btn btn-outline-secondary btn-round btn-lg w-100 mt-10px" data-bs-toggle="modal" data-bs-target="#alert-purchasing-confirmation">구매확정</button>
+                <div class="item">
+                  <div class="row">
+                    <div class="col">
+                      <div class="user">
+                        <div class="user-profile"><img src="../../assets/images/@profile.jpg" alt="티도" /></div>
+                        <div class="user-info">
+                          <div class="name">티도 <span class="badge primary sm font-eng">BEST</span></div>
+                          <div class="date">2022.05.20 작성</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <a href="javascript:;" class="declaration">신고</a>
+                    </div>
+                  </div>
+                  <div class="option">[옵션] 감자볶음밥</div>
+                  <div class="content">하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다</div>
+                  <div class="refer-to">
+                    <div class="row justify-content-between align-items-center">
+                      <div class="col-auto">
+                        <button type="button" class="btn btn-outline-secondary btn-round btn-sm w-100">참고</button>
+                      </div>
+                      <div class="col-auto">
+                        <p><strong class="text-secondary">108</strong>명이 참고하였습니다.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="row">
+                    <div class="col">
+                      <div class="user">
+                        <div class="user-profile"><img src="../../assets/images/@profile.jpg" alt="티도" /></div>
+                        <div class="user-info">
+                          <div class="name">티도 <span class="badge primary sm font-eng">BEST</span></div>
+                          <div class="date">2022.05.20 작성</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <a href="javascript:;" class="declaration">신고</a>
+                    </div>
+                  </div>
+                  <div class="photos">
+                    <div class="swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="option">[옵션] 감자볶음밥</div>
+                  <div class="content">내용물도 큼직큼직하고 양이 많아요.</div>
+                  <div class="refer-to">
+                    <div class="row justify-content-between align-items-center">
+                      <div class="col-auto">
+                        <button type="button" class="btn btn-outline-secondary btn-round btn-sm w-100">참고</button>
+                      </div>
+                      <div class="col-auto">
+                        <p><strong class="text-secondary">108</strong>명이 참고하였습니다.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

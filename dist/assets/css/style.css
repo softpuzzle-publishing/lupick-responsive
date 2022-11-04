@@ -487,6 +487,31 @@ textarea.form-control::placeholder {
   font-size: 13px;
   padding-top: 2px;
 }
+.form-check.point-style {
+  padding-left: 20px;
+}
+.form-check.point-style [type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-print-color-adjust: exact;
+  width: 14px;
+  height: 14px;
+  vertical-align: top;
+  background: rgb(216, 216, 216) url("../images/checkbox-arr-white.svg") 50% 50% no-repeat;
+  background-size: 10px auto !important;
+  border-radius: 2px;
+  float: left;
+  margin-left: -1.25em;
+}
+.form-check.point-style [type=checkbox]:checked {
+  background-color: #4ac0ff;
+  background-image: url("../images/checkbox-arr-white.svg");
+}
+.form-check.point-style label {
+  font-weight: 400;
+  line-height: 1;
+}
 .form-check.switch {
   padding-left: 60px;
   min-height: 30px;
@@ -2503,25 +2528,31 @@ progress {
   font-size: 14px;
   color: #999;
   text-decoration: underline;
+  display: inline-block;
+  margin-top: 9px;
 }
-.reviews .refer-to .btn-refer {
+.reviews .refer-to {
+  margin-top: 15px;
+}
+.reviews .refer-to .btn {
   height: 32px;
+  line-height: 32px;
   font-size: 16px;
   padding-left: 8px;
   padding-right: 8px;
-  padding-top: 5px;
 }
-.reviews .refer-to .btn-refer::after {
+.reviews .refer-to .btn::after {
   content: "할게요";
 }
-.reviews .refer-to .btn-refer.active {
+.reviews .refer-to .btn.clicked {
   color: #fff;
   background: #4ac0ff;
 }
-.reviews .refer-to .btn-refer.active::after {
+.reviews .refer-to .btn.clicked::after {
   content: "했어요";
 }
 .reviews .refer-to p {
+  font-size: 14px;
   color: rgb(153, 153, 153);
 }
 
@@ -2615,6 +2646,37 @@ progress {
 .modal-review .content .more {
   color: rgba(255, 255, 255, 0.6);
   margin-left: 10px;
+}
+
+.review-sort {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.sort {
+  display: flex;
+  align-items: center;
+}
+.sort > a {
+  color: rgba(0, 0, 0, 0.25);
+  font-size: 14px;
+  line-height: 1;
+}
+.sort > a::before {
+  content: "•";
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.25);
+}
+.sort > a.active {
+  color: #000;
+  font-weight: 700;
+}
+.sort > a.active::before {
+  color: #4ac0ff;
+}
+.sort > a + a {
+  margin-left: 5px;
 }
 
 .text-banner-img {

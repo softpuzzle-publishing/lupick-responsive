@@ -82,6 +82,15 @@
     label{font-weight: 400;font-size: 13px;padding-top: 2px;}
   }
 
+  &.point-style{
+    padding-left: 20px;
+    [type="checkbox"]{
+      -webkit-appearance: none;-moz-appearance: none;appearance: none;-webkit-print-color-adjust: exact;width: 14px;height: 14px;vertical-align: top;background: rgba(216,216,216,1) url('../images/checkbox-arr-white.svg') 50% 50% no-repeat;background-size: 10px auto !important; border-radius: 2px;float: left;margin-left: -1.25em;
+      &:checked{background-color: $secondary;background-image: url('../images/checkbox-arr-white.svg');}
+    }
+    label{font-weight: 400;line-height: 1;}
+  }
+
   /* checkbox - switch */
   &.switch {
     padding-left: 60px;

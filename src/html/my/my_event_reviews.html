@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  @@include('@@webRoot/html/_include/_head.html')
+
+  <script>
+    $(document).ready(function () {
+      //포토리뷰 swiper
+      var photosSwiper = [];
+      $('.reviews .photos .swiper').each(function (i) {
+        if ($(this).find('.swiper-slide').length > 4) {
+          photosSwiper[i] = new Swiper($(this)[0], { // eslint-disable-line
+            slidesPerView: 4.5,
+            freeMode: true,
+            spaceBetween: 5,
+            slidesOffsetBefore: 20,
+            slidesOffsetAfter: 20,
+            observeParents: true,
+            observeSlideChildren: true,
+            observer: true
+          });
+        }
+      });
+
+      let photoIdx; //클릭한 사진의 인덱스
+      $('.reviews .photos .swiper-slide').on('click', function () {
+        photoIdx = $(this).index();
+        $('#modal-review').modal('show')
+      });
+
+      // 모달이 열릴때 swiper 실행
+      var modalReviewSwiper;
+      $('#modal-review').on('shown.bs.modal', function (event) {
+        modalReviewSwiper = new Swiper(".modal-review .swiper", { // eslint-disable-line
+          initialSlide: photoIdx,
+          pagination: {
+            el: ".review-swiper-pagination"
+          },
+          observeParents: true,
+          observeSlideChildren: true,
+          observer: true
+        });
+      });
+      // 모달이 닫힐때 swiper destroy
+      $("#modal-review").on("hidden.bs.modal", function (event) {
+        modalReviewSwiper.destroy(true, true);
+      });
+
+      //리뷰 내용 100자까지 ... 처리
+      const maxLength = 95;
+      let str = '하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다. 하나를 둘이서 갈라먹어서 하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다. 하나를 둘이서 갈라먹어서 하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다.'
+      let strShort;
+      if (str.length > maxLength) {
+        strShort = str.substr(0, maxLength - 2) + '...';
+        $('#reviewContent').text(strShort);
+      } else {
+        $('.review-collapse .more').remove();
+      }
+      $('.review-collapse .more').on('click', function (e) {
+        e.preventDefault();
+        if (!$('.review-collapse').hasClass('expanded')) {
+          $('#reviewContent').text(str);
+          $('.review-collapse .more span').text('접기');
+        } else {
+          $('#reviewContent').text(strShort);
+          $('.review-collapse .more span').text('더보기');
+        }
+        $('.review-collapse').toggleClass('expanded');
+      });
+
+      //참고할게요 버튼
+      $('.refer-to .btn').on('click', function (e) {
+        e.preventDefault();
+        $(this).toggleClass('clicked');
+      })
+    });
+  </script>
+</head>
+
+<body>
+  <div id="wrap">
+    @@include('@@webRoot/html/_include/_header.html', { "title": "나의 리뷰" })
+    <div id="container">
+      <main id="main">
+        <!-- 실컨텐츠 -->
+
+        <div class="container pt-20px">
+          <div class="reviews">
+            <div class="item">
+              <div class="user">
+                <div class="user-profile"><img src="@@webRoot/assets/images/@profile.jpg" alt="티도"></div>
+                <div class="user-info">
+                  <div class="name">티도</div>
+                  <div class="date">2022.05.20 작성</div>
+                </div>
+              </div>
+              <div class="photos">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="option">[옵션] 감자볶음밥</div>
+              <div class="content">하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다</div>
+            </div>
+            <div class="item">
+              <div class="user">
+                <div class="user-profile"><img src="@@webRoot/assets/images/@profile.jpg" alt="티도"></div>
+                <div class="user-info">
+                  <div class="name">티도</div>
+                  <div class="date">2022.05.20 작성</div>
+                </div>
+              </div>
+              <div class="option">[옵션] 감자볶음밥</div>
+              <div class="content">하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다</div>
+            </div>
+            <div class="item">
+              <div class="user">
+                <div class="user-profile"><img src="@@webRoot/assets/images/@profile.jpg" alt="티도"></div>
+                <div class="user-info">
+                  <div class="name">티도</div>
+                  <div class="date">2022.05.20 작성</div>
+                </div>
+              </div>
+              <div class="photos">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="option">[옵션] 감자볶음밥</div>
+              <div class="content">내용물도 큼직큼직하고 양이 많아요.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- //실컨텐츠 -->
+      </main>
+    </div>
+  </div>
+
+  @@include('@@webRoot/html/_include/_modal.html')
+
+</body>
+
+</html>

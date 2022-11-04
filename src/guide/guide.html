@@ -62,6 +62,7 @@
       margin-bottom: 2rem;
       padding: 1rem;
       flex: 0 0 50%;
+      max-width: 50%;
     }
 
     section h2 {
@@ -107,7 +108,8 @@
       <a href="#g5">Select</a>
       <a href="#g6">Badge</a>
       <a href="#g7">Tab</a>
-      <a href="#g8">Data Empty</a>
+      <a href="#g8">Event List Type</a>
+      <a href="#g9">Data Empty</a>
     </div>
     <div id="guide-container">
       <section id="g0">
@@ -129,6 +131,8 @@
           </div>
           <h1 class="page-title">로그인.</h1>
           <div class="section-title font-eng has-border-top">Related Events</div>
+          <div class="section-title"><span class="title-ball bg-primary"></span> 이벤트상품</div>
+          <div class="section-title">참여 이벤트 상태 <small>(최근 3개월)</small></div>
           <div class="row align-items-center justify-content-between mb-15px mt-30px">
             <div class="col-auto">
               <div class="section-title mb-0 mt-0">루픽스토리</div>
@@ -210,6 +214,10 @@
             <input type="checkbox" value="" id="flexCheckDefault" checked>
             <label for="flexCheckDefault">네모 체크박스</label>
           </div>
+          <div class="form-check point-style">
+            <input type="checkbox" value="" id="onlyPhoto" checked="">
+            <label for="onlyPhoto">사진 리뷰만</label>
+          </div>
           <div class="form-check agree-style">
             <input type="checkbox" value="" id="agree1">
             <label for="agree1">본인은 만 14세 이상이며 <a href="#none" class="text-info fw-bold text-decoration-underline">서비스 이용약관</a>, <a href="#none" class="text-info fw-bold text-decoration-underline">개인정보수집 및 이용</a>에 동의합니다. (필수)</label>
@@ -280,10 +288,12 @@
           <span class="badge outline-gray">outline gray</span>
           <span class="badge dark">dark</span>
           <span class="badge muted">답변대기</span>
+          <span class="badge outline-dark bg-primary">오직 1명에게</span>
           <span class="badge outline-dark lg">쇼핑 이벤트</span>
           <span class="badge dark lg text-primary">프리 이벤트</span>
           <span class="badge outline-dark lg bg-primary">포인트 이벤트</span>
           <span class="badge secondary lg round font-16px">베스트</span>
+          <span class="badge primary sm font-eng">BEST</span>
         </div>
       </section>
       <section id="g7">
@@ -314,6 +324,58 @@
         </div>
       </section>
       <section id="g8">
+        <h2>Event List Type</h2>
+        <div>
+          <div class="my-event-list">
+            <div class="item">
+              <div class="item-top">
+                <a href="#none" class="row gx-10px">
+                  <div class="col-auto">
+                    <span class="badge outline-dark lg">쇼핑 이벤트</span>
+                  </div>
+                  <div class="col">
+                    <div class="number">주문번호 ORD20210409-0000010</div>
+                    <div class="date">2020.07.14</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="icon-arr-down-gray"></i>
+                  </div>
+                </a>
+              </div>
+              <div class="item-body">
+                <a href="#none">
+                  <div class="d-flex align-items-center">
+                    <div class="info">
+                      <div class="state text-gray-light">반품/환불</div>
+                      <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명 </div>
+                      <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
+                    </div>
+                    <div class="img">
+                      <img src="@@webRoot/assets/images/@landscape.jpg" alt="">
+                    </div>
+                  </div>
+                  <div class="price">20,000원</div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="my-event-list img-first">
+            <div class="item-body">
+              <div class="d-flex align-items-center">
+                <div class="img">
+                  <img src="@@webRoot/assets/images/@portrait.jpg" alt="">
+                </div>
+                <div class="info">
+                  <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명 </div>
+                  <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
+                  <button type="button" class="btn btn-outline-dark btn-round btn-md w-100 font-14px fw-bold" onclick="location.href='my_event_result_confirmation.html'">결과 확인하기</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="g9">
         <style>
           .data-empty {
             height: 240px;
