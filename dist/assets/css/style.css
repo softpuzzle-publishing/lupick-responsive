@@ -2154,6 +2154,7 @@ progress {
 }
 .event-item .event-state .inner {
   position: relative;
+  display: block;
 }
 .event-item .event-state .img {
   height: 0;
@@ -4264,6 +4265,7 @@ html.scroll-down body.body-main #header {
 }
 .main-top-banner .item {
   padding: 0 1.25rem;
+  display: block;
 }
 .main-top-banner .btn-event-alarm {
   width: 80px;
@@ -4423,6 +4425,9 @@ html.scroll-down body.body-main #header {
   font-family: "Gilroy";
   padding: 0 20px 10px;
 }
+.main-brands .item {
+  display: block;
+}
 .main-brands .img {
   height: 0;
   padding-bottom: 100%;
@@ -4450,7 +4455,7 @@ html.scroll-down body.body-main #header {
   padding-left: 20px;
 }
 .main-brands .swiper:not(.swiper-initialized) .swiper-slide {
-  width: calc((100vw - 55px) / 4);
+  width: calc((100% - 55px) / 4);
   margin-right: 5px;
 }
 
