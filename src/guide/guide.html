@@ -1,410 +1,417 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <title>(guide)Lupick</title>
+    @@include('@@webRoot/html/_include/_head.html')
+  </head>
 
-<head>
-  <title>(guide)Lupick</title>
-  @@include('@@webRoot/html/_include/_head.html')
-</head>
+  <body>
+    <style>
+      #guide {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+      }
 
-<body>
-  <style>
-    #guide {
-      max-width: 1280px;
-      margin: 0 auto;
-      display: flex;
-    }
+      #guide-sidebar {
+        position: sticky;
+        left: 0;
+        top: 0;
+        width: 250px;
+        height: 100vh;
+        background: #000;
+        border-right: 1px solid #ddd;
+      }
 
-    #guide-sidebar {
-      position: sticky;
-      left: 0;
-      top: 0;
-      width: 250px;
-      height: 100vh;
-      background: #000;
-      border-right: 1px solid #ddd;
-    }
+      #guide-sidebar h1 {
+        font-size: 26px;
+        font-family: "Gilroy";
+        font-weight: 700;
+        color: #fff;
+        text-align: center;
+        padding: 2rem;
+      }
 
-    #guide-sidebar h1 {
-      font-size: 26px;
-      font-family: 'Gilroy';
-      font-weight: 700;
-      color: #fff;
-      text-align: center;
-      padding: 2rem;
-    }
+      #guide-sidebar a {
+        color: #ffec00;
+        font-weight: 700;
+        display: block;
+        padding: 0.75rem 1rem;
+      }
 
-    #guide-sidebar a {
-      color: #ffec00;
-      font-weight: 700;
-      display: block;
-      padding: .75rem 1rem;
-    }
+      #guide-sidebar a::before {
+        content: "- ";
+      }
 
-    #guide-sidebar a::before {
-      content: '- ';
-    }
+      #guide-container {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 1rem;
+      }
 
-    #guide-container {
-      flex: 1;
-      display: flex;
-      flex-wrap: wrap;
-      padding: 0 1rem;
-    }
+      .gulp-guide {
+        padding: 0 1rem 1rem;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 700;
+      }
 
-    .gulp-guide {
-      padding: 0 1rem 1rem;
-      color: #fff;
-      font-size: 14px;
-      font-weight: 700;
-    }
+      section {
+        margin-bottom: 2rem;
+        padding: 1rem;
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
 
-    section {
-      margin-bottom: 2rem;
-      padding: 1rem;
-      flex: 0 0 50%;
-      max-width: 50%;
-    }
+      section h2 {
+        display: inline-block;
+        background: rgb(253, 219, 97);
+        padding: 3px 8px 1px;
+        font-size: 22px;
+        font-family: "Gilroy";
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
 
-    section h2 {
-      display: inline-block;
-      background: rgb(253, 219, 97);
-      padding: 3px 8px 1px;
-      font-size: 22px;
-      font-family: 'Gilroy';
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
+      section h2::before {
+        content: "- ";
+      }
 
-    section h2::before {
-      content: '- ';
-    }
+      section.active h2 {
+        background: rgb(255, 65, 65);
+        color: #fff;
+      }
 
-    section.active h2 {
-      background: rgb(255, 65, 65);
-      color: #fff;
-    }
-
-    section.active h2::before {
-      content: '> ';
-    }
-  </style>
-  <div id="guide">
-    <div id="guide-sidebar">
-      <h1>Component Guide</h1>
-      <div class="gulp-guide">
-        gulp(걸프) 사용 방법
-        <ol>
-          <li>1. $ npm install --global gulp-cli</li>
-          <li>2. $ npm install</li>
-          <li>3. $ gulp</li>
-        </ol>
-      </div>
-      <a href="modal.html" target="_blank">Modal 모아보기</a>
-      <a href="#g0">Text</a>
-      <a href="#g1">Buttons</a>
-      <a href="#g2">Text Field</a>
-      <a href="#g3">Checkbox</a>
-      <a href="#g4">Radio</a>
-      <a href="#g5">Select</a>
-      <a href="#g6">Badge</a>
-      <a href="#g7">Tab</a>
-      <a href="#g8">Event List Type</a>
-      <a href="#g9">Data Empty</a>
-    </div>
-    <div id="guide-container">
-      <section id="g0">
-        <h2>Text</h2>
-        <div>
-          <div style="margin-bottom: .5rem">
-            <div class="font-13px">font 13px</div>
-            <div class="font-14px">font 14px</div>
-            <div class="font-16px">font 16px</div>
-            <div>
-              <span class="text-primary">text primary</span>
-              <span class="text-secondary">text secondary</span>
-              <span class="text-info">text info</span>
-              <span class="text-danger">text danger</span>
-              <span class="text-success">text success</span>
-            </div>
-            <div class="text-decoration-underline">Text Underline</div>
-            <div class="fw-bold">Text Bold</div>
-          </div>
-          <h1 class="page-title">로그인.</h1>
-          <div class="section-title font-eng has-border-top">Related Events</div>
-          <div class="section-title"><span class="title-ball bg-primary"></span> 이벤트상품</div>
-          <div class="section-title">참여 이벤트 상태 <small>(최근 3개월)</small></div>
-          <div class="row align-items-center justify-content-between mb-15px mt-30px">
-            <div class="col-auto">
-              <div class="section-title mb-0 mt-0">루픽스토리</div>
-            </div>
-            <div class="col-auto">
-              <a href="feed_lupick_story.html" class="text-secondary font-14px fw-bold">전체보기</a>
-            </div>
-          </div>
-          <div class="section-title-lg font-eng has-border-top">Related Events</div>
-          <div class="more-text">
-            <a href="javascript:;" role="button">더보기</a>
-          </div>
+      section.active h2::before {
+        content: "> ";
+      }
+    </style>
+    <div id="guide">
+      <div id="guide-sidebar">
+        <h1>Component Guide</h1>
+        <div class="gulp-guide">
+          gulp(걸프) 사용 방법
+          <ol>
+            <li>1. $ npm install --global gulp-cli</li>
+            <li>2. $ npm install</li>
+            <li>3. $ gulp</li>
+          </ol>
         </div>
-      </section>
-      <section id="g1">
-        <h2>Buttons</h2>
-        <div>
+        <a href="modal.html" target="_blank">Modal 모아보기</a>
+        <a href="#g0">Text</a>
+        <a href="#g1">Buttons</a>
+        <a href="#g2">Text Field</a>
+        <a href="#g3">Checkbox</a>
+        <a href="#g4">Radio</a>
+        <a href="#g5">Select</a>
+        <a href="#g6">Badge</a>
+        <a href="#g7">Tab</a>
+        <a href="#g8">Event List Type</a>
+        <a href="#g9">Data Empty</a>
+      </div>
+      <div id="guide-container">
+        <section id="g0">
+          <h2>Text</h2>
+          <div>
+            <div style="margin-bottom: 0.5rem">
+              <div class="font-13px">font 13px</div>
+              <div class="font-14px">font 14px</div>
+              <div class="font-16px">font 16px</div>
+              <div>
+                <span class="text-primary">text primary</span>
+                <span class="text-secondary">text secondary</span>
+                <span class="text-info">text info</span>
+                <span class="text-danger">text danger</span>
+                <span class="text-success">text success</span>
+              </div>
+              <div class="text-decoration-underline">Text Underline</div>
+              <div class="fw-bold">Text Bold</div>
+            </div>
+            <h1 class="page-title">로그인.</h1>
+            <div class="section-title font-eng has-border-top">Related Events</div>
+            <div class="section-title"><span class="title-ball bg-primary"></span> 이벤트상품</div>
+            <div class="section-title">참여 이벤트 상태 <small>(최근 3개월)</small></div>
+            <div class="row align-items-center justify-content-between mb-15px mt-30px">
+              <div class="col-auto">
+                <div class="section-title mb-0 mt-0">루픽스토리</div>
+              </div>
+              <div class="col-auto">
+                <a href="feed_lupick_story.html" class="text-secondary font-14px fw-bold">전체보기</a>
+              </div>
+            </div>
+            <div class="section-title-lg font-eng has-border-top">Related Events</div>
+            <div class="more-text">
+              <a href="javascript:;" role="button">더보기</a>
+            </div>
+          </div>
+        </section>
+        <section id="g1">
+          <h2>Buttons</h2>
+          <div>
+            <style>
+              .btn + .btn {
+                margin-top: 0.5rem;
+              }
+            </style>
+            <button type="button" class="btn btn-dark btn-round btn-lg w-100" disabled>완료</button>
+            <button type="button" class="btn btn-dark btn-round btn-lg w-100">로그인</button>
+            <button type="button" class="btn btn-dark btn-round btn-lg w-100 justify-content-between">
+              <span>투표완료 <i class="icon-check-in-btn"></i></span>
+              <span class="fw-normal">23:19:07</span>
+            </button>
+            <button type="button" class="btn btn-secondary btn-round btn-lg w-100">프리&amp;포인트 모아보기</button>
+            <button type="button" class="btn btn-outline-secondary btn-round btn-lg w-100">구매확정</button>
+            <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100">배송 조회</button>
+            <button type="button" class="btn btn-outline-light btn-round btn-lg w-100">로그아웃</button>
+
+            <button type="button" class="btn btn-outline-dark btn-round btn-md w-100 font-14px fw-bold">투표하기</button>
+
+            <button type="button" class="btn btn-dark btn-lg btn-round">인증 재시도</button>
+
+            <button type="button" class="btn btn-outline-dark btn-flat btn-md">인증번호 발송</button>
+            <button type="button" class="btn btn-outline-dark btn-flat btn-md" disabled>인증번호 발송</button>
+
+            <button type="button" class="btn btn-outline-dark btn-flat btn-xl w-100">결제내역 상세보기</button>
+            <button type="button" class="btn btn-outline-light btn-flat btn-xl w-100">영수증 받기</button>
+
+            <button type="button" class="btn btn-outline-light btn-flat btn-lg w-100 justify-content-start text-gray-light">+ 첨부파일 추가</button>
+          </div>
+        </section>
+        <section id="g2">
           <style>
-            .btn+.btn {
-              margin-top: .5rem;
+            .form-control {
+              margin-bottom: 5px;
             }
           </style>
-          <button type="button" class="btn btn-dark btn-round btn-lg w-100" disabled>완료</button>
-          <button type="button" class="btn btn-dark btn-round btn-lg w-100">로그인</button>
-          <button type="button" class="btn btn-dark btn-round btn-lg w-100 justify-content-between">
-            <span>투표완료 <i class="icon-check-in-btn"></i></span>
-            <span class="fw-normal">23:19:07</span>
-          </button>
-          <button type="button" class="btn btn-secondary btn-round btn-lg w-100">프리&amp;포인트 모아보기</button>
-          <button type="button" class="btn btn-outline-secondary btn-round btn-lg w-100">구매확정</button>
-          <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100">배송 조회</button>
-          <button type="button" class="btn btn-outline-light btn-round btn-lg w-100">로그아웃</button>
-
-          <button type="button" class="btn btn-outline-dark btn-round btn-md w-100 font-14px fw-bold">투표하기</button>
-
-          <button type="button" class="btn btn-dark btn-lg btn-round">인증 재시도</button>
-
-          <button type="button" class="btn btn-outline-dark btn-flat btn-md">인증번호 발송</button>
-          <button type="button" class="btn btn-outline-dark btn-flat btn-md" disabled>인증번호 발송</button>
-
-          <button type="button" class="btn btn-outline-dark btn-flat btn-xl w-100">결제내역 상세보기</button>
-          <button type="button" class="btn btn-outline-light btn-flat btn-xl w-100">영수증 받기</button>
-
-          <button type="button" class="btn btn-outline-light btn-flat btn-lg w-100 justify-content-start text-gray-light">+ 첨부파일 추가</button>
-        </div>
-      </section>
-      <section id="g2">
-        <style>
-          .form-control {
-            margin-bottom: 5px;
-          }
-        </style>
-        <h2>Text Field</h2>
-        <div>
-          <div class="form-group">
-            <label for="formPassword" class="form-label">비밀번호 <span class="required">*</span></label>
-            <input type="password" class="form-control" placeholder="form-control(40px)" id="formPassword">
-            <p class="form-text">* 최소 10글자 이상으로 영문, 숫자, 특수문자 2개 이상 조합 동일한 숫자</p>
-            <p class="feedback valid" style="display:block">OK 동일한 비밀번호를 입력해주세요</p>
-            <p class="feedback invalid" style="display:block">NO 동일한 비밀번호를 입력해주세요</p>
+          <h2>Text Field</h2>
+          <div>
+            <div class="form-group">
+              <label for="formPassword" class="form-label">비밀번호 <span class="required">*</span></label>
+              <input type="password" class="form-control" placeholder="form-control(40px)" id="formPassword" />
+              <p class="form-text">* 최소 10글자 이상으로 영문, 숫자, 특수문자 2개 이상 조합 동일한 숫자</p>
+              <p class="feedback valid" style="display: block">OK 동일한 비밀번호를 입력해주세요</p>
+              <p class="feedback invalid" style="display: block">NO 동일한 비밀번호를 입력해주세요</p>
+            </div>
+            <input type="text" class="form-control border" placeholder="form-control(40px)" />
+            <input type="password" class="form-control form-control-lg" placeholder="form-control-lg(50px)" />
+            <input type="text" class="form-control border form-control-lg" placeholder="form-control-lg(50px)" />
+            <div class="textarea">
+              <textarea rows="2" class="form-control" placeholder="내용을 입력해주세요" maxlength="300"></textarea>
+              <div class="byte"><span>0</span>/300자</div>
+            </div>
           </div>
-          <input type="text" class="form-control border" placeholder="form-control(40px)">
-          <input type="password" class="form-control form-control-lg" placeholder="form-control-lg(50px)">
-          <input type="text" class="form-control border  form-control-lg" placeholder="form-control-lg(50px)">
-          <div class="textarea">
-            <textarea rows="2" class="form-control" placeholder="내용을 입력해주세요" maxlength="300"></textarea>
-            <div class="byte"><span>0</span>/300자</div>
+        </section>
+        <section id="g3">
+          <h2>Checkbox</h2>
+          <div>
+            <div class="form-check">
+              <input type="checkbox" value="" id="flexCheckDefault2" checked />
+              <label for="flexCheckDefault2">체크박스(default)</label>
+            </div>
+            <div class="form-check square">
+              <input type="checkbox" value="" id="flexCheckDefault" checked />
+              <label for="flexCheckDefault">네모 체크박스</label>
+            </div>
+            <div class="form-check point-style">
+              <input type="checkbox" value="" id="onlyPhoto" checked="" />
+              <label for="onlyPhoto">사진 리뷰만</label>
+            </div>
+            <div class="form-check agree-style">
+              <input type="checkbox" value="" id="agree1" />
+              <label for="agree1">본인은 만 14세 이상이며 <a href="#none" class="text-info fw-bold text-decoration-underline">서비스 이용약관</a>, <a href="#none" class="text-info fw-bold text-decoration-underline">개인정보수집 및 이용</a>에 동의합니다. (필수)</label>
+            </div>
+            <div class="form-check switch">
+              <input type="checkbox" value="" id="flexCheckDefault3" />
+              <label for="flexCheckDefault3">label 있음</label>
+            </div>
+            <div class="form-check switch label-empty">
+              <input type="checkbox" value="" id="flexCheckDefault4" />
+              <label for="flexCheckDefault4"></label>
+            </div>
+            <div class="checkbox-button-wrap">
+              <div class="form-check button">
+                <input type="checkbox" value="" id="chkKeyword1" name="chkKeyword" />
+                <label for="chkKeyword1">포장이 꼼꼼해요</label>
+              </div>
+              <div class="form-check button">
+                <input type="checkbox" value="" id="chkKeyword2" name="chkKeyword" />
+                <label for="chkKeyword2">조리 식품이 맛있어요</label>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
-      <section id="g3">
-        <h2>Checkbox</h2>
-        <div>
-          <div class="form-check">
-            <input type="checkbox" value="" id="flexCheckDefault2" checked>
-            <label for="flexCheckDefault2">체크박스(default)</label>
+        </section>
+        <section id="g4">
+          <h2>Radio</h2>
+          <div>
+            <div class="form-check button inline">
+              <input type="radio" value="" id="radio1" name="radioBtnStyle" />
+              <label for="radio1">버튼 스타일</label>
+            </div>
+            <div class="form-check button inline">
+              <input type="radio" value="" id="radio2" name="radioBtnStyle" />
+              <label for="radio2">버튼 스타일</label>
+            </div>
           </div>
-          <div class="form-check square">
-            <input type="checkbox" value="" id="flexCheckDefault" checked>
-            <label for="flexCheckDefault">네모 체크박스</label>
-          </div>
-          <div class="form-check point-style">
-            <input type="checkbox" value="" id="onlyPhoto" checked="">
-            <label for="onlyPhoto">사진 리뷰만</label>
-          </div>
-          <div class="form-check agree-style">
-            <input type="checkbox" value="" id="agree1">
-            <label for="agree1">본인은 만 14세 이상이며 <a href="#none" class="text-info fw-bold text-decoration-underline">서비스 이용약관</a>, <a href="#none" class="text-info fw-bold text-decoration-underline">개인정보수집 및 이용</a>에 동의합니다. (필수)</label>
-          </div>
-          <div class="form-check switch">
-            <input type="checkbox" value="" id="flexCheckDefault3">
-            <label for="flexCheckDefault3">label 있음</label>
-          </div>
-          <div class="form-check switch label-empty">
-            <input type="checkbox" value="" id="flexCheckDefault4">
-            <label for="flexCheckDefault4"></label>
-          </div>
-        </div>
-      </section>
-      <section id="g4">
-        <h2>Radio</h2>
-        <div>
-          <div class="form-check button inline">
-            <input type="radio" value="" id="radio1" name="radioBtnStyle">
-            <label for="radio1">버튼 스타일</label>
-          </div>
-          <div class="form-check button inline">
-            <input type="radio" value="" id="radio2" name="radioBtnStyle">
-            <label for="radio2">버튼 스타일</label>
-          </div>
-        </div>
-      </section>
-      <section id="g5">
-        <h2>Select</h2>
-        <div>
-          <select class="form-select text-style">
-            <option selected>전체</option>
-            <option value="">이벤트 알림</option>
-            <option value="">배송 알림</option>
-            <option value="">투표 알림</option>
-            <option value="">루픽 알림</option>
-          </select>
-          <select class="form-select">
-            <option selected>옵션 선택</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-          </select>
-          <select class="form-select w-100">
-            <option selected>옵션 선택</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-          </select>
-          <div class="form-select-zone"></div>
-          <script>
-            $(".form-select").each(function () {
-              var zone = $(this).next('.form-select-zone');
-              if (!$(this).next('.form-select-zone')) {
+        </section>
+        <section id="g5">
+          <h2>Select</h2>
+          <div>
+            <select class="form-select text-style">
+              <option selected>전체</option>
+              <option value="">이벤트 알림</option>
+              <option value="">배송 알림</option>
+              <option value="">투표 알림</option>
+              <option value="">루픽 알림</option>
+            </select>
+            <select class="form-select">
+              <option selected>옵션 선택</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+            </select>
+            <select class="form-select w-100">
+              <option selected>옵션 선택</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+            </select>
+            <div class="form-select-zone"></div>
+            <script>
+              $(".form-select").each(function () {
+                var zone = $(this).next(".form-select-zone");
+                if (!$(this).next(".form-select-zone")) {
+                  $(this).selectmenu({});
+                }
                 $(this).selectmenu({
-
+                  // appenTo 선택 엘리먼트에 셀렉트박스 넣음
+                  appendTo: zone,
                 });
-              }
-              $(this).selectmenu({
-                // appenTo 선택 엘리먼트에 셀렉트박스 넣음
-                appendTo: zone,
               });
-            });
-          </script>
-        </div>
-      </section>
-      <section id="g6">
-        <h2>Badge</h2>
-        <div>
-          <span class="badge outline-gray">outline gray</span>
-          <span class="badge dark">dark</span>
-          <span class="badge muted">답변대기</span>
-          <span class="badge outline-dark bg-primary">오직 1명에게</span>
-          <span class="badge outline-dark lg">쇼핑 이벤트</span>
-          <span class="badge dark lg text-primary">프리 이벤트</span>
-          <span class="badge outline-dark lg bg-primary">포인트 이벤트</span>
-          <span class="badge secondary lg round font-16px">베스트</span>
-          <span class="badge primary sm font-eng">BEST</span>
-        </div>
-      </section>
-      <section id="g7">
-        <h2>Tab</h2>
-        <div>
-          <ul class="nav nav-badges" role="tablist">
-            <li class="nav-item" role="presentation">
-              <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="tab">루픽스토리</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a class="nav-link" href="#" data-bs-toggle="tab">루픽스토리</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a class="nav-link" href="#" data-bs-toggle="tab">루피커 인터뷰</a>
-            </li>
-          </ul>
-          <ul class="nav nav-tabs justify-content-around" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <a href="#t1" class="nav-link active" data-bs-toggle="tab" role="tab">이벤트 전체</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a href="#t1" class="nav-link" data-bs-toggle="tab" role="tab">감자볶음밥 세트</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a href="#t1" class="nav-link" data-bs-toggle="tab" role="tab">돌돌만 세트</a>
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section id="g8">
-        <h2>Event List Type</h2>
-        <div>
-          <div class="my-event-list">
-            <div class="item">
-              <div class="item-top">
-                <a href="#none" class="row gx-10px">
-                  <div class="col-auto">
-                    <span class="badge outline-dark lg">쇼핑 이벤트</span>
-                  </div>
-                  <div class="col">
-                    <div class="number">주문번호 ORD20210409-0000010</div>
-                    <div class="date">2020.07.14</div>
-                  </div>
-                  <div class="col-auto">
-                    <i class="icon-arr-down-gray"></i>
-                  </div>
-                </a>
+            </script>
+          </div>
+        </section>
+        <section id="g6">
+          <h2>Badge</h2>
+          <div>
+            <span class="badge outline-gray">outline gray</span>
+            <span class="badge dark">dark</span>
+            <span class="badge muted">답변대기</span>
+            <span class="badge outline-dark bg-primary">오직 1명에게</span>
+            <span class="badge outline-dark lg">쇼핑 이벤트</span>
+            <span class="badge dark lg text-primary">프리 이벤트</span>
+            <span class="badge outline-dark lg bg-primary">포인트 이벤트</span>
+            <span class="badge secondary lg round font-16px">베스트</span>
+            <span class="badge primary sm font-eng">BEST</span>
+            <span class="badge secondary round">500P 지급!</span>
+          </div>
+        </section>
+        <section id="g7">
+          <h2>Tab</h2>
+          <div>
+            <ul class="nav nav-badges" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="tab">루픽스토리</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" href="#" data-bs-toggle="tab">루픽스토리</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" href="#" data-bs-toggle="tab">루피커 인터뷰</a>
+              </li>
+            </ul>
+            <ul class="nav nav-tabs justify-content-around" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a href="#t1" class="nav-link active" data-bs-toggle="tab" role="tab">이벤트 전체</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a href="#t1" class="nav-link" data-bs-toggle="tab" role="tab">감자볶음밥 세트</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a href="#t1" class="nav-link" data-bs-toggle="tab" role="tab">돌돌만 세트</a>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section id="g8">
+          <h2>Event List Type</h2>
+          <div>
+            <div class="my-event-list">
+              <div class="item">
+                <div class="item-top">
+                  <a href="#none" class="row gx-10px">
+                    <div class="col-auto">
+                      <span class="badge outline-dark lg">쇼핑 이벤트</span>
+                    </div>
+                    <div class="col">
+                      <div class="number">주문번호 ORD20210409-0000010</div>
+                      <div class="date">2020.07.14</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="icon-arr-down-gray"></i>
+                    </div>
+                  </a>
+                </div>
+                <div class="item-body">
+                  <a href="#none">
+                    <div class="d-flex align-items-center">
+                      <div class="info">
+                        <div class="state text-gray-light">반품/환불</div>
+                        <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
+                        <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
+                      </div>
+                      <div class="img">
+                        <img src="@@webRoot/assets/images/@landscape.jpg" alt="" />
+                      </div>
+                    </div>
+                    <div class="price">20,000원</div>
+                  </a>
+                </div>
               </div>
+            </div>
+            <div class="my-event-list img-first">
               <div class="item-body">
-                <a href="#none">
-                  <div class="d-flex align-items-center">
-                    <div class="info">
-                      <div class="state text-gray-light">반품/환불</div>
-                      <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명 </div>
-                      <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
-                    </div>
-                    <div class="img">
-                      <img src="@@webRoot/assets/images/@landscape.jpg" alt="">
-                    </div>
+                <div class="d-flex align-items-center">
+                  <div class="img">
+                    <img src="@@webRoot/assets/images/@portrait.jpg" alt="" />
                   </div>
-                  <div class="price">20,000원</div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="my-event-list img-first">
-            <div class="item-body">
-              <div class="d-flex align-items-center">
-                <div class="img">
-                  <img src="@@webRoot/assets/images/@portrait.jpg" alt="">
-                </div>
-                <div class="info">
-                  <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명 </div>
-                  <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
-                  <button type="button" class="btn btn-outline-dark btn-round btn-md w-100 font-14px fw-bold" onclick="location.href='my_event_result_confirmation.html'">결과 확인하기</button>
+                  <div class="info">
+                    <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
+                    <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
+                    <button type="button" class="btn btn-outline-dark btn-round btn-md w-100 font-14px fw-bold" onclick="location.href='my_event_result_confirmation.html'">결과 확인하기</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section id="g9">
-        <style>
-          .data-empty {
-            height: 240px;
-          }
-        </style>
-        <h2>Data Empty</h2>
-        <div>
-          <div class="data-empty">
-            <i class="icon-exclaimation-light"></i>
-            <p>참여한 이벤트가 없습니다</p>
+        </section>
+        <section id="g9">
+          <style>
+            .data-empty {
+              height: 240px;
+            }
+          </style>
+          <h2>Data Empty</h2>
+          <div>
+            <div class="data-empty">
+              <i class="icon-exclaimation-light"></i>
+              <p>참여한 이벤트가 없습니다</p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
-  </div>
 
-  <script>
-    var btns = document.querySelectorAll('#guide-sidebar a');
-    btns.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var target = btn.hash;
-        var sectionsAll = document.querySelectorAll('section');
-        sectionsAll.forEach(function (sec) {
-          sec.classList.remove('active');
-        })
-        document.querySelector(target).classList.add('active');
-      })
-    });
-  </script>
-</body>
-
+    <script>
+      var btns = document.querySelectorAll("#guide-sidebar a");
+      btns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var target = btn.hash;
+          var sectionsAll = document.querySelectorAll("section");
+          sectionsAll.forEach(function (sec) {
+            sec.classList.remove("active");
+          });
+          document.querySelector(target).classList.add("active");
+        });
+      });
+    </script>
+  </body>
 </html>

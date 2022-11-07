@@ -26,10 +26,17 @@ body.modal-open{
   &.circle{
     display: block;width: 30px;height: 30px;border-radius: 50%;background: rgba(0,0,0,0.5);
     position: absolute;right: 20px;top: 20px;z-index: 1;
+    .icon-x-white{width: 16px;height: 16px;}
   }
   .modal-content > &{
     position: absolute;right: 20px;top: 20px;z-index: 2;
   }
+}
+
+.btn-close-line{
+  text-align: center;width: 100%;padding: 10px;position: absolute;
+  left: 0;top: 0;line-height: 1;font-size: 0;z-index: 2;
+  &::before{content: '';width: 34px;height: 4px;background: $muted;display: inline-block;}
 }
 
 .modal-header {
@@ -74,10 +81,10 @@ body.modal-open{
 }
 
 .modal.slide-up {
-  max-width: $container-max-width; margin: 0;height: 100%;overflow: hidden;align-items: flex-end;left: 50%;transform: translateX(-50%);
+  max-width: $container-max-width; margin: 0;height: 100%;overflow: hidden;align-items: flex-end;left: 50%;transform: translateX(-50%);transition: transform 200ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
   .modal-dialog { margin: 0; max-width: 100%;width: 100%;overflow: visible;align-items: flex-end;min-height: 100%;}
   .modal-content {
-    background: transparent; opacity: 0; transform: translateY(50px); transition: all .35s; border: 0;border-radius: 7px 7px 0 0;max-height: 100vh;overflow: auto;
+    background: transparent;transform: translateY(100%); transition: all .35s; border: 0;border-radius: 7px 7px 0 0;max-height: 100vh;overflow: auto;
   }
   .modal-body {
     $padding-bottom: 40px;
@@ -91,8 +98,9 @@ body.modal-open{
     overflow-x: hidden;
     max-height: calc(100% - 40px);overflow: auto;
   }
+  &.fade{transition: all .225s;}
   &.show {
-    .modal-content { opacity: 1; transform: translateY(0); }
+    .modal-content { opacity: 1; transform: translateY(0);transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 150ms }
   }
 }
 

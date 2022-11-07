@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>btn_exit</title>
+    <g id="-iOS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="리뷰쓰기-(입력-후)" transform="translate(-60.000000, -583.000000)">
+            <g id="btn_exit" transform="translate(60.000000, 583.000000)">
+                <circle id="Oval" fill-opacity="0.2" fill="#000000" cx="10" cy="10" r="10"></circle>
+                <path d="M13.8181818,5.33333333 L14.7609909,6.27614237 L10.9893333,10.0463333 L14.7609909,13.8181818 L13.8181818,14.7609909 L10.0463333,10.9893333 L6.27614237,14.7609909 L5.33333333,13.8181818 L9.10433333,10.0463333 L5.33333333,6.27614237 L6.27614237,5.33333333 L10.0463333,9.10433333 L13.8181818,5.33333333 Z" id="Combined-Shape" fill="#FFFFFF" transform="translate(10.047162, 10.047162) rotate(45.000000) translate(-10.047162, -10.047162) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

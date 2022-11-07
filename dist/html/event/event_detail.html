@@ -113,6 +113,9 @@
               <i class="icon-back"></i>
             </button>
             <h1 class="header-title">이벤트 상세보기</h1>
+            <!-- 이벤트 상세에서만 노출 -->
+            <button type="button" aria-label="공유" data-bs-toggle="modal" data-bs-target="#modal-event-share" class="btn-share"><i class="icon-share"></i></button>
+            <!-- //이벤트 상세에서만 노출 -->
           </div>
           <div class="header-main">
             <div class="logo"><span class="visually-hidden">Lupick Logo</span></div>
@@ -125,6 +128,7 @@
           </div>
         </div>
       </header>
+
       <main id="main">
         <!-- 실컨텐츠 -->
 
@@ -448,7 +452,9 @@
           <!-- 하단 버튼 -->
           <div class="bottom-buttons">
             <p class="stock-count"><span>16,000</span>개 모집 중, <strong>302</strong>개 남음</p>
-            <button type="button" class="btn btn-dark btn-lg w-100 px-0" data-bs-toggle="modal">구매하기</button>
+            <button type="button" class="btn btn-dark btn-lg w-100 px-0" data-bs-toggle="modal" data-bs-target="#modal-event-option">구매하기</button>
+            <button type="button" class="btn btn-dark btn-lg w-100 px-0"><i class="icon-bell-white mr-5px"></i>알림신청</button>
+            <button type="button" class="btn btn-dark btn-lg w-100 px-0 text-primary"><i class="icon-alarm-yellow mr-5px"></i>등록완료</button>
           </div>
           <!-- //하단 버튼 -->
         </div>
@@ -936,6 +942,74 @@
               <div class="content">
                 <span id="reviewContent"></span> <a href="javascript:;" class="more"><span>더보기</span><i class="icon-more-arrow-down m-l-5"></i></a>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 이벤트 공유 -->
+    <div class="modal slide-up" tabindex="-1" id="modal-event-share">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-body">
+            <div class="share-event">
+              <div class="img">
+                <img src="../../assets/images/@portrait.jpg" alt="" />
+              </div>
+              <div class="info">
+                <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
+                <div class="link">lupick.onelink.me</div>
+              </div>
+            </div>
+            <div class="share-list">
+              <a href="javascript:;">
+                <img src="../../assets/images/share-url.png" alt="URL" />
+              </a>
+              <a href="javascript:;">
+                <img src="../../assets/images/share-kakaotalk.png" alt="kakaotalk" />
+              </a>
+              <a href="javascript:;">
+                <img src="../../assets/images/share-facebook.png" alt="facebook" />
+              </a>
+              <a href="javascript:;">
+                <img src="../../assets/images/share-line.png" alt="line" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 구매 옵션 선택 -->
+    <div class="modal fade slide-up" tabindex="-1" id="modal-event-option">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button type="button" class="btn-close-line" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-body">
+            <div class="share-event">
+              <div class="img">
+                <img src="../../assets/images/@portrait.jpg" alt="" />
+              </div>
+              <div class="info">
+                <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
+                <div class="link">lupick.onelink.me</div>
+              </div>
+            </div>
+            <div class="share-list">
+              <a href="javascript:;">
+                <img src="../../assets/images/share-url.png" alt="URL" />
+              </a>
+              <a href="javascript:;">
+                <img src="../../assets/images/share-kakaotalk.png" alt="kakaotalk" />
+              </a>
+              <a href="javascript:;">
+                <img src="../../assets/images/share-facebook.png" alt="facebook" />
+              </a>
+              <a href="javascript:;">
+                <img src="../../assets/images/share-line.png" alt="line" />
+              </a>
             </div>
           </div>
         </div>

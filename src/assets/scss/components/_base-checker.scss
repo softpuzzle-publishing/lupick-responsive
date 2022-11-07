@@ -123,21 +123,33 @@
     }
   }
 
-  /* radio - button */
+  /* button style */
   &.button{
     padding-left: 0;
+    &.w-100{
+      label{width: 100%;}
+    }
+    /* button style - radio */
     input[type="radio"]{
       opacity: 0;width: 0;height: 0;overflow: hidden;margin: 0;border: 0;
       &:checked{
         border-radius: 0;
         ~ label{border: 2px solid $dark;color: $dark;line-height: 37px;}
       }
+      & ~ label{
+        min-width: 105px;height: 40px;border: 1px solid $muted;color: $muted;font-size: 14px;text-align: center;line-height: 38px;padding-left: .5rem;padding-right: .5rem;font-weight: 400;
+      }
     }
-    label{
-      min-width: 105px;height: 40px;border: 1px solid $muted;color: $muted;font-size: 14px;text-align: center;line-height: 38px;padding-left: .5rem;padding-right: .5rem;font-weight: 400;
-    }
-    &.w-100{
-      label{width: 100%;}
+    /* button style - checkbox */
+    input[type="checkbox"]{
+      opacity: 0;width: 0;height: 0;overflow: hidden;margin: 0;border: 0;
+      &:checked{
+        border-radius: 0;
+        ~ label{background-color: $secondary;}
+      }
+      & ~ label{
+        width: 100%;background: #f7f7f7;height: 35px;line-height: 35px;color: $dark;border: 0;border-radius: 7px;text-align: left;padding-left: 10px;padding-right: 10px;transition: background-color .2s;
+      }
     }
   }
 }

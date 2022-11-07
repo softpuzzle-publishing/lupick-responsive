@@ -41,7 +41,6 @@ var Common = {
         var maxlength = $(this).attr("maxlength");
         var content = $(this).val();
         $(this).siblings(".byte").find("span").text(content.length);
-
         if (content.length > maxlength) {
           $(this).val(content.substring(0, maxlength));
         }
@@ -75,14 +74,12 @@ var Header = {
     var curScroll;
     var direction = 0;
     var prevDirection = 0;
-
     var checkScroll = function checkScroll() {
       /*
        ** Find the direction of scroll
        ** 0 - initial, 1 - up, 2 - down
        */
       curScroll = w.scrollY || doc.scrollTop;
-
       if (curScroll > prevScroll) {
         //scrolled up
         direction = 2;
@@ -90,14 +87,11 @@ var Header = {
         //scrolled down
         direction = 1;
       }
-
       if (direction !== prevDirection) {
         scrollDirection(direction, curScroll);
       }
-
       prevScroll = curScroll;
     };
-
     var scrollDirection = function scrollDirection(direction, curScroll) {
       if (direction === 2 && curScroll > 25) {
         //replace 52 with the height of your header in px
@@ -108,7 +102,6 @@ var Header = {
         prevDirection = direction;
       }
     };
-
     window.addEventListener("scroll", checkScroll);
   }
 };
