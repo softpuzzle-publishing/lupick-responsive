@@ -59,52 +59,64 @@
         <main id="main">
           <!-- 실컨텐츠 -->
 
+          <!-- 리뷰에 대한 이벤트 -->
           <div class="my-event-list img-first">
-            <div class="item">
-              <div class="item-body">
-                <div class="d-flex align-items-center">
-                  <div class="img">
-                    <img src="../../assets/images/@portrait.jpg" alt="" />
-                  </div>
-                  <div class="info">
-                    <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
-                    <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
-                    <button type="button" class="btn btn-outline-dark btn-round btn-md w-100 font-14px fw-bold" onclick="location.href='my_event_review_form.html'">리뷰쓰기</button>
-                  </div>
+            <div class="item-body">
+              <div class="d-flex align-items-center">
+                <div class="img">
+                  <img src="../../assets/images/@portrait.jpg" alt="" />
                 </div>
-              </div>
-            </div>
-
-            <div class="item">
-              <div class="item-body">
-                <div class="d-flex align-items-center">
-                  <div class="img">
-                    <img src="../../assets/images/@portrait.jpg" alt="" />
-                  </div>
-                  <div class="info">
-                    <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
-                    <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
-                    <button type="button" class="btn btn-outline-dark btn-round btn-md w-100 font-14px fw-bold" onclick="location.href='my_event_review_form.html'">리뷰쓰기</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="item">
-              <div class="item-body">
-                <div class="d-flex align-items-center">
-                  <div class="img">
-                    <img src="../../assets/images/@portrait.jpg" alt="" />
-                  </div>
-                  <div class="info">
-                    <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
-                    <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
-                    <button type="button" class="btn btn-outline-dark btn-round btn-md w-100 font-14px fw-bold" onclick="location.href='my_event_review_form.html'">리뷰쓰기</button>
-                  </div>
+                <div class="info">
+                  <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
+                  <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
+                  <button type="button" class="btn btn-outline-secondary btn-round btn-md w-100 font-14px fw-bold bg-secondary-light">포토리뷰 500P / 일반리뷰 100P</button>
                 </div>
               </div>
             </div>
           </div>
+          <!-- //리뷰에 대한 이벤트 -->
+
+          <!-- 리뷰 작성 폼 -->
+          <div class="review-form">
+            <div class="reveiw-form-title">
+              <p>키워드를 선택해 만족도를 알려주세요.</p>
+              <small>(중복 선택 가능)</small>
+            </div>
+            <div class="form-check button">
+              <input type="checkbox" value="" id="chkKeyword1" name="chkKeyword" />
+              <label for="chkKeyword1">포장이 꼼꼼해요</label>
+            </div>
+            <div class="form-check button">
+              <input type="checkbox" value="" id="chkKeyword2" name="chkKeyword" />
+              <label for="chkKeyword2">조리 식품이 맛있어요</label>
+            </div>
+
+            <div class="reveiw-form-title">
+              <p>사진 업로드</p>
+              <small>(최대 5장까지)</small> <span class="badge secondary round">500P 지급!</span>
+            </div>
+            <div class="review-form-title-desc">상품과 무관한 사진을 첨부한 리뷰는 통보없이 삭제 및 적립 혜택이 회수됩니다.</div>
+            <div class="form-photo-upload">
+              <button type="button" class="btn-upload"><i></i><span>사진 업로드</span></button>
+              <div class="uploded-photos">
+                <div class="item"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                <div class="item"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+              </div>
+            </div>
+
+            <div class="reveiw-form-title">
+              <p>리뷰를 작성해주세요.</p>
+            </div>
+            <div class="textarea round">
+              <textarea rows="2" class="form-control" placeholder="상품을 사용하시면서 느낀점을 후기로 남겨주세요." maxlength="300"></textarea>
+              <div class="byte"><span>0</span>/300자</div>
+            </div>
+
+            <div class="bottom-buttons">
+              <button type="button" class="btn btn-dark btn-round btn-lg w-100">리뷰 등록하기</button>
+            </div>
+          </div>
+          <!-- //리뷰 작성 폼 -->
 
           <!-- //실컨텐츠 -->
         </main>

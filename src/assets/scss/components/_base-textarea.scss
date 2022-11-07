@@ -3,6 +3,7 @@
   transition: border-color .15s ease-in-out;
   .byte{text-align: right;font-size: 12px;line-height: 1.6666;color: $gray;margin-top: 10px;}
   &.active{border-color: $dark;}
+  &.round{border-radius: 7px;}
 }
 textarea {
   &.form-control {
