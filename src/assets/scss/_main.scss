@@ -143,8 +143,14 @@
 
 .main-slideup-banner{
   position: relative;border-radius: 7px 7px 0 0;overflow: hidden;
+  .item{position: relative;}
   img{width: 100%;object-fit: contain;}
   .btn.w-100{position: absolute;left: 20px;right: 20px;bottom: 30px;width: auto !important;}
+  .swiper-pagination{
+    bottom: 91px;
+    .swiper-pagination-bullet{width: 7px;height: 7px;background: rgba(255,255,255,.3);opacity: 1;}
+    .swiper-pagination-bullet-active{background: #fff;}
+  }
 }
 
 .alarm-list{

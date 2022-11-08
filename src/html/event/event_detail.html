@@ -9,8 +9,8 @@
         var photosSwiper = [];
         $(".reviews .photos .swiper").each(function (i) {
           if ($(this).find(".swiper-slide").length > 4) {
+            // eslint-disable-next-line
             photosSwiper[i] = new Swiper($(this)[0], {
-              // eslint-disable-line
               slidesPerView: 4.5,
               freeMode: true,
               spaceBetween: 5,
@@ -32,8 +32,8 @@
         // 모달이 열릴때 swiper 실행
         var modalReviewSwiper;
         $("#modal-review").on("shown.bs.modal", function (event) {
+          // eslint-disable-next-line
           modalReviewSwiper = new Swiper(".modal-review .swiper", {
-            // eslint-disable-line
             initialSlide: photoIdx,
             pagination: {
               el: ".review-swiper-pagination",
@@ -50,7 +50,8 @@
 
         //리뷰 내용 100자까지 ... 처리
         const maxLength = 95;
-        let str = "하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다. 하나를 둘이서 갈라먹어서 하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다. 하나를 둘이서 갈라먹어서 하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다.";
+        let str =
+          "하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다. 하나를 둘이서 갈라먹어서 하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다. 하나를 둘이서 갈라먹어서 하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다.";
         let strShort;
         if (str.length > maxLength) {
           strShort = str.substr(0, maxLength - 2) + "...";
@@ -134,19 +135,21 @@
               <p>이벤트상품 제작과 관련한 이슈로 초기 모집 때 프리오더(선주문) 방식으로 판매가 진행될 수 있습니다.</p>
               <p>이벤트 모집이 완료 후 구매 취소가 불가합니다.</p>
             </div>
-            <div class="event-shipping-info-detail">
-              <h2 class="collapse-title">이벤트 정보</h2>
-              <a href="#collapse-info-detail" role="button" class="toggler" aria-label="이벤트 정보 토글" data-bs-toggle="collapse"><i class="icon-arr-down"></i></a>
-              <div class="collapse" id="collapse-info-detail">
-                <ul>
-                  <li><span>이벤트코드</span> <span id="eventCd">LEFAS211200009</span></li>
-                  <li><span>구매개수</span> <span>일반상품 구매개수는 1인당 1개로 제한</span></li>
-                  <li><span>결제취소</span> <span>남은 시간 12시간부터 결제취소 불가능</span></li>
-                  <li><span>이벤트마감</span> <span>기간 내 준비된 일반상품 모두 소진 시</span></li>
-                  <li><span>이벤트미달</span> <span>이벤트 참여율이 100% 미만으로 마감될 경우 지정된 포인트 보상</span></li>
-                  <li><span>이벤트기간</span> <span>2021.12.17 오후 5시 ~ 2021.12.17 오후 5시</span></li>
-                </ul>
-              </div>
+          </div>
+          <div class="event-shipping-info-detail">
+            <h2 class="collapse-title">이벤트 정보</h2>
+            <a href="#collapse-info-detail" role="button" class="toggler" aria-label="이벤트 정보 토글" data-bs-toggle="collapse"
+              ><i class="icon-arr-down"></i
+            ></a>
+            <div class="collapse" id="collapse-info-detail">
+              <ul>
+                <li><span>이벤트코드</span> <span id="eventCd">LEFAS211200009</span></li>
+                <li><span>구매개수</span> <span>일반상품 구매개수는 1인당 1개로 제한</span></li>
+                <li><span>결제취소</span> <span>남은 시간 12시간부터 결제취소 불가능</span></li>
+                <li><span>이벤트마감</span> <span>기간 내 준비된 일반상품 모두 소진 시</span></li>
+                <li><span>이벤트미달</span> <span>이벤트 참여율이 100% 미만으로 마감될 경우 지정된 포인트 보상</span></li>
+                <li><span>이벤트기간</span> <span>2021.12.17 오후 5시 ~ 2021.12.17 오후 5시</span></li>
+              </ul>
             </div>
           </div>
           <!-- //Info. -->
@@ -209,7 +212,9 @@
                     </div>
                   </div>
                   <div class="option">[옵션] 감자볶음밥</div>
-                  <div class="content">하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다</div>
+                  <div class="content">
+                    하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다
+                  </div>
                 </div>
                 <div class="item">
                   <div class="user">
@@ -220,7 +225,9 @@
                     </div>
                   </div>
                   <div class="option">[옵션] 감자볶음밥</div>
-                  <div class="content">하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다</div>
+                  <div class="content">
+                    하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다
+                  </div>
                 </div>
                 <div class="item">
                   <div class="user">
@@ -282,7 +289,10 @@
                 <img src="@@webRoot/assets/images/@landscape.jpg" alt="" />
               </div>
               <div class="title">하이브로우 MINI CARRIER TABLE</div>
-              <div class="desc">루픽과 하이브로우가 드디어 만났다! 하이브로우의 라이프 스타일과 루픽의 ‘펀’함이 만나 스페셜 제품이 탄생했습니다. 단 7777개만 생산하고 에디션 넘버까지 각인됩니다!</div>
+              <div class="desc">
+                루픽과 하이브로우가 드디어 만났다! 하이브로우의 라이프 스타일과 루픽의 ‘펀’함이 만나 스페셜 제품이 탄생했습니다. 단 7777개만 생산하고 에디션
+                넘버까지 각인됩니다!
+              </div>
               <div class="info">
                 <ul>
                   <li><span class="bold">가격</span> <span>배송비</span></li>
@@ -311,7 +321,10 @@
                 <span class="badge dark">75,600,000원</span>
               </div>
               <p class="text-guide">*이벤트상품 금액은 판매가 기준으로 상이할 수 있습니다.</p>
-              <div class="desc">루픽과 하이브로우의 만남! 하이브로우의 라이프 스타일과 루픽의 ‘펀’함이 만나 스페셜 제품이 탄생했습니다. 단 7777개만 생산하고 에디션 넘버까지 각인됩니다!</div>
+              <div class="desc">
+                루픽과 하이브로우의 만남! 하이브로우의 라이프 스타일과 루픽의 ‘펀’함이 만나 스페셜 제품이 탄생했습니다. 단 7777개만 생산하고 에디션 넘버까지
+                각인됩니다!
+              </div>
               <div class="lupick-reward-items">
                 <div class="item">
                   <div class="info">
@@ -400,8 +413,8 @@
           <div class="bottom-buttons">
             <p class="stock-count"><span>16,000</span>개 모집 중, <strong>302</strong>개 남음</p>
             <button type="button" class="btn btn-dark btn-lg w-100 px-0" data-bs-toggle="modal" data-bs-target="#modal-event-option">구매하기</button>
-            <button type="button" class="btn btn-dark btn-lg w-100 px-0"><i class="icon-bell-white mr-5px"></i>알림신청</button>
-            <button type="button" class="btn btn-dark btn-lg w-100 px-0 text-primary"><i class="icon-alarm-yellow mr-5px"></i>등록완료</button>
+            <!-- <button type="button" class="btn btn-dark btn-lg w-100 px-0"><i class="icon-bell-white mr-5px"></i>알림신청</button>
+            <button type="button" class="btn btn-dark btn-lg w-100 px-0 text-primary"><i class="icon-alarm-yellow mr-5px"></i>등록완료</button> -->
           </div>
           <!-- //하단 버튼 -->
         </div>

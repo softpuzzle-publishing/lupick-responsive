@@ -25,7 +25,7 @@ body.modal-open{
   &.white{background-image: url('../images/icon-x-white.svg');}
   &.circle{
     display: block;width: 30px;height: 30px;border-radius: 50%;background: rgba(0,0,0,0.5);
-    position: absolute;right: 20px;top: 20px;z-index: 1;
+    position: absolute;right: 20px;top: 20px;z-index: 2;
     .icon-x-white{width: 16px;height: 16px;}
   }
   .modal-content > &{

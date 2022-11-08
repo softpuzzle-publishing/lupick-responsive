@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>btn_delete</title>
+    <g id="-iOS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="이벤트-상세---수량-초과" transform="translate(-337.000000, -532.000000)">
+            <g id="옵션-선택" transform="translate(0.000000, 468.000000)">
+                <g id="옵션1" transform="translate(20.000000, 64.000000)">
+                    <g id="btn_delete" transform="translate(317.000000, 0.000000)">
+                        <rect id="Rectangle" x="0" y="0" width="18" height="18"></rect>
+                        <path d="M12.8888889,4 L14,5.11111111 L10.111,8.999 L14,12.8888889 L12.8888889,14 L8.999,10.111 L5.11111111,14 L4,12.8888889 L7.888,9 L4,5.11111111 L5.11111111,4 L9,7.888 L12.8888889,4 Z" id="Combined-Shape" fill="#000000"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -294,29 +294,22 @@
               <option value="">투표 알림</option>
               <option value="">루픽 알림</option>
             </select>
-            <select class="form-select">
+            <select class="form-select static w-100">
               <option selected>옵션 선택</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-            </select>
-            <select class="form-select w-100">
-              <option selected>옵션 선택</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
+              <option value="">추멘세끼 볶음밥 (감자)</option>
+              <option value="">추멘세끼 볶음밥 (햄)</option>
+              <option value="">추멘세끼 볶음밥 (감자)</option>
+              <option value="">추멘세끼 볶음밥 (햄)</option>
+              <option value="">추멘세끼 볶음밥 (감자)</option>
+              <option value="">추멘세끼 볶음밥 (햄)</option>
             </select>
             <div class="form-select-zone"></div>
-            <script>
-              $('.form-select').each(function () {
-                var zone = $(this).next('.form-select-zone');
-                if (!$(this).next('.form-select-zone')) {
-                  $(this).selectmenu({});
-                }
-                $(this).selectmenu({
-                  // appenTo 선택 엘리먼트에 셀렉트박스 넣음
-                  appendTo: zone,
-                });
-              });
-            </script>
+            <div class="form-select-zone"></div>
+            <select class="form-select form-select-lg w-100">
+              <option selected>배송 메모 (선택)</option>
+              <option value="">배송 전에 미리 연락 바랍니다.</option>
+              <option value="">부재 시 경비실에 맡겨주세요.</option>
+            </select>
           </div>
         </section>
         <section id="g6">

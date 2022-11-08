@@ -23,7 +23,7 @@ var Common = {
             at: "right bottom"
           }
         }).selectmenu("menuWidget").addClass("text-style");
-      } else if ($(this).next().hasClass(".form-select-zone")) {
+      } else if ($(this).hasClass("static")) {
         var zone = $(this).next(".form-select-zone");
         $(this).selectmenu({
           // appenTo 선택 엘리먼트에 셀렉트박스 넣음

@@ -44,3 +44,7 @@
 }
 
 .bg-secondary-light{background-color: rgba(74, 192, 255, 0.1); }
+
+.overflow-y-scroll{
+  overflow-x: hidden;max-height: 100%;
+}

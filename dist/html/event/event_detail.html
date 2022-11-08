@@ -39,8 +39,8 @@
         var photosSwiper = [];
         $('.reviews .photos .swiper').each(function (i) {
           if ($(this).find('.swiper-slide').length > 4) {
+            // eslint-disable-next-line
             photosSwiper[i] = new Swiper($(this)[0], {
-              // eslint-disable-line
               slidesPerView: 4.5,
               freeMode: true,
               spaceBetween: 5,
@@ -62,8 +62,8 @@
         // 모달이 열릴때 swiper 실행
         var modalReviewSwiper;
         $('#modal-review').on('shown.bs.modal', function (event) {
+          // eslint-disable-next-line
           modalReviewSwiper = new Swiper('.modal-review .swiper', {
-            // eslint-disable-line
             initialSlide: photoIdx,
             pagination: {
               el: '.review-swiper-pagination',
@@ -187,19 +187,19 @@
               <p>이벤트상품 제작과 관련한 이슈로 초기 모집 때 프리오더(선주문) 방식으로 판매가 진행될 수 있습니다.</p>
               <p>이벤트 모집이 완료 후 구매 취소가 불가합니다.</p>
             </div>
-            <div class="event-shipping-info-detail">
-              <h2 class="collapse-title">이벤트 정보</h2>
-              <a href="#collapse-info-detail" role="button" class="toggler" aria-label="이벤트 정보 토글" data-bs-toggle="collapse"><i class="icon-arr-down"></i></a>
-              <div class="collapse" id="collapse-info-detail">
-                <ul>
-                  <li><span>이벤트코드</span> <span id="eventCd">LEFAS211200009</span></li>
-                  <li><span>구매개수</span> <span>일반상품 구매개수는 1인당 1개로 제한</span></li>
-                  <li><span>결제취소</span> <span>남은 시간 12시간부터 결제취소 불가능</span></li>
-                  <li><span>이벤트마감</span> <span>기간 내 준비된 일반상품 모두 소진 시</span></li>
-                  <li><span>이벤트미달</span> <span>이벤트 참여율이 100% 미만으로 마감될 경우 지정된 포인트 보상</span></li>
-                  <li><span>이벤트기간</span> <span>2021.12.17 오후 5시 ~ 2021.12.17 오후 5시</span></li>
-                </ul>
-              </div>
+          </div>
+          <div class="event-shipping-info-detail">
+            <h2 class="collapse-title">이벤트 정보</h2>
+            <a href="#collapse-info-detail" role="button" class="toggler" aria-label="이벤트 정보 토글" data-bs-toggle="collapse"><i class="icon-arr-down"></i></a>
+            <div class="collapse" id="collapse-info-detail">
+              <ul>
+                <li><span>이벤트코드</span> <span id="eventCd">LEFAS211200009</span></li>
+                <li><span>구매개수</span> <span>일반상품 구매개수는 1인당 1개로 제한</span></li>
+                <li><span>결제취소</span> <span>남은 시간 12시간부터 결제취소 불가능</span></li>
+                <li><span>이벤트마감</span> <span>기간 내 준비된 일반상품 모두 소진 시</span></li>
+                <li><span>이벤트미달</span> <span>이벤트 참여율이 100% 미만으로 마감될 경우 지정된 포인트 보상</span></li>
+                <li><span>이벤트기간</span> <span>2021.12.17 오후 5시 ~ 2021.12.17 오후 5시</span></li>
+              </ul>
             </div>
           </div>
           <!-- //Info. -->
@@ -453,8 +453,8 @@
           <div class="bottom-buttons">
             <p class="stock-count"><span>16,000</span>개 모집 중, <strong>302</strong>개 남음</p>
             <button type="button" class="btn btn-dark btn-lg w-100 px-0" data-bs-toggle="modal" data-bs-target="#modal-event-option">구매하기</button>
-            <button type="button" class="btn btn-dark btn-lg w-100 px-0"><i class="icon-bell-white mr-5px"></i>알림신청</button>
-            <button type="button" class="btn btn-dark btn-lg w-100 px-0 text-primary"><i class="icon-alarm-yellow mr-5px"></i>등록완료</button>
+            <!-- <button type="button" class="btn btn-dark btn-lg w-100 px-0"><i class="icon-bell-white mr-5px"></i>알림신청</button>
+            <button type="button" class="btn btn-dark btn-lg w-100 px-0 text-primary"><i class="icon-alarm-yellow mr-5px"></i>등록완료</button> -->
           </div>
           <!-- //하단 버튼 -->
         </div>
@@ -650,11 +650,40 @@
     <div class="modal slide-up" tabindex="-1" id="modal-main-slideup">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-body p-0">
+          <div class="modal-body p-0 bg-transparent">
             <button type="button" class="btn-close circle" aria-label="Close" data-bs-dismiss="modal"><i class="icon-x-white"></i></button>
             <div class="main-slideup-banner">
-              <img src="../../assets/images/@banner-slideup.png" alt="" />
-              <button type="button" class="btn btn-dark btn-round btn-lg w-100">이벤트 확인하기</button>
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="item">
+                      <img src="../../assets/images/@banner-slideup.png" alt="" />
+                      <button type="button" class="btn btn-dark btn-round btn-lg w-100">이벤트 확인하기</button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="item">
+                      <img src="../../assets/images/@banner-slideup.png" alt="" />
+                      <button type="button" class="btn btn-dark btn-round btn-lg w-100">이벤트 확인하기</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination swiper-pagination-main-slideup-banner"></div>
+              </div>
+              <script>
+                // 메인 슬라이드업 배너 swiper
+                $('#modal-main-slideup').on('shown.bs.modal', function (event) {
+                  // eslint-disable-next-line
+                  const mainTopBannerSwiper = new Swiper('.main-slideup-banner .swiper', {
+                    observeParents: true,
+                    observeSlideChildren: true,
+                    observer: true,
+                    pagination: {
+                      el: '.swiper-pagination-main-slideup-banner',
+                    },
+                  });
+                });
+              </script>
             </div>
           </div>
         </div>
@@ -854,7 +883,10 @@
           <div class="modal-body">
             <div class="fail-message">
               <strong>나의 럭키번호란?</strong>
-              <p class="text-dark">럭키번호는 랜덤으로 생성되는 나만의 고유번호입니다. 구매 후 부여받은 투표권을 가지고 나의 럭키번호를 예측해서 투표를 해주시면 됩니다. <br /><br />이제 투표하러 가볼까요?</p>
+              <p class="text-dark">
+                럭키번호는 랜덤으로 생성되는 나만의 고유번호입니다. 구매 후 부여받은 투표권을 가지고 나의 럭키번호를 예측해서 투표를 해주시면 됩니다.
+                <br /><br />이제 투표하러 가볼까요?
+              </p>
               <button type="button" class="btn btn-dark btn-lg btn-round" data-bs-dismiss="modal">확인</button>
             </div>
           </div>
@@ -988,28 +1020,91 @@
         <div class="modal-content">
           <button type="button" class="btn-close-line" data-bs-dismiss="modal" aria-label="Close"></button>
           <div class="modal-body">
-            <div class="share-event">
-              <div class="img">
-                <img src="../../assets/images/@portrait.jpg" alt="" />
+            <div class="overflow-y-scroll">
+              <p class="purchasable">총<span>3</span>개까지 구매할 수 있어요!</p>
+              <div class="options">
+                <div class="item">
+                  <select class="form-select static w-100">
+                    <option selected>옵션 선택</option>
+                    <option value="">추멘세끼 볶음밥 (감자)</option>
+                    <option value="">추멘세끼 볶음밥 (햄)</option>
+                    <option value="">추멘세끼 볶음밥 (감자)</option>
+                    <option value="">추멘세끼 볶음밥 (햄)</option>
+                    <option value="">추멘세끼 볶음밥 (감자)</option>
+                    <option value="">추멘세끼 볶음밥 (햄)</option>
+                  </select>
+                  <div class="form-select-zone"></div>
+                </div>
+                <div class="item">
+                  <select class="form-select static w-100">
+                    <option selected>옵션 선택 2</option>
+                    <option value="">추멘세끼 볶음밥 (감자)</option>
+                    <option value="">추멘세끼 볶음밥 (햄)</option>
+                  </select>
+                  <div class="form-select-zone"></div>
+                </div>
               </div>
-              <div class="info">
-                <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
-                <div class="link">lupick.onelink.me</div>
+              <div class="selected-option-quantity">
+                <div class="selected-option">
+                  <p class="title">추멘세끼 볶음밥 (감자)추멘세끼 볶음밥 (감자)추멘세끼 볶음밥 (감자)추멘세끼 볶음밥 (감자)</p>
+                  <button type="button" aria-label="삭제"></button>
+                </div>
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="quantity">
+                    <button class="decrement" aria-label="Decrease Value"><i class="icon-decrease"></i></button>
+                    <input type="text" value="1" max="5" min="1" readonly />
+                    <button class="increment" aria-label="Increase Value"><i class="icon-increase"></i></button>
+                  </div>
+                  <div class="quantity-sum">57,000원</div>
+                </div>
               </div>
-            </div>
-            <div class="share-list">
-              <a href="javascript:;">
-                <img src="../../assets/images/share-url.png" alt="URL" />
-              </a>
-              <a href="javascript:;">
-                <img src="../../assets/images/share-kakaotalk.png" alt="kakaotalk" />
-              </a>
-              <a href="javascript:;">
-                <img src="../../assets/images/share-facebook.png" alt="facebook" />
-              </a>
-              <a href="javascript:;">
-                <img src="../../assets/images/share-line.png" alt="line" />
-              </a>
+              <div class="selected-option-quantity">
+                <div class="selected-option">
+                  <p class="title">추멘세끼 볶음밥 (햄)</p>
+                  <button type="button" aria-label="삭제"><i></i></button>
+                </div>
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="quantity">
+                    <button class="decrement" aria-label="Decrease Value"><i class="icon-decrease"></i></button>
+                    <input type="text" value="1" max="5" min="1" readonly />
+                    <button class="increment" aria-label="Increase Value"><i class="icon-increase"></i></button>
+                  </div>
+                  <div class="quantity-sum">57,000원</div>
+                </div>
+              </div>
+              <script>
+                /* option quantity */
+                $('.quantity button').on('click', function () {
+                  const max = parseInt($(this).siblings('input').attr('max'));
+                  const min = parseInt($(this).siblings('input').attr('min'));
+                  let count = $(this).siblings('input').val();
+
+                  if ($(this).hasClass('increment')) {
+                    if (count < max) {
+                      count++;
+                      $(this).siblings('input').val(count);
+                      $(this).siblings('.decrement').prop('disabled', false);
+                      $(this).prop('disabled', false);
+                    }
+                    if (count == max) {
+                      $(this).prop('disabled', true);
+                    }
+                  } else if ($(this).hasClass('decrement')) {
+                    if (count > min) {
+                      count--;
+                      $(this).siblings('input').val(count);
+                      $(this).siblings('.increment').prop('disabled', false);
+                      $(this).prop('disabled', false);
+                    }
+                    if (count == min) {
+                      $(this).prop('disabled', true);
+                    }
+                  }
+                });
+              </script>
+              <div class="bottom-buttons">
+                <button type="button" class="btn btn-dark btn-lg w-100 px-0">결제하고 참여하기</button>
+              </div>
             </div>
           </div>
         </div>
