@@ -495,7 +495,7 @@ textarea.form-control::placeholder {
 }
 .form-check.inline {
   display: inline-block;
-  margin-right: 7px;
+  margin-right: 12px;
   vertical-align: middle;
 }
 .form-check.square [type=checkbox]:checked {
@@ -4789,6 +4789,51 @@ progress {
 .simple-pay-list input[type=radio]:checked + label::before {
   content: "";
   border: 2px solid #000;
+}
+
+.my-exchange-item {
+  margin-bottom: 25px;
+}
+.my-exchange-item a {
+  font-size: 16px;
+  line-height: 1.625;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.info-list {
+  font-size: 16px;
+  overflow: hidden;
+}
+.info-list dt, .info-list dd {
+  margin-top: 5px;
+}
+.info-list dt:first-of-type,
+.info-list dd:first-of-type {
+  margin-top: 0;
+}
+.info-list dt {
+  color: #666;
+  clear: both;
+  float: left;
+}
+.info-list dd {
+  font-weight: 700;
+  float: right;
+}
+
+.process-finish {
+  padding: 65px 0 180px;
+}
+.process-finish .heading-text {
+  display: block;
+  font-size: 40px;
+  line-height: 1.25;
+  margin-bottom: 30px;
+}
+.process-finish .desc {
+  font-size: 13px;
+  line-height: 1.846;
 }
 
 body.body-main #header .header-sub {

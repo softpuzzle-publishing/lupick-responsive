@@ -42,7 +42,7 @@
             <button type="button" class="btn-back" aria-label="뒤로" onclick="window.history.back()">
               <i class="icon-back"></i>
             </button>
-            <h1 class="header-title">결제 방법</h1>
+            <h1 class="header-title">결제하기</h1>
             <!-- 이벤트 상세에서만 노출 -->
             <button type="button" aria-label="공유" data-bs-toggle="modal" data-bs-target="#modal-event-share" class="btn-share"><i class="icon-share"></i></button>
             <!-- //이벤트 상세에서만 노출 -->
@@ -64,60 +64,83 @@
           <!-- 실컨텐츠 -->
 
           <div class="container pt-20px">
+            <!-- 결제 금액 -->
             <div class="form-group-wrap">
+              <div class="form-group-header">
+                <div class="label">결제 금액</div>
+                <div class="sum-pay">16,800원</div>
+              </div>
               <div class="form-group-body">
-                <div class="form-group">
-                  <label for="formCardNumber" class="form-label font-16px">카드 번호</label>
-                  <div class="row gx-10px">
-                    <div class="col">
-                      <input type="text" class="form-control form-control-lg border w-100 text-center font-16px px-0" placeholder="0000" id="formCardNumber" inputmode="numeric" maxlength="4" />
-                    </div>
-                    <div class="col">
-                      <input type="password" class="form-control form-control-lg border w-100 text-center font-16px px-0" placeholder="0000" id="formCardNumber2" inputmode="numeric" maxlength="4" />
-                    </div>
-                    <div class="col">
-                      <input type="password" class="form-control form-control-lg border w-100 text-center font-16px px-0" placeholder="0000" id="formCardNumber3" inputmode="numeric" maxlength="4" />
-                    </div>
-                    <div class="col">
-                      <input type="text" class="form-control form-control-lg border w-100 text-center font-16px px-0" placeholder="0000" id="formCardNumber4" inputmode="numeric" maxlength="4" />
-                    </div>
-                  </div>
+                <dl class="info-list between">
+                  <dt>반품 및 배송비</dt>
+                  <dd>5,000 원</dd>
+                </dl>
+                <p class="help-text">*제주 및 도서산간 지역 : 추가 배송비 3,000원 발생</p>
+              </div>
+            </div>
+            <!-- //결제 금액 -->
+            <!-- 결제 방법 -->
+            <div class="form-group-wrap">
+              <div class="form-group-header">
+                <div class="label">결제 방법</div>
+                <!-- 결제 방법 선택 후 -->
+                <button type="button" class="btn btn-muted btn-sm btn-flat text-gray" onclick="location.href='../payment/payment_type.html'">변경하기</button>
+              </div>
+              <div class="form-group-body border-top-0 pt-0">
+                <!-- 결제 방법 선택 전 -->
+                <button type="button" class="btn btn-outline-dark btn-flat btn-lg w-100 fw-normal">+ 결제수단 추가하기</button>
+                <!-- 결제 방법 선택 후 -->
+                <div class="added-payment-type">
+                  <div class="badge dark">루픽페이</div>
+                  <span>[신한] 4890 **** **** 2834</span>
                 </div>
-                <div class="row gx-10px mt-25px">
-                  <div class="col">
-                    <div class="form-group">
-                      <label for="formCardMonth" class="form-label font-16px">유효기간</label>
-                      <div class="row gx-10px">
-                        <div class="col-auto">
-                          <input type="text" class="form-control form-control-lg border text-center font-16px px-0" placeholder="MM" id="formCardMonth" inputmode="numeric" maxlength="2" style="width: 54px" />
-                        </div>
-                        <div class="col-auto">
-                          <input type="text" class="form-control form-control-lg border text-center font-16px px-0" placeholder="YY" id="formCardYear" inputmode="numeric" maxlength="2" style="width: 54px" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="form-group">
-                      <label for="formCardPassword" class="form-label font-16px">비밀번호 앞 2자리</label>
-                      <div class="row row-10 align-items-center">
-                        <div class="col-auto">
-                          <input type="text" class="form-control form-control-lg border text-center font-16px px-0" placeholder="00" id="formCardPassword" inputmode="numeric" maxlength="2" style="width: 54px" />
-                        </div>
-                        <div class="col-auto">**</div>
-                      </div>
-                    </div>
-                  </div>
+                <div class="added-payment-type">
+                  <div class="badge dark">카카오페이</div>
+                  <span><img src="../../assets/images/pay-kakao.svg" alt="" /></span>
                 </div>
-                <div class="form-group mt-25px">
-                  <label for="formCardBirth" class="form-label font-16px">카드 번호주민번호 앞 6자리 <small>*법인카드는 사업자등록번호 10자리</small></label>
-                  <input type="text" class="form-control form-control-lg border text-center font-16px px-0" placeholder="YYMMDD" id="formCardBirth" inputmode="numeric" maxlength="6" style="width: 140px" />
+                <div class="added-payment-type">
+                  <div class="badge dark">네이버페이</div>
+                  <span><img src="../../assets/images/pay-naver.svg" alt="" /></span>
+                </div>
+                <div class="added-payment-type">
+                  <div class="badge dark">토스페이</div>
+                  <span><img src="../../assets/images/pay-toss.svg" alt="" /></span>
+                </div>
+                <div class="added-payment-type">
+                  <div class="badge dark">페이코</div>
+                  <span><img src="../../assets/images/pay-payco.svg" alt="" /></span>
                 </div>
               </div>
             </div>
+            <!-- //결제 금액 -->
+            <!-- 할부 방법 -->
+            <div class="form-group-wrap">
+              <div class="form-group-header">
+                <div class="label">할부 방법</div>
+              </div>
+              <div class="form-group-body">
+                <select class="form-select form-select-lg w-100">
+                  <option value="">일시불</option>
+                  <option value="">2개월</option>
+                  <option value="">3개월</option>
+                  <option value="">4개월</option>
+                </select>
+              </div>
+            </div>
+            <!-- //할부 방법 -->
+            <!-- 결제 정보 동의 -->
+            <div class="form-group-wrap">
+              <div class="form-group-body">
+                <div class="form-check">
+                  <input type="checkbox" id="orderAgree" />
+                  <label for="orderAgree" class="fw-normal">결제 정보를 확인하였으며, 동의합니다. (필수)</label>
+                </div>
+              </div>
+            </div>
+            <!-- //결제 정보 동의 -->
             <!-- 하단 버튼 -->
             <div class="bottom-buttons">
-              <button type="button" class="btn btn-dark btn-lg w-100 px-0" onclick="location.href='payment_type.html'">등록하기</button>
+              <button type="button" class="btn btn-dark btn-lg w-100 px-0" onclick="location.href='my_event_exchange_finish.html'">결제하기</button>
             </div>
             <!-- //하단 버튼 -->
           </div>
