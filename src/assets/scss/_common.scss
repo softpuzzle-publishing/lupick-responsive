@@ -64,6 +64,10 @@
   }
 }
 
+.form{
+  .form-control + .form-control{margin-top: 10px;}
+}
+
 .form-text{margin-top: 4px;font-size: 10px;color: $gray-light;}
 
 .form-desc{font-size: 14px;color: rgba(0,0,0,0.5);line-height: 1.714;}
@@ -181,10 +185,11 @@
 .address-item{
   padding: 30px 0;
   .zipcode{font-weight: 700;font-size: 16px;line-height: 1.5;}
-  .addr{font-size: 16px;line-height: 1.5;}
+  .addr{font-size: 16px;}
   .name{font-size: 13px;color: $gray;font-weight: 700;line-height: 1.153;margin-top: 5px;}
   .badge{margin-top: 10px;}
   & + .address-item{border-top: 1px solid $border-color;}
+  .form-group-body &{padding: 0 0 20px 0;}
 }
 
 .guide-text{

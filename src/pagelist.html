@@ -1,435 +1,434 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <title>(pagelist)Lupick</title>
+    @@include('@@webRoot/html/_include/_head.html')
+    <style>
+      body {
+        padding: 20px;
+        position: relative;
+        background: #fff;
+        overflow-y: auto;
+        height: auto !important;
+        padding-bottom: calc(constant(safe-area-inset-bottom) + 20px);
+        padding-bottom: calc(env(safe-area-inset-bottom) + 20px);
+      }
 
-<head>
-  <title>(pagelist)Lupick</title>
-  @@include('@@webRoot/html/_include/_head.html')
-  <style>
-    body {
-      padding: 20px;
-      position: relative;
-      background: #fff;
-      overflow-y: auto;
-      height: auto !important;
-      padding-bottom: calc(constant(safe-area-inset-bottom) + 20px);
-      padding-bottom: calc(env(safe-area-inset-bottom) + 20px);
-    }
+      * {
+        margin: 0;
+        padding: 0;
+        font-size: 12px;
+        color: #222;
+        line-height: 1.5em;
+        font-family: "NanumGothic";
+      }
 
-    * {
-      margin: 0;
-      padding: 0;
-      font-size: 12px;
-      color: #222;
-      line-height: 1.5em;
-      font-family: "NanumGothic";
-    }
+      h1 {
+        margin-bottom: 20px;
+        font-size: 24px;
+        text-align: center;
+      }
 
-    h1 {
-      margin-bottom: 20px;
-      font-size: 24px;
-      text-align: center;
-    }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0 auto;
+        max-width: 1500px;
+      }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 0 auto;
-      max-width: 1500px;
-    }
+      table th,
+      table td {
+        border: 1px solid #959b97;
+        padding: 2px 10px;
+        word-break: keep-all;
+      }
 
-    table th,
-    table td {
-      border: 1px solid #959b97;
-      padding: 2px 10px;
-      word-break: keep-all;
-    }
+      table th {
+        background: #000000;
+        color: rgb(255, 246, 152);
+        padding: 10px;
+        font-size: 14px;
+      }
 
-    table th {
-      background: #000000;
-      color: rgb(255, 246, 152);
-      padding: 10px;
-      font-size: 14px;
-    }
+      table td a {
+        color: #1f5a2c;
+        text-decoration: none;
+      }
 
-    table td a {
-      color: #1f5a2c;
-      text-decoration: none;
-    }
+      table td a:hover {
+        text-decoration: underline;
+      }
 
-    table td a:hover {
-      text-decoration: underline;
-    }
+      table tbody tr:hover {
+        background-color: #fffcea;
+      }
 
-    table tbody tr:hover {
-      background-color: #fffcea;
-    }
+      .noteTable {
+        display: table;
+        width: 100%;
+      }
 
-    .noteTable {
-      display: table;
-      width: 100%;
-    }
+      .noteTable.date {
+        display: table-cell;
+        color: #ff523c;
+        width: 40px;
+      }
 
-    .noteTable.date {
-      display: table-cell;
-      color: #ff523c;
-      width: 40px;
-    }
+      .noteTable.note {
+        display: table-cell;
+      }
 
-    .noteTable.note {
-      display: table-cell;
-    }
+      .center {
+        text-align: center;
+      }
 
-    .center {
-      text-align: center;
-    }
+      .bg {
+        background: #fff5f5;
+      }
 
-    .bg {
-      background: #fff5f5;
-    }
+      ul.float {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+      }
 
-    ul.float {
-      position: absolute;
-      right: 20px;
-      top: 20px;
-    }
+      ul.floatli {
+        list-style: none;
+        border: 1px solid #ccc;
+        padding: 2px 5px;
+        display: inline-block;
+      }
 
-    ul.floatli {
-      list-style: none;
-      border: 1px solid #ccc;
-      padding: 2px 5px;
-      display: inline-block;
-    }
+      .end {
+        background: #ffffcc;
+      }
 
-    .end {
-      background: #ffffcc;
-    }
+      .ing {
+        background: #f6b1a6;
+      }
 
-    .ing {
-      background: #f6b1a6;
-    }
+      .list {
+        text-align: center;
+        padding: 0 0 20px;
+      }
 
-    .list {
-      text-align: center;
-      padding: 0 0 20px;
-    }
+      .lista {
+        text-decoration: none;
+        margin: 0 10px;
+      }
 
-    .lista {
-      text-decoration: none;
-      margin: 0 10px;
-    }
+      .lista:hover {
+        text-decoration: underline;
+      }
 
-    .lista:hover {
-      text-decoration: underline;
-    }
+      .box {
+        border: 2px dotted #aaa;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        line-height: 1.6;
+      }
 
-    .box {
-      border: 2px dotted #aaa;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      text-align: center;
-      line-height: 1.6;
-    }
+      .box > ul {
+        display: inline-block;
+        text-align-last: left;
+      }
+    </style>
+  </head>
 
-    .box>ul {
-      display: inline-block;
-      text-align-last: left;
-    }
-  </style>
-</head>
-
-<body>
-  <h1>Lupick Responsive Web PAGELIST</h1>
-  <table>
-    <thead>
-      <tr>
-        <th></th>
-        <th>Depth 1</th>
-        <th>Depth 2</th>
-        <th>Depth 3</th>
-        <th>Depth 4</th>
-        <th>File</th>
-        <th>pageLink</th>
-        <th></th>
-        <th>Popup&Modal</th>
-      </tr>
-    </thead>
-    <tbody id="pageList">
-      <tr>
-        <td></td>
-        <td>* Guide</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/guide/guide.html">guide.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>* Layout</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/guide/layout.html">layout.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>* Modal</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/guide/modal.html">modal.html</a></td>
-        <td></td>
-        <td>fullscreen/center/slideup/alert</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>에러페이지</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/util/error.html">error.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>HOME</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>/main/</td>
-        <td><a target="_blank" href="@@webRoot/html/main/main.html">main.html</a></td>
-        <td></td>
-        <td>이벤트슬라이드, 알림</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>브랜드관</td>
-        <td></td>
-        <td></td>
-        <td>/brand/</td>
-        <td><a target="_blank" href="@@webRoot/html/brand/brand.html">brand.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>프리&amp;포인트 모아보기</td>
-        <td></td>
-        <td></td>
-        <td>/free_point/</td>
-        <td><a target="_blank" href="@@webRoot/html/free_point/free_point.html">free_point.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>이벤트</td>
-        <td>이벤트 상세</td>
-        <td></td>
-        <td></td>
-        <td>/event/</td>
-        <td><a target="_blank" href="@@webRoot/html/event/event_detail.html">event_detail.html</a></td>
-        <td></td>
-        <td>리뷰상세</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>리뷰 더보기</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/event/event_reviews.html">event_reviews.html</a></td>
-        <td></td>
-        <td>리뷰상세</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>FEED</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>/feed/</td>
-        <td><a target="_blank" href="@@webRoot/html/feed/feed.html">feed.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>루픽스토리</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/feed/feed_lupick_story.html">feed_lupick_story.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>상세</td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/feed/feed_lupick_story_detail.html">feed_lupick_story_detail.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>루피커 인터뷰</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/feed/feed_lupicker_interview.html">feed_lupicker_interview.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>상세</td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/feed/feed_lupicker_interview_detail.html">feed_lupicker_interview_detail.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>My</td>
-        <td>index</td>
-        <td></td>
-        <td></td>
-        <td>/my/</td>
-        <td><a target="_blank" href="@@webRoot/html/my/my.html">my.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>루픽 포인트</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/my/my_point.html">my_point.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>소멸예정 포인트</td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/my/my_point_disppear.html">my_point_disppear.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>참여중 이벤트</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/my/my_event_ing.html">my_event_ing.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>투표 요청</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/my/my_event_votable.html">my_event_votable.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>투표하기</td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/my/my_event_vote.html">my_event_vote.html</a></td>
-        <td></td>
-        <td>루픽투표란?, 나의럭키번호란?, 루픽투표권, 투표완료</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>상품 배송중</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/my/my_event_shipping.html">my_event_shipping.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>구매확정 확인</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/my/my_event_purchasing_confirmation.html">my_event_purchasing_confirmation.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>이벤트 결과</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/my/my_event_result.html">my_event_result.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>투표결과 확인하기</td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/my/my_event_result_confirmation.html">my_event_result_confirmation.html</a></td>
-        <td></td>
-        <td>당첨, 낙첨</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>작성 가능한 리뷰</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/my/my_event_writable_reviews.html">my_event_writable_reviews.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <!-- <tr>
+  <body>
+    <h1>Lupick Responsive Web PAGELIST</h1>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Depth 1</th>
+          <th>Depth 2</th>
+          <th>Depth 3</th>
+          <th>Depth 4</th>
+          <th>File</th>
+          <th>pageLink</th>
+          <th></th>
+          <th>Popup&Modal</th>
+        </tr>
+      </thead>
+      <tbody id="pageList">
+        <tr>
+          <td></td>
+          <td>* Guide</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/guide/guide.html">guide.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>* Layout</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/guide/layout.html">layout.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>* Modal</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/guide/modal.html">modal.html</a></td>
+          <td></td>
+          <td>fullscreen/center/slideup/alert</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>에러페이지</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/util/error.html">error.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>HOME</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>/main/</td>
+          <td><a target="_blank" href="@@webRoot/html/main/main.html">main.html</a></td>
+          <td></td>
+          <td>이벤트슬라이드, 알림</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>브랜드관</td>
+          <td></td>
+          <td></td>
+          <td>/brand/</td>
+          <td><a target="_blank" href="@@webRoot/html/brand/brand.html">brand.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>프리&amp;포인트 모아보기</td>
+          <td></td>
+          <td></td>
+          <td>/free_point/</td>
+          <td><a target="_blank" href="@@webRoot/html/free_point/free_point.html">free_point.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>이벤트</td>
+          <td>이벤트 상세</td>
+          <td></td>
+          <td></td>
+          <td>/event/</td>
+          <td><a target="_blank" href="@@webRoot/html/event/event_detail.html">event_detail.html</a></td>
+          <td></td>
+          <td>리뷰상세, 옵션선택</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>리뷰 더보기</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/event/event_reviews.html">event_reviews.html</a></td>
+          <td></td>
+          <td>리뷰상세</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>FEED</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>/feed/</td>
+          <td><a target="_blank" href="@@webRoot/html/feed/feed.html">feed.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>루픽스토리</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/feed/feed_lupick_story.html">feed_lupick_story.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>상세</td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/feed/feed_lupick_story_detail.html">feed_lupick_story_detail.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>루피커 인터뷰</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/feed/feed_lupicker_interview.html">feed_lupicker_interview.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>상세</td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/feed/feed_lupicker_interview_detail.html">feed_lupicker_interview_detail.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>My</td>
+          <td>index</td>
+          <td></td>
+          <td></td>
+          <td>/my/</td>
+          <td><a target="_blank" href="@@webRoot/html/my/my.html">my.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>루픽 포인트</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/my/my_point.html">my_point.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>소멸예정 포인트</td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/my/my_point_disppear.html">my_point_disppear.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>참여중 이벤트</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/my/my_event_ing.html">my_event_ing.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>투표 요청</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/my/my_event_votable.html">my_event_votable.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>투표하기</td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/my/my_event_vote.html">my_event_vote.html</a></td>
+          <td></td>
+          <td>루픽투표란?, 나의럭키번호란?, 루픽투표권, 투표완료</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>상품 배송중</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/my/my_event_shipping.html">my_event_shipping.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>구매확정 확인</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/my/my_event_purchasing_confirmation.html">my_event_purchasing_confirmation.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>이벤트 결과</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/my/my_event_result.html">my_event_result.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>투표결과 확인하기</td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/my/my_event_result_confirmation.html">my_event_result_confirmation.html</a></td>
+          <td></td>
+          <td>당첨, 낙첨</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>작성 가능한 리뷰</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/my/my_event_writable_reviews.html">my_event_writable_reviews.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <!-- <tr>
         <td></td>
         <td></td>
         <td></td>
@@ -440,290 +439,289 @@
         <td></td>
         <td></td>
       </tr> -->
-      <tr>
-        <td></td>
-        <td></td>
-        <td>선정된 이벤트</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/my/my_event_selected_lupicker.html">my_event_selected_lupicker.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>루피커 정보 입력</td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/my/my_event_selected_lupicker_form.html">my_event_selected_lupicker_form.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>주문 및 참여 내역</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/my/my_event_order_history.html">my_event_order_history.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>취소/교환/반품 내역</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/my/my_event_cancel_history.html">my_event_cancel_history.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>나의 리뷰</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/my/my_event_reviews.html">my_event_reviews.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>프로필 편집</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/my/my_profile.html">my_profile.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>내 정보 관리</td>
-        <td>비밀번호 입력</td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/my/my_info_password.html">my_info_password.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>내 정보 수정</td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/my/my_info.html">my_info.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>배송지 관리</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/my/my_address.html">my_address.html</a></td>
-        <td></td>
-        <td>배송지 추가, 배송지 수정</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>환경설정</td>
-        <td>메뉴</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/setting/setting.html">setting.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>알림 설정</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/setting/setting_alarm.html">setting_alarm.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>공지사항</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>/notice/</td>
-        <td><a target="_blank" href="@@webRoot/html/notice/notice.html">notice.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>고객센터</td>
-        <td>index</td>
-        <td></td>
-        <td></td>
-        <td>/customer/</td>
-        <td><a target="_blank" href="@@webRoot/html/customer/customer.html">customer.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>이벤트 문의</td>
-        <td>이벤트 선택</td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/customer/customer_qna_event_select.html">customer_qna_event_select.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>form</td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/customer/customer_qna_event_form.html">customer_qna_event_form.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>루픽 문의</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/customer/customer_qna_lupick_form.html">customer_qna_lupick_form.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>내 문의내역</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/customer/customer_my_qna.html">customer_my_qna.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>로그인</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>/login/</td>
-        <td><a target="_blank" href="@@webRoot/html/login/login.html">login.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>아이디 찾기</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/login/id_find.html">id_find.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>아이디 찾기 완료</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/login/id_find_result.html">id_find_result.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>비밀번호 찾기</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/login/password_find.html">password_find.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>이메일 인증번호 확인하기</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/login/email_number_confirm.html">email_number_confirm.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>이메일 인증번호 입력하기</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/login/email_number_input.html">email_number_input.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>새 비밀번호 등록</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a target="_blank" href="@@webRoot/html/login/password_reset.html">password_reset.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>회원가입</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>/join/</td>
-        <td><a target="_blank" href="@@webRoot/html/join/join.html">join.html</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <script>
-    var leng = document.querySelectorAll("tbody td a");
-    console.log(leng.length);
+        <tr>
+          <td></td>
+          <td></td>
+          <td>선정된 이벤트</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/my/my_event_selected_lupicker.html">my_event_selected_lupicker.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>루피커 정보 입력</td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/my/my_event_selected_lupicker_form.html">my_event_selected_lupicker_form.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>주문 및 참여 내역</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/my/my_event_order_history.html">my_event_order_history.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>취소/교환/반품 내역</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/my/my_event_cancel_history.html">my_event_cancel_history.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>나의 리뷰</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/my/my_event_reviews.html">my_event_reviews.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>프로필 편집</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/my/my_profile.html">my_profile.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>내 정보 관리</td>
+          <td>비밀번호 입력</td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/my/my_info_password.html">my_info_password.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>내 정보 수정</td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/my/my_info.html">my_info.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>배송지 관리</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/my/my_address.html">my_address.html</a></td>
+          <td></td>
+          <td>배송지 추가, 배송지 수정</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>환경설정</td>
+          <td>메뉴</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/setting/setting.html">setting.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>알림 설정</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/setting/setting_alarm.html">setting_alarm.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>공지사항</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>/notice/</td>
+          <td><a target="_blank" href="@@webRoot/html/notice/notice.html">notice.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>고객센터</td>
+          <td>index</td>
+          <td></td>
+          <td></td>
+          <td>/customer/</td>
+          <td><a target="_blank" href="@@webRoot/html/customer/customer.html">customer.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>이벤트 문의</td>
+          <td>이벤트 선택</td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/customer/customer_qna_event_select.html">customer_qna_event_select.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>form</td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/customer/customer_qna_event_form.html">customer_qna_event_form.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>루픽 문의</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/customer/customer_qna_lupick_form.html">customer_qna_lupick_form.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>내 문의내역</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/customer/customer_my_qna.html">customer_my_qna.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>로그인</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>/login/</td>
+          <td><a target="_blank" href="@@webRoot/html/login/login.html">login.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>아이디 찾기</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/login/id_find.html">id_find.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>아이디 찾기 완료</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/login/id_find_result.html">id_find_result.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>비밀번호 찾기</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/login/password_find.html">password_find.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>이메일 인증번호 확인하기</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/login/email_number_confirm.html">email_number_confirm.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>이메일 인증번호 입력하기</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/login/email_number_input.html">email_number_input.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>새 비밀번호 등록</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a target="_blank" href="@@webRoot/html/login/password_reset.html">password_reset.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>회원가입</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>/join/</td>
+          <td><a target="_blank" href="@@webRoot/html/join/join.html">join.html</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      var leng = document.querySelectorAll("tbody td a");
+      console.log(leng.length);
 
       // var rows = document.getElementById("pageList").getElementsByTagName("tr");
       // console.log(rows.length);
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>

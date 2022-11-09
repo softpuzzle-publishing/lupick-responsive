@@ -284,6 +284,11 @@
   border-color: #fff;
 }
 
+.btn-muted {
+  background: #f2f2f2;
+  border-color: #f2f2f2;
+}
+
 /* button size */
 .btn-sm {
   padding-left: 16px;
@@ -388,7 +393,6 @@ input.form-control.form-control-lg {
 .textarea {
   border: 1px solid rgba(0, 0, 0, 0.15);
   padding: 15px;
-  height: 200px;
   display: flex;
   flex-direction: column;
   transition: border-color 0.15s ease-in-out;
@@ -405,6 +409,9 @@ input.form-control.form-control-lg {
 }
 .textarea.round {
   border-radius: 7px;
+}
+.form-select .textarea {
+  margin-top: 10px;
 }
 
 textarea.form-control {
@@ -466,13 +473,14 @@ textarea.form-control::placeholder {
 }
 .form-check input[type=radio] {
   border-radius: 50%;
+  border: 1px solid #000;
 }
 .form-check input:checked[type=checkbox] {
   background-image: url("../images/checkbox-checked.svg");
 }
 .form-check input:checked[type=radio] {
   background-color: #fff;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-3 -3 6 6'%3e%3ccircle r='2' fill='%2356b36b'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-3 -3 6 6'%3e%3ccircle r='2' fill='%23000000'/%3e%3c/svg%3e");
 }
 .form-check input:checked[type=radio] ~ label {
   color: #000;
@@ -1898,6 +1906,10 @@ progress {
   top: 100px;
 }
 
+.form .form-control + .form-control {
+  margin-top: 10px;
+}
+
 .form-text {
   margin-top: 4px;
   font-size: 10px;
@@ -2117,7 +2129,6 @@ progress {
 }
 .address-item .addr {
   font-size: 16px;
-  line-height: 1.5;
 }
 .address-item .name {
   font-size: 13px;
@@ -2132,6 +2143,9 @@ progress {
 .address-item + .address-item {
   border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
+.form-group-body .address-item {
+  padding: 0 0 20px 0;
+}
 
 .guide-text {
   padding-left: 10px;
@@ -2143,52 +2157,6 @@ progress {
   display: inline-block;
   margin-left: -10px;
   width: 10px;
-}
-
-.form .form-control + .form-control {
-  margin-top: 10px;
-}
-
-.login-menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-.login-menu a {
-  font-size: 13px;
-  color: #666;
-}
-
-.login-message {
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.5);
-  line-height: 1.714;
-  margin-bottom: 20px;
-}
-
-.find-result {
-  font-size: 28px;
-  line-height: 1.78;
-}
-
-.re-send {
-  text-align: right;
-  margin-top: 50px;
-  margin-bottom: -10px;
-}
-.re-send a {
-  font-size: 13px;
-  font-weight: 700;
-  color: rgba(0, 0, 0, 0.25);
-  text-decoration: underline;
-}
-
-.agree-area {
-  margin-top: 40px;
-}
-.agree-area .form-check {
-  margin-top: 15px;
 }
 
 .cms-area img {
@@ -3095,6 +3063,28 @@ progress {
 .quantity-sum {
   font-size: 14px;
   font-weight: 700;
+}
+
+.total-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 12px 0;
+  font-size: 14px;
+}
+.total-price span {
+  vertical-align: middle;
+}
+.total-price .count {
+  font-weight: 700;
+  margin-left: 2px;
+}
+.total-price .price {
+  font-size: 20px;
+  font-weight: 700;
+  margin-left: 18px;
 }
 
 .feed-top-banner {
@@ -4366,6 +4356,48 @@ progress {
   margin-top: 40px;
 }
 
+.login-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.login-menu a {
+  font-size: 13px;
+  color: #666;
+}
+
+.login-message {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 1.714;
+  margin-bottom: 20px;
+}
+
+.find-result {
+  font-size: 28px;
+  line-height: 1.78;
+}
+
+.re-send {
+  text-align: right;
+  margin-top: 50px;
+  margin-bottom: -10px;
+}
+.re-send a {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.25);
+  text-decoration: underline;
+}
+
+.agree-area {
+  margin-top: 40px;
+}
+.agree-area .form-check {
+  margin-top: 15px;
+}
+
 .accordion .item {
   position: relative;
 }
@@ -4554,6 +4586,122 @@ progress {
 .qna-seleted-event .title {
   font-size: 14px;
   font-weight: 700;
+}
+
+.form-group-wrap {
+  border-top: 2px solid #000;
+  margin-top: 30px;
+}
+.form-group-wrap:first-of-type {
+  margin-top: 0;
+}
+
+.form-group-header {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.form-group-header .label {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.form-group-body {
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 20px 0;
+}
+
+.my-order-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 20px 0;
+}
+.my-order-item .info {
+  flex-grow: 1;
+  margin-right: 20px;
+}
+.my-order-item .title {
+  font-size: 16px;
+}
+.my-order-item .price {
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 8px;
+  line-height: 1;
+}
+.my-order-item .img {
+  flex: 0 0 70px;
+  width: 70px;
+  height: 70px;
+}
+.my-order-item .img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.available-point {
+  font-size: 14px;
+}
+
+.help-text {
+  font-size: 12px;
+  color: #999;
+  margin-top: 15px;
+}
+
+.sum-pay {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.price-calc {
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+}
+.price-calc .col-auto {
+  font-size: 10px;
+}
+.price-calc dl dt {
+  font-size: 13px;
+  font-weight: 400;
+}
+.price-calc dl dd {
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+.price-calc .plus {
+  display: inline-block;
+  background: url("../images/icon-calc-plus.svg") no-repeat center;
+  background-size: contain;
+  width: 10px;
+  height: 10px;
+  vertical-align: top;
+}
+.price-calc .minus {
+  display: inline-block;
+  background: url("../images/icon-calc-minus.svg") no-repeat center;
+  background-size: contain;
+  width: 10px;
+  height: 10px;
+  vertical-align: top;
+}
+
+.added-payment-type {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  padding-top: 20px;
+}
+.added-payment-type span {
+  margin-left: 10px;
+}
+.added-payment-type span img {
+  max-height: 24px;
 }
 
 body.body-main #header .header-sub {

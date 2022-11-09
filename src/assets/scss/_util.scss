@@ -5,3 +5,22 @@
   p{font-size: 14px;color: rgba(0,0,0,0.4);line-height: 1.428;margin-top: 16px;}
   .btn{width: 200px;margin-top: 40px;}
 }
+
+.login-menu{
+  display: flex;justify-content: center;align-items: center;margin-top: 20px;
+  a{font-size: 13px;color: $gray;}
+}
+.login-message{
+  font-size: 14px;color: rgba(0,0,0,0.5);line-height: 1.714;margin-bottom: 20px;
+}
+
+.find-result{font-size: 28px;line-height: 1.78;}
+.re-send{
+  text-align: right;margin-top: 50px;margin-bottom: -10px;
+  a{font-size: 13px;font-weight: 700;color: $muted;text-decoration: underline;}
+}
+
+.agree-area{
+  margin-top: 40px;
+  .form-check{margin-top: 15px;}
+}

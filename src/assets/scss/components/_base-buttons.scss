@@ -43,6 +43,10 @@
     @include button-outline-variant($value);
   }
 }
+.btn-muted{
+  background: #f2f2f2;border-color: #f2f2f2;
+}
+
 
 /* button size */
 .btn-sm {

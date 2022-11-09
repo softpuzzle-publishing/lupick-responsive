@@ -3,6 +3,7 @@ var Common = {
     this.accordion();
     this.select();
     this.byte();
+    this.address();
   },
   accordion: function () {
     $(".accordion .item-header").on("click", function (e) {
@@ -23,7 +24,8 @@ var Common = {
           .addClass("text-style");
       } else if ($(this).hasClass("static")) {
         var zone = $(this).next(".form-select-zone");
-        $(this).selectmenu({ // appenTo 선택 엘리먼트에 셀렉트박스 넣음
+        $(this).selectmenu({
+          // appenTo 선택 엘리먼트에 셀렉트박스 넣음
           appendTo: zone,
         });
       } else {
@@ -52,6 +54,18 @@ var Common = {
       .on("blur", function () {
         $(this).closest(".textarea").removeClass("active");
       });
+  },
+  address: function () {
+    /* 직접입력 */
+    $(".form-select").selectmenu({
+      change: function (event, ui) {
+        if ($(this).val() == "직접 입력") {
+          $(this).siblings(".textarea").removeClass("visually-hidden");
+        } else {
+          $(this).siblings(".textarea").addClass("visually-hidden");
+        }
+      },
+    });
   },
 };
 

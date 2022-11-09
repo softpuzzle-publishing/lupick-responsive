@@ -5,6 +5,7 @@ var Common = {
     this.accordion();
     this.select();
     this["byte"]();
+    this.address();
   },
   accordion: function accordion() {
     $(".accordion .item-header").on("click", function (e) {
@@ -50,6 +51,18 @@ var Common = {
       $(this).closest(".textarea").addClass("active");
     }).on("blur", function () {
       $(this).closest(".textarea").removeClass("active");
+    });
+  },
+  address: function address() {
+    /* 직접입력 */
+    $(".form-select").selectmenu({
+      change: function change(event, ui) {
+        if ($(this).val() == "직접 입력") {
+          $(this).siblings(".textarea").removeClass("visually-hidden");
+        } else {
+          $(this).siblings(".textarea").addClass("visually-hidden");
+        }
+      }
     });
   }
 };
