@@ -1562,6 +1562,10 @@ progress {
   margin-top: 20px !important;
 }
 
+.mt-25px {
+  margin-top: 25px !important;
+}
+
 .mt-30px {
   margin-top: 30px !important;
 }
@@ -1601,6 +1605,13 @@ progress {
 .gx-10px > * {
   padding-left: 5px;
   padding-right: 5px;
+}
+
+.g-10px {
+  margin: -5px;
+}
+.g-10px > * {
+  padding: 5px;
 }
 
 .collapse:not(.show) {
@@ -1931,6 +1942,10 @@ progress {
   color: #000;
   margin-bottom: 5px;
   font-weight: 700;
+}
+.form-label small {
+  font-size: 10px;
+  color: #999;
 }
 
 .required {
@@ -4702,6 +4717,78 @@ progress {
 }
 .added-payment-type span img {
   max-height: 24px;
+}
+
+.lupickpay-card-img {
+  margin-bottom: 15px;
+}
+.lupickpay-card-img img {
+  width: 100%;
+}
+
+.lupickpay-added-card {
+  margin-bottom: 15px;
+}
+.lupickpay-added-card li {
+  position: relative;
+}
+.lupickpay-added-card li a {
+  display: block;
+  border: 1px solid #000;
+  border-radius: 7px;
+  font-size: 16px;
+  height: 50px;
+  line-height: 49px;
+  text-align: center;
+}
+.lupickpay-added-card li.selected a {
+  background: #000;
+  color: #fff;
+}
+.lupickpay-added-card li.selected::before {
+  content: "";
+  background: url("../images/icon-check-white.svg") no-repeat 0 0;
+  background-size: contain;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.lupickpay-added-card li + li {
+  margin-top: 10px;
+}
+
+.simple-pay-list label {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+.simple-pay-list label::before {
+  content: "";
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.simple-pay-list .way {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.simple-pay-list input[type=radio] {
+  display: none;
+}
+.simple-pay-list input[type=radio]:checked + label::before {
+  content: "";
+  border: 2px solid #000;
 }
 
 body.body-main #header .header-sub {
