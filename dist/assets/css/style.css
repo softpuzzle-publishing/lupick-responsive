@@ -1648,6 +1648,14 @@ progress {
   max-height: 100%;
 }
 
+.white-pre-wrap {
+  white-space: pre-wrap;
+}
+
+.white-break-spaces {
+  white-space: break-spaces;
+}
+
 .container,
 .container-fluid {
   padding-left: 20px;
@@ -3100,6 +3108,17 @@ progress {
   font-size: 20px;
   font-weight: 700;
   margin-left: 18px;
+}
+
+.item-info {
+  font-size: 14px;
+  line-height: 1.57;
+}
+.item-info dt {
+  margin-top: 20px;
+}
+.item-info dd {
+  line-height: 1.8;
 }
 
 .feed-top-banner {
@@ -4834,6 +4853,14 @@ progress {
 .process-finish .desc {
   font-size: 13px;
   line-height: 1.846;
+}
+
+.leave .heading-text {
+  font-size: 30px;
+}
+.leave ul li {
+  font-size: 14px;
+  margin-bottom: 20px;
 }
 
 body.body-main #header .header-sub {
