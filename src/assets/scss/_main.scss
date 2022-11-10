@@ -96,10 +96,12 @@
 }
 
 .main-image-banner{
-  padding: 0 20px;margin-top: 36px;
+  padding: 0 20px;margin-top: 35px;
   .swiper-pagination-main-image-banner{
     background: rgba(0,0,0,0.25);width: 43px;height: 24px;color: #fff;font-size: 12px;font-weight: 700;line-height: 24px;border-radius: 10rem;text-align: center;left:auto;right: 4px;bottom: 5px;
   }
+  > a + a{display: block;margin-top: 20px;}
+  img{border-radius: 7px;}
 }
 
 .main-events{
@@ -107,13 +109,13 @@
 }
 
 .main-events-free{
-  padding: 0 20px;
+  margin: 0 20px;padding-bottom: 30px;border-bottom: 1px solid $border-color;
   .events-free{padding: 30px 0;margin-top: 40px;border-top: 1px solid $border-color;}
 }
 
 .main-quiz{
   padding: 0 20px;
-  .quiz{margin-top: 30px;padding-top: 40px;border-top: 1px solid $border-color;}
+  .quiz{padding-top: 40px;}
 }
 .quiz{
   .img{

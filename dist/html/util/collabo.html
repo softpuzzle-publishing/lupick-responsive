@@ -42,7 +42,7 @@
             <button type="button" class="btn-back" aria-label="뒤로" onclick="window.history.back()">
               <i class="icon-back"></i>
             </button>
-            <h1 class="header-title">주문 및 참여 내역</h1>
+            <h1 class="header-title">친구초대</h1>
             <!-- 이벤트 상세에서만 노출 -->
             <button type="button" aria-label="공유" data-bs-toggle="modal" data-bs-target="#modal-event-share" class="btn-share"><i class="icon-share"></i></button>
             <!-- //이벤트 상세에서만 노출 -->
@@ -63,134 +63,14 @@
         <main id="main">
           <!-- 실컨텐츠 -->
 
-          <div class="tab">
-            <ul class="nav nav-tabs justify-content-around" id="myTab" role="tablist">
-              <li class="nav-item" role="presentation">
-                <a href="#t1" class="nav-link active" data-bs-toggle="tab" role="tab">전체</a>
-              </li>
-              <li class="nav-item" role="presentation">
-                <a href="#t2" class="nav-link" data-bs-toggle="tab" role="tab">쇼핑 이벤트</a>
-              </li>
-              <li class="nav-item" role="presentation">
-                <a href="#t3" class="nav-link" data-bs-toggle="tab" role="tab">포인트 이벤트</a>
-              </li>
-              <li class="nav-item" role="presentation">
-                <a href="#t4" class="nav-link" data-bs-toggle="tab" role="tab">프리 이벤트</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="top-sort is-tab-next">
-            <select class="form-select w-100">
-              <option selected>3개월</option>
-            </select>
-          </div>
-
-          <div class="my-event-list">
-            <div class="item">
-              <div class="item-top">
-                <a href="my_event_order_detail.html" class="row gx-10px">
-                  <div class="col-auto">
-                    <span class="badge outline-dark lg">쇼핑 이벤트</span>
-                  </div>
-                  <div class="col">
-                    <div class="number">주문번호 ORD20210409-0000010</div>
-                    <div class="date">2020.07.14</div>
-                  </div>
-                  <div class="col-auto">
-                    <i class="icon-arr-down-gray"></i>
-                  </div>
-                </a>
+          <div class="container">
+            <div class="lupick-collabo">
+              <strong class="heading-text">오직 루픽에서만 <br />가능한 콜라보!</strong>
+              <div class="collabo-email">
+                콜라보 문의 <br />
+                <a href="mailto:">lupick@lupick.com</a>
               </div>
-              <div class="item-body">
-                <a href="../event/event_detail.html">
-                  <div class="d-flex align-items-center">
-                    <div class="info">
-                      <div class="state">배송 완료</div>
-                      <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
-                      <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
-                    </div>
-                    <div class="img">
-                      <img src="../../assets/images/@landscape.jpg" alt="" />
-                    </div>
-                  </div>
-                  <div class="price">20,000원</div>
-                  <div class="row gx-10px mt-20px">
-                    <div class="col">
-                      <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100" data-bs-toggle="modal" data-bs-target="#modal-shipping">배송 조회</button>
-                    </div>
-                    <div class="col">
-                      <button type="button" class="btn btn-outline-secondary btn-round btn-lg w-100">구매확정</button>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="item">
-              <div class="item-top">
-                <a href="my_event_order_detail.html" class="row gx-10px">
-                  <div class="col-auto">
-                    <span class="badge dark lg text-primary">프리 이벤트</span>
-                  </div>
-                  <div class="col">
-                    <div class="number">주문번호 ORD20210409-0000010</div>
-                    <div class="date">2020.07.14</div>
-                  </div>
-                  <div class="col-auto">
-                    <i class="icon-arr-down-gray"></i>
-                  </div>
-                </a>
-              </div>
-              <div class="item-body">
-                <a href="../event/event_detail.html">
-                  <div class="d-flex align-items-center">
-                    <div class="info">
-                      <div class="state">결제완료</div>
-                      <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
-                      <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
-                    </div>
-                    <div class="img">
-                      <img src="../../assets/images/@landscape.jpg" alt="" />
-                    </div>
-                  </div>
-                  <div class="price">무료 참여</div>
-                </a>
-              </div>
-            </div>
-            <div class="item">
-              <div class="item-top">
-                <a href="my_event_order_detail.html" class="row gx-10px align-items-center">
-                  <div class="col-auto">
-                    <span class="badge outline-dark lg bg-primary">포인트 이벤트</span>
-                  </div>
-                  <div class="col">
-                    <div class="number">주문번호 ORD20210409-0000010</div>
-                    <div class="date">2020.07.14</div>
-                  </div>
-                  <div class="col-auto">
-                    <i class="icon-arr-down-gray"></i>
-                  </div>
-                </a>
-              </div>
-              <div class="item-body">
-                <a href="../event/event_detail.html">
-                  <div class="d-flex align-items-center">
-                    <div class="info">
-                      <div class="state">결제완료</div>
-                      <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
-                      <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
-                    </div>
-                    <div class="img">
-                      <img src="../../assets/images/@landscape.jpg" alt="" />
-                    </div>
-                  </div>
-                  <div class="price">100P</div>
-                </a>
-              </div>
-            </div>
-            <div class="data-empty">
-              <i class="icon-exclaimation-light"></i>
-              <p>참여한 이벤트가 없습니다</p>
+              <p class="desc">세상을 깜짝 놀라게 할 이벤트를 <br />함께 만들어갈 당신을 기다립니다. <br />언제든 연락해주세요.</p>
             </div>
           </div>
 

@@ -1715,6 +1715,7 @@ progress {
   display: flex;
   align-items: center;
   height: 100%;
+  position: relative;
 }
 #header .header-sub .btn-back {
   margin-right: 15px;
@@ -1723,6 +1724,12 @@ progress {
   font-size: 18px;
   font-weight: 700;
   transform: translateY(1px);
+}
+#header .btn-share {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #main {
@@ -1882,6 +1889,7 @@ progress {
 .more-text {
   text-align: center;
   margin-top: 20px;
+  line-height: 1;
 }
 .more-text a {
   font-size: 13px;
@@ -1899,6 +1907,9 @@ progress {
   height: 6px;
   background: url("../images/icon-arr-down-gray.svg") no-repeat 0 0;
   margin-left: 8px;
+}
+.more-text .active::after {
+  transform: rotate(180deg);
 }
 
 .hr {
@@ -2180,6 +2191,19 @@ progress {
   display: inline-block;
   margin-left: -10px;
   width: 10px;
+}
+
+.bottom-text-guide {
+  margin-top: 30px;
+}
+.bottom-text-guide .help-text {
+  margin-top: 0;
+}
+.bottom-text-guide .link {
+  font-size: 13px;
+  font-weight: 700;
+  display: inline-block;
+  margin-top: 8px;
 }
 
 .cms-area img {
@@ -2929,13 +2953,6 @@ progress {
 }
 .stock-count strong {
   color: #4ac0ff;
-}
-
-.btn-share {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .share-event {
@@ -4432,6 +4449,84 @@ progress {
   margin-top: 15px;
 }
 
+.lupick-collabo {
+  padding-top: 50px;
+  position: relative;
+  padding-bottom: 340px;
+  padding-left: 30px;
+}
+.lupick-collabo::before {
+  content: "";
+  display: block;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: #ffec00;
+  position: absolute;
+  right: -200px;
+  bottom: 0;
+  z-index: -1;
+}
+.lupick-collabo .heading-text {
+  font-size: 36px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 30px;
+}
+.lupick-collabo .heading-text::before {
+  content: "";
+  display: block;
+  width: 57px;
+  height: 57px;
+  background: #000;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.lupick-collabo .collabo-email {
+  font-size: 16px;
+  line-height: 1.75;
+  margin-bottom: 30px;
+}
+.lupick-collabo .collabo-email a {
+  display: inline-block;
+  border-bottom: 1px solid #000;
+  padding-bottom: 1px;
+}
+.lupick-collabo .desc {
+  font-size: 16px;
+}
+
+.invitaion img {
+  max-width: 100%;
+}
+.invitaion .id-copy {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 95px;
+}
+.invitaion .id-copy p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+.invitaion .id-copy .my-id {
+  border-bottom: 3px solid #000;
+  color: #4ac0ff;
+  font-size: 32px;
+  font-family: "Gilroy";
+  font-weight: 700;
+  display: inline-block;
+  padding-bottom: 2px;
+  margin-bottom: 20px;
+}
+
+.lupickguide {
+  padding-top: 30px;
+}
+.lupickguide img {
+  max-width: 100%;
+}
+
 .accordion .item {
   position: relative;
 }
@@ -4820,16 +4915,14 @@ progress {
   text-decoration: underline;
 }
 
+.my-exchange-item-number {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
 .info-list {
   font-size: 16px;
   overflow: hidden;
-}
-.info-list dt, .info-list dd {
-  margin-top: 5px;
-}
-.info-list dt:first-of-type,
-.info-list dd:first-of-type {
-  margin-top: 0;
 }
 .info-list dt {
   color: #666;
@@ -4837,8 +4930,21 @@ progress {
   float: left;
 }
 .info-list dd {
+  margin-left: 110px;
+}
+.info-list dt, .info-list dd {
+  margin-top: 10px;
+}
+.info-list dt:first-of-type, .info-list dd:first-of-type {
+  margin-top: 0 !important;
+}
+.info-list.between dd {
   font-weight: 700;
   float: right;
+  margin-left: 0;
+}
+.info-list.between dt, .info-list.between dd {
+  margin-top: 5px;
 }
 
 .process-finish {
@@ -4861,6 +4967,67 @@ progress {
 .leave ul li {
   font-size: 14px;
   margin-bottom: 20px;
+}
+
+.my-order-state {
+  padding: 35px 0 60px;
+}
+.my-order-state p {
+  font-size: 24px;
+}
+
+.shipping-state {
+  text-align: center;
+}
+.shipping-state strong {
+  font-size: 20px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 15px;
+}
+.shipping-state p {
+  font-size: 13px;
+  color: #666;
+  word-break: keep-all;
+}
+
+.shipping-tracking li {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+.shipping-tracking li:first-of-type {
+  display: flex;
+}
+.shipping-tracking li:first-of-type .state {
+  color: #000;
+}
+.shipping-tracking .info {
+  flex-grow: 1;
+}
+.shipping-tracking .title {
+  font-size: 16px;
+}
+.shipping-tracking .date {
+  font-size: 12px;
+  color: #999;
+  margin-top: 2px;
+}
+.shipping-tracking .state {
+  font-size: 16px;
+  color: #999;
+  font-weight: 700;
+}
+.shipping-tracking.expanded li {
+  display: flex;
+}
+
+.invoice p {
+  font-size: 30px;
+  line-height: 1.3333;
+  margin-bottom: 40px;
 }
 
 body.body-main #header .header-sub {
@@ -5080,7 +5247,7 @@ html.scroll-down body.body-main #header {
 
 .main-image-banner {
   padding: 0 20px;
-  margin-top: 36px;
+  margin-top: 35px;
 }
 .main-image-banner .swiper-pagination-main-image-banner {
   background: rgba(0, 0, 0, 0.25);
@@ -5096,13 +5263,22 @@ html.scroll-down body.body-main #header {
   right: 4px;
   bottom: 5px;
 }
+.main-image-banner > a + a {
+  display: block;
+  margin-top: 20px;
+}
+.main-image-banner img {
+  border-radius: 7px;
+}
 
 .main-events {
   margin-top: 40px;
 }
 
 .main-events-free {
-  padding: 0 20px;
+  margin: 0 20px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 .main-events-free .events-free {
   padding: 30px 0;
@@ -5114,9 +5290,7 @@ html.scroll-down body.body-main #header {
   padding: 0 20px;
 }
 .main-quiz .quiz {
-  margin-top: 30px;
   padding-top: 40px;
-  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .quiz .img {

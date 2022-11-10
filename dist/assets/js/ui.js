@@ -6,6 +6,7 @@ var Common = {
     this.select();
     this["byte"]();
     this.address();
+    this.moreToggle();
   },
   accordion: function accordion() {
     $(".accordion .item-header").on("click", function (e) {
@@ -62,6 +63,18 @@ var Common = {
         } else {
           $(this).siblings(".textarea").addClass("visually-hidden");
         }
+      }
+    });
+  },
+  moreToggle: function moreToggle() {
+    $(".toggle-view-detail > a").on("click", function (e) {
+      e.preventDefault();
+      if ($(this).hasClass("active")) {
+        $(this).removeClass("active");
+        $(this).text("자세히 보기");
+      } else {
+        $(this).addClass("active");
+        $(this).text("간략히 보기");
       }
     });
   }

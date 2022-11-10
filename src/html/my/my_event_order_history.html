@@ -38,7 +38,7 @@
         <div class="my-event-list">
           <div class="item">
             <div class="item-top">
-              <a href="#none" class="row gx-10px">
+              <a href="my_event_order_detail.html" class="row gx-10px">
                 <div class="col-auto">
                   <span class="badge outline-dark lg">쇼핑 이벤트</span>
                 </div>
@@ -52,10 +52,10 @@
               </a>
             </div>
             <div class="item-body">
-              <a href="#none">
+              <a href="../event/event_detail.html">
                 <div class="d-flex align-items-center">
                   <div class="info">
-                    <div class="state">결제완료</div>
+                    <div class="state">배송 완료</div>
                     <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명 </div>
                     <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
                   </div>
@@ -64,12 +64,21 @@
                   </div>
                 </div>
                 <div class="price">20,000원</div>
+                <div class="row gx-10px mt-20px">
+                  <div class="col">
+                    <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100" data-bs-toggle="modal"
+                      data-bs-target="#modal-shipping">배송 조회</button>
+                  </div>
+                  <div class="col">
+                    <button type="button" class="btn btn-outline-secondary btn-round btn-lg w-100">구매확정</button>
+                  </div>
+                </div>
               </a>
             </div>
           </div>
           <div class="item">
             <div class="item-top">
-              <a href="#none" class="row gx-10px">
+              <a href="my_event_order_detail.html" class="row gx-10px">
                 <div class="col-auto">
                   <span class="badge dark lg text-primary">프리 이벤트</span>
                 </div>
@@ -83,7 +92,7 @@
               </a>
             </div>
             <div class="item-body">
-              <a href="#none">
+              <a href="../event/event_detail.html">
                 <div class="d-flex align-items-center">
                   <div class="info">
                     <div class="state">결제완료</div>
@@ -100,7 +109,7 @@
           </div>
           <div class="item">
             <div class="item-top">
-              <a href="#none" class="row gx-10px align-items-center">
+              <a href="my_event_order_detail.html" class="row gx-10px align-items-center">
                 <div class="col-auto">
                   <span class="badge outline-dark lg bg-primary">포인트 이벤트</span>
                 </div>
@@ -114,7 +123,7 @@
               </a>
             </div>
             <div class="item-body">
-              <a href="#none">
+              <a href="../event/event_detail.html">
                 <div class="d-flex align-items-center">
                   <div class="info">
                     <div class="state">결제완료</div>
@@ -140,6 +149,7 @@
     </div>
   </div>
 
+  @@include('@@webRoot/html/_include/_modal.html')
 </body>
 
 </html>

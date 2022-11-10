@@ -42,7 +42,7 @@
             <button type="button" class="btn-back" aria-label="뒤로" onclick="window.history.back()">
               <i class="icon-back"></i>
             </button>
-            <h1 class="header-title">주문 및 참여 내역</h1>
+            <h1 class="header-title">주문내역 상세정보</h1>
             <!-- 이벤트 상세에서만 노출 -->
             <button type="button" aria-label="공유" data-bs-toggle="modal" data-bs-target="#modal-event-share" class="btn-share"><i class="icon-share"></i></button>
             <!-- //이벤트 상세에서만 노출 -->
@@ -63,134 +63,174 @@
         <main id="main">
           <!-- 실컨텐츠 -->
 
-          <div class="tab">
-            <ul class="nav nav-tabs justify-content-around" id="myTab" role="tablist">
-              <li class="nav-item" role="presentation">
-                <a href="#t1" class="nav-link active" data-bs-toggle="tab" role="tab">전체</a>
-              </li>
-              <li class="nav-item" role="presentation">
-                <a href="#t2" class="nav-link" data-bs-toggle="tab" role="tab">쇼핑 이벤트</a>
-              </li>
-              <li class="nav-item" role="presentation">
-                <a href="#t3" class="nav-link" data-bs-toggle="tab" role="tab">포인트 이벤트</a>
-              </li>
-              <li class="nav-item" role="presentation">
-                <a href="#t4" class="nav-link" data-bs-toggle="tab" role="tab">프리 이벤트</a>
-              </li>
-            </ul>
-          </div>
+          <div class="container">
+            <div class="bg-circle">
+              <span class="circle"></span>
+              <!-- 결제 취소, 환불/반품, 반품 신청 일때 회색 볼 -->
+              <!-- <span class="circle light"></span> -->
+            </div>
 
-          <div class="top-sort is-tab-next">
-            <select class="form-select w-100">
-              <option selected>3개월</option>
-            </select>
-          </div>
+            <div class="my-order-state">
+              <p>‘결제 완료’되었어요.</p>
+              <!-- <p>‘결제 취소'되었어요.</p>
+            <p>‘환불/반품’되었어요.</p>
+            <p>‘반품 신창’되었어요.</p>
+            <p>‘상품 준비 중’이에요.</p>
+            <p>‘배송 중’이에요.</p>
+            <p>‘배송 완료’되었어요.</p> -->
+            </div>
 
-          <div class="my-event-list">
-            <div class="item">
-              <div class="item-top">
-                <a href="my_event_order_detail.html" class="row gx-10px">
-                  <div class="col-auto">
-                    <span class="badge outline-dark lg">쇼핑 이벤트</span>
-                  </div>
-                  <div class="col">
-                    <div class="number">주문번호 ORD20210409-0000010</div>
-                    <div class="date">2020.07.14</div>
-                  </div>
-                  <div class="col-auto">
-                    <i class="icon-arr-down-gray"></i>
-                  </div>
-                </a>
+            <div class="my-exchange-item">
+              <a href="#none">믿고 먹는 추멘세끼 감자볶음밥, 성원에 힘입어 이번엔 🚙와 컴백!!</a>
+            </div>
+            <div class="my-exchange-item-number">2022.06.14 / 주문번호 200020264169</div>
+
+            <!-- 주문 정보 -->
+            <div class="form-group-wrap mt-0">
+              <div class="form-group-header">
+                <div class="label">주문 정보</div>
               </div>
-              <div class="item-body">
-                <a href="../event/event_detail.html">
-                  <div class="d-flex align-items-center">
+              <div class="form-group-body pt-0">
+                <div class="my-order-item">
+                  <div class="d-flex">
                     <div class="info">
-                      <div class="state">배송 완료</div>
-                      <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
-                      <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
+                      <div class="title">감자볶음밥 세트 (감자)</div>
+                      <div class="price"><span>1개</span> / <span>13,800원</span></div>
                     </div>
                     <div class="img">
-                      <img src="../../assets/images/@landscape.jpg" alt="" />
+                      <img src="../../assets/images/@portrait.jpg" alt="" />
                     </div>
                   </div>
-                  <div class="price">20,000원</div>
-                  <div class="row gx-10px mt-20px">
-                    <div class="col">
-                      <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100" data-bs-toggle="modal" data-bs-target="#modal-shipping">배송 조회</button>
-                    </div>
-                    <div class="col">
-                      <button type="button" class="btn btn-outline-secondary btn-round btn-lg w-100">구매확정</button>
-                    </div>
-                  </div>
-                </a>
+                </div>
+                <div class="more-text">
+                  <a href="javascript:;" role="button">총 2건 전체보기</a>
+                </div>
               </div>
             </div>
-            <div class="item">
-              <div class="item-top">
-                <a href="my_event_order_detail.html" class="row gx-10px">
-                  <div class="col-auto">
-                    <span class="badge dark lg text-primary">프리 이벤트</span>
-                  </div>
-                  <div class="col">
-                    <div class="number">주문번호 ORD20210409-0000010</div>
-                    <div class="date">2020.07.14</div>
-                  </div>
-                  <div class="col-auto">
-                    <i class="icon-arr-down-gray"></i>
-                  </div>
-                </a>
+            <!-- //주문 정보 -->
+            <!-- 배송 정보 -->
+            <div class="form-group-wrap">
+              <div class="form-group-header">
+                <div class="label">배송 정보</div>
               </div>
-              <div class="item-body">
-                <a href="../event/event_detail.html">
-                  <div class="d-flex align-items-center">
-                    <div class="info">
-                      <div class="state">결제완료</div>
-                      <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
-                      <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
-                    </div>
-                    <div class="img">
-                      <img src="../../assets/images/@landscape.jpg" alt="" />
-                    </div>
-                  </div>
-                  <div class="price">무료 참여</div>
-                </a>
+              <div class="form-group-body">
+                <dl class="info-list">
+                  <dt>수령인</dt>
+                  <dd>이정후</dd>
+                  <dt>연락처</dt>
+                  <dd>010-1234-5678</dd>
+                  <dt>배송지</dt>
+                  <dd>04720 <br />서울시 강남구 도산대로 54길 32 (도산아파트) 도산아파트 101동 202호</dd>
+                  <dt>배송 메모</dt>
+                  <dd>(직접 입력) 배송 시 꼭 연락주시고, 벨 누르지 말고 문 앞에서 노크해주세요</dd>
+                </dl>
               </div>
             </div>
-            <div class="item">
-              <div class="item-top">
-                <a href="my_event_order_detail.html" class="row gx-10px align-items-center">
-                  <div class="col-auto">
-                    <span class="badge outline-dark lg bg-primary">포인트 이벤트</span>
-                  </div>
-                  <div class="col">
-                    <div class="number">주문번호 ORD20210409-0000010</div>
-                    <div class="date">2020.07.14</div>
-                  </div>
-                  <div class="col-auto">
-                    <i class="icon-arr-down-gray"></i>
-                  </div>
-                </a>
+            <!-- //배송 정보 -->
+            <!-- 결제 정보 -->
+            <div class="form-group-wrap">
+              <div class="form-group-header">
+                <div class="label">결제 정보</div>
               </div>
-              <div class="item-body">
-                <a href="../event/event_detail.html">
-                  <div class="d-flex align-items-center">
-                    <div class="info">
-                      <div class="state">결제완료</div>
-                      <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
-                      <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
-                    </div>
-                    <div class="img">
-                      <img src="../../assets/images/@landscape.jpg" alt="" />
-                    </div>
-                  </div>
-                  <div class="price">100P</div>
-                </a>
+              <div class="form-group-body">
+                <dl class="info-list">
+                  <dt>결제 방법</dt>
+                  <dd>네이버페이</dd>
+                  <dt>결제 일시</dt>
+                  <dd>2020-08-21 13:22:31</dd>
+                </dl>
               </div>
             </div>
-            <div class="data-empty">
-              <i class="icon-exclaimation-light"></i>
-              <p>참여한 이벤트가 없습니다</p>
+            <!-- //결제 정보-->
+            <!-- 결제 금액 -->
+            <div class="form-group-wrap">
+              <div class="form-group-header">
+                <div class="label">결제 금액</div>
+                <div class="sum-pay">2,816,800원</div>
+              </div>
+              <div class="form-group-body">
+                <div class="price-calc">
+                  <div class="row gx-0 align-items-center">
+                    <dl class="col">
+                      <dt>상품 금액</dt>
+                      <dd>2,114,000원</dd>
+                    </dl>
+                    <div class="col-auto"><span class="plus"></span></div>
+                    <dl class="col">
+                      <dt>배송비</dt>
+                      <dd>3,000원</dd>
+                    </dl>
+                    <div class="col-auto"><span class="minus"></span></div>
+                    <dl class="col">
+                      <dt>루픽 포인트</dt>
+                      <dd>1500P</dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //결제 금액 -->
+            <!-- 교환 및 반품 정보 -->
+            <div class="form-group-wrap">
+              <div class="form-group-header">
+                <div class="label">교환 및 반품 정보</div>
+              </div>
+              <div class="form-group-body">
+                <dl class="info-list">
+                  <dt>해결 방법</dt>
+                  <dd>반품 후 환불</dd>
+                  <dt>신청 일시</dt>
+                  <dd>2020-08-21 13:22:31</dd>
+                  <dt>결제 금액</dt>
+                  <dd>5,000원</dd>
+                </dl>
+              </div>
+            </div>
+            <!-- //교환 및 반품 정보-->
+            <!-- 취소 정보 -->
+            <div class="form-group-wrap">
+              <div class="form-group-header">
+                <div class="label">취소 정보</div>
+              </div>
+              <div class="form-group-body">
+                <dl class="info-list">
+                  <dt>취소 방법</dt>
+                  <dd>결제수단으로 환불</dd>
+                  <dt>취소 일시</dt>
+                  <dd>2020-08-21 13:22:31</dd>
+                  <dt>취소 금액</dt>
+                  <dd>42,850원</dd>
+                </dl>
+              </div>
+            </div>
+            <!-- //취소 정보-->
+            <!-- 환불 정보 -->
+            <div class="form-group-wrap">
+              <div class="form-group-header">
+                <div class="label">환불 정보</div>
+              </div>
+              <div class="form-group-body">
+                <dl class="info-list">
+                  <dt>환불 방법</dt>
+                  <dd>결제수단으로 환불</dd>
+                  <dt>환불 일시</dt>
+                  <dd>2020-08-21 13:22:31</dd>
+                  <dt>환불 금액</dt>
+                  <dd>42,850원</dd>
+                </dl>
+              </div>
+            </div>
+            <!-- //환불 정보-->
+            <!-- 하단 버튼 -->
+            <div class="bottom-buttons">
+              <button type="button" class="btn btn-outline-light btn-round btn-lg w-100">주문취소</button>
+              <button type="button" class="btn btn-outline-light btn-round btn-lg w-100" data-bs-toggle="modal" data-bs-target="#modal-invoice">영수증 받기</button>
+            </div>
+            <!-- //하단 버튼 -->
+            <!-- 배송완료 됐을 때 -->
+            <div class="bottom-text-guide">
+              <p class="help-text">아이템은 상품 하자에 의한 교환/환불/반품만 가능합니다. <br />교환/환불/반품 문의는 ‘1:1 문의’를 이용하시기 바랍니다.</p>
+              <a href="../customer/customer_qna_event_form.html" class="link">1:1문의 바로가기 <i class="icon-full-menu-arr"></i></a>
             </div>
           </div>
 

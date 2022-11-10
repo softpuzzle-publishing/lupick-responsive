@@ -733,5 +733,155 @@
         </div>
       </div>
     </div>
+
+    <!-- modal: 배송 조회 -->
+    <div class="modal" tabindex="-1" id="modal-shipping">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="d-flex align-items-center">
+              <h5 class="modal-title">배송 조회</h5>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body pt-30px">
+            <!-- modal 내용 -->
+            <!-- 배송 현황 -->
+            <div class="shipping-state">
+              <strong>아직 배송 현황을 확인할 수 없네요.</strong>
+              <p>아이템이 발송되었으나, 아직 택배사로부터 배송 현황이 확인되지 않습니다.</p>
+              <!-- <strong>배송 중</strong>
+          <strong>배송 완료</strong>
+          <p>담당자 : 김배송 (010-1234-5678)</p> -->
+            </div>
+            <!-- //배송 현황 -->
+            <!-- 배송 추적 -->
+            <div class="form-group-wrap">
+              <div class="form-group-header">
+                <div class="label">배송 추적</div>
+              </div>
+              <div class="form-group-body pt-0">
+                <ol class="shipping-tracking">
+                  <li>
+                    <div class="info">
+                      <div class="title">서울신성수</div>
+                      <div class="date">2020.10.12 14:07:38</div>
+                    </div>
+                    <div class="state">배달완료</div>
+                  </li>
+                  <li>
+                    <div class="info">
+                      <div class="title">서울신성수</div>
+                      <div class="date">2020.10.12 14:07:38</div>
+                    </div>
+                    <div class="state">배달중</div>
+                  </li>
+                  <li>
+                    <div class="info">
+                      <div class="title">서울신성수</div>
+                      <div class="date">2020.10.12 14:07:38</div>
+                    </div>
+                    <div class="state">배송중(입고)</div>
+                  </li>
+                  <li>
+                    <div class="info">
+                      <div class="title">서울신성수</div>
+                      <div class="date">2020.10.12 14:07:38</div>
+                    </div>
+                    <div class="state">배송중(출고)</div>
+                  </li>
+                  <li>
+                    <div class="info">
+                      <div class="title">서울신성수</div>
+                      <div class="date">2020.10.12 14:07:38</div>
+                    </div>
+                    <div class="state">집하</div>
+                  </li>
+                </ol>
+                <div class="more-text toggle-view-detail">
+                  <a href="javascript:;" role="button" id="btn-tracking-detail">자세히 보기</a>
+                </div>
+                <script>
+                  //자세히 보기 토글
+                  $('#btn-tracking-detail').on('click', function (e) {
+                    e.preventDefault();
+                    if (!$(this).hasClass('active')) {
+                      $('.shipping-tracking').addClass('expanded');
+                    } else {
+                      $('.shipping-tracking').removeClass('expanded');
+                    }
+                  });
+                </script>
+              </div>
+            </div>
+            <!-- //배송 추적-->
+            <!-- 송장 정보 -->
+            <div class="form-group-wrap mt-0">
+              <div class="form-group-header">
+                <div class="label">판매자 정보</div>
+              </div>
+              <div class="form-group-body">
+                <dl class="info-list">
+                  <dt>송장번호</dt>
+                  <dd>663583305725</dd>
+                  <dt>택배사</dt>
+                  <dd>CJ대한통운</dd>
+                  <dt>대표번호</dt>
+                  <dd>1588-1255</dd>
+                </dl>
+              </div>
+            </div>
+            <!-- //송장 정보-->
+            <!-- 판매자 정보 -->
+            <div class="form-group-wrap mt-0">
+              <div class="form-group-header">
+                <div class="label">판매자 정보</div>
+              </div>
+              <div class="form-group-body">
+                <dl class="info-list">
+                  <dt>판매자</dt>
+                  <dd>김뫄뫄</dd>
+                  <dt>연락처</dt>
+                  <dd>010-1234-5678</dd>
+                </dl>
+              </div>
+            </div>
+            <!-- //판매자 정보-->
+            <!-- //modal 내용 -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 영수증 받기 -->
+    <div class="modal" tabindex="-1" id="modal-invoice">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="d-flex align-items-center">
+              <h5 class="modal-title">영수증 받기</h5>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body pt-30px">
+            <!-- modal 내용 -->
+            <div class="invoice">
+              <p>이메일로 영수증을 <br />받아보세요.</p>
+              <input type="email" class="form-control form-control-lg" placeholder="이메일을 입력해주세요" />
+            </div>
+            <div class="bottom-buttons">
+              <button type="button" class="btn btn-dark btn-round btn-lg w-100">보내기</button>
+            </div>
+            <div class="bottom-text-guide">
+              <p class="help-text">
+                루픽은 상품 판매의 당사자가 아니며 상품 판매와 관련한 일체의 책임은 판매자에게 있습니다. 루픽 서비스는 결제정보의 중개 또는 통신판매중개시스템의 제공만을 대상으로 하고 루픽 서비스의 이용자와 판매자 간의 거래관계, 구매내용 및 이벤트 상세페이지에 게재된 상품 정보, 거래 조건 등에
+                대해서는 어떠한 보증이나 책임도 부담하지 않습니다.
+              </p>
+            </div>
+            <!-- //modal 내용 -->
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

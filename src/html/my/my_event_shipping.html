@@ -15,7 +15,7 @@
         <div class="my-event-list mt-n10px">
           <div class="item">
             <div class="item-top">
-              <a href="#none" class="row gx-10px">
+              <a href="my_event_order_detail.html" class="row gx-10px">
                 <div class="col-auto">
                   <span class="badge outline-dark lg">쇼핑 이벤트</span>
                 </div>
@@ -29,7 +29,7 @@
               </a>
             </div>
             <div class="item-body">
-              <a href="#none">
+              <a href="../event/event_detail.html">
                 <div class="d-flex align-items-center">
                   <div class="info">
                     <div class="state">결제완료</div>
@@ -42,12 +42,13 @@
                 </div>
                 <div class="price">20,000원</div>
               </a>
-              <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100 mt-20px">배송 조회</button>
+              <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100 mt-20px" data-bs-toggle="modal"
+                data-bs-target="#modal-shipping">배송 조회</button>
             </div>
           </div>
           <div class="item">
             <div class="item-top">
-              <a href="#none" class="row gx-10px">
+              <a href="my_event_order_detail.html" class="row gx-10px">
                 <div class="col-auto">
                   <span class="badge dark lg text-primary">프리 이벤트</span>
                 </div>
@@ -61,7 +62,7 @@
               </a>
             </div>
             <div class="item-body">
-              <a href="#none">
+              <a href="../event/event_detail.html">
                 <div class="d-flex align-items-center">
                   <div class="info">
                     <div class="state">결제완료</div>
@@ -74,12 +75,13 @@
                 </div>
                 <div class="price">무료 참여</div>
               </a>
-              <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100 mt-20px">배송 조회</button>
+              <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100 mt-20px" data-bs-toggle="modal"
+                data-bs-target="#modal-shipping">배송 조회</button>
             </div>
           </div>
           <div class="item">
             <div class="item-top">
-              <a href="#none" class="row gx-10px align-items-center">
+              <a href="my_event_order_detail.html" class="row gx-10px align-items-center">
                 <div class="col-auto">
                   <span class="badge outline-dark lg bg-primary">포인트 이벤트</span>
                 </div>
@@ -93,7 +95,7 @@
               </a>
             </div>
             <div class="item-body">
-              <a href="#none">
+              <a href="../event/event_detail.html">
                 <div class="d-flex align-items-center">
                   <div class="info">
                     <div class="state">결제완료</div>
@@ -106,7 +108,8 @@
                 </div>
                 <div class="price">100P</div>
               </a>
-              <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100 mt-20px">배송 조회</button>
+              <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100 mt-20px" data-bs-toggle="modal"
+                data-bs-target="#modal-shipping">배송 조회</button>
             </div>
           </div>
         </div>
@@ -116,6 +119,7 @@
     </div>
   </div>
 
+  @@include('@@webRoot/html/_include/_modal.html')
 </body>
 
 </html>

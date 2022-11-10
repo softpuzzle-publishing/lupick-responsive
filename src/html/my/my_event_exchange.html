@@ -1,203 +1,209 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    @@include('@@webRoot/html/_include/_head.html')
-  </head>
 
-  <body>
-    <div id="wrap">
-      @@include('@@webRoot/html/_include/_header.html', { "title": "교환 및 반품 신청" })
-      <div id="container">
-        <main id="main">
-          <!-- 실컨텐츠 -->
+<head>
+  @@include('@@webRoot/html/_include/_head.html')
+</head>
 
-          <div class="container pt-20px">
-            <div class="my-exchange-item">
-              <a href="#none">믿고 먹는 추멘세끼 감자볶음밥, 성원에 힘입어 이번엔 🚙와 컴백!!</a>
-            </div>
-            <div class="my-exchange-item-number">2022.06.14 / 주문번호 200020264169</div>
-            <!-- 사유 선택 -->
-            <div class="form-group-wrap">
-              <div class="form-group-header">
-                <div class="label">사유 선택(필수)</div>
-              </div>
-              <div class="form-group-body">
-                <div class="form-group">
-                  <label for="exchangeFeeType1" class="form-label">배송비 판매자 부담</label>
-                  <div class="row g-10px">
-                    <div class="col-6">
-                      <div class="form-check button w-100">
-                        <input type="radio" id="exchangeFeeType1" name="exchangeFeeType" />
-                        <label for="exchangeFeeType1">파손 및 불량</label>
-                      </div>
-                    </div>
-                    <div class="col-6">
-                      <div class="form-check button w-100">
-                        <input type="radio" id="exchangeFeeType2" name="exchangeFeeType" />
-                        <label for="exchangeFeeType2">오배송</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="exchangeFeeType3" class="form-label">배송비 구매자 부담</label>
-                  <div class="row g-10px">
-                    <div class="col-6">
-                      <div class="form-check button w-100">
-                        <input type="radio" id="exchangeFeeType3" name="exchangeFeeType" />
-                        <label for="exchangeFeeType3">단순 변심</label>
-                      </div>
-                    </div>
-                    <div class="col-6">
-                      <div class="form-check button w-100">
-                        <input type="radio" id="exchangeFeeType4" name="exchangeFeeType" />
-                        <label for="exchangeFeeType4">주문 실수</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- //사유 선택 -->
-            <!-- 상세 내용 -->
-            <div class="form-group-wrap">
-              <div class="form-group-header">
-                <div class="label">상세 내용(필수)</div>
-              </div>
-              <div class="form-group-body">
-                <div class="textarea">
-                  <textarea rows="6" class="form-control" placeholder="내용을 입력해주세요" maxlength="300"></textarea>
-                  <div class="byte"><span>0</span>/300자</div>
-                </div>
-              </div>
-            </div>
-            <!-- //상세 내용 -->
-            <!-- 첨부파일 -->
-            <div class="form-group-wrap">
-              <div class="form-group-header">
-                <div class="label">첨부파일(선택)</div>
-              </div>
-              <div class="form-group-body">
-                <div class="uploaded-file">
-                  <div class="row align-items-center h-100">
-                    <div class="col">
-                      <div class="file-name">img0456.jpg</div>
-                    </div>
-                    <div class="col-auto">
-                      <button type="button" class="btn-file-delete"><i class="icon-file-delete"></i></button>
-                    </div>
-                  </div>
-                </div>
-                <div class="uploaded-file">
-                  <div class="row align-items-center h-100">
-                    <div class="col">
-                      <div class="file-name">img0456.jpg</div>
-                    </div>
-                    <div class="col-auto">
-                      <button type="button" class="btn-file-delete"><i class="icon-file-delete"></i></button>
-                    </div>
-                  </div>
-                </div>
-                <button type="button" class="btn btn-outline-light btn-flat btn-lg w-100 justify-content-start text-gray-light" id="btn-file">+ 첨부파일 추가</button>
-                <input type="file" class="visually-hidden" />
-                <script>
-                  $("#btn-file").on("click", function () {
-                    $(this).siblings("input[type=file]").click();
-                  });
-                </script>
-                <p class="help-text">포맷 jpg/png/gif, 최대 3개, 개당 5MB, 총 10MB 등록 가능</p>
-              </div>
-            </div>
-            <!-- //첨부파일 -->
-            <!-- 해결 방법 -->
-            <div class="form-group-wrap">
-              <div class="form-group-header">
-                <label for="solutionType1" class="label">해결 방법(필수)</label>
-              </div>
-              <div class="form-group-body">
-                <div class="form-check inline">
-                  <input type="radio" id="solutionType1" name="solutionType" />
-                  <label for="solutionType1">교환</label>
-                </div>
-                <div class="form-check inline">
-                  <input type="radio" id="solutionType2" name="solutionType" />
-                  <label for="solutionType2">반품 후 환불</label>
-                </div>
-              </div>
-            </div>
-            <!-- //첨부파일 -->
-            <!-- 상품 회수지 정보 -->
-            <div class="form-group-wrap">
-              <div class="form-group-header">
-                <label for="solutionType1" class="label">상품 회수지 정보</label>
-                <button type="button" class="btn btn-muted btn-sm btn-flat text-gray" data-bs-toggle="modal" data-bs-target="#modal-address-edit">변경하기</button>
-              </div>
-              <div class="form-group-body">
-                <address class="address-item">
-                  <div class="zipcode">04720</div>
-                  <div class="addr">서울시 강남구 도산대로 54길 32 (도산아파트) 도산아파트 101동 202호</div>
-                  <div class="name">이정후, 010-1234-5678</div>
-                  <span class="badge dark">기본 배송지</span>
-                </address>
-                <select class="form-select form-select-lg w-100">
-                  <option value="">배송 메모 (선택)</option>
-                  <option value="" selected>배송 전에 미리 연락 바랍니다.</option>
-                  <option value="">부재 시 경비실에 맡겨주세요.</option>
-                  <option value="">부재 시 문 앞에 놓아주세요.</option>
-                  <option value="">부재 시 전화나 문자 남겨주세요.</option>
-                  <option value="직접 입력">직접 입력</option>
-                </select>
-                <div class="textarea visually-hidden mt-10px">
-                  <textarea rows="2" class="form-control" placeholder="직접 입력" maxlength="100"></textarea>
-                </div>
-              </div>
-            </div>
-            <!-- //상품 회수지 정보 -->
-            <!-- 환불 예정 금액 -->
-            <div class="form-group-wrap">
-              <div class="form-group-header">
-                <div class="label">환불 예정 금액</div>
-                <div class="sum-pay">14,850원</div>
-              </div>
-              <div class="form-group-body">
-                <dl class="info-list between">
-                  <dt>상품금액</dt>
-                  <dd>11,500 원</dd>
-                  <dt>포인트</dt>
-                  <dd>850 원</dd>
-                  <dt>배송비</dt>
-                  <dd>2,500원</dd>
-                </dl>
-              </div>
-            </div>
-            <!-- //환불 예정 금액 -->
-            <!-- 추가 결제 비용 -->
-            <div class="form-group-wrap">
-              <div class="form-group-header">
-                <div class="label">추가 결제 비용</div>
-                <div class="sum-pay">5,000원</div>
-              </div>
-              <div class="form-group-body">
-                <dl class="info-list between">
-                  <dt>반품 및 배송비</dt>
-                  <dd>5,000 원</dd>
-                </dl>
-                <p class="help-text">*제주 및 도서산간 지역 : 추가 배송비 3,000원 발생</p>
-              </div>
-            </div>
-            <!-- //추가 결제 비용 -->
-            <!-- 하단 버튼 -->
-            <div class="bottom-buttons">
-              <button type="button" class="btn btn-dark btn-lg w-100 px-0" onclick="location.href='my_event_exchange_payment.html'">신청하기</button>
-            </div>
-            <!-- //하단 버튼 -->
+<body>
+  <div id="wrap">
+    @@include('@@webRoot/html/_include/_header.html', { "title": "교환 및 반품 신청" })
+    <div id="container">
+      <main id="main">
+        <!-- 실컨텐츠 -->
+
+        <div class="container pt-20px">
+          <div class="my-exchange-item">
+            <a href="#none">믿고 먹는 추멘세끼 감자볶음밥, 성원에 힘입어 이번엔 🚙와 컴백!!</a>
           </div>
+          <div class="my-exchange-item-number">2022.06.14 / 주문번호 200020264169</div>
+          <!-- 사유 선택 -->
+          <div class="form-group-wrap mt-0">
+            <div class="form-group-header">
+              <div class="label">사유 선택(필수)</div>
+            </div>
+            <div class="form-group-body">
+              <div class="form-group">
+                <label for="exchangeFeeType1" class="form-label">배송비 판매자 부담</label>
+                <div class="row g-10px">
+                  <div class="col-6">
+                    <div class="form-check button w-100">
+                      <input type="radio" id="exchangeFeeType1" name="exchangeFeeType" />
+                      <label for="exchangeFeeType1">파손 및 불량</label>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-check button w-100">
+                      <input type="radio" id="exchangeFeeType2" name="exchangeFeeType" />
+                      <label for="exchangeFeeType2">오배송</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="exchangeFeeType3" class="form-label">배송비 구매자 부담</label>
+                <div class="row g-10px">
+                  <div class="col-6">
+                    <div class="form-check button w-100">
+                      <input type="radio" id="exchangeFeeType3" name="exchangeFeeType" />
+                      <label for="exchangeFeeType3">단순 변심</label>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-check button w-100">
+                      <input type="radio" id="exchangeFeeType4" name="exchangeFeeType" />
+                      <label for="exchangeFeeType4">주문 실수</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //사유 선택 -->
+          <!-- 상세 내용 -->
+          <div class="form-group-wrap">
+            <div class="form-group-header">
+              <div class="label">상세 내용(필수)</div>
+            </div>
+            <div class="form-group-body">
+              <div class="textarea">
+                <textarea rows="6" class="form-control" placeholder="내용을 입력해주세요" maxlength="300"></textarea>
+                <div class="byte"><span>0</span>/300자</div>
+              </div>
+            </div>
+          </div>
+          <!-- //상세 내용 -->
+          <!-- 첨부파일 -->
+          <div class="form-group-wrap">
+            <div class="form-group-header">
+              <div class="label">첨부파일(선택)</div>
+            </div>
+            <div class="form-group-body">
+              <div class="uploaded-file">
+                <div class="row align-items-center h-100">
+                  <div class="col">
+                    <div class="file-name">img0456.jpg</div>
+                  </div>
+                  <div class="col-auto">
+                    <button type="button" class="btn-file-delete"><i class="icon-file-delete"></i></button>
+                  </div>
+                </div>
+              </div>
+              <div class="uploaded-file">
+                <div class="row align-items-center h-100">
+                  <div class="col">
+                    <div class="file-name">img0456.jpg</div>
+                  </div>
+                  <div class="col-auto">
+                    <button type="button" class="btn-file-delete"><i class="icon-file-delete"></i></button>
+                  </div>
+                </div>
+              </div>
+              <button type="button"
+                class="btn btn-outline-light btn-flat btn-lg w-100 justify-content-start text-gray-light"
+                id="btn-file">+ 첨부파일 추가</button>
+              <input type="file" class="visually-hidden" />
+              <script>
+                $("#btn-file").on("click", function () {
+                  $(this).siblings("input[type=file]").click();
+                });
+              </script>
+              <p class="help-text">포맷 jpg/png/gif, 최대 3개, 개당 5MB, 총 10MB 등록 가능</p>
+            </div>
+          </div>
+          <!-- //첨부파일 -->
+          <!-- 해결 방법 -->
+          <div class="form-group-wrap">
+            <div class="form-group-header">
+              <label for="solutionType1" class="label">해결 방법(필수)</label>
+            </div>
+            <div class="form-group-body">
+              <div class="form-check inline">
+                <input type="radio" id="solutionType1" name="solutionType" />
+                <label for="solutionType1">교환</label>
+              </div>
+              <div class="form-check inline">
+                <input type="radio" id="solutionType2" name="solutionType" />
+                <label for="solutionType2">반품 후 환불</label>
+              </div>
+            </div>
+          </div>
+          <!-- //첨부파일 -->
+          <!-- 상품 회수지 정보 -->
+          <div class="form-group-wrap">
+            <div class="form-group-header">
+              <label for="solutionType1" class="label">상품 회수지 정보</label>
+              <button type="button" class="btn btn-muted btn-sm btn-flat text-gray" data-bs-toggle="modal"
+                data-bs-target="#modal-address-edit">변경하기</button>
+            </div>
+            <div class="form-group-body">
+              <address class="address-item">
+                <div class="zipcode">04720</div>
+                <div class="addr">서울시 강남구 도산대로 54길 32 (도산아파트) 도산아파트 101동 202호</div>
+                <div class="name">이정후, 010-1234-5678</div>
+                <span class="badge dark">기본 배송지</span>
+              </address>
+              <select class="form-select form-select-lg w-100">
+                <option value="">배송 메모 (선택)</option>
+                <option value="" selected>배송 전에 미리 연락 바랍니다.</option>
+                <option value="">부재 시 경비실에 맡겨주세요.</option>
+                <option value="">부재 시 문 앞에 놓아주세요.</option>
+                <option value="">부재 시 전화나 문자 남겨주세요.</option>
+                <option value="직접 입력">직접 입력</option>
+              </select>
+              <div class="textarea visually-hidden mt-10px">
+                <textarea rows="2" class="form-control" placeholder="직접 입력" maxlength="100"></textarea>
+              </div>
+            </div>
+          </div>
+          <!-- //상품 회수지 정보 -->
+          <!-- 환불 예정 금액 -->
+          <div class="form-group-wrap">
+            <div class="form-group-header">
+              <div class="label">환불 예정 금액</div>
+              <div class="sum-pay">14,850원</div>
+            </div>
+            <div class="form-group-body">
+              <dl class="info-list between">
+                <dt>상품금액</dt>
+                <dd>11,500 원</dd>
+                <dt>포인트</dt>
+                <dd>850 원</dd>
+                <dt>배송비</dt>
+                <dd>2,500원</dd>
+              </dl>
+            </div>
+          </div>
+          <!-- //환불 예정 금액 -->
+          <!-- 추가 결제 비용 -->
+          <div class="form-group-wrap">
+            <div class="form-group-header">
+              <div class="label">추가 결제 비용</div>
+              <div class="sum-pay">5,000원</div>
+            </div>
+            <div class="form-group-body">
+              <dl class="info-list between">
+                <dt>반품 및 배송비</dt>
+                <dd>5,000 원</dd>
+              </dl>
+              <p class="help-text">*제주 및 도서산간 지역 : 추가 배송비 3,000원 발생</p>
+            </div>
+          </div>
+          <!-- //추가 결제 비용 -->
+          <!-- 하단 버튼 -->
+          <div class="bottom-buttons">
+            <button type="button" class="btn btn-dark btn-lg w-100 px-0"
+              onclick="location.href='my_event_exchange_payment.html'">신청하기</button>
+          </div>
+          <!-- //하단 버튼 -->
+        </div>
 
-          <!-- //실컨텐츠 -->
-        </main>
-      </div>
+        <!-- //실컨텐츠 -->
+      </main>
     </div>
+  </div>
 
-    @@include('@@webRoot/html/_include/_modal.html')
-  </body>
+  @@include('@@webRoot/html/_include/_modal.html')
+</body>
+
 </html>
