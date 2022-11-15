@@ -2587,10 +2587,27 @@ progress {
 .reviews .photos .swiper-slide .img {
   cursor: pointer;
 }
+.reviews .title {
+  font-size: 12px;
+  font-weight: 700;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+.reviews .title + .option {
+  color: #000;
+  margin-top: 2px;
+}
+.reviews .user + .title {
+  margin-top: -8px;
+}
 .reviews .option {
   font-size: 12px;
   color: #999;
   margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .reviews .content {
   font-size: 14px;
