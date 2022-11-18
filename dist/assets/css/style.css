@@ -1804,6 +1804,75 @@ progress {
   color: #000;
 }
 
+#footer {
+  padding: 0 20px;
+  display: none;
+  padding-bottom: 110px;
+  padding-bottom: calc(constant(safe-area-inset-bottom) + 110px);
+  padding-bottom: calc(env(safe-area-inset-bottom) + 110px);
+}
+#footer .inner {
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  margin-top: 40px;
+  padding-top: 40px;
+}
+#footer .btn-info-toggler {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #999;
+  margin-left: 15px;
+}
+#footer .btn-info-toggler::after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 11px;
+  height: 6px;
+  background: url("../images/icon-arr-down-gray.svg") no-repeat 0 0;
+  margin-left: 5px;
+}
+#footer .btn-info-toggler[aria-expanded=true]::after {
+  transform: rotate(180deg);
+}
+#footer .footer-info {
+  font-size: 12px;
+  line-height: 20px;
+  color: #999;
+  margin-top: 20px;
+}
+#footer .footer-info a {
+  margin-left: 3px;
+  color: #666;
+  text-decoration: underline;
+}
+#footer .footer-menu {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+#footer .footer-menu li + li::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.15);
+  margin: 0 10px;
+}
+#footer .footer-menu a {
+  font-size: 12px;
+  font-weight: 700;
+  color: #999;
+}
+#footer .footer-warning {
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.25);
+  margin-top: 20px;
+}
+#footer .copyright {
+  display: none;
+}
+
 .bottom-buttons {
   margin-top: 30px;
   display: grid;
@@ -5047,6 +5116,10 @@ progress {
   margin-bottom: 40px;
 }
 
+#home #footer {
+  display: block;
+}
+
 body.body-main #header .header-sub {
   display: none;
 }
@@ -5057,6 +5130,9 @@ body.body-main #main {
   padding-bottom: 110px;
   padding-bottom: calc(constant(safe-area-inset-bottom) + 110px);
   padding-bottom: calc(env(safe-area-inset-bottom) + 110px);
+}
+body.body-main #main + #footer {
+  margin-top: -110px;
 }
 html.scroll-down body.body-main #header {
   transform: translateY(-60px);
