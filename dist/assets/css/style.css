@@ -324,6 +324,10 @@
   font-weight: 400;
 }
 
+.btn-round-lg {
+  border-radius: 50rem;
+}
+
 /* button display */
 .btn-block {
   display: flex;
@@ -3426,11 +3430,16 @@ progress {
   margin-left: 15px;
 }
 .my-profile .info .username {
+  display: block;
   font-size: 30px;
   font-weight: 700;
   line-height: 1.16666;
   margin-bottom: 3px;
   transform: translateY(-6px);
+}
+.my-profile .info .username .icon-full-menu-arr {
+  width: 12px;
+  height: 17px;
 }
 .my-profile .info .btn-friend-invite {
   padding: 9px 15px;
@@ -3557,6 +3566,25 @@ progress {
 }
 .my-event-state .col-auto {
   padding-bottom: 41px;
+}
+
+.be-lucky {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding-top: 90px;
+  border-top: 10px solid rgba(0, 0, 0, 0.05);
+}
+.be-lucky p {
+  font-size: 30px;
+  font-weight: 700;
+  display: inline-block;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.be-lucky .btn {
+  width: 160px;
 }
 
 .my-event-list .item {
