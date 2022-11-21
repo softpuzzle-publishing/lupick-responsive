@@ -7,7 +7,7 @@
     &::after{content: '';width: 100%;height: 20%;position: absolute;left: 0;bottom: 0;background: linear-gradient(0deg, rgba(0,0,0,0.3)  0%, rgba(0,0,0,0) 100%);}
   }
   .info{
-    position: absolute;left: 15px;bottom: 15px;z-index: 1;
+    position: absolute;left: 15px;bottom: 15px;right: 15px; z-index: 1;
     .title{font-size: 16px;line-height: 1.375;color: #fff;font-weight: 700;}
   }
   .swiper-pagination-feed-top-banner{font-size: 13px;font-weight: 700;color: rgba(255,255,255,.6);position: static;text-align: left;margin-bottom: 5px;}

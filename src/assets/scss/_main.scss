@@ -44,7 +44,7 @@
   }
   .state{
     width: 80px;height: 80px;background: #000;color: #fff;border-radius: 50rem;position: absolute;right: 20px;bottom: 0;z-index: 10;transition: transform .18s;
-    strong{font-size: 20px;font-weight: 400;}
+    strong{font-size: 20px;font-weight: 400;font-family: $font-family-eng;}
     span{font-size: 12px;}
     &[data-event-state="alarm-before"]{
       .btn-alarm-before{opacity: 1;visibility: visible;display: block;}

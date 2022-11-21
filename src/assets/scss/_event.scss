@@ -1,5 +1,23 @@
 .cms-area{
-  img{width: 100% !important;height: auto !important;}
+  overflow: hidden;
+  *{max-width: none !important;}
+  img{width: auto !important;max-width:100% !important;height: auto !important;vertical-align: top;}
+  .content{background: transparent !important;}
+  .container,
+  .container-fluid{padding-left: 0;padding-right: 0;}
+  .content{
+    img{margin: 40px 0 20px;}
+  }
+}
+
+.full-video{
+  position: relative;height: 0;padding-bottom: 56.25%;margin: 0 -20px 20px;
+  > iframe{position: absolute;left: 0;top: 0;width: 100% !important;height: 100% !important;}
+}
+
+.full-img{
+  margin: 0 -20px;overflow: hidden;
+  img{width: auto !important;max-width: 100% !important;height: auto !important;}
 }
 
 .event-item{
@@ -152,6 +170,7 @@
 }
 
 .reviews{
+  .review-graph + &{border-top: 1px solid $border-color;padding-top: 20px;}
   .item{
     padding: 20px 0 30px;
     &:first-of-type{padding-top: 0;}
@@ -241,7 +260,7 @@
 }
 
 .text-banner-img{
-  text-align: center;margin-top: 40px;
+  text-align: center;margin-top: 40px;margin-bottom: 40px;
   img{width: 100%;vertical-align: top;}
 }
 

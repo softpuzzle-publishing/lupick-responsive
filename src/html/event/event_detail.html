@@ -9,19 +9,17 @@
       //포토리뷰 swiper
       var photosSwiper = [];
       $(".reviews .photos .swiper").each(function (i) {
-        if ($(this).find(".swiper-slide").length > 4) {
-          // eslint-disable-next-line
-          photosSwiper[i] = new Swiper($(this)[0], {
-            slidesPerView: 4.5,
-            freeMode: true,
-            spaceBetween: 5,
-            slidesOffsetBefore: 20,
-            slidesOffsetAfter: 20,
-            observeParents: true,
-            observeSlideChildren: true,
-            observer: true,
-          });
-        }
+        // eslint-disable-next-line
+        photosSwiper[i] = new Swiper($(this)[0], {
+          slidesPerView: 4.5,
+          freeMode: true,
+          spaceBetween: 5,
+          slidesOffsetBefore: 20,
+          slidesOffsetAfter: 20,
+          observeParents: true,
+          observeSlideChildren: true,
+          observer: true,
+        });
       });
 
       let photoIdx; //클릭한 사진의 인덱스
@@ -264,7 +262,7 @@
         <!-- //실제 구매자 리뷰 -->
 
         <!-- 중간 텍스트 배너 -->
-        <div class="text-banner-img m-t-40">
+        <div class="text-banner-img">
           <img src="@@webRoot/assets/images/img-text-banner-normal.svg" alt="" />
           <!-- <img src="@@webRoot/assets/images/img-text-banner-free.svg" alt="">
           <img src="@@webRoot/assets/images/img-text-banner-point.svg" alt=""> -->
@@ -273,7 +271,43 @@
 
         <!-- 에디터 컨텐츠 -->
         <div class="container">
-          <div class="cms-area">에디터 영역</div>
+          <div class="cms-area">
+            <div class="wrappers" style="max-width:375px;">
+              <div class="container-wrap">
+                <div class="item article" id="event_detail_article">
+                  <div class="content" style="background-color : #000;"><img alt=""
+                      src="https://m.lupick.com//upload/ckeditor/20221028/17895330902788261.png"
+                      style="width: 750px; height: 5256px;"> <img alt=""
+                      src="https://m.lupick.com//upload/ckeditor/20221028/17895699953801391.gif"
+                      style="width: 400px; height: 225px;">
+                    <div class="wrappers" style="max-width:375px;">
+                      <div class="container-wrap">
+                        <div class="item article" id="event_detail_article">
+                          <div class="content"><img alt=""
+                              src="https://m.lupick.com//upload/ckeditor/20221028/17895809632181751.png"
+                              style="width: 750px; height: 402px;"> <img alt=""
+                              src="https://m.lupick.com//upload/ckeditor/20221028/17895829027295128.gif"
+                              style="width: 100%; height: 207px;">
+                            <div class="wrappers" style="max-width:375px;">
+                              <div class="container-wrap">
+                                <div class="item article" id="event_detail_article">
+                                  <div class="content"><img alt=""
+                                      src="https://m.lupick.com//upload/ckeditor/20221028/17895849777280924.png"
+                                      style="width: 750px; height: 402px;"> <img alt=""
+                                      src="https://m.lupick.com//upload/ckeditor/20221028/17895874800941654.png"
+                                      style="width: 750px; height: 2796px;"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <!-- //에디터 컨텐츠 -->
 
@@ -295,7 +329,8 @@
                 <li><span class="bold">배송비</span> <span>기본 배송 2,500원 (CJ대한통운)</span></li>
               </ul>
             </div>
-            <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100">이벤트상품 정보 상세보기</button>
+            <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100"
+              onclick="location.href='item.html'">이벤트상품 정보 상세보기</button>
           </div>
         </div>
         <!-- //이벤트 상품 -->

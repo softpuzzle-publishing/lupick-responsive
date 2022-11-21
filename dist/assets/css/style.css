@@ -1582,7 +1582,15 @@ progress {
   margin-bottom: 15px !important;
 }
 
+.mb-20px {
+  margin-bottom: 30px !important;
+}
+
 .mb-30px {
+  margin-bottom: 30px !important;
+}
+
+.mb-40px {
   margin-bottom: 30px !important;
 }
 
@@ -2279,8 +2287,51 @@ progress {
   margin-top: 8px;
 }
 
+.cms-area {
+  overflow: hidden;
+}
+.cms-area * {
+  max-width: none !important;
+}
 .cms-area img {
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+  vertical-align: top;
+}
+.cms-area .content {
+  background: transparent !important;
+}
+.cms-area .container,
+.cms-area .container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+.cms-area .content img {
+  margin: 40px 0 20px;
+}
+
+.full-video {
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%;
+  margin: 0 -20px 20px;
+}
+.full-video > iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 100% !important;
+  height: 100% !important;
+}
+
+.full-img {
+  margin: 0 -20px;
+  overflow: hidden;
+}
+.full-img img {
+  width: auto !important;
+  max-width: 100% !important;
   height: auto !important;
 }
 
@@ -2648,6 +2699,10 @@ progress {
   margin-right: 5px;
 }
 
+.review-graph + .reviews {
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  padding-top: 20px;
+}
 .reviews .item {
   padding: 20px 0 30px;
 }
@@ -2844,6 +2899,7 @@ progress {
 .text-banner-img {
   text-align: center;
   margin-top: 40px;
+  margin-bottom: 40px;
 }
 .text-banner-img img {
   width: 100%;
@@ -3268,6 +3324,7 @@ progress {
   position: absolute;
   left: 15px;
   bottom: 15px;
+  right: 15px;
   z-index: 1;
 }
 .feed-top-banner .info .title {
@@ -5248,6 +5305,7 @@ html.scroll-down body.body-main #header {
 .main-top-banner .state strong {
   font-size: 20px;
   font-weight: 400;
+  font-family: "Gilroy";
 }
 .main-top-banner .state span {
   font-size: 12px;
