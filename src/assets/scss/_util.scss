@@ -54,3 +54,21 @@
   padding-top: 30px;
   img{max-width: 100%;}
 }
+
+.terms{
+  padding: 20px 0;font-size: 12px;color: #888;
+  h2{margin-bottom: .75rem;margin-top: 2rem;color: #000;font-size: 14px;font-weight: 500;
+      &:first-of-type{margin-top: 0;}
+  }
+  strong{display: block;margin-bottom: .5rem;margin-top: 1.25rem;color: #000;font-weight: 500;font-size: 13px;
+      &:first-of-type{margin-top: 0;}
+  }
+  h2 + strong{margin-top: .75rem;}
+  .table{
+      margin: 10px 0;
+      th,
+      td{padding: 7px 8px;height: auto;}
+      td{color: #666;}
+      font-size: 11px;color: #666;
+  }
+}

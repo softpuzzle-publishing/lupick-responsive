@@ -16,9 +16,6 @@
   height: 40px;
   padding-left: 16px;padding-right: 16px;
   border-radius: 7px;
-  @media (max-width: 320px) {
-    font-size: 15px;
-  }
   &:disabled{
     pointer-events: none;background: #bfbfbf !important;border-color: #bfbfbf !important;
   }

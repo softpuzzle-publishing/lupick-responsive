@@ -162,11 +162,6 @@
   padding-right: 16px;
   border-radius: 7px;
 }
-@media (max-width: 320px) {
-  .btn {
-    font-size: 15px;
-  }
-}
 .btn:disabled {
   pointer-events: none;
   background: #bfbfbf !important;
@@ -602,7 +597,6 @@ textarea.form-control::placeholder {
   min-width: 105px;
   height: 40px;
   border: 1px solid rgba(0, 0, 0, 0.25);
-  color: rgba(0, 0, 0, 0.25);
   font-size: 14px;
   text-align: center;
   line-height: 38px;
@@ -1263,6 +1257,7 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
 }
 
 @media (max-width: 320px) {
@@ -3089,6 +3084,94 @@ progress {
   border-radius: 50%;
 }
 
+.reward .reward-item {
+  position: relative;
+  overflow: hidden;
+}
+.reward .reward-item .reward-item-img img {
+  border-radius: 50%;
+  width: 100%;
+  aspect-ratio: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.reward .reward-item .name {
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  padding-bottom: 13px;
+  margin-bottom: 20px;
+}
+.reward .reward-item .to {
+  font-size: 16px;
+  line-height: 1.1875;
+  color: #4ac0ff;
+  font-weight: 700;
+}
+.reward .reward-item .lucky-user {
+  margin-top: 20px;
+}
+.reward .reward-item .lucky-user li {
+  font-size: 16px;
+  line-height: 1;
+}
+.reward .reward-item .lucky-user li + li {
+  margin-top: 14px;
+}
+.reward .reward-item .lucky-user li:nth-child(5) ~ li {
+  display: none;
+}
+.reward .reward-item .toggler {
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  padding-top: 20px;
+  text-align: center;
+  line-height: 1;
+  margin-top: 20px;
+}
+.reward .reward-item .toggler a {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 13px;
+  line-height: 1.153;
+  font-weight: 700;
+  display: inline-block;
+  vertical-align: top;
+}
+.reward .reward-item .toggler i {
+  margin-left: 3px;
+}
+.reward .reward-item + .reward-item {
+  margin-top: 50px;
+}
+.reward .reward-item:nth-of-type(1) .reward-item-img {
+  margin-bottom: 18px;
+}
+.reward .reward-item:not(:nth-of-type(1)) .reward-item-img {
+  position: absolute;
+  right: -10px;
+  top: 7px;
+  border: 10px solid #fff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.reward .reward-item:not(:nth-of-type(1)) .reward-item-img img {
+  width: 105px;
+  height: 105px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.reward .reward-item:not(:nth-of-type(1)) .name {
+  border-top: 2px solid #000;
+  padding-top: 13px;
+  padding-right: 115px;
+}
+.reward .reward-item.expanded .lucky-user li:nth-child(5) ~ li {
+  display: block;
+}
+.reward .reward-item.expanded .toggler a i {
+  transform: scaleY(-100%);
+}
+
 .stock-count {
   text-align: right;
   font-size: 14px;
@@ -3284,6 +3367,82 @@ progress {
   line-height: 1.8;
 }
 
+/* old style 개발 이슈로 추가 */
+.spinner {
+  display: inline-block;
+}
+.spinner .spinner-box {
+  display: flex;
+  overflow: hidden;
+}
+.spinner .spinner-box button {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.spinner .spinner-box i {
+  vertical-align: top;
+}
+.spinner .spinner-box .spinner-input {
+  display: block;
+  width: 40px;
+  border: 0;
+  margin: 0;
+  background: #fff;
+  text-align: center;
+  border-radius: 0;
+}
+.spinner .spinner-box .icon-minus {
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/icon-decrease.svg);
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+}
+.spinner .spinner-box .icon-plus {
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/icon-increase.svg);
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+}
+.spinner .spinner-box:disabled {
+  opacity: 0.3;
+}
+
+.sel-option {
+  padding: 20px 0;
+}
+.sel-option + .sel-option {
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+.sel-option .name {
+  width: 265px;
+  font-size: 14px;
+  line-height: 1.2;
+}
+.sel-option .sel-delete {
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  background: url("../images/icon-x-sm.svg") no-repeat 0 0;
+  background-size: contain;
+}
+.sel-option .spinner-wrap {
+  margin-top: 13px;
+  line-height: 1;
+}
+.sel-option .spinner-wrap .price {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* //old style */
 .feed-top-banner {
   position: relative;
 }
@@ -3519,6 +3678,7 @@ progress {
   width: 25px;
   height: 25px;
   margin-right: 7.5px;
+  transform: translateY(-2px);
 }
 .my-point .point strong {
   font-size: 30px;
@@ -4163,7 +4323,7 @@ progress {
 .modal-vote-card[data-winning=Y] .modal-content {
   background: #000;
 }
-.modal-vote-card[data-winning=Y] .modal-title {
+.modal-vote-card[data-winning=Y] checkbox-button-wrap .modal-title {
   color: #ffec00;
 }
 .modal-vote-card[data-winning=Y] .btn-close {
@@ -4185,7 +4345,7 @@ progress {
   top: 0;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+  border-radius: 7px;
   overflow: hidden;
 }
 .result-open-animation > div {
@@ -4474,6 +4634,12 @@ progress {
   word-break: keep-all;
 }
 
+.checkbox-button-wrap .form-check label {
+  font-weight: 400;
+}
+.checkbox-button-wrap .form-check input:checked ~ label {
+  font-weight: 700;
+}
 .checkbox-button-wrap .form-check + .form-check {
   margin-top: 10px;
 }
@@ -4696,6 +4862,49 @@ progress {
 }
 .lupickguide img {
   max-width: 100%;
+}
+
+.terms {
+  padding: 20px 0;
+  font-size: 12px;
+  color: #888;
+}
+.terms h2 {
+  margin-bottom: 0.75rem;
+  margin-top: 2rem;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+}
+.terms h2:first-of-type {
+  margin-top: 0;
+}
+.terms strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  margin-top: 1.25rem;
+  color: #000;
+  font-weight: 500;
+  font-size: 13px;
+}
+.terms strong:first-of-type {
+  margin-top: 0;
+}
+.terms h2 + strong {
+  margin-top: 0.75rem;
+}
+.terms .table {
+  margin: 10px 0;
+  font-size: 11px;
+  color: #666;
+}
+.terms .table th,
+.terms .table td {
+  padding: 7px 8px;
+  height: auto;
+}
+.terms .table td {
+  color: #666;
 }
 
 .accordion .item {
@@ -5305,7 +5514,6 @@ html.scroll-down body.body-main #header {
 .main-top-banner .state strong {
   font-size: 20px;
   font-weight: 400;
-  font-family: "Gilroy";
 }
 .main-top-banner .state span {
   font-size: 12px;
@@ -5361,8 +5569,9 @@ html.scroll-down body.body-main #header {
   padding-bottom: 1px;
 }
 .main-top-banner .ing strong {
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 20px;
+  font-weight: 100;
+  font-family: "Gilroy";
 }
 .main-top-banner .ing span {
   font-size: 12px;

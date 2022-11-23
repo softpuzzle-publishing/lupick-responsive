@@ -41,7 +41,7 @@
             <button type="button" class="btn-back" aria-label="뒤로" onclick="window.history.back()">
               <i class="icon-back"></i>
             </button>
-            <h1 class="header-title">배송지 관리</h1>
+            <h1 class="header-title">이벤트 결과</h1>
             <!-- 이벤트 상세에서만 노출 -->
             <button type="button" aria-label="공유" data-bs-toggle="modal" data-bs-target="#modal-event-share" class="btn-share"><i class="icon-share"></i></button>
             <!-- //이벤트 상세에서만 노출 -->
@@ -58,44 +58,97 @@
         </div>
       </header>
 
-      <div id="container">
-        <main id="main">
-          <!-- 실컨텐츠 -->
+      <main id="main">
+        <!-- 실컨텐츠 -->
 
-          <div class="container pt-20px">
-            <button type="button" class="btn btn-outline-light btn-flat btn-lg w-100 justify-content-start text-gray-light" data-bs-toggle="modal" data-bs-target="#modal-address-add">+ 배송지 추가</button>
-            <address class="address-item">
-              <div class="row gx-5">
-                <div class="col">
-                  <div class="zipcode">04720</div>
-                  <div class="addr">서울시 강남구 도산대로 54길 32 (도산아파트) 도산아파트 101동 202호</div>
-                  <div class="name">이정후, 010-1234-5678</div>
-                  <span class="badge dark">기본 배송지</span>
-                </div>
-                <div class="col-auto">
-                  <button type="button" aria-label="수정" data-bs-toggle="modal" data-bs-target="#modal-address-edit"><i class="icon-edit"></i></button>
-                </div>
+        <div class="container">
+          <div class="reward">
+            <h2 class="heading-text">루픽리워드 받으신 분들 <br />진심으로 축하합니다!</h2>
+            <!-- 3명에게 -->
+            <div class="reward-item">
+              <div class="reward-item-img">
+                <img src="../../assets/images/@landscape.jpg" alt="" />
               </div>
-            </address>
-            <address class="address-item">
-              <div class="row gx-5">
-                <div class="col">
-                  <div class="zipcode">04720</div>
-                  <div class="addr">서울시 강남구 도산대로 54길 32 (도산아파트) 도산아파트 101동 202호</div>
-                  <div class="name">이정후, 010-1234-5678</div>
-                </div>
-                <div class="col-auto">
-                  <button type="button" aria-label="수정" data-bs-toggle="modal" data-bs-target="#modal-address-edit"><i class="icon-edit"></i></button>
-                </div>
+              <div class="name">패밀리 SUV의 진화, 현대 2022 SANTA FE</div>
+              <div class="to">오직 3명에게</div>
+              <ul class="lucky-user">
+                <li>•버터</li>
+                <li>•티비보는도라에몽</li>
+                <li>•데부루</li>
+              </ul>
+            </div>
+            <!-- 5명에게 -->
+            <div class="reward-item">
+              <div class="reward-item-img">
+                <img src="../../assets/images/@landscape.jpg" alt="" />
               </div>
-            </address>
+              <div class="name">도미노 포테이토피자L+콜라</div>
+              <div class="to">오직 5명에게</div>
+              <ul class="lucky-user">
+                <li>•버터</li>
+                <li>•티비보는도라에몽</li>
+                <li>•데부루</li>
+                <li>•버터</li>
+                <li>•티비보는도라에몽</li>
+              </ul>
+            </div>
+            <!-- 10명에게 -->
+            <div class="reward-item">
+              <div class="reward-item-img">
+                <img src="../../assets/images/@landscape.jpg" alt="" />
+              </div>
+              <div class="name">BHC 후라이드치킨+콜라</div>
+              <div class="to">오직 10명에게</div>
+              <ul class="lucky-user">
+                <li>•버터</li>
+                <li>•티비보는도라에몽</li>
+                <li>•데부루</li>
+                <li>•버터</li>
+                <li>•티비보는도라에몽</li>
+                <li>•데부루</li>
+                <li>•버터</li>
+                <li>•티비보는도라에몽</li>
+                <li>•데부루</li>
+                <li>•데부루</li>
+              </ul>
+              <div class="toggler">
+                <a href="javascript:;">전체보기 <i class="icon-arrow-down"></i></a>
+              </div>
+            </div>
+            <!-- 15명에게 -->
+            <div class="reward-item">
+              <div class="reward-item-img">
+                <img src="../../assets/images/@portrait.jpg" alt="" />
+              </div>
+              <div class="name">배스킨라빈스 싱글레귤러</div>
+              <div class="to">오직 15명에게</div>
+              <ul class="lucky-user">
+                <li>•버터</li>
+                <li>•티비보는도라에몽</li>
+                <li>•데부루</li>
+                <li>•버터</li>
+                <li>•티비보는도라에몽</li>
+                <li>•데부루</li>
+                <li>•버터</li>
+                <li>•티비보는도라에몽</li>
+                <li>•데부루</li>
+                <li>•데부루</li>
+                <li>•버터</li>
+                <li>•티비보는도라에몽</li>
+                <li>•데부루</li>
+                <li>•버터</li>
+                <li>•티비보는도라에몽</li>
+              </ul>
+              <div class="toggler">
+                <a href="javascript:;">전체보기 <i class="icon-arrow-down"></i></a>
+              </div>
+            </div>
           </div>
+        </div>
 
-          <!-- //실컨텐츠 -->
-        </main>
-      </div>
+        <!-- //실컨텐츠 -->
+      </main>
     </div>
-
     <!-- alert: 새 비밀번호 등록 확인  -->
     <div class="modal alert" tabindex="-1" id="alert-confirm">
       <div class="modal-dialog">
