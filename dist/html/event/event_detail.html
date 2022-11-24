@@ -113,6 +113,9 @@
             <!-- 이벤트 상세에서만 노출 -->
             <button type="button" aria-label="공유" data-bs-toggle="modal" data-bs-target="#modal-event-share" class="btn-share"><i class="icon-share"></i></button>
             <!-- //이벤트 상세에서만 노출 -->
+            <!-- 이벤트 결과에서만 노출 -->
+            <button type="button" aria-label="리스트" data-bs-toggle="modal" data-bs-target="#modal-result-list" class="btn-list"><i class="icon-list"></i></button>
+            <!-- //이벤트 결과에서만 노출 -->
           </div>
           <div class="header-main">
             <div class="logo"><span class="visually-hidden">Lupick Logo</span></div>
@@ -125,7 +128,6 @@
           </div>
         </div>
       </header>
-
       <main id="main">
         <!-- 실컨텐츠 -->
 
@@ -323,17 +325,17 @@
             <div class="cms-area">
               <div class="wrappers" style="max-width: 375px">
                 <div class="container-wrap">
-                  <div class="item article" id="event_detail_article">
+                  <div class="item article">
                     <div class="content" style="background-color: #000">
                       <img alt="" src="https://m.lupick.com//upload/ckeditor/20221028/17895330902788261.png" style="width: 750px; height: 5256px" /> <img alt="" src="https://m.lupick.com//upload/ckeditor/20221028/17895699953801391.gif" style="width: 400px; height: 225px" />
                       <div class="wrappers" style="max-width: 375px">
                         <div class="container-wrap">
-                          <div class="item article" id="event_detail_article">
+                          <div class="item article">
                             <div class="content">
                               <img alt="" src="https://m.lupick.com//upload/ckeditor/20221028/17895809632181751.png" style="width: 750px; height: 402px" /> <img alt="" src="https://m.lupick.com//upload/ckeditor/20221028/17895829027295128.gif" style="width: 100%; height: 207px" />
                               <div class="wrappers" style="max-width: 375px">
                                 <div class="container-wrap">
-                                  <div class="item article" id="event_detail_article">
+                                  <div class="item article">
                                     <div class="content">
                                       <img alt="" src="https://m.lupick.com//upload/ckeditor/20221028/17895849777280924.png" style="width: 750px; height: 402px" /> <img alt="" src="https://m.lupick.com//upload/ckeditor/20221028/17895874800941654.png" style="width: 750px; height: 2796px" />
                                     </div>
@@ -558,6 +560,7 @@
         </div>
       </div>
     </div>
+    ㅜ
 
     <!-- modal: 인증 실패 -->
     <div class="modal" tabindex="-1" id="modal-certification-fail">
@@ -665,6 +668,373 @@
             </div>
             <div class="more-text">
               <a href="javascript:;" role="button">더보기</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 투표결과 리스트 보기 -->
+    <div class="modal" tabindex="-1" id="modal-result-list">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="d-flex align-items-center">
+              <h5 class="modal-title">투표결과 리스트 보기</h5>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="event-result-list">
+              <table class="footnote">
+                <tbody>
+                  <tr>
+                    <td><i class="icon-footnote-black"></i><span>루픽리워드 선정자(루피커)</span></td>
+                    <td><i class="icon-footnote-yellow"></i><span>본인</span></td>
+                  </tr>
+                  <tr>
+                    <td><i class="icon-footnote-time"></i><span>시간차 우선 선정 루피커</span></td>
+                    <td><i class="icon-footnote-point"></i><span>루픽 포인트 루피커</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="help-text">
+                * 본인이 루피커일 경우 검정 박스에 닉네임이 노란색으로 표시됩니다. <br />
+                * 루픽 포인트는 득표수와 관계없이 랜덤하게 지급됩니다.
+              </p>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th class="text-center">닉네임</th>
+                    <th class="text-center">럭키번호</th>
+                    <th class="text-center">득표수</th>
+                    <th class="text-center">투표한 번호</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-start bg-dark text-white">호호호</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">
+                      <div class="row gx-1">
+                        <div class="col">티비보는도라에몽임다</div>
+                        <div class="col-auto"><i class="icon-footnote-point"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">정알파</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-dark text-primary">
+                      <div class="row gx-1">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-primary">
+                      <div class="row">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+
+                  <tr>
+                    <td class="text-start bg-dark text-white">호호호</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">
+                      <div class="row gx-1">
+                        <div class="col">티비보는도라에몽임다</div>
+                        <div class="col-auto"><i class="icon-footnote-point"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">정알파</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-dark text-primary">
+                      <div class="row gx-1">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-primary">
+                      <div class="row">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+
+                  <tr>
+                    <td class="text-start bg-dark text-white">호호호</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">
+                      <div class="row gx-1">
+                        <div class="col">티비보는도라에몽임다</div>
+                        <div class="col-auto"><i class="icon-footnote-point"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">정알파</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-dark text-primary">
+                      <div class="row gx-1">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-primary">
+                      <div class="row">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+
+                  <tr>
+                    <td class="text-start bg-dark text-white">호호호</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">
+                      <div class="row gx-1">
+                        <div class="col">티비보는도라에몽임다</div>
+                        <div class="col-auto"><i class="icon-footnote-point"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">정알파</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-dark text-primary">
+                      <div class="row gx-1">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-primary">
+                      <div class="row">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+
+                  <tr>
+                    <td class="text-start bg-dark text-white">호호호</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">
+                      <div class="row gx-1">
+                        <div class="col">티비보는도라에몽임다</div>
+                        <div class="col-auto"><i class="icon-footnote-point"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">정알파</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-dark text-primary">
+                      <div class="row gx-1">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-primary">
+                      <div class="row">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+
+                  <tr>
+                    <td class="text-start bg-dark text-white">호호호</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">
+                      <div class="row gx-1">
+                        <div class="col">티비보는도라에몽임다</div>
+                        <div class="col-auto"><i class="icon-footnote-point"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">정알파</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-dark text-primary">
+                      <div class="row gx-1">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-primary">
+                      <div class="row">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+
+                  <tr>
+                    <td class="text-start bg-dark text-white">호호호</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">
+                      <div class="row gx-1">
+                        <div class="col">티비보는도라에몽임다</div>
+                        <div class="col-auto"><i class="icon-footnote-point"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">정알파</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-dark text-primary">
+                      <div class="row gx-1">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-primary">
+                      <div class="row">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -1070,7 +1440,7 @@
                 </div>
               </div>
               <div>
-                <div class="sel-option" id="sel-1">
+                <div class="sel-option">
                   <div class="d-flex align-items-center justify-content-between">
                     <p class="name">미니 캐리어 테이블 (PLAIN)</p>
                     <button type="button" class="sel-delete" onclick="deleteOption(1);"></button>
@@ -1086,7 +1456,7 @@
                     <p class="price">57,000원</p>
                   </div>
                 </div>
-                <div class="sel-option" id="sel-1">
+                <div class="sel-option">
                   <div class="d-flex align-items-center justify-content-between">
                     <p class="name">미니 캐리어 테이블 (PLAIN)</p>
                     <button type="button" class="sel-delete" onclick="deleteOption(1);"></button>
@@ -1323,6 +1693,26 @@
                 루픽은 상품 판매의 당사자가 아니며 상품 판매와 관련한 일체의 책임은 판매자에게 있습니다. 루픽 서비스는 결제정보의 중개 또는 통신판매중개시스템의 제공만을 대상으로 하고 루픽 서비스의 이용자와 판매자 간의 거래관계, 구매내용 및 이벤트 상세페이지에 게재된 상품 정보, 거래 조건 등에
                 대해서는 어떠한 보증이나 책임도 부담하지 않습니다.
               </p>
+            </div>
+            <!-- //modal 내용 -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 루픽 앱 유도 -->
+    <div class="modal" tabindex="-1" id="modal-app-intro">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-body p-0">
+            <!-- modal 내용 -->
+            <div class="app-introduction">
+              <div class="app-icon">
+                <img src="../../assets/images/app-icon.png" alt="Lupick 앱 아이콘" />
+              </div>
+              <p class="text">루픽 앱에서 제공되는 <br />혜택과 이벤트를 놓칠 수 있어요!</p>
+              <button type="button" class="btn btn-white btn-round btn-lg w-100">루픽 앱 이용하기</button>
+              <a href="javascript:;" data-bs-dismiss="modal" class="close">괜찮아요. 모바일웹으로 볼게요.</a>
             </div>
             <!-- //modal 내용 -->
           </div>

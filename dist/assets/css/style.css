@@ -34,6 +34,12 @@
   background-image: url("../images/icon-share.svg");
 }
 
+.icon-list {
+  width: 20px;
+  height: 20px;
+  background-image: url("../images/icon-list.svg");
+}
+
 .icon-check-in-btn {
   width: 22px;
   height: 22px;
@@ -1197,6 +1203,27 @@ body.modal-open {
   border-color: #000;
 }
 
+.table {
+  width: 100%;
+}
+.table th,
+.table td {
+  border-left: 1px solid #c8c8c8;
+  border-top: 1px solid #c8c8c8;
+  padding: 10px;
+}
+.table th:first-child,
+.table td:first-child {
+  border-left: 0;
+}
+.table thead th {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.table-striped tbody tr:nth-child(odd) {
+  background: rgba(0, 0, 0, 0.04);
+}
+
 @font-face {
   font-family: "NanumBarunGothic";
   font-weight: 400;
@@ -1738,6 +1765,12 @@ progress {
   top: 50%;
   transform: translateY(-50%);
 }
+#header .btn-list {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
 #main {
   padding-top: 60px;
@@ -1818,9 +1851,7 @@ progress {
   padding-bottom: calc(constant(safe-area-inset-bottom) + 110px);
   padding-bottom: calc(env(safe-area-inset-bottom) + 110px);
 }
-#footer .inner {
-  border-top: 1px solid rgba(0, 0, 0, 0.15);
-  margin-top: 40px;
+#footer .inner { /* border-top: 1px solid $border-color;margin-top: 40px; */
   padding-top: 40px;
 }
 #footer .btn-info-toggler {
@@ -3084,6 +3115,12 @@ progress {
   border-radius: 50%;
 }
 
+.reward .heading-text {
+  font-size: 30px;
+  line-height: 1.3333;
+  font-weight: 400;
+  padding: 10px 0 20px;
+}
 .reward .reward-item {
   position: relative;
   overflow: hidden;
@@ -3170,6 +3207,43 @@ progress {
 }
 .reward .reward-item.expanded .toggler a i {
   transform: scaleY(-100%);
+}
+
+.event-result-list .icon-footnote-black {
+  width: 14px;
+  height: 14px;
+  background-image: url("../images/footnote-black.svg");
+}
+.event-result-list .icon-footnote-yellow {
+  width: 14px;
+  height: 14px;
+  background-image: url("../images/footnote-yellow.svg");
+}
+.event-result-list .icon-footnote-point {
+  width: 14px;
+  height: 14px;
+  background-image: url("../images/footnote-point.svg");
+}
+.event-result-list .icon-footnote-time {
+  width: 30px;
+  height: 14px;
+  background-image: url("../images/footnote-time.svg");
+}
+.event-result-list .footnote span {
+  font-size: 12px;
+  margin-left: 6px;
+}
+.event-result-list .footnote td {
+  padding-right: 15px;
+}
+.event-result-list .help-text {
+  font-size: 10px;
+}
+.event-result-list .table thead th {
+  font-size: 10px;
+}
+.event-result-list .table tbody td {
+  font-size: 12px;
 }
 
 .stock-count {
@@ -5946,5 +6020,40 @@ html.scroll-down body.body-main #header {
   font-size: 14px;
   color: rgba(0, 0, 0, 0.8);
   line-height: 1.5714;
+}
+
+#modal-app-intro .modal-content {
+  background: transparent;
+}
+#modal-app-intro ~ .modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.app-introduction {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+.app-introduction .app-icon img {
+  width: 86px;
+  height: 86px;
+}
+.app-introduction .text {
+  font-size: 20px;
+  line-height: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: #fff;
+}
+.app-introduction .btn-lg {
+  margin-bottom: 20px;
+  max-width: 300px;
+}
+.app-introduction .close {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.4);
 }
 /*# sourceMappingURL=maps/style.css.map */

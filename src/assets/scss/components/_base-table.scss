@@ -1,0 +1,17 @@
+.table{
+  width: 100%;
+  th,
+  td{
+    border-left: 1px solid #c8c8c8;border-top: 1px solid #c8c8c8;padding: 10px;
+    &:first-child{border-left: 0;}
+  }
+  thead{
+    th{background: rgba(0,0,0,0.1);}
+  }
+}
+
+.table-striped{
+  tbody{
+    tr:nth-child(odd){background: rgba(0,0,0,0.04);}
+  }
+}

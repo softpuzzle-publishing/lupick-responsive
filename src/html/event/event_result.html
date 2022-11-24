@@ -3,6 +3,19 @@
 
 <head>
   @@include('@@webRoot/html/_include/_head.html')
+  <script>
+    $(document).ready(function () {
+      $(document).on('click', '.reward-item .toggler a', function (e) {
+        e.preventDefault();
+        $(this).closest('.reward-item').toggleClass('expanded');
+        if ($(this).closest('.reward-item').hasClass('expanded')) {
+          $(this).find('span').text('접기');
+        } else {
+          $(this).find('span').text('전체보기');
+        }
+      });
+    })
+  </script>
 </head>
 
 <body>
@@ -62,7 +75,7 @@
               <li>•데부루</li>
             </ul>
             <div class="toggler">
-              <a href="javascript:;">전체보기 <i class="icon-arrow-down"></i></a>
+              <a href="javascript:;"><span>전체보기</span> <i class="icon-arr-down-gray"></i></a>
             </div>
           </div>
           <!-- 15명에게 -->
@@ -90,7 +103,7 @@
               <li>•티비보는도라에몽</li>
             </ul>
             <div class="toggler">
-              <a href="javascript:;">전체보기 <i class="icon-arrow-down"></i></a>
+              <a href="javascript:;"><span>전체보기</span> <i class="icon-arr-down-gray"></i></a>
             </div>
           </div>
         </div>

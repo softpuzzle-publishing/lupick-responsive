@@ -216,3 +216,17 @@
   .brand-name{margin-top: 46px;font-size: 28px; font-weight: 700;line-height: 1.0714;margin-bottom: 15px;}
   .brand-intro{font-size: 14px;color: rgba(0,0,0,0.8);line-height: 1.5714;}
 }
+
+#modal-app-intro{
+  .modal-content{background: transparent;}
+  & ~ .modal-backdrop{background-color: rgba(0,0,0,0.8);}
+}
+.app-introduction{
+  text-align: center;display: flex;align-items: center;justify-content: center;flex-direction: column;height: 100%;
+  .app-icon{
+    img{width: 86px;height: 86px;}
+  }
+  .text{font-size: 20px;line-height: 30px;margin-top: 30px;margin-bottom: 30px;color: #fff;}
+  .btn-lg{margin-bottom: 20px;max-width: 300px;}
+  .close{font-size: 14px;color: rgba(255,255,255,.4);}
+}
