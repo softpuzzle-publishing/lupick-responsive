@@ -37,6 +37,13 @@ $theme-colors: (
   "white":       $white
 ) !default;
 
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1234px,
+) !default;
+
 $header-height: 60px !default;
 $navbar-height: 70px !default;
-$container-max-width: 540px !default;
+$container-max-width: 1234px !default;

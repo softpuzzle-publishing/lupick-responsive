@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>(header)Lupick</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-Compatible" content="IE=edge" />
+    <title>Lupick</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no, viewport-fit=cover" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <link rel="icon" type="image/png" href="../assets/images/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon-152x152.png" sizes="152x152" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon-512x512.png" sizes="512x512" />
+
+    <!-- library css -->
+    <link rel="stylesheet" href="../assets/lib/jquery-ui/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../assets/lib/swiper/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../assets/lib/select2/css/select2.min.css" />
+
+    <!-- publilshing css -->
+    <link rel="stylesheet" href="../assets/css/bootstrap-grid.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-utilities.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <!-- library js -->
+    <script src="../assets/lib/jquery/jquery.min.js"></script>
+    <script src="../assets/lib/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/lib/select2/js/select2.min.js"></script>
+    <script src="../assets/lib/swiper/js/swiper-bundle.min.js"></script>
+
+    <!-- publishing js -->
+    <script src="../assets/js/ui.js" async></script>
+    <style>
+      .header-main,
+      .header-sub,
+      .header-desktop {
+        display: flex !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <header id="header">
+        <div class="container">
+          <!-- 서브 기본 -->
+          <div class="header-sub">
+            <button type="button" class="btn-back" aria-label="뒤로" onclick="window.history.back()">
+              <i class="icon-back"></i>
+            </button>
+            <h1 class="header-title">@@title</h1>
+          </div>
+          <!-- 이벤트 상세 -->
+          <div class="header-sub">
+            <button type="button" class="btn-back" aria-label="뒤로" onclick="window.history.back()">
+              <i class="icon-back"></i>
+            </button>
+            <h1 class="header-title">이벤트 상세보기</h1>
+            <div class="buttons">
+              <button type="button" aria-label="공유" data-bs-toggle="modal" data-bs-target="#modal-event-share" class="btn-share"><i class="icon-share"></i></button>
+            </div>
+          </div>
+          <!-- 이벤트 결과 -->
+          <div class="header-sub">
+            <button type="button" class="btn-back" aria-label="뒤로" onclick="window.history.back()">
+              <i class="icon-back"></i>
+            </button>
+            <h1 class="header-title">이벤트 결과</h1>
+            <div class="buttons">
+              <button type="button" aria-label="리스트" data-bs-toggle="modal" data-bs-target="#modal-result-list" class="btn-list"><i class="icon-list"></i></button>
+            </div>
+          </div>
+          <!-- 홈 -->
+          <div class="header-main">
+            <div class="logo"><span class="visually-hidden">Lupick Logo</span></div>
+            <div class="buttons">
+              <button type="button" aria-label="알림" data-bs-toggle="modal" data-bs-target="#modal-alarm"><i class="icon-bell"></i></button>
+            </div>
+          </div>
+          <!-- Feed -->
+          <div class="header-main">
+            <div class="logo-feed"><span class="visually-hidden">Feed</span></div>
+            <div class="buttons">
+              <button type="button" aria-label="알림" data-bs-toggle="modal" data-bs-target="#modal-alarm"><i class="icon-bell"></i></button>
+            </div>
+          </div>
+          <!-- My -->
+          <div class="header-main">
+            <div class="logo-my"><span class="visually-hidden">My</span></div>
+            <div class="buttons">
+              <button type="button" aria-label="환경설정" onclick="location.href='../html/setting/setting.html'"><i class="icon-gear"></i></button>
+            </div>
+          </div>
+          <!-- Desktop -->
+          <div class="header-desktop">
+            <a href="../html/main/main.html" class="logo"><span class="visually-hidden">Lupick Logo</span></a>
+            <nav id="gnb">
+              <ul>
+                <li>
+                  <a href="../html/main/main.html"><span>루픽 홈</span></a>
+                </li>
+                <li>
+                  <a href="../html/brand/brand.html"><span>브랜드관</span></a>
+                </li>
+                <li>
+                  <a href=""><span>쇼핑</span></a>
+                </li>
+                <li>
+                  <a href="../html/free_point/free_point.html"><span>프리&amp;포인트</span></a>
+                </li>
+                <li>
+                  <a href="../html/feed/feed.html"><span>피드</span></a>
+                </li>
+                <li>
+                  <a href="about.lupick.com" target="_blank"><span>About</span></a>
+                </li>
+              </ul>
+            </nav>
+            <div class="buttons">
+              <button type="button" aria-label="알림" data-bs-toggle="modal" data-bs-target="#modal-alarm"><i class="icon-bell"></i></button>
+              <button type="button" class="btn-mypage" aria-label="마이페이지" onlick="location.href='../html/my/my.html'">
+                <!-- <img src="../assets/images/profile-after-login-1.svg" alt="프로필 사진 없음(로그인 후)" class="default"> -->
+                <img src="../assets/images/@profile.jpg" alt="{{유저 닉네임}} 프로필 사진" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+  </body>
+</html>

@@ -9,81 +9,94 @@
   <div id="wrap">
     @@include('@@webRoot/html/_include/_header.html', { "title": "선정된 이벤트" })
     <div id="container">
-      <main id="main">
-        <!-- 실컨텐츠 -->
-
-        <div class="tab">
-          <ul class="nav nav-tabs justify-content-around" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <a href="#t1" class="nav-link active" data-bs-toggle="tab" role="tab">전체</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a href="#t2" class="nav-link" data-bs-toggle="tab" role="tab">쇼핑 이벤트</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a href="#t3" class="nav-link" data-bs-toggle="tab" role="tab">포인트 이벤트</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a href="#t4" class="nav-link" data-bs-toggle="tab" role="tab">프리 이벤트</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="top-sort is-tab-next">
-          <select class="form-select w-100">
-            <option selected>3개월</option>
-          </select>
-        </div>
-
-        <div class="container">
-          <p class="congratulations">루피커 선정을 축하합니다 (총 12개)</p>
-        </div>
-
-        <div class="my-event-list img-first">
-          <div class="item">
-            <div class="item-body">
-              <div class="d-flex align-items-center">
-                <div class="img">
-                  <img src="@@webRoot/assets/images/@portrait.jpg" alt="">
+      @@include('@@webRoot/html/_include/_top-my.html')
+      <div id="layout">
+        @@include('@@webRoot/html/_include/_sidebar-my.html')
+        <main id="main">
+          <!-- 실컨텐츠 -->
+          <div class="main-title-area">
+            <h2 class="main-title">선정된 이벤트</h2>
+            <select class="form-select form-select-lg">
+              <option selected>3개월</option>
+            </select>
+          </div>
+          <div class="tab">
+            <ul class="nav nav-tabs justify-content-around" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a href="#t1" class="nav-link active" data-bs-toggle="tab" role="tab">전체</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a href="#t2" class="nav-link" data-bs-toggle="tab" role="tab">쇼핑 이벤트</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a href="#t3" class="nav-link" data-bs-toggle="tab" role="tab">포인트 이벤트</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a href="#t4" class="nav-link" data-bs-toggle="tab" role="tab">프리 이벤트</a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-sort is-tab-next d-lg-none">
+            <select class="form-select w-100">
+              <option selected>3개월</option>
+            </select>
+          </div>
+          <div class="container">
+            <p class="congratulations">루피커 선정을 축하합니다 (총 12개)</p>
+          </div>
+          <div class="my-event-list img-first">
+            <div class="item">
+              <div class="item-body">
+                <div class="d-flex align-items-center">
+                  <div class="img">
+                    <img src="@@webRoot/assets/images/@portrait.jpg" alt="">
+                  </div>
+                  <div class="info">
+                    <div class="title max-line-2">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명 </div>
+                    <div class="row gx-10px align-items-center d-lg-none">
+                      <div class="col">
+                        <button type="button" class="btn btn-outline-light btn-round btn-md w-100 fw-bold">결과 확인하기</button>
+                      </div>
+                      <div class="col">
+                        <button type="button" class="btn btn-outline-secondary btn-round btn-md w-100 fw-bold" onclick="location.href='my_event_selected_lupicker_form.html'">루피커 정보 입력</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="btns">
+                    <button type="button" class="btn btn-outline-light btn-round btn-md w-100 fw-bold">결과 확인하기</button>
+                    <button type="button" class="btn btn-outline-secondary btn-round btn-md w-100 fw-bold" onclick="location.href='my_event_selected_lupicker_form.html'">루피커 정보 입력</button>
+                  </div>
                 </div>
-                <div class="info">
-                  <div class="title max-line-2">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명 </div>
-                  <div class="row gx-10px align-items-center">
-                    <div class="col">
-                      <button type="button" class="btn btn-outline-light btn-round btn-md w-100 fw-bold">결과 확인하기</button>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-body">
+                <div class="d-flex align-items-center">
+                  <div class="img">
+                    <img src="@@webRoot/assets/images/@portrait.jpg" alt="">
+                  </div>
+                  <div class="info">
+                    <div class="title max-line-2">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명 </div>
+                    <div class="row gx-10px align-items-center d-lg-none">
+                      <div class="col">
+                        <button type="button" class="btn btn-outline-light btn-round btn-md w-100 fw-bold">결과 확인하기</button>
+                      </div>
+                      <div class="col">
+                        <button type="button" class="btn btn-outline-secondary btn-round btn-md w-100 fw-bold" disabled>루픽리워드 포기</button>
+                      </div>
                     </div>
-                    <div class="col">
-                      <button type="button" class="btn btn-outline-secondary btn-round btn-md w-100 fw-bold" onclick="location.href='my_event_selected_lupicker_form.html'">루피커 정보 입력</button>
-                    </div>
+                  </div>
+                  <div class="btns">
+                    <button type="button" class="btn btn-outline-light btn-round btn-md w-100 fw-bold">결과 확인하기</button>
+                    <button type="button" class="btn btn-outline-secondary btn-round btn-md w-100 fw-bold" disabled>루픽리워드 포기</button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="item">
-            <div class="item-body">
-              <div class="d-flex align-items-center">
-                <div class="img">
-                  <img src="@@webRoot/assets/images/@portrait.jpg" alt="">
-                </div>
-                <div class="info">
-                  <div class="title max-line-2">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명 </div>
-                  <div class="row gx-10px align-items-center">
-                    <div class="col">
-                      <button type="button" class="btn btn-outline-light btn-round btn-md w-100 fw-bold">결과 확인하기</button>
-                    </div>
-                    <div class="col">
-                      <button type="button" class="btn btn-outline-secondary btn-round btn-md w-100 fw-bold" disabled>루픽리워드 포기</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- //실컨텐츠 -->
-      </main>
+          <!-- //실컨텐츠 -->
+        </main>
+      </div>
     </div>
   </div>
 

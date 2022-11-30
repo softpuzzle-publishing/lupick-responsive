@@ -36,47 +36,81 @@
   <body>
     <div id="wrap">
       <header id="header">
-        <div class="inner">
+        <div class="container">
           <div class="header-sub">
             <button type="button" class="btn-back" aria-label="뒤로" onclick="window.history.back()">
               <i class="icon-back"></i>
             </button>
             <h1 class="header-title">상품정보고지</h1>
-            <!-- 이벤트 상세에서만 노출 -->
-            <button type="button" aria-label="공유" data-bs-toggle="modal" data-bs-target="#modal-event-share" class="btn-share"><i class="icon-share"></i></button>
-            <!-- //이벤트 상세에서만 노출 -->
-            <!-- 이벤트 결과에서만 노출 -->
-            <button type="button" aria-label="리스트" data-bs-toggle="modal" data-bs-target="#modal-result-list" class="btn-list"><i class="icon-list"></i></button>
-            <!-- //이벤트 결과에서만 노출 -->
+            <div class="buttons">
+              <!-- 이벤트 상세에서만 노출 -->
+              <button type="button" aria-label="공유" data-bs-toggle="modal" data-bs-target="#modal-event-share" class="btn-share"><i class="icon-share"></i></button>
+              <!-- //이벤트 상세에서만 노출 -->
+              <!-- 이벤트 결과에서만 노출 -->
+              <button type="button" aria-label="리스트" data-bs-toggle="modal" data-bs-target="#modal-result-list" class="btn-list"><i class="icon-list"></i></button>
+              <!-- //이벤트 결과에서만 노출 -->
+            </div>
           </div>
           <div class="header-main">
             <div class="logo"><span class="visually-hidden">Lupick Logo</span></div>
             <div class="logo-feed"><span class="visually-hidden">Feed</span></div>
             <div class="logo-my"><span class="visually-hidden">My</span></div>
-            <div class="util">
+            <div class="buttons">
               <button type="button" aria-label="알림" data-bs-toggle="modal" data-bs-target="#modal-alarm"><i class="icon-bell"></i></button>
               <button type="button" aria-label="환경설정" onclick="location.href='../../html/setting/setting.html'"><i class="icon-gear"></i></button>
             </div>
           </div>
+          <div class="header-desktop">
+            <a href="../../html/main/main.html" class="logo"><span class="visually-hidden">Lupick Logo</span></a>
+            <nav id="gnb">
+              <ul>
+                <li>
+                  <a href="../../html/main/main.html"><span>루픽 홈</span></a>
+                </li>
+                <li>
+                  <a href="../../html/brand/brand.html"><span>브랜드관</span></a>
+                </li>
+                <li>
+                  <a href=""><span>쇼핑</span></a>
+                </li>
+                <li>
+                  <a href="../../html/free_point/free_point.html"><span>프리&amp;포인트</span></a>
+                </li>
+                <li>
+                  <a href="../../html/feed/feed.html"><span>피드</span></a>
+                </li>
+                <li>
+                  <a href="about.lupick.com" target="_blank"><span>About</span></a>
+                </li>
+              </ul>
+            </nav>
+            <div class="buttons">
+              <button type="button" aria-label="알림" data-bs-toggle="modal" data-bs-target="#modal-alarm"><i class="icon-bell"></i></button>
+              <button type="button" class="btn-mypage" aria-label="마이페이지" onclick="location.href='../../html/my/my.html'">
+                <!-- <img src="../../assets/images/profile-after-login-1.svg" alt="프로필 사진 없음(로그인 후)" class="default"> -->
+                <img src="../../assets/images/@profile.jpg" alt="{{유저 닉네임}} 프로필 사진" />
+              </button>
+            </div>
+          </div>
         </div>
       </header>
-      <main id="main">
-        <!-- 실컨텐츠 -->
-
-        <div class="container">
-          <dl class="item-info">
-            <dt>가방</dt>
-            <dd class="white-pre-wrap">
-              가방 종류 백팩, 토트백, 파우치겸 미니백 소재 패러글라이더 업사이클링 소재 - 나일론100% 색상 레드계열, 오렌지계열, 퍼플계열 크기 1, 백팩: 가로 25 cm x 세로 36 cm x 너비 7.5 cm, 핸들높이 9 cm 2. 토트백 : 가로 30 cm x 세로 23 cm x 너비 10 cm, 핸들높이 14 cm 3. 미니백 : 가로 20 cm x 세로
-              14 cm x 너비 3 cm, 끈길이 110 cm 제조자(수입자) 마인드풀컴퍼니 / Mindful Company 제조국 대한민국 취급시 주의사항 1. 세탁 : 기본적으로 제품 형태 변형문제로 금지하나, 부득이한 경우 찬물 혹은 미지근한물(약 30ºC 이하) 에 중성세제를 이용하여 단독 손세탁 해주세요. 2. 오염: 이물질이 묻었을
-              경우에는 물기있는 천으로 오염 부위만 살살 닦아주세요. 3. 건조 : 비틀어 짜지 말고 가볍게 털어 물기를 제거한 뒤 그늘에서 건조 시켜주세요. → 드라이기 및 건조기 사용 금지! ( 높은 온도는 소재 및 부자재를 손상시킬 수 있습니다.) 4. 보관 : 소재 특성상 온도가 낮고 습도가 최대한 없는 곳에 보관
-              해주세요. 5. 기타 : 화기에 접근시 제품이 인화되거나 손상될 수 있으니 주의 하세요. 품질보증기준 관련법 및 소비자분쟁해결 기준에 따름
-            </dd>
-          </dl>
-        </div>
-
-        <!-- //실컨텐츠 -->
-      </main>
+      <div id="container">
+        <main id="main">
+          <!-- 실컨텐츠 -->
+          <div class="container">
+            <dl class="item-info">
+              <dt>가방</dt>
+              <dd class="white-pre-wrap">
+                가방 종류 백팩, 토트백, 파우치겸 미니백 소재 패러글라이더 업사이클링 소재 - 나일론100% 색상 레드계열, 오렌지계열, 퍼플계열 크기 1, 백팩: 가로 25 cm x 세로 36 cm x 너비 7.5 cm, 핸들높이 9 cm 2. 토트백 : 가로 30 cm x 세로 23 cm x 너비 10 cm, 핸들높이 14 cm 3. 미니백 : 가로 20 cm x 세로
+                14 cm x 너비 3 cm, 끈길이 110 cm 제조자(수입자) 마인드풀컴퍼니 / Mindful Company 제조국 대한민국 취급시 주의사항 1. 세탁 : 기본적으로 제품 형태 변형문제로 금지하나, 부득이한 경우 찬물 혹은 미지근한물(약 30ºC 이하) 에 중성세제를 이용하여 단독 손세탁 해주세요. 2. 오염: 이물질이 묻었을
+                경우에는 물기있는 천으로 오염 부위만 살살 닦아주세요. 3. 건조 : 비틀어 짜지 말고 가볍게 털어 물기를 제거한 뒤 그늘에서 건조 시켜주세요. → 드라이기 및 건조기 사용 금지! ( 높은 온도는 소재 및 부자재를 손상시킬 수 있습니다.) 4. 보관 : 소재 특성상 온도가 낮고 습도가 최대한 없는 곳에 보관
+                해주세요. 5. 기타 : 화기에 접근시 제품이 인화되거나 손상될 수 있으니 주의 하세요. 품질보증기준 관련법 및 소비자분쟁해결 기준에 따름
+              </dd>
+            </dl>
+          </div>
+          <!-- //실컨텐츠 -->
+        </main>
+      </div>
     </div>
     <!-- alert: 새 비밀번호 등록 확인  -->
     <div class="modal alert" tabindex="-1" id="alert-confirm">
@@ -149,7 +183,6 @@
         </div>
       </div>
     </div>
-    ㅜ
 
     <!-- modal: 인증 실패 -->
     <div class="modal" tabindex="-1" id="modal-certification-fail">

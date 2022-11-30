@@ -1,0 +1,20 @@
+
+.sidebar-title{
+  font-size: 30px;font-weight: 700;padding-bottom: 30px;padding-top: 15px;height: 78px;
+}
+.sidebar{
+  border: 1px solid $border-color;padding: 0 20px;margin-bottom: 20px;
+  ul{
+    > li{
+      border-top: 1px solid $border-color;
+      &:first-child{border-top: 0;}
+      > a{
+        display: flex;align-items: center;justify-content: space-between;font-size: 16px;padding: 19px 0 19px;
+        &::after{content: '';background: url('../images/icon-full-menu-arr.svg') no-repeat 0 0;display: block;width: 6px;height: 10px;}
+      }
+      &.active{
+        > a{font-weight: 700;}
+      }
+    }
+  }
+}

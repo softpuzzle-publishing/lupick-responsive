@@ -36,45 +36,79 @@
   <body>
     <div id="wrap">
       <header id="header">
-        <div class="inner">
+        <div class="container">
           <div class="header-sub">
             <button type="button" class="btn-back" aria-label="뒤로" onclick="window.history.back()">
               <i class="icon-back"></i>
             </button>
             <h1 class="header-title">안내사항</h1>
-            <!-- 이벤트 상세에서만 노출 -->
-            <button type="button" aria-label="공유" data-bs-toggle="modal" data-bs-target="#modal-event-share" class="btn-share"><i class="icon-share"></i></button>
-            <!-- //이벤트 상세에서만 노출 -->
-            <!-- 이벤트 결과에서만 노출 -->
-            <button type="button" aria-label="리스트" data-bs-toggle="modal" data-bs-target="#modal-result-list" class="btn-list"><i class="icon-list"></i></button>
-            <!-- //이벤트 결과에서만 노출 -->
+            <div class="buttons">
+              <!-- 이벤트 상세에서만 노출 -->
+              <button type="button" aria-label="공유" data-bs-toggle="modal" data-bs-target="#modal-event-share" class="btn-share"><i class="icon-share"></i></button>
+              <!-- //이벤트 상세에서만 노출 -->
+              <!-- 이벤트 결과에서만 노출 -->
+              <button type="button" aria-label="리스트" data-bs-toggle="modal" data-bs-target="#modal-result-list" class="btn-list"><i class="icon-list"></i></button>
+              <!-- //이벤트 결과에서만 노출 -->
+            </div>
           </div>
           <div class="header-main">
             <div class="logo"><span class="visually-hidden">Lupick Logo</span></div>
             <div class="logo-feed"><span class="visually-hidden">Feed</span></div>
             <div class="logo-my"><span class="visually-hidden">My</span></div>
-            <div class="util">
+            <div class="buttons">
               <button type="button" aria-label="알림" data-bs-toggle="modal" data-bs-target="#modal-alarm"><i class="icon-bell"></i></button>
               <button type="button" aria-label="환경설정" onclick="location.href='../../html/setting/setting.html'"><i class="icon-gear"></i></button>
             </div>
           </div>
+          <div class="header-desktop">
+            <a href="../../html/main/main.html" class="logo"><span class="visually-hidden">Lupick Logo</span></a>
+            <nav id="gnb">
+              <ul>
+                <li>
+                  <a href="../../html/main/main.html"><span>루픽 홈</span></a>
+                </li>
+                <li>
+                  <a href="../../html/brand/brand.html"><span>브랜드관</span></a>
+                </li>
+                <li>
+                  <a href=""><span>쇼핑</span></a>
+                </li>
+                <li>
+                  <a href="../../html/free_point/free_point.html"><span>프리&amp;포인트</span></a>
+                </li>
+                <li>
+                  <a href="../../html/feed/feed.html"><span>피드</span></a>
+                </li>
+                <li>
+                  <a href="about.lupick.com" target="_blank"><span>About</span></a>
+                </li>
+              </ul>
+            </nav>
+            <div class="buttons">
+              <button type="button" aria-label="알림" data-bs-toggle="modal" data-bs-target="#modal-alarm"><i class="icon-bell"></i></button>
+              <button type="button" class="btn-mypage" aria-label="마이페이지" onclick="location.href='../../html/my/my.html'">
+                <!-- <img src="../../assets/images/profile-after-login-1.svg" alt="프로필 사진 없음(로그인 후)" class="default"> -->
+                <img src="../../assets/images/@profile.jpg" alt="{{유저 닉네임}} 프로필 사진" />
+              </button>
+            </div>
+          </div>
         </div>
       </header>
-      <main id="main">
-        <!-- 실컨텐츠 -->
-
-        <div class="container">
-          <dl class="item-info">
-            <dt>안내사항</dt>
-            <dd class="white-break-spaces">
-              - 아이템 배송은 결제 순서대로 순차 출고됩니다. - 럭키템에 대한 제세공과금은 루픽이 부담합니다. - 개인소득에 따른 차이로 발생하는 추가 공과금은 개인이 부담하여야 합니다. - 주문취소로 인해 발생하는 차액은 ‘포인트’ 럭키템에서 차감되며 이벤트 상세페이지 내 명시된 포인트와 이후 지급되는
-              포인트에 차이가 있을 수 있습니다.
-            </dd>
-          </dl>
-        </div>
-
-        <!-- //실컨텐츠 -->
-      </main>
+      <div id="container">
+        <main id="main">
+          <!-- 실컨텐츠 -->
+          <div class="container">
+            <dl class="item-info">
+              <dt>안내사항</dt>
+              <dd class="white-break-spaces">
+                - 아이템 배송은 결제 순서대로 순차 출고됩니다. - 럭키템에 대한 제세공과금은 루픽이 부담합니다. - 개인소득에 따른 차이로 발생하는 추가 공과금은 개인이 부담하여야 합니다. - 주문취소로 인해 발생하는 차액은 ‘포인트’ 럭키템에서 차감되며 이벤트 상세페이지 내 명시된 포인트와 이후 지급되는
+                포인트에 차이가 있을 수 있습니다.
+              </dd>
+            </dl>
+          </div>
+          <!-- //실컨텐츠 -->
+        </main>
+      </div>
     </div>
     <!-- alert: 새 비밀번호 등록 확인  -->
     <div class="modal alert" tabindex="-1" id="alert-confirm">
@@ -147,7 +181,6 @@
         </div>
       </div>
     </div>
-    ㅜ
 
     <!-- modal: 인증 실패 -->
     <div class="modal" tabindex="-1" id="modal-certification-fail">

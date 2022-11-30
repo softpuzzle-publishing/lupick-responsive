@@ -9,30 +9,38 @@
   <div id="wrap">
     @@include('@@webRoot/html/_include/_header.html', { "title": "리뷰쓰기" })
     <div id="container">
-      <main id="main">
-        <!-- 실컨텐츠 -->
-
-        <div class="my-event-list img-first">
-          @@for (var i = 3; i > 0; i--) {
-          <div class="item">
-            <div class="item-body">
-              <div class="d-flex align-items-center">
-                <div class="img">
-                  <img src="@@webRoot/assets/images/@portrait.jpg" alt="">
-                </div>
-                <div class="info">
-                  <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명 </div>
-                  <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
-                  <button type="button" class="btn btn-outline-dark btn-round btn-md w-100 fw-bold" onclick="location.href='my_event_review_form.html'">리뷰쓰기</button>
+      @@include('@@webRoot/html/_include/_top-my.html')
+      <div id="layout">
+        @@include('@@webRoot/html/_include/_sidebar-my.html')
+        <main id="main">
+          <!-- 실컨텐츠 -->
+          <div class="main-title-area">
+            <h2 class="main-title">리뷰쓰기</h2>
+          </div>
+          <div class="my-event-list img-first">
+            @@for (var i = 3; i > 0; i--) {
+            <div class="item">
+              <div class="item-body">
+                <div class="d-flex align-items-center">
+                  <div class="img">
+                    <img src="@@webRoot/assets/images/@portrait.jpg" alt="">
+                  </div>
+                  <div class="info">
+                    <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명 </div>
+                    <div class="product">이화동 벽화마을 벽화그리기 체험권 이화동 벽화마을 벽화그리기 체험권</div>
+                    <button type="button" class="btn btn-outline-dark btn-round btn-md w-100 fw-bold d-lg-none" onclick="location.href='my_event_review_form.html'">리뷰쓰기</button>
+                  </div>
+                  <div class="btns">
+                    <button type="button" class="btn btn-outline-dark btn-round btn-md w-100 fw-bold" onclick="location.href='my_event_review_form.html'">리뷰쓰기</button>
+                  </div>
                 </div>
               </div>
             </div>
+            }
           </div>
-          }
-        </div>
-
-        <!-- //실컨텐츠 -->
-      </main>
+          <!-- //실컨텐츠 -->
+        </main>
+      </div>
     </div>
   </div>
 

@@ -8,40 +8,45 @@
 <body>
   <div id="wrap"> @@include('@@webRoot/html/_include/_header.html', { "title": "루픽 포인트" })
     <div id="container">
-      <main id="main">
-        <!-- 실컨텐츠 -->
-
-        <div class="container">
-          <div class="my-lupick-point">
-            <div class="bg-circle">
-              <span class="circle"></span>
-              <span class="circle"></span>
-              <span class="circle dark"></span>
-            </div>
-            <strong class="point"><span>150</span> Point</strong>
-            <div class="point-desc">
-              <a href="my_point_disppear.html">소멸예정 포인트 <span>150</span>P <i class="icon-arr-right-gray-xs"></i></a>
-            </div>
+      @@include('@@webRoot/html/_include/_top-my.html')
+      <div id="layout">
+        @@include('@@webRoot/html/_include/_sidebar-my.html')
+        <main id="main">
+          <!-- 실컨텐츠 -->
+          <div class="main-title-area">
+            <h2 class="main-title">루픽 포인트</h2>
           </div>
-          <div class="my-point-history">
-            @@for (var i = 10; i > 0; i--) {
-            <div class="item">
-              <div class="row align-items-center">
-                <div class="col">
-                  <div class="title">루피커 선정 포인트 지급</div>
-                  <div class="date">2021.03.24</div>
-                </div>
-                <div class="col-auto">
-                  <div class="history">+ 50P</div>
-                </div>
+          <div class="container">
+            <div class="my-lupick-point">
+              <div class="bg-circle">
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle dark"></span>
+              </div>
+              <strong class="point"><span>150</span> Point</strong>
+              <div class="point-desc">
+                <a href="my_point_disppear.html">소멸예정 포인트 <span>150</span>P <i class="icon-arr-right-gray-xs"></i></a>
               </div>
             </div>
-            }
+            <div class="my-point-history">
+              @@for (var i = 10; i > 0; i--) {
+              <div class="item">
+                <div class="row align-items-center">
+                  <div class="col">
+                    <div class="title">루피커 선정 포인트 지급</div>
+                    <div class="date">2021.03.24</div>
+                  </div>
+                  <div class="col-auto">
+                    <div class="history">+ 50P</div>
+                  </div>
+                </div>
+              </div>
+              }
+            </div>
           </div>
-        </div>
-
-        <!-- //실컨텐츠 -->
-      </main>
+          <!-- //실컨텐츠 -->
+        </main>
+      </div>
     </div>
   </div>
 

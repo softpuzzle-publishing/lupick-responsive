@@ -9,18 +9,21 @@
       //포토리뷰 swiper
       var photosSwiper = [];
       $('.reviews .photos .swiper').each(function (i) {
-        if ($(this).find('.swiper-slide').length > 4) {
-          photosSwiper[i] = new Swiper($(this)[0], { // eslint-disable-line
-            slidesPerView: 4.5,
-            freeMode: true,
-            spaceBetween: 5,
-            slidesOffsetBefore: 20,
-            slidesOffsetAfter: 20,
-            observeParents: true,
-            observeSlideChildren: true,
-            observer: true
-          });
-        }
+        photosSwiper[i] = new Swiper($(this)[0], { // eslint-disable-line
+          slidesPerView: 4.5,
+          freeMode: true,
+          spaceBetween: 5,
+          slidesOffsetBefore: 20,
+          slidesOffsetAfter: 20,
+          observeParents: true,
+          observeSlideChildren: true,
+          observer: true,
+          breakpoints: {
+            992: {
+              slidesPerView: "auto"
+            }
+          }
+        });
       });
 
       let photoIdx; //클릭한 사진의 인덱스
@@ -82,85 +85,80 @@
   <div id="wrap">
     @@include('@@webRoot/html/_include/_header.html', { "title": "나의 리뷰" })
     <div id="container">
-      <main id="main">
-        <!-- 실컨텐츠 -->
-
-        <div class="container pt-20px">
-          <div class="reviews">
-            <div class="item">
-              <div class="user">
-                <div class="user-profile"><img src="@@webRoot/assets/images/@profile.jpg" alt="티도"></div>
-                <div class="user-info">
-                  <div class="name">티도</div>
-                  <div class="date">2022.05.20 작성</div>
+      @@include('@@webRoot/html/_include/_top-my.html')
+      <div id="layout">
+        @@include('@@webRoot/html/_include/_sidebar-my.html')
+        <main id="main">
+          <!-- 실컨텐츠 -->
+          <div class="main-title-area">
+            <h2 class="main-title">나의 리뷰</h2>
+          </div>
+          <div class="container pt-20px">
+            <div class="reviews">
+              <div class="item">
+                <div class="user">
+                  <div class="user-profile"><img src="@@webRoot/assets/images/@profile.jpg" alt="티도"></div>
+                  <div class="user-info">
+                    <div class="name">티도</div>
+                    <div class="date">2022.05.20 작성</div>
+                  </div>
                 </div>
-              </div>
-              <div class="title">[추멘세끼] 이스타TV X 루픽, 추멘의 레시피가 담긴 감자볶음밥 추멘의 레시피가 담긴 감자볶음밥</div>
-              <div class="option">추멘세끼 감자볶음밥*3ea + 오뚜기케찹 65g</div>
-              <div class="photos">
-                <div class="swiper">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="img"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
+                <div class="title">[추멘세끼] 이스타TV X 루픽, 추멘의 레시피가 담긴 감자볶음밥 추멘의 레시피가 담긴 감자볶음밥</div>
+                <div class="option">추멘세끼 감자볶음밥*3ea + 오뚜기케찹 65g</div>
+                <div class="photos">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="img"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <div class="content">하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다</div>
               </div>
-              <div class="content">하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다</div>
-            </div>
-            <div class="item">
-              <div class="user">
-                <div class="user-profile"><img src="@@webRoot/assets/images/@profile.jpg" alt="티도"></div>
-                <div class="user-info">
-                  <div class="name">티도</div>
-                  <div class="date">2022.05.20 작성</div>
+              <div class="item">
+                <div class="user">
+                  <div class="user-profile"><img src="@@webRoot/assets/images/@profile.jpg" alt="티도"></div>
+                  <div class="user-info">
+                    <div class="name">티도</div>
+                    <div class="date">2022.05.20 작성</div>
+                  </div>
                 </div>
+                <div class="title">[추멘세끼] 이스타TV X 루픽, 추멘의 레시피가 담긴 감자볶음밥 추멘의 레시피가 담긴 감자볶음밥</div>
+                <div class="option">추멘세끼 감자볶음밥*3ea + 오뚜기케찹 65g</div>
+                <div class="content">하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다</div>
               </div>
-              <div class="title">[추멘세끼] 이스타TV X 루픽, 추멘의 레시피가 담긴 감자볶음밥 추멘의 레시피가 담긴 감자볶음밥</div>
-              <div class="option">추멘세끼 감자볶음밥*3ea + 오뚜기케찹 65g</div>
-              <div class="content">하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다</div>
-            </div>
-            <div class="item">
-              <div class="user">
-                <div class="user-profile"><img src="@@webRoot/assets/images/@profile.jpg" alt="티도"></div>
-                <div class="user-info">
-                  <div class="name">티도</div>
-                  <div class="date">2022.05.20 작성</div>
+              <div class="item">
+                <div class="user">
+                  <div class="user-profile"><img src="@@webRoot/assets/images/@profile.jpg" alt="티도"></div>
+                  <div class="user-info">
+                    <div class="name">티도</div>
+                    <div class="date">2022.05.20 작성</div>
+                  </div>
                 </div>
-              </div>
-              <div class="title">[추멘세끼] 이스타TV X 루픽, 추멘의 레시피가 담긴 감자볶음밥 추멘의 레시피가 담긴 감자볶음밥</div>
-              <div class="option">추멘세끼 감자볶음밥*3ea + 오뚜기케찹 65g</div>
-              <div class="photos">
-                <div class="swiper">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="img"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="img"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
+                <div class="title">[추멘세끼] 이스타TV X 루픽, 추멘의 레시피가 담긴 감자볶음밥 추멘의 레시피가 담긴 감자볶음밥</div>
+                <div class="option">추멘세끼 감자볶음밥*3ea + 오뚜기케찹 65g</div>
+                <div class="photos">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      @@for (var i = 8; i > 0; i--) {
+                      <div class="swiper-slide">
+                        <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
+                      </div>
+                      }
                     </div>
                   </div>
                 </div>
+                <div class="content">내용물도 큼직큼직하고 양이 많아요.</div>
               </div>
-              <div class="content">내용물도 큼직큼직하고 양이 많아요.</div>
             </div>
           </div>
-        </div>
-
-        <!-- //실컨텐츠 -->
-      </main>
+          <!-- //실컨텐츠 -->
+        </main>
+      </div>
     </div>
   </div>
 

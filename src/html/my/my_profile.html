@@ -9,78 +9,80 @@
   <div id="wrap">
     @@include('@@webRoot/html/_include/_header.html', { "title": "프로필 편집" })
     <div id="container">
-      <main id="main">
-        <!-- 실컨텐츠 -->
-
-        <div class="container">
-          <div class="my-profile-edit">
-            <div class="img">
-              <!-- <img src="@@webRoot/assets/images/profile-before-login-1.svg" alt="프로필 사진 없음(로그인 전)" class="default">
-              <img src="@@webRoot/assets/images/profile-after-login-1.svg" alt="프로필 사진 없음(로그인 후)" class="default"> -->
-              <img src="@@webRoot/assets/images/@profile.jpg" alt="조이 프로필 사진">
-              <button type="button" class="btn-profile-edit" aria-label="사진 변경"></button>
-              <input type="file" class="visually-hidden">
-              <script>
-                $('.btn-profile-edit').on('click', function (e) {
-                  e.preventDefault();
-                  $(this).siblings('input[type=file]').click();
-                });
-              </script>
-            </div>
-            <div class="form-group">
-              <label for="formUserNickname" class="form-label">닉네임</label>
-              <input type="text" class="form-control" placeholder="닉네임을 입력해주세요." id="formUserNickname" value="조이">
-            </div>
-            <div class="form-group">
-              <label for="formUserBirthYear" class="form-label">생년월일</label>
-              <div class="row gx-0 align-items-center border-bottom">
-                <div class="col">
-                  <input type="text" class="form-control text-center border-0" placeholder="YYYY" id="formUserBirthYear"
-                    value="1966" inputmode="numeric">
-                </div>
-                <div class="col-auto text-gray-light">/</div>
-                <div class="col">
-                  <input type="text" class="form-control text-center border-0" placeholder="MM" id="formUserBirthMonth"
-                    value="09" inputmode="numeric">
-                </div>
-                <div class="col-auto text-gray-light">/</div>
-                <div class="col">
-                  <input type="text" class="form-control text-center border-0" placeholder="MM" id="formUserBirthDay"
-                    value="03" inputmode="numeric">
-                </div>
+      @@include('@@webRoot/html/_include/_top-my.html')
+      <div id="layout">
+        @@include('@@webRoot/html/_include/_sidebar-setting.html')
+        <main id="main">
+          <!-- 실컨텐츠 -->
+          <div class="main-title-area">
+            <h2 class="main-title">프로필 편집</h2>
+          </div>
+          <div class="container">
+            <div class="my-profile-edit">
+              <div class="img">
+                <!-- <img src="@@webRoot/assets/images/profile-before-login-1.svg" alt="프로필 사진 없음(로그인 전)" class="default">
+                <img src="@@webRoot/assets/images/profile-after-login-1.svg" alt="프로필 사진 없음(로그인 후)" class="default"> -->
+                <img src="@@webRoot/assets/images/@profile.jpg" alt="조이 프로필 사진">
+                <button type="button" class="btn-profile-edit" aria-label="사진 변경"></button>
+                <input type="file" class="visually-hidden">
+                <script>
+                  $('.btn-profile-edit').on('click', function (e) {
+                    e.preventDefault();
+                    $(this).siblings('input[type=file]').click();
+                  });
+                </script>
               </div>
-            </div>
-            <div class="form-group">
-              <label for="formUserBirthYear" class="form-label">성별</label>
-              <div class="row gx-10px">
-                <div class="col">
-                  <div class="form-check button w-100">
-                    <input type="radio" value="" id="formGenderMail" name="formGender">
-                    <label for="formGenderMail">남성</label>
+              <div class="form-group">
+                <label for="formUserNickname" class="form-label">닉네임</label>
+                <input type="text" class="form-control" placeholder="닉네임을 입력해주세요." id="formUserNickname" value="조이">
+              </div>
+              <div class="form-group">
+                <label for="formUserBirthYear" class="form-label">생년월일</label>
+                <div class="row gx-0 align-items-center border-bottom">
+                  <div class="col">
+                    <input type="text" class="form-control text-center border-0" placeholder="YYYY" id="formUserBirthYear" value="1966" inputmode="numeric">
                   </div>
-                </div>
-                <div class="col">
-                  <div class="form-check button w-100">
-                    <input type="radio" value="" id="formGenderFemail" name="formGender">
-                    <label for="formGenderFemail">여성</label>
+                  <div class="col-auto text-gray-light">/</div>
+                  <div class="col">
+                    <input type="text" class="form-control text-center border-0" placeholder="MM" id="formUserBirthMonth" value="09" inputmode="numeric">
                   </div>
-                </div>
-                <div class="col">
-                  <div class="form-check button w-100">
-                    <input type="radio" value="" id="formGenderNone" name="formGender">
-                    <label for="formGenderNone">선택안함</label>
+                  <div class="col-auto text-gray-light">/</div>
+                  <div class="col">
+                    <input type="text" class="form-control text-center border-0" placeholder="MM" id="formUserBirthDay" value="03" inputmode="numeric">
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="bottom-buttons">
-              <button type="button" class="btn btn-dark btn-round btn-lg w-100">저장</button>
+              <div class="form-group">
+                <label for="formUserBirthYear" class="form-label">성별</label>
+                <div class="row gx-10px">
+                  <div class="col">
+                    <div class="form-check button w-100">
+                      <input type="radio" value="" id="formGenderMail" name="formGender">
+                      <label for="formGenderMail">남성</label>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-check button w-100">
+                      <input type="radio" value="" id="formGenderFemail" name="formGender">
+                      <label for="formGenderFemail">여성</label>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-check button w-100">
+                      <input type="radio" value="" id="formGenderNone" name="formGender">
+                      <label for="formGenderNone">선택안함</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bottom-buttons">
+                <button type="button" class="btn btn-dark btn-round btn-lg w-100">저장</button>
+              </div>
             </div>
           </div>
-        </div>
-
-        <!-- //실컨텐츠 -->
-      </main>
+          <!-- //실컨텐츠 -->
+        </main>
+      </div>
     </div>
   </div>
 

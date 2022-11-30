@@ -37,257 +37,286 @@
     <!-- 메인페이지에만 body-main 추가 -->
     <div id="wrap">
       <header id="header">
-        <div class="inner">
+        <div class="container">
           <div class="header-sub">
             <button type="button" class="btn-back" aria-label="뒤로" onclick="window.history.back()">
               <i class="icon-back"></i>
             </button>
             <h1 class="header-title">FEED</h1>
-            <!-- 이벤트 상세에서만 노출 -->
-            <button type="button" aria-label="공유" data-bs-toggle="modal" data-bs-target="#modal-event-share" class="btn-share"><i class="icon-share"></i></button>
-            <!-- //이벤트 상세에서만 노출 -->
-            <!-- 이벤트 결과에서만 노출 -->
-            <button type="button" aria-label="리스트" data-bs-toggle="modal" data-bs-target="#modal-result-list" class="btn-list"><i class="icon-list"></i></button>
-            <!-- //이벤트 결과에서만 노출 -->
+            <div class="buttons">
+              <!-- 이벤트 상세에서만 노출 -->
+              <button type="button" aria-label="공유" data-bs-toggle="modal" data-bs-target="#modal-event-share" class="btn-share"><i class="icon-share"></i></button>
+              <!-- //이벤트 상세에서만 노출 -->
+              <!-- 이벤트 결과에서만 노출 -->
+              <button type="button" aria-label="리스트" data-bs-toggle="modal" data-bs-target="#modal-result-list" class="btn-list"><i class="icon-list"></i></button>
+              <!-- //이벤트 결과에서만 노출 -->
+            </div>
           </div>
           <div class="header-main">
             <div class="logo"><span class="visually-hidden">Lupick Logo</span></div>
             <div class="logo-feed"><span class="visually-hidden">Feed</span></div>
             <div class="logo-my"><span class="visually-hidden">My</span></div>
-            <div class="util">
+            <div class="buttons">
               <button type="button" aria-label="알림" data-bs-toggle="modal" data-bs-target="#modal-alarm"><i class="icon-bell"></i></button>
               <button type="button" aria-label="환경설정" onclick="location.href='../../html/setting/setting.html'"><i class="icon-gear"></i></button>
             </div>
           </div>
+          <div class="header-desktop">
+            <a href="../../html/main/main.html" class="logo"><span class="visually-hidden">Lupick Logo</span></a>
+            <nav id="gnb">
+              <ul>
+                <li>
+                  <a href="../../html/main/main.html"><span>루픽 홈</span></a>
+                </li>
+                <li>
+                  <a href="../../html/brand/brand.html"><span>브랜드관</span></a>
+                </li>
+                <li>
+                  <a href=""><span>쇼핑</span></a>
+                </li>
+                <li>
+                  <a href="../../html/free_point/free_point.html"><span>프리&amp;포인트</span></a>
+                </li>
+                <li>
+                  <a href="../../html/feed/feed.html"><span>피드</span></a>
+                </li>
+                <li>
+                  <a href="about.lupick.com" target="_blank"><span>About</span></a>
+                </li>
+              </ul>
+            </nav>
+            <div class="buttons">
+              <button type="button" aria-label="알림" data-bs-toggle="modal" data-bs-target="#modal-alarm"><i class="icon-bell"></i></button>
+              <button type="button" class="btn-mypage" aria-label="마이페이지" onclick="location.href='../../html/my/my.html'">
+                <!-- <img src="../../assets/images/profile-after-login-1.svg" alt="프로필 사진 없음(로그인 후)" class="default"> -->
+                <img src="../../assets/images/@profile.jpg" alt="{{유저 닉네임}} 프로필 사진" />
+              </button>
+            </div>
+          </div>
         </div>
       </header>
-      <main id="main">
-        <!-- 실컨텐츠 -->
-
-        <!-- FEED 상단 배너 -->
-        <div class="feed-top-banner">
-          <div class="swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide" data-feed-title="Ep.08 루픽 시그니처 컬러를 담은 뉴 아이맥 이벤트 루피커 ‘긴유니’님의 소감!">
-                <div class="item">
-                  <div class="img"><img src="../../assets/images/@lupicker.png" alt="" /></div>
+      <div id="container">
+        <main id="main">
+          <!-- 실컨텐츠 -->
+          <!-- FEED 상단 배너 -->
+          <div class="feed-top-banner">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" data-feed-title="Ep.08 루픽 시그니처 컬러를 담은 뉴 아이맥 이벤트 루피커 ‘긴유니’님의 소감!">
+                  <div class="item">
+                    <div class="img"><img src="../../assets/images/@lupicker.png" alt="" /></div>
+                  </div>
                 </div>
-              </div>
-              <div class="swiper-slide" data-feed-title="Ep.09 건강한 삶이 내 손목에! 애플워치 시리즈6 이벤트 루피커 ‘대가’님의 소감!">
-                <div class="item">
-                  <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                <div class="swiper-slide" data-feed-title="Ep.09 건강한 삶이 내 손목에! 애플워치 시리즈6 이벤트 루피커 ‘대가’님의 소감!">
+                  <div class="item">
+                    <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                  </div>
                 </div>
-              </div>
-              <div class="swiper-slide" data-feed-title="Ep.10 핫한 텐트 받고 가을 캠핑 떠나자! 이벤트의 주인공 루피커 ‘토끼’님의 소감!">
-                <div class="item">
-                  <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                <div class="swiper-slide" data-feed-title="Ep.10 핫한 텐트 받고 가을 캠핑 떠나자! 이벤트의 주인공 루피커 ‘토끼’님의 소감!">
+                  <div class="item">
+                    <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="info">
-            <div class="swiper-pagination swiper-pagination-feed-top-banner"></div>
-            <div class="title">Ep.08 루픽 시그니처 컬러를 담은 뉴 아이맥 이벤트 루피커 ‘긴유니’님의 소감!</div>
-          </div>
-          <script>
-            const feedTopBannerSwiper = new Swiper('.feed-top-banner .swiper', {
-              // eslint-disable-line
-              observeParents: true,
-              observeSlideChildren: true,
-              observer: true,
-              pagination: {
-                el: '.swiper-pagination-feed-top-banner',
-                type: 'fraction',
-              },
-              on: {
-                slideChangeTransitionEnd: function () {
-                  let activeIdx = $('.feed-top-banner .swiper-slide-active');
-                  //슬라이드 변경될 때 각 슬라이드의 타이틀 변경
-                  $('.feed-top-banner .title').html(activeIdx.attr('data-feed-title'));
+            <div class="info">
+              <div class="swiper-pagination swiper-pagination-feed-top-banner"></div>
+              <div class="title">Ep.08 루픽 시그니처 컬러를 담은 뉴 아이맥 이벤트 루피커 ‘긴유니’님의 소감!</div>
+            </div>
+            <script>
+              const feedTopBannerSwiper = new Swiper('.feed-top-banner .swiper', {
+                // eslint-disable-line
+                observeParents: true,
+                observeSlideChildren: true,
+                observer: true,
+                pagination: {
+                  el: '.swiper-pagination-feed-top-banner',
+                  type: 'fraction',
                 },
-              },
-            });
-          </script>
-        </div>
-        <!-- //FEED 상단 배너 -->
-
-        <!-- 루픽스토리 -->
-        <div class="container">
-          <div class="row align-items-center justify-content-between mb-15px mt-30px">
-            <div class="col-auto">
-              <div class="section-title mb-0 mt-0">루픽스토리</div>
-            </div>
-            <div class="col-auto">
-              <a href="feed_lupick_story.html" class="text-secondary font-14px fw-bold">전체보기</a>
-            </div>
+                on: {
+                  slideChangeTransitionEnd: function () {
+                    let activeIdx = $('.feed-top-banner .swiper-slide-active');
+                    //슬라이드 변경될 때 각 슬라이드의 타이틀 변경
+                    $('.feed-top-banner .title').html(activeIdx.attr('data-feed-title'));
+                  },
+                },
+              });
+            </script>
           </div>
-        </div>
-        <div class="story-list">
-          <div class="swiper" id="lupick-story">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <a href="feed_lupick_story_detail.html" class="item">
-                  <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                  <div class="title">[OFF-WHITE] 현시대의 예술, 그래피티 작가 ‘로니나’와 오프화이트의 만남</div>
-                  <div class="info">
-                    <div class="hit">조회수 10만회</div>
-                    <div class="date">2022.05.20 작성</div>
-                  </div>
-                </a>
+          <!-- //FEED 상단 배너 -->
+          <!-- 루픽스토리 -->
+          <div class="container">
+            <div class="row align-items-center justify-content-between mb-15px mt-30px">
+              <div class="col-auto">
+                <div class="section-title mb-0 mt-0">루픽스토리</div>
               </div>
-
-              <div class="swiper-slide">
-                <a href="feed_lupick_story_detail.html" class="item">
-                  <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                  <div class="title">[OFF-WHITE] 현시대의 예술, 그래피티 작가 ‘로니나’와 오프화이트의 만남</div>
-                  <div class="info">
-                    <div class="hit">조회수 10만회</div>
-                    <div class="date">2022.05.20 작성</div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="swiper-slide">
-                <a href="feed_lupick_story_detail.html" class="item">
-                  <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                  <div class="title">[OFF-WHITE] 현시대의 예술, 그래피티 작가 ‘로니나’와 오프화이트의 만남</div>
-                  <div class="info">
-                    <div class="hit">조회수 10만회</div>
-                    <div class="date">2022.05.20 작성</div>
-                  </div>
-                </a>
+              <div class="col-auto">
+                <a href="feed_lupick_story.html" class="text-secondary font-14px fw-bold">전체보기</a>
               </div>
             </div>
           </div>
-          <script>
-            const lupickStorySwiper = new Swiper('#lupick-story', {
-              // eslint-disable-line
-              spaceBetween: 10,
-              slidesOffsetAfter: 20,
-            });
-          </script>
-        </div>
-        <!-- //루픽스토리 -->
+          <div class="story-list">
+            <div class="swiper" id="lupick-story">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="feed_lupick_story_detail.html" class="item">
+                    <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                    <div class="title">[OFF-WHITE] 현시대의 예술, 그래피티 작가 ‘로니나’와 오프화이트의 만남</div>
+                    <div class="info">
+                      <div class="hit">조회수 10만회</div>
+                      <div class="date">2022.05.20 작성</div>
+                    </div>
+                  </a>
+                </div>
 
-        <div class="hr"></div>
+                <div class="swiper-slide">
+                  <a href="feed_lupick_story_detail.html" class="item">
+                    <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                    <div class="title">[OFF-WHITE] 현시대의 예술, 그래피티 작가 ‘로니나’와 오프화이트의 만남</div>
+                    <div class="info">
+                      <div class="hit">조회수 10만회</div>
+                      <div class="date">2022.05.20 작성</div>
+                    </div>
+                  </a>
+                </div>
 
-        <!-- 루피커 인터뷰 -->
-        <div class="container">
-          <div class="row align-items-center justify-content-between mb-15px mt-30px">
-            <div class="col-auto">
-              <div class="section-title mb-0 mt-0">루피커 인터뷰</div>
-            </div>
-            <div class="col-auto">
-              <a href="feed_lupicker_interview.html" class="text-secondary font-14px fw-bold">전체보기</a>
-            </div>
-          </div>
-        </div>
-        <div class="story-list">
-          <div class="swiper" id="lupicker-interview">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <a href="feed_lupicker_interview_detail.html" class="item">
-                  <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                  <div class="title">Ep.10 핫한 텐트 받고 가을 캠핑 떠나자! 이벤트의 주인공 루피커 ‘토끼’님의 소감!</div>
-                  <div class="info">
-                    <div class="hit">조회수 10만회</div>
-                    <div class="date">2022.05.20 작성</div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="swiper-slide">
-                <a href="feed_lupicker_interview_detail.html" class="item">
-                  <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                  <div class="title">Ep.10 핫한 텐트 받고 가을 캠핑 떠나자! 이벤트의 주인공 루피커 ‘토끼’님의 소감!</div>
-                  <div class="info">
-                    <div class="hit">조회수 10만회</div>
-                    <div class="date">2022.05.20 작성</div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="swiper-slide">
-                <a href="feed_lupicker_interview_detail.html" class="item">
-                  <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                  <div class="title">Ep.10 핫한 텐트 받고 가을 캠핑 떠나자! 이벤트의 주인공 루피커 ‘토끼’님의 소감!</div>
-                  <div class="info">
-                    <div class="hit">조회수 10만회</div>
-                    <div class="date">2022.05.20 작성</div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <script>
-            const lupickerInterviewSwiper = new Swiper('#lupicker-interview', {
-              // eslint-disable-line
-              spaceBetween: 10,
-              slidesOffsetAfter: 20,
-            });
-          </script>
-        </div>
-        <!-- //루피커 인터뷰 -->
-
-        <div class="hr"></div>
-
-        <!-- 인기 피드 -->
-        <div class="container">
-          <div class="section-title">인기 피드</div>
-          <ul class="nav nav-badges" role="tablist">
-            <li class="nav-item" role="presentation">
-              <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="tab">루픽스토리</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a class="nav-link" href="#" data-bs-toggle="tab">루픽스토리</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a class="nav-link" href="#" data-bs-toggle="tab">루피커 인터뷰</a>
-            </li>
-          </ul>
-          <div class="popular-list">
-            <a href="#none" class="item">
-              <div class="img">
-                <img src="../../assets/images/@portrait.jpg" alt="" />
-                <span>1위</span>
-              </div>
-              <div class="info">
-                <div class="d-flex flex-column justify-content-between h-100">
-                  <div>
-                    <div class="title">랜드로버 뉴 디펜더를 타고 캠핑 간 루피커의 생생한 후기!</div>
-                    <span class="badge outline-gray">루픽스토리</span>
-                  </div>
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="hit">조회수 10만회</div>
-                    <div class="date">2022.05.20 작성</div>
-                  </div>
+                <div class="swiper-slide">
+                  <a href="feed_lupick_story_detail.html" class="item">
+                    <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                    <div class="title">[OFF-WHITE] 현시대의 예술, 그래피티 작가 ‘로니나’와 오프화이트의 만남</div>
+                    <div class="info">
+                      <div class="hit">조회수 10만회</div>
+                      <div class="date">2022.05.20 작성</div>
+                    </div>
+                  </a>
                 </div>
               </div>
-            </a>
-            <a href="#none" class="item">
-              <div class="img">
-                <img src="../../assets/images/@landscape.jpg" alt="" />
-                <span>2위</span>
+            </div>
+            <script>
+              const lupickStorySwiper = new Swiper('#lupick-story', {
+                // eslint-disable-line
+                spaceBetween: 10,
+                slidesOffsetAfter: 20,
+              });
+            </script>
+          </div>
+          <!-- //루픽스토리 -->
+          <div class="hr"></div>
+          <!-- 루피커 인터뷰 -->
+          <div class="container">
+            <div class="row align-items-center justify-content-between mb-15px mt-30px">
+              <div class="col-auto">
+                <div class="section-title mb-0 mt-0">루피커 인터뷰</div>
               </div>
-              <div class="info">
-                <div class="d-flex flex-column justify-content-between h-100">
-                  <div>
-                    <div class="title">랜드로버 뉴 디펜더를 타고 캠핑 간 루피커의 생생한 후기!</div>
-                    <span class="badge outline-gray">루픽스토리</span>
-                  </div>
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="hit">조회수 10만회</div>
-                    <div class="date">2022.05.20 작성</div>
-                  </div>
+              <div class="col-auto">
+                <a href="feed_lupicker_interview.html" class="text-secondary font-14px fw-bold">전체보기</a>
+              </div>
+            </div>
+          </div>
+          <div class="story-list">
+            <div class="swiper" id="lupicker-interview">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="feed_lupicker_interview_detail.html" class="item">
+                    <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                    <div class="title">Ep.10 핫한 텐트 받고 가을 캠핑 떠나자! 이벤트의 주인공 루피커 ‘토끼’님의 소감!</div>
+                    <div class="info">
+                      <div class="hit">조회수 10만회</div>
+                      <div class="date">2022.05.20 작성</div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="swiper-slide">
+                  <a href="feed_lupicker_interview_detail.html" class="item">
+                    <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                    <div class="title">Ep.10 핫한 텐트 받고 가을 캠핑 떠나자! 이벤트의 주인공 루피커 ‘토끼’님의 소감!</div>
+                    <div class="info">
+                      <div class="hit">조회수 10만회</div>
+                      <div class="date">2022.05.20 작성</div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="swiper-slide">
+                  <a href="feed_lupicker_interview_detail.html" class="item">
+                    <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                    <div class="title">Ep.10 핫한 텐트 받고 가을 캠핑 떠나자! 이벤트의 주인공 루피커 ‘토끼’님의 소감!</div>
+                    <div class="info">
+                      <div class="hit">조회수 10만회</div>
+                      <div class="date">2022.05.20 작성</div>
+                    </div>
+                  </a>
                 </div>
               </div>
-            </a>
+            </div>
+            <script>
+              const lupickerInterviewSwiper = new Swiper('#lupicker-interview', {
+                // eslint-disable-line
+                spaceBetween: 10,
+                slidesOffsetAfter: 20,
+              });
+            </script>
           </div>
-        </div>
-        <!-- //인기 피드 -->
-
-        <!-- //실컨텐츠 -->
-      </main>
+          <!-- //루피커 인터뷰 -->
+          <div class="hr"></div>
+          <!-- 인기 피드 -->
+          <div class="container">
+            <div class="section-title">인기 피드</div>
+            <ul class="nav nav-badges" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="tab">루픽스토리</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" href="#" data-bs-toggle="tab">루픽스토리</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" href="#" data-bs-toggle="tab">루피커 인터뷰</a>
+              </li>
+            </ul>
+            <div class="popular-list">
+              <a href="#none" class="item">
+                <div class="img">
+                  <img src="../../assets/images/@portrait.jpg" alt="" />
+                  <span>1위</span>
+                </div>
+                <div class="info">
+                  <div class="d-flex flex-column justify-content-between h-100">
+                    <div>
+                      <div class="title">랜드로버 뉴 디펜더를 타고 캠핑 간 루피커의 생생한 후기!</div>
+                      <span class="badge outline-gray">루픽스토리</span>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <div class="hit">조회수 10만회</div>
+                      <div class="date">2022.05.20 작성</div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a href="#none" class="item">
+                <div class="img">
+                  <img src="../../assets/images/@landscape.jpg" alt="" />
+                  <span>2위</span>
+                </div>
+                <div class="info">
+                  <div class="d-flex flex-column justify-content-between h-100">
+                    <div>
+                      <div class="title">랜드로버 뉴 디펜더를 타고 캠핑 간 루피커의 생생한 후기!</div>
+                      <span class="badge outline-gray">루픽스토리</span>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <div class="hit">조회수 10만회</div>
+                      <div class="date">2022.05.20 작성</div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- //인기 피드 -->
+          <!-- //실컨텐츠 -->
+        </main>
+      </div>
       <div id="navbar">
         <div class="inner">
           <nav class="navbar">
@@ -384,7 +413,6 @@
         </div>
       </div>
     </div>
-    ㅜ
 
     <!-- modal: 인증 실패 -->
     <div class="modal" tabindex="-1" id="modal-certification-fail">

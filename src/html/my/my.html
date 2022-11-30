@@ -9,115 +9,112 @@
   <!-- 메인페이지에만 body-main 추가 -->
   <div id="wrap">
     @@include('@@webRoot/html/_include/_header.html', { "title": "My" })
-    <main id="main">
-
-      <!-- 실컨텐츠 -->
-
-      <!-- 내 정보 -->
-      <div class="container">
-        <div class="my-profile">
-          <div class="img">
-            <!-- <img src="@@webRoot/assets/images/profile-before-login-1.svg" alt="프로필 사진 없음(로그인 전)" class="default">
-              <img src="@@webRoot/assets/images/profile-after-login-1.svg" alt="프로필 사진 없음(로그인 후)" class="default"> -->
-            <img src="@@webRoot/assets/images/@profile.jpg" alt="복남이 프로필 사진">
-          </div>
-          <div class="info">
-            <!-- 로그인 전 -->
-            <!-- <a href="../login/login.html" class="username">로그인 <i class="icon-full-menu-arr"></i></a> -->
-            <!-- 로그인 후 -->
-            <div class="username">복남이</div>
-            <a href="" class="btn-friend-invite">친구초대하고 <span class="text-secondary">1,000P</span> 씩 받기</a>
-          </div>
-        </div>
-      </div>
-      <!-- //내 정보 -->
-
-      <!-- 내 포인트 -->
-      <div class="container">
-        <div class="my-point">
-          <div class="point">
-            <i class="icon-point"></i>
-            <strong>77,000</strong>
-          </div>
-          <div class="menu">
-            <a href="../util/lupickguide.html">사용방법</a>
-            <span class="bar"></span>
-            <a href="my_point.html">사용내역</a>
-          </div>
-        </div>
-      </div>
-      <!-- //내 포인트 -->
-
-      <!-- 참여 이벤트 상태 -->
-      <div class="container">
-        <div class="my-event-state">
-          <div class="section-title">참여 이벤트 상태 <small>(최근 3개월)</small></div>
-          <div class="my-event-step">
-            <div class="row gx-2 justify-content-between">
-              <a href="my_event_ing.html" class="col">
-                <div class="event-count"><span class="text-secondary">21</span></div>
-                <div class="event-order">참여중<br>이벤트</div>
-              </a>
-              <div class="col-auto"><i class="icon-step-arr-right"></i></div>
-              <a href="my_event_votable.html" class="col">
-                <div class="event-count"><span class="text-secondary">4</span></div>
-                <div class="event-order">투표<br>요청</div>
-              </a>
-              <div class="col-auto"><i class="icon-step-arr-right"></i></div>
-              <a href="my_event_shipping.html" class="col">
-                <div class="event-count"><span>0</span></div>
-                <div class="event-order">상품<br>배송중</div>
-              </a>
-              <div class="col-auto"><i class="icon-step-arr-right"></i></div>
-              <a href="my_event_purchasing_confirmation.html" class="col">
-                <div class="event-count"><span>0</span></div>
-                <div class="event-order">구매확정<br>확인</div>
-              </a>
-              <div class="col-auto"><i class="icon-step-arr-right"></i></div>
-              <a href="my_event_result.html" class="col">
-                <div class="event-count"><span>0</span></div>
-                <div class="event-order">이벤트<br>결과</div>
-              </a>
+    <div id="container">
+      @@include('@@webRoot/html/_include/_top-my.html')
+      <div id="layout">
+        @@include('@@webRoot/html/_include/_sidebar-my.html')
+        <main id="main">
+          <!-- 실컨텐츠 -->
+          <div class="d-lg-none">
+            <!-- 내 정보 -->
+            <div class="container">
+              <div class="my-profile">
+                <div class="img">
+                  <!-- <img src="@@webRoot/assets/images/profile-before-login-1.svg" alt="프로필 사진 없음(로그인 전)" class="default">
+                    <img src="@@webRoot/assets/images/profile-after-login-1.svg" alt="프로필 사진 없음(로그인 후)" class="default"> -->
+                  <img src="@@webRoot/assets/images/@profile.jpg" alt="복남이 프로필 사진">
+                </div>
+                <div class="info">
+                  <!-- 로그인 전 -->
+                  <!-- <a href="../login/login.html" class="username">로그인 <i class="icon-full-menu-arr"></i></a> -->
+                  <!-- 로그인 후 -->
+                  <div class="username">복남이</div>
+                  <a href="" class="btn-friend-invite">친구초대하고 <span class="text-secondary">1,000P</span> 씩 받기</a>
+                </div>
+              </div>
             </div>
+            <!-- //내 정보 -->
+            <!-- 내 포인트 -->
+            <div class="container">
+              <div class="my-point">
+                <div class="point">
+                  <i class="icon-point"></i>
+                  <strong>77,000</strong>
+                </div>
+                <div class="menu">
+                  <a href="../util/lupickguide.html">사용방법</a>
+                  <span class="bar"></span>
+                  <a href="my_point.html">사용내역</a>
+                </div>
+              </div>
+            </div>
+            <!-- //내 포인트 -->
+            <!-- 참여 이벤트 상태 -->
+            <div class="container">
+              <div class="my-event-state">
+                <div class="section-title">참여 이벤트 상태 <small>(최근 3개월)</small></div>
+                <div class="my-event-step">
+                  <div class="row gx-2 justify-content-between">
+                    <a href="my_event_ing.html" class="col">
+                      <div class="event-count"><span class="text-secondary">21</span></div>
+                      <div class="event-order">참여중<br>이벤트</div>
+                    </a>
+                    <div class="col-auto"><i class="icon-step-arr-right"></i></div>
+                    <a href="my_event_votable.html" class="col">
+                      <div class="event-count"><span class="text-secondary">4</span></div>
+                      <div class="event-order">투표<br>요청</div>
+                    </a>
+                    <div class="col-auto"><i class="icon-step-arr-right"></i></div>
+                    <a href="my_event_shipping.html" class="col">
+                      <div class="event-count"><span>0</span></div>
+                      <div class="event-order">상품<br>배송중</div>
+                    </a>
+                    <div class="col-auto"><i class="icon-step-arr-right"></i></div>
+                    <a href="my_event_purchasing_confirmation.html" class="col">
+                      <div class="event-count"><span>0</span></div>
+                      <div class="event-order">구매확정<br>확인</div>
+                    </a>
+                    <div class="col-auto"><i class="icon-step-arr-right"></i></div>
+                    <a href="my_event_result.html" class="col">
+                      <div class="event-count"><span>0</span></div>
+                      <div class="event-order">이벤트<br>결과</div>
+                    </a>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100 mt-20px" onclick="location.href='my_event_writable_reviews.html'">리뷰쓰고 포인트 받자 <span class="text-secondary ms-2">21</span></button>
+                <button type="button" class="btn btn-dark btn-round btn-lg w-100 text-primary mt-10px" onclick="location.href='my_event_selected_lupicker.html'">선정된 이벤트 확인</button>
+              </div>
+            </div>
+            <!-- //참여 이벤트 상태 -->
+            <!-- My 하단 메뉴 -->
+            <div class="full-menu">
+              <ul>
+                <li>
+                  <a href="my_event_order_history.html">주문 및 참여 내역 <span>2</span></a>
+                </li>
+                <li>
+                  <a href="my_event_cancel_history.html">취소/교환/반품 내역 <span>2</span></a>
+                </li>
+                <li>
+                  <a href="my_event_reviews.html">나의 리뷰 <span>2</span></a>
+                </li>
+                <li>
+                  <a href="../customer/customer_my_qna.html">문의내역 <span>2</span></a>
+                </li>
+              </ul>
+            </div>
+            <!-- //My 하단 메뉴 -->
+            <!-- 루픽의 행운아가 되어봐요. -->
+            <div class="be-lucky">
+              <p>루픽의 <br>행운아가 <br>되어봐요.</p>
+              <button type="button" class="btn btn-dark btn-lg btn-round-lg">함께하기</button>
+            </div>
+            <!-- //루픽의 행운아가 되어봐요. -->
           </div>
-          <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100 mt-20px"
-            onclick="location.href='my_event_writable_reviews.html'">리뷰쓰고 포인트 받자 <span
-              class="text-secondary ms-2">21</span></button>
-          <button type="button" class="btn btn-dark btn-round btn-lg w-100 text-primary mt-10px"
-            onclick="location.href='my_event_selected_lupicker.html'">선정된 이벤트 확인</button>
-        </div>
+          <!-- //실컨텐츠 -->
+        </main>
       </div>
-      <!-- //참여 이벤트 상태 -->
-
-      <!-- My 하단 메뉴 -->
-      <div class="full-menu">
-        <ul>
-          <li>
-            <a href="my_event_order_history.html">주문 및 참여 내역 <span>2</span></a>
-          </li>
-          <li>
-            <a href="my_event_cancel_history.html">취소/교환/반품 내역 <span>2</span></a>
-          </li>
-          <li>
-            <a href="my_event_reviews.html">나의 리뷰 <span>2</span></a>
-          </li>
-          <li>
-            <a href="../customer/customer_my_qna.html">문의내역 <span>2</span></a>
-          </li>
-        </ul>
-      </div>
-      <!-- //My 하단 메뉴 -->
-
-      <!-- 루픽의 행운아가 되어봐요. -->
-      <div class="be-lucky">
-        <p>루픽의 <br>행운아가 <br>되어봐요.</p>
-        <button type="button" class="btn btn-dark btn-lg btn-round-lg">함께하기</button>
-      </div>
-      <!-- //루픽의 행운아가 되어봐요. -->
-
-      <!-- //실컨텐츠 -->
-
-    </main>
+    </div>
     @@include('@@webRoot/html/_include/_navbar.html')
   </div>
 

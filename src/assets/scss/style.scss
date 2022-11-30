@@ -5,10 +5,8 @@
 @import 'vendors/bootstrap/variables';
 @import 'vendors/bootstrap/mixins';
 
-/*
-    컨텐츠 css
-*/
-
+// 컨텐츠 css
+// ---------------------------------------------------
 @import 'mixins';
 @import 'components/base-icons';
 @import 'components/base-buttons';
@@ -24,7 +22,11 @@
 @import "webfonts";
 @import 'base';
 @import 'helpers';
-@import 'layout';
+@import 'layout/layout';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/navbar';
+@import 'layout/sidebar';
 @import 'common';
 @import 'event';
 @import 'feed';
