@@ -5209,6 +5209,13 @@ progress {
   overflow: hidden;
   background: #fff;
 }
+@media (min-width: 992px) {
+  .balls.front {
+    top: 60px;
+    bottom: 208px;
+    height: auto;
+  }
+}
 .balls.front .bg-balls {
   position: absolute;
   left: 0;
@@ -5226,6 +5233,11 @@ progress {
   left: 50%;
   top: 50%;
   transform: translate(-50%, calc(-50% - 75px));
+}
+@media (min-width: 992px) {
+  .vote-loading {
+    transform: translate(-50%, -50%);
+  }
 }
 .vote-loading .set {
   width: 100%;
@@ -5675,6 +5687,67 @@ progress {
   color: #666;
 }
 
+/* loading */
+.loading-spokes {
+  position: relative;
+  height: 40px;
+  width: 40px;
+}
+.loading-spokes .spoke-container {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 5px*1.5);
+  transform-origin: 50% -100%;
+}
+.loading-spokes .spoke-container .spoke {
+  background: rgb(150, 155, 163);
+  width: 5px;
+  height: 10px;
+  border-radius: 5px;
+  animation: spoke 1s infinite;
+  animation-delay: inherit;
+}
+.loading-spokes .spoke-container:nth-of-type(0n+1) {
+  transform: translateX(100%) rotate(-90deg);
+  animation-delay: -0.875s;
+}
+.loading-spokes .spoke-container:nth-of-type(0n+2) {
+  transform: translateX(100%) rotate(-45deg);
+  animation-delay: -0.75s;
+}
+.loading-spokes .spoke-container:nth-of-type(0n+3) {
+  transform: translateX(100%);
+  animation-delay: -0.625s;
+}
+.loading-spokes .spoke-container:nth-of-type(0n+4) {
+  transform: translateX(100%) rotate(45deg);
+  animation-delay: -0.5s;
+}
+.loading-spokes .spoke-container:nth-of-type(0n+5) {
+  transform: translateX(100%) rotate(90deg);
+  animation-delay: -0.375s;
+}
+.loading-spokes .spoke-container:nth-of-type(0n+6) {
+  transform: translateX(100%) rotate(135deg);
+  animation-delay: -0.25s;
+}
+.loading-spokes .spoke-container:nth-of-type(0n+7) {
+  transform: translateX(100%) rotate(180deg);
+  animation-delay: -0.125s;
+}
+.loading-spokes .spoke-container:nth-of-type(0n+8) {
+  transform: translateX(100%) rotate(225deg);
+  animation-delay: 0;
+}
+
+@keyframes spoke {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
 .accordion .item {
   position: relative;
 }
