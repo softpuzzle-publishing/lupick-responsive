@@ -17,7 +17,12 @@
 .find-result{font-size: 28px;line-height: 1.78;}
 .re-send{
   text-align: right;margin-top: 50px;margin-bottom: -10px;
-  a{font-size: 13px;font-weight: 700;color: $muted;text-decoration: underline;}
+  a{
+    font-size: 13px;font-weight: 700;color: $muted;text-decoration: underline;
+    @include media-breakpoint-up(lg){
+      font-size: 14px;
+    }
+  }
 }
 
 .agree-area{

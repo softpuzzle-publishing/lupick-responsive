@@ -95,42 +95,71 @@
         </div>
       </header>
       <div id="container">
-        <main id="main">
-          <!-- 실컨텐츠 -->
-
-          <div class="container pt-20px">
-            <div class="leave">
-              <h1 class="page-title">루픽을 떠나기 전 <br />꼭 확인해주세요.</h1>
-              <ul>
-                <li>- 내 프로필 정보(이름, 프로필 사진, 이메일 주소, 배송지 주소 등), 주문내역, 문의내역, 참여한 이벤트, 좋아요한 이벤트가 모두 사라지고 복구가 불가능합니다.</li>
-                <li>- 탈퇴 후에는 기존 주문에 대한 배송/환불문의 대응이 불가능합니다.</li>
-                <li>- 탈퇴 시 루픽 포인트는 모두 소멸됩니다.</li>
-                <li>- 탈퇴 후 24시간 내에 동일한 계정으로 가입할 수 없습니다.</li>
-              </ul>
-              <select class="form-select form-select-lg w-100">
-                <option value="" selected>루픽을 떠나는 이유가 무엇인가요?</option>
-                <option value="">서비스 불만</option>
-                <option value="">가격이 비쌈</option>
-                <option value="">앱 사용이 어려움</option>
-                <option value="">기타</option>
-              </select>
-            </div>
-            <div class="form-group-wrap">
-              <div class="form-group-body">
-                <div class="form-check">
-                  <input type="checkbox" id="leaveAgree" />
-                  <label for="leaveAgree">위 내용을 확인했으며 이에 동의합니다.</label>
+        <div id="layout">
+          <main id="main">
+            <!-- 실컨텐츠 -->
+            <div class="container pt-20px">
+              <div class="leave">
+                <h1 class="page-title">루픽을 떠나기 전 <br />꼭 확인해주세요.</h1>
+                <ul>
+                  <li>- 내 프로필 정보(이름, 프로필 사진, 이메일 주소, 배송지 주소 등), 주문내역, 문의내역, 참여한 이벤트, 좋아요한 이벤트가 모두 사라지고 복구가 불가능합니다.</li>
+                  <li>- 탈퇴 후에는 기존 주문에 대한 배송/환불문의 대응이 불가능합니다.</li>
+                  <li>- 탈퇴 시 루픽 포인트는 모두 소멸됩니다.</li>
+                  <li>- 탈퇴 후 24시간 내에 동일한 계정으로 가입할 수 없습니다.</li>
+                </ul>
+                <select class="form-select form-select-lg w-100">
+                  <option value="" selected>루픽을 떠나는 이유가 무엇인가요?</option>
+                  <option value="">서비스 불만</option>
+                  <option value="">가격이 비쌈</option>
+                  <option value="">앱 사용이 어려움</option>
+                  <option value="">기타</option>
+                </select>
+              </div>
+              <div class="form-group-wrap">
+                <div class="form-group-body">
+                  <div class="form-check">
+                    <input type="checkbox" id="leaveAgree" />
+                    <label for="leaveAgree">위 내용을 확인했으며 이에 동의합니다.</label>
+                  </div>
                 </div>
               </div>
+              <div class="bottom-buttons">
+                <button type="button" class="btn btn-dark btn-lg w-100 px-0" onclick="location.href='../main/main.html'">탈퇴하기</button>
+              </div>
             </div>
-            <div class="bottom-buttons">
-              <button type="button" class="btn btn-dark btn-lg w-100 px-0" onclick="location.href='../main/main.html'">탈퇴하기</button>
-            </div>
-          </div>
-
-          <!-- //실컨텐츠 -->
-        </main>
+            <!-- //실컨텐츠 -->
+          </main>
+        </div>
       </div>
+      <footer id="footer">
+        <div class="container">
+          <div class="d-flex align-items-center">
+            <div class="footer-logo">
+              <img src="../../assets/images/logo-gray.svg" alt="Lupick Logo" />
+            </div>
+            <a href="#footer-info" role="button" class="btn-info-toggler" data-bs-toggle="collapse" aria-expanded="false">사업자정보</a>
+          </div>
+          <div class="footer-info collapse" id="footer-info">
+            <div>(주) 루픽</div>
+            <div>대표자 : 신선호</div>
+            <div>개인정보보호책임자 : 신선호</div>
+            <div>사업자등록번호 : 346-87-01740 <a href="#none">사업자정보확인</a></div>
+            <div>통신판매업 : 제 2020-부산부산진-1526 호</div>
+            <div>주소 : 부산광역시 부산진구 서전로 8, 6층 105호 (부전동)</div>
+            <div>대표전화 : 02-6951-0507</div>
+          </div>
+          <ul class="footer-menu">
+            <li><a href="">이용약관</a></li>
+            <li><a href="">개인정보처리방침</a></li>
+            <li><a href="">콜라보문의</a></li>
+          </ul>
+          <p class="copyright">© 2022 Lupick. All Rights Reserved.</p>
+          <div class="footer-warning">
+            루픽은 통신판매중개자이며 통신판매의 당사자가 아닙니다. <br />
+            따라서 루픽은 상품, 거래정보 및 거래에 대해 책임을 지지 않습니다.
+          </div>
+        </div>
+      </footer>
     </div>
   </body>
 </html>

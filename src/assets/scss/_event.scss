@@ -187,7 +187,11 @@
   .review-graph + &{border-top: 1px solid $border-color;padding-top: 20px;}
   .item{
     padding: 20px 0 30px;
-    &:first-of-type{padding-top: 0;}
+    &:first-of-type{padding-top: 0;
+      @include media-breakpoint-up(lg){
+        padding-top: 20px;
+      }
+    }
     & + .item{border-top: 1px solid $border-color;}
   }
   .photos{
@@ -408,6 +412,20 @@
     }
     tbody{
       td{font-size: 12px;}
+    }
+  }
+  @include media-breakpoint-up(lg){
+    .footnote{
+      span{font-size: 14px;}
+    }
+    .help-text{font-size: 13px;}
+    .table{
+      thead{
+        th{font-size: 14px;}
+      }
+      tbody{
+        td{font-size: 14px;}
+      }
     }
   }
 }

@@ -9,172 +9,169 @@
   <div id="wrap">
     @@include('@@webRoot/html/_include/_header.html', { "title": "회원가입" })
     <div id="container">
-      <main id="main">
-
-        <!-- 실컨텐츠 -->
-        <div class="container">
-          <div class="form pt-20px">
-            <form>
-              <fieldset>
-                <legend>회원가입</legend>
-                <div class="form-group">
-                  <label for="formId" class="form-label">아이디 <span class="required">*</span></label>
-                  <div class="row gx-10px">
-                    <div class="col">
-                      <input type="text" class="form-control" placeholder="예 : lupick01" id="formId">
-                    </div>
-                    <div class="col-auto">
-                      <button type="button" class="btn btn-outline-dark btn-flat btn-md">중복확인</button>
-                    </div>
-                  </div>
-                  <p class="feedback valid" style="display:block">OK 8자 이상 영문 또는 영문과 숫자를 조합</p>
-                  <p class="feedback valid" style="display:block">OK 아이디 중복확인</p>
-                </div>
-                <div class="form-group">
-                  <label for="formPw" class="form-label">비밀번호 <span class="required">*</span></label>
-                  <input type="password" class="form-control" placeholder="비밀번호를 입력해주세요" id="formPw">
-                  <p class="feedback valid" style="display:block">OK 8자 이상 입력 / 영문, 숫자, 특수문자만 허용하며(2개 이상 포함)</p>
-                  <p class="feedback valid" style="display:block">OK 동일한 숫자 4개 이상 연속 사용 불가</p>
-                </div>
-                <div class="form-group">
-                  <label for="formPwRe" class="form-label">비밀번호 확인 <span class="required">*</span></label>
-                  <input type="password" class="form-control" placeholder="비밀번호를 한번 더 확인해주세요" id="formPwRe">
-                  <p class="feedback valid" style="display:block">OK 동일한 비밀번호를 입력해주세요</p>
-                </div>
-                <div class="form-group">
-                  <label for="formName" class="form-label">이름 <span class="required">*</span></label>
-                  <input type="text" class="form-control" placeholder="이름을 입력해주세요" id="formName">
-                  <p class="form-text">* 꼭 본인 실명을 작성해주세요 <br>(본명이 아닐 시 럭키상품이 취소될 수 있습니다)</p>
-                </div>
-                <div class="form-group">
-                  <label for="formEmail" class="form-label">이메일 <span class="required">*</span></label>
-                  <input type="email" class="form-control" placeholder="예 : lupick@lupick.com" id="formEmail">
-                </div>
-                <div class="form-group">
-                  <label for="formNickname" class="form-label">닉네임 <span class="required">*</span></label>
-                  <input type="text" class="form-control" placeholder="한글 2~10자 또는 영문 2~8자" id="formNickname">
-                </div>
-                <div class="form-group">
-                  <label for="formMobile" class="form-label">휴대폰 번호 <span class="required">*</span></label>
-                  <div class="row gx-10px">
-                    <div class="col">
-                      <input type="tel" class="form-control" placeholder="- 없이 숫자만 입력" id="formMobile">
-                    </div>
-                    <div class="col-auto">
-                      <button type="button" class="btn btn-outline-dark btn-flat btn-md">인증번호 발송</button>
-                    </div>
-                  </div>
-                  <div class="row gx-10px mt-10px">
-                    <div class="col">
-                      <input type="text" class="form-control" placeholder="인증번호 입력" id="formMobile2"
-                        inputmode="numeric">
-                    </div>
-                    <div class="col-auto">
-                      <button type="button" class="btn btn-outline-dark btn-flat btn-md">인증번호 확인</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="formAddr1" class="form-label">주소 <span class="required">*</span></label>
-                  <div class="row gx-10px">
-                    <div class="col">
-                      <input type="text" class="form-control" placeholder="" id="formAddr1" readonly>
-                    </div>
-                    <div class="col-auto">
-                      <button type="button" class="btn btn-outline-dark btn-flat btn-md">우편번호 검색</button>
-                    </div>
-                  </div>
-                  <input type="text" class="form-control mt-10px" placeholder="" id="formAddr2" readonly>
-                  <input type="text" class="form-control" placeholder="상세주소를 입력해주세요" id="formAddr3">
-                </div>
-                <div class="form-group">
-                  <label for="formBirthYear" class="form-label">생년월일</label>
-                  <div class="border-bottom">
-                    <div class="row align-items-center gx-0">
-                      <div class="col">
-                        <input type="text" class="form-control text-center border-0" placeholder="YYYY"
-                          id="formBirthYear" inputmode="numberic" maxlength="4">
+      <div id="layout">
+        <main id="main">
+          <!-- 실컨텐츠 -->
+          <div class="container">
+            <div class="center-wrap">
+              <h1 class="page-title d-none d-lg-block">회원가입</h1>
+              <div class="form pt-20px">
+                <form>
+                  <fieldset>
+                    <legend>회원가입</legend>
+                    <div class="form-group">
+                      <label for="formId" class="form-label">아이디 <span class="required">*</span></label>
+                      <div class="row gx-10px">
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="예 : lupick01" id="formId">
+                        </div>
+                        <div class="col-auto">
+                          <button type="button" class="btn btn-outline-dark btn-flat btn-md">중복확인</button>
+                        </div>
                       </div>
-                      <div class="col-auto">
-                        <span class="text-gray-light">/</span>
+                      <p class="feedback valid" style="display:block">OK 8자 이상 영문 또는 영문과 숫자를 조합</p>
+                      <p class="feedback valid" style="display:block">OK 아이디 중복확인</p>
+                    </div>
+                    <div class="form-group">
+                      <label for="formPw" class="form-label">비밀번호 <span class="required">*</span></label>
+                      <input type="password" class="form-control" placeholder="비밀번호를 입력해주세요" id="formPw">
+                      <p class="feedback valid" style="display:block">OK 8자 이상 입력 / 영문, 숫자, 특수문자만 허용하며(2개 이상 포함)</p>
+                      <p class="feedback valid" style="display:block">OK 동일한 숫자 4개 이상 연속 사용 불가</p>
+                    </div>
+                    <div class="form-group">
+                      <label for="formPwRe" class="form-label">비밀번호 확인 <span class="required">*</span></label>
+                      <input type="password" class="form-control" placeholder="비밀번호를 한번 더 확인해주세요" id="formPwRe">
+                      <p class="feedback valid" style="display:block">OK 동일한 비밀번호를 입력해주세요</p>
+                    </div>
+                    <div class="form-group">
+                      <label for="formName" class="form-label">이름 <span class="required">*</span></label>
+                      <input type="text" class="form-control" placeholder="이름을 입력해주세요" id="formName">
+                      <p class="form-text">* 꼭 본인 실명을 작성해주세요 <br>(본명이 아닐 시 럭키상품이 취소될 수 있습니다)</p>
+                    </div>
+                    <div class="form-group">
+                      <label for="formEmail" class="form-label">이메일 <span class="required">*</span></label>
+                      <input type="email" class="form-control" placeholder="예 : lupick@lupick.com" id="formEmail">
+                    </div>
+                    <div class="form-group">
+                      <label for="formNickname" class="form-label">닉네임 <span class="required">*</span></label>
+                      <input type="text" class="form-control" placeholder="한글 2~10자 또는 영문 2~8자" id="formNickname">
+                    </div>
+                    <div class="form-group">
+                      <label for="formMobile" class="form-label">휴대폰 번호 <span class="required">*</span></label>
+                      <div class="row gx-10px">
+                        <div class="col">
+                          <input type="tel" class="form-control" placeholder="- 없이 숫자만 입력" id="formMobile">
+                        </div>
+                        <div class="col-auto">
+                          <button type="button" class="btn btn-outline-dark btn-flat btn-md">인증번호 발송</button>
+                        </div>
                       </div>
-                      <div class="col">
-                        <input type="text" class="form-control text-center border-0" placeholder="MM"
-                          id="formBirthMonth" inputmode="numberic" maxlength="2">
-                      </div>
-                      <div class="col-auto">
-                        <span class="text-gray-light">/</span>
-                      </div>
-                      <div class="col">
-                        <input type="text" class="form-control text-center border-0" placeholder="DD" id="formBirthDay"
-                          inputmode="numberic" maxlength="2">
+                      <div class="row gx-10px mt-10px">
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="인증번호 입력" id="formMobile2" inputmode="numeric">
+                        </div>
+                        <div class="col-auto">
+                          <button type="button" class="btn btn-outline-dark btn-flat btn-md">인증번호 확인</button>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="formGenderMail" class="form-label">성별</label>
-                  <div class="row gx-10px">
-                    <div class="col">
-                      <div class="form-check button w-100">
-                        <input type="radio" value="" id="formGenderMail" name="formGender">
-                        <label for="formGenderMail">남성</label>
+                    <div class="form-group">
+                      <label for="formAddr1" class="form-label">주소 <span class="required">*</span></label>
+                      <div class="row gx-10px">
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="" id="formAddr1" readonly>
+                        </div>
+                        <div class="col-auto">
+                          <button type="button" class="btn btn-outline-dark btn-flat btn-md">우편번호 검색</button>
+                        </div>
+                      </div>
+                      <input type="text" class="form-control mt-10px" placeholder="" id="formAddr2" readonly>
+                      <input type="text" class="form-control" placeholder="상세주소를 입력해주세요" id="formAddr3">
+                    </div>
+                    <div class="form-group">
+                      <label for="formBirthYear" class="form-label">생년월일</label>
+                      <div class="border-bottom">
+                        <div class="row align-items-center gx-0">
+                          <div class="col">
+                            <input type="text" class="form-control text-center border-0" placeholder="YYYY" id="formBirthYear" inputmode="numberic" maxlength="4">
+                          </div>
+                          <div class="col-auto">
+                            <span class="text-gray-light">/</span>
+                          </div>
+                          <div class="col">
+                            <input type="text" class="form-control text-center border-0" placeholder="MM" id="formBirthMonth" inputmode="numberic" maxlength="2">
+                          </div>
+                          <div class="col-auto">
+                            <span class="text-gray-light">/</span>
+                          </div>
+                          <div class="col">
+                            <input type="text" class="form-control text-center border-0" placeholder="DD" id="formBirthDay" inputmode="numberic" maxlength="2">
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div class="col">
-                      <div class="form-check button w-100">
-                        <input type="radio" value="" id="formGenderFemail" name="formGender">
-                        <label for="formGenderFemail">여성</label>
+                    <div class="form-group">
+                      <label for="formGenderMail" class="form-label">성별</label>
+                      <div class="row gx-10px">
+                        <div class="col">
+                          <div class="form-check button w-100">
+                            <input type="radio" value="" id="formGenderMail" name="formGender">
+                            <label for="formGenderMail">남성</label>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-check button w-100">
+                            <input type="radio" value="" id="formGenderFemail" name="formGender">
+                            <label for="formGenderFemail">여성</label>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-check button w-100">
+                            <input type="radio" value="" id="formGenderNone" name="formGender">
+                            <label for="formGenderNone">선택안함</label>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div class="col">
-                      <div class="form-check button w-100">
-                        <input type="radio" value="" id="formGenderNone" name="formGender">
-                        <label for="formGenderNone">선택안함</label>
+                    <div class="form-group">
+                      <label for="formRecommend" class="form-label">추천인 아이디</label>
+                      <input type="text" class="form-control" placeholder="추천인 아이디를 입력해주세요" id="formRecommend">
+                      <p class="form-text">- 추천받은 아이디를 입력해주세요 <br>* 추천인과 본인 모두에게 1,000 포인트를 지급합니다.</p>
+                      <p class="feedback valid" style="display:block">OK 추천인 아이디가 확인되었습니다</p>
+                      <p class="feedback invalid" style="display:block">NO 추천인 아이디가 확인되지 않습니다</p>
+                    </div>
+                    <div class="agree-area">
+                      <div class="form-check square">
+                        <input type="checkbox" value="" id="agreeAll">
+                        <label for="agreeAll">약관에 모두 동의합니다.</label>
+                      </div>
+                      <div class="form-check agree-style">
+                        <input type="checkbox" value="" id="agree1">
+                        <label for="agree1">본인은 만 14세 이상이며 <a href="#none" class="text-info fw-bold text-decoration-underline">서비스 이용약관</a>, <a href="#none" class="text-info fw-bold text-decoration-underline">개인정보수집 및 이용</a>에 동의합니다. (필수)</label>
+                      </div>
+                      <div class="form-check agree-style">
+                        <input type="checkbox" value="" id="agree2">
+                        <label for="agree2">가입 시 입력한 이름과 럭키상품 수령자의 개인정보가 동일해야합니다. (필수)</label>
+                      </div>
+                      <div class="form-check agree-style">
+                        <input type="checkbox" value="" id="agree3">
+                        <label for="agree3"><a href="" class="text-info fw-bold text-decoration-underline">루픽 프로모션 및 혜택
+                            수신</a>에 동의합니다. (선택)</label>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="formRecommend" class="form-label">추천인 아이디</label>
-                  <input type="text" class="form-control" placeholder="추천인 아이디를 입력해주세요" id="formRecommend">
-                  <p class="form-text">- 추천받은 아이디를 입력해주세요 <br>* 추천인과 본인 모두에게 1,000 포인트를 지급합니다.</p>
-                  <p class="feedback valid" style="display:block">OK 추천인 아이디가 확인되었습니다</p>
-                  <p class="feedback invalid" style="display:block">NO 추천인 아이디가 확인되지 않습니다</p>
-                </div>
-                <div class="agree-area">
-                  <div class="form-check square">
-                    <input type="checkbox" value="" id="agreeAll">
-                    <label for="agreeAll">약관에 모두 동의합니다.</label>
-                  </div>
-                  <div class="form-check agree-style">
-                    <input type="checkbox" value="" id="agree1">
-                    <label for="agree1">본인은 만 14세 이상이며 <a href="#none"
-                        class="text-info fw-bold text-decoration-underline">서비스 이용약관</a>, <a href="#none"
-                        class="text-info fw-bold text-decoration-underline">개인정보수집 및 이용</a>에 동의합니다. (필수)</label>
-                  </div>
-                  <div class="form-check agree-style">
-                    <input type="checkbox" value="" id="agree2">
-                    <label for="agree2">가입 시 입력한 이름과 럭키상품 수령자의 개인정보가 동일해야합니다. (필수)</label>
-                  </div>
-                  <div class="form-check agree-style">
-                    <input type="checkbox" value="" id="agree3">
-                    <label for="agree3"><a href="" class="text-info fw-bold text-decoration-underline">루픽 프로모션 및 혜택
-                        수신</a>에 동의합니다. (선택)</label>
-                  </div>
-                </div>
-
-                <div class="bottom-buttons">
-                  <button type="button" class="btn btn-dark btn-lg w-100">가입하기</button>
-                </div>
-              </fieldset>
-            </form>
+                    <div class="bottom-buttons">
+                      <button type="button" class="btn btn-dark btn-lg w-100">가입하기</button>
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
           </div>
-        </div>
-        <!-- //실컨텐츠 -->
-
-      </main>
+          <!-- //실컨텐츠 -->
+        </main>
+      </div>
     </div>
+    @@include('@@webRoot/html/_include/_footer.html')
   </div>
 
 </body>

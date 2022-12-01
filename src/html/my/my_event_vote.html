@@ -15,82 +15,78 @@
   <div id="wrap">
     @@include('@@webRoot/html/_include/_header.html', { "title": "투표하기" })
     <div id="container">
-      <main id="main">
-        <!-- 실컨텐츠 -->
-
-        <div class="container pt-20px">
-
-          <div class="has-fixed-bottom-buttons">
-            <p class="top-text-lg has-border-bottom">나의 럭키번호 예측해서 <br>투표해주세요!</p>
-
-            <div class="d-flex align-items-center justify-content-between">
-              <strong class="my-item-count">나의 투표권 <span>5</span>개</strong>
-              <p class="my-lucky-number-is">
-                <i class="icon-question-mark"></i>
-                <a href="#modal-vote-help" role="button" data-bs-toggle="modal">나의 럭키번호란?</a>
-              </p>
-            </div>
-
-            <div class="system-guide text-danger">
-              ● 입력가능한 숫자범위 <strong>1~10,000</strong>
-            </div>
-
-            <div class="my-items">
-              <div class="my-item-card" data-type="vote" data-voted="N">
-                <div class="inner">
-                  <div class="my-item-card-head">
-                    <div class="title">루픽 투표권</div>
-                    <div class="number">01</div>
+      <div id="layout">
+        <main id="main">
+          <!-- 실컨텐츠 -->
+          <div class="container pt-20px">
+            <h1 class="page-title d-none d-lg-block">투표하기</h1>
+            <div class="has-fixed-bottom-buttons">
+              <p class="top-text-lg has-border-bottom">나의 럭키번호 예측해서 <br>투표해주세요!</p>
+              <div class="d-flex align-items-center justify-content-between">
+                <strong class="my-item-count">나의 투표권 <span>5</span>개</strong>
+                <p class="my-lucky-number-is">
+                  <i class="icon-question-mark"></i>
+                  <a href="#modal-vote-help" role="button" data-bs-toggle="modal">나의 럭키번호란?</a>
+                </p>
+              </div>
+              <div class="system-guide text-danger">
+                ● 입력가능한 숫자범위 <strong>1~10,000</strong>
+              </div>
+              <div class="my-items">
+                <div class="my-item-card" data-type="vote" data-voted="N">
+                  <div class="inner">
+                    <div class="my-item-card-head">
+                      <div class="title">루픽 투표권</div>
+                      <div class="number">01</div>
+                    </div>
+                    <div class="my-item-card-body">
+                      <div class="status"></div>
+                    </div>
+                    <div class="my-item-card-foot">
+                      <input type="text" class="form-control border text-center" inputmode="numeric" placeholder="번호를 입력해주세요" readonly data-bs-toggle="modal" data-bs-target="#modal-vote">
+                    </div>
                   </div>
-                  <div class="my-item-card-body">
-                    <div class="status"></div>
+                </div>
+                <div class="my-item-card" data-type="vote" data-voted="Y">
+                  <div class="inner">
+                    <div class="my-item-card-head">
+                      <div class="title">루픽 투표권</div>
+                      <div class="number">02</div>
+                    </div>
+                    <div class="my-item-card-body">
+                      <div class="status"></div>
+                    </div>
+                    <div class="my-item-card-foot">
+                      <input type="text" class="form-control border text-center" inputmode="numeric" placeholder="번호를 입력해주세요" readonly data-bs-toggle="modal" data-bs-target="#modal-vote" value="8,888">
+                    </div>
                   </div>
-                  <div class="my-item-card-foot">
-                    <input type="text" class="form-control border text-center" inputmode="numeric" placeholder="번호를 입력해주세요" readonly data-bs-toggle="modal" data-bs-target="#modal-vote">
+                </div>
+                <div class="my-item-card" data-type="vote" data-voted="Y">
+                  <div class="inner">
+                    <div class="my-item-card-head">
+                      <div class="title">루픽 투표권</div>
+                      <div class="number">03</div>
+                    </div>
+                    <div class="my-item-card-body">
+                      <div class="status"></div>
+                    </div>
+                    <div class="my-item-card-foot">
+                      <input type="text" class="form-control border text-center" inputmode="numeric" placeholder="번호를 입력해주세요" readonly data-bs-toggle="modal" data-bs-target="#modal-vote" value="777">
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="my-item-card" data-type="vote" data-voted="Y">
-                <div class="inner">
-                  <div class="my-item-card-head">
-                    <div class="title">루픽 투표권</div>
-                    <div class="number">02</div>
-                  </div>
-                  <div class="my-item-card-body">
-                    <div class="status"></div>
-                  </div>
-                  <div class="my-item-card-foot">
-                    <input type="text" class="form-control border text-center" inputmode="numeric" placeholder="번호를 입력해주세요" readonly data-bs-toggle="modal" data-bs-target="#modal-vote" value="8,888">
-                  </div>
-                </div>
+              <div class="bottom-buttons horizontal">
+                <button type="button" class="btn btn-outline-dark btn-lg w-100 px-0">랜덤 입력</button>
+                <button type="button" class="btn btn-dark btn-lg w-100 px-0" data-bs-toggle="modal" data-bs-target="#modal-voted">투표 완료</button>
               </div>
-              <div class="my-item-card" data-type="vote" data-voted="Y">
-                <div class="inner">
-                  <div class="my-item-card-head">
-                    <div class="title">루픽 투표권</div>
-                    <div class="number">03</div>
-                  </div>
-                  <div class="my-item-card-body">
-                    <div class="status"></div>
-                  </div>
-                  <div class="my-item-card-foot">
-                    <input type="text" class="form-control border text-center" inputmode="numeric" placeholder="번호를 입력해주세요" readonly data-bs-toggle="modal" data-bs-target="#modal-vote" value="777">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="bottom-buttons horizontal">
-              <button type="button" class="btn btn-outline-dark btn-lg w-100 px-0">랜덤 입력</button>
-              <button type="button" class="btn btn-dark btn-lg w-100 px-0" data-bs-toggle="modal" data-bs-target="#modal-voted">투표 완료</button>
             </div>
           </div>
-
-        </div>
-
-        <!-- //실컨텐츠 -->
-      </main>
+          <!-- //실컨텐츠 -->
+        </main>
+      </div>
     </div>
+    @@include('@@webRoot/html/_include/_footer.html')
   </div>
 
   @@include('@@webRoot/html/_include/_modal.html')

@@ -24,6 +24,7 @@
   -webkit-line-clamp: $lines-to-show;
   -webkit-box-orient: vertical;
   white-space: normal;
+  height: auto;
   @if $height-fix{
     height: ($line-height * $lines-to-show) * 1em;
   }

@@ -9,69 +9,71 @@
   <div id="wrap">
     @@include('@@webRoot/html/_include/_header.html', { "title": "루픽 문의" })
     <div id="container">
-      <main id="main">
-        <!-- 실컨텐츠 -->
-
-        <div class="container pt-20px">
-          <!-- 루픽 문의 form -->
-          <div class="form-group">
-            <label for="formQnaType" class="form-label visually-hidden">문의유형</label>
-            <select class="form-select form-select-lg w-100" id="formQnaType">
-              <option selected>문의유형</option>
-              <option value="">이용안내</option>
-              <option value="">회원문의</option>
-              <option value="">포인트</option>
-              <option value="">투표</option>
-              <option value="">오류</option>
-              <option value="">기타</option>
-            </select>
+      @@include('@@webRoot/html/_include/_top-my.html')
+      <div id="layout">
+        @@include('@@webRoot/html/_include/_sidebar-my.html')
+        <main id="main">
+          <!-- 실컨텐츠 -->
+          <div class="main-title-area">
+            <h2 class="main-title">루픽 문의</h2>
           </div>
-          <div class="form-group">
-            <label for="formQnaTitle" class="form-label">제목</label>
-            <input type="text" class="form-control border form-control-lg" placeholder="제목을 입력해주세요 (35자 제한)"
-              id="formQnaTitle" maxlength="35" />
-          </div>
-          <div class="form-group">
-            <label for="formQnaContent" class="form-label">문의내용</label>
-            <div class="textarea">
-              <textarea rows="6" class="form-control" placeholder="내용을 입력해주세요" maxlength="300"
-                id="formQnaContent"></textarea>
-              <div class="byte"><span>0</span>/300자</div>
+          <div class="container pt-20px">
+            <!-- 루픽 문의 form -->
+            <div class="form-group">
+              <label for="formQnaType" class="form-label visually-hidden">문의유형</label>
+              <select class="form-select form-select-lg w-100" id="formQnaType">
+                <option selected>문의유형</option>
+                <option value="">이용안내</option>
+                <option value="">회원문의</option>
+                <option value="">포인트</option>
+                <option value="">투표</option>
+                <option value="">오류</option>
+                <option value="">기타</option>
+              </select>
             </div>
-          </div>
-          <div class="form-group">
-            <div class="uploaded-file">
-              <div class="row align-items-center h-100">
-                <div class="col">
-                  <div class="file-name">img0456.jpg</div>
-                </div>
-                <div class="col-auto">
-                  <button type="button" class="btn-file-delete"><i class="icon-file-delete"></i></button>
-                </div>
+            <div class="form-group">
+              <label for="formQnaTitle" class="form-label">제목</label>
+              <input type="text" class="form-control border form-control-lg" placeholder="제목을 입력해주세요 (35자 제한)" id="formQnaTitle" maxlength="35" />
+            </div>
+            <div class="form-group">
+              <label for="formQnaContent" class="form-label">문의내용</label>
+              <div class="textarea">
+                <textarea rows="6" class="form-control" placeholder="내용을 입력해주세요" maxlength="300" id="formQnaContent"></textarea>
+                <div class="byte"><span>0</span>/300자</div>
               </div>
             </div>
-            <button type="button"
-              class="btn btn-outline-light btn-flat btn-lg w-100 justify-content-start text-gray-light" id="btn-file">
-              + 첨부파일 추가
-            </button>
-            <input type="file" class="visually-hidden" />
-            <script>
-              $("#btn-file").on("click", function () {
-                $(this).siblings("input[type=file]").click();
-              });
-            </script>
-            <p class="form-text font-13px">포맷 jpg/png/gif, 최대 3개, 개당 5MB, 총 10MB 등록 가능</p>
+            <div class="form-group">
+              <div class="uploaded-file">
+                <div class="row align-items-center h-100">
+                  <div class="col">
+                    <div class="file-name">img0456.jpg</div>
+                  </div>
+                  <div class="col-auto">
+                    <button type="button" class="btn-file-delete"><i class="icon-file-delete"></i></button>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="btn btn-outline-light btn-flat btn-lg w-100 justify-content-start text-gray-light" id="btn-file">
+                + 첨부파일 추가
+              </button>
+              <input type="file" class="visually-hidden" />
+              <script>
+                $("#btn-file").on("click", function () {
+                  $(this).siblings("input[type=file]").click();
+                });
+              </script>
+              <p class="form-text font-13px">포맷 jpg/png/gif, 최대 3개, 개당 5MB, 총 10MB 등록 가능</p>
+            </div>
+            <!-- //루픽 문의 form -->
+            <div class="bottom-buttons">
+              <button type="button" class="btn btn-dark btn-round btn-lg w-100">등록</button>
+            </div>
           </div>
-          <!-- //루픽 문의 form -->
-
-          <div class="bottom-buttons">
-            <button type="button" class="btn btn-dark btn-round btn-lg w-100">등록</button>
-          </div>
-        </div>
-
-        <!-- //실컨텐츠 -->
-      </main>
+          <!-- //실컨텐츠 -->
+        </main>
+      </div>
     </div>
+    @@include('@@webRoot/html/_include/_footer.html')
   </div>
 </body>
 

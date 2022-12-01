@@ -79,14 +79,11 @@
           <div class="form-group-wrap">
             <div class="form-group-header">
               <div class="label">배송 정보</div>
-              <button type="button" class="btn btn-muted btn-sm btn-flat text-gray" data-bs-toggle="modal"
-                data-bs-target="#modal-address-edit">변경하기</button>
+              <button type="button" class="btn btn-muted btn-sm btn-flat text-gray" data-bs-toggle="modal" data-bs-target="#modal-address-edit">변경하기</button>
             </div>
             <div class="form-group-body">
               <!-- 배송지 추가 전 -->
-              <button type="button"
-                class="btn btn-outline-light btn-flat btn-lg w-100 justify-content-start text-gray-light"
-                data-bs-toggle="modal" data-bs-target="#modal-address-add">+ 배송지 추가</button>
+              <button type="button" class="btn btn-outline-light btn-flat btn-lg w-100 justify-content-start text-gray-light" data-bs-toggle="modal" data-bs-target="#modal-address-add">+ 배송지 추가</button>
               <!-- 배송지 추가 후 -->
               <address class="address-item">
                 <div class="zipcode">04720</div>
@@ -117,8 +114,7 @@
             <div class="form-group-body border-top-0 pt-0">
               <div class="row gx-10px">
                 <div class="col">
-                  <input type="tel" class="form-control border form-control-lg font-16px" placeholder="0"
-                    id="orderPoint" />
+                  <input type="tel" class="form-control border form-control-lg font-16px" placeholder="0" id="orderPoint" />
                 </div>
                 <div class="col-auto">
                   <button type="button" class="btn btn-outline-dark btn-flat btn-lg fw-normal">모두 사용</button>
@@ -172,8 +168,7 @@
             <div class="form-group-header">
               <div class="label">결제 방법</div>
               <!-- 결제 방법 선택 후 -->
-              <button type="button" class="btn btn-muted btn-sm btn-flat text-gray"
-                onclick="location.href='payment_type.html'">변경하기</button>
+              <button type="button" class="btn btn-muted btn-sm btn-flat text-gray" onclick="location.href='payment_type.html'">변경하기</button>
             </div>
             <div class="form-group-body border-top-0 pt-0">
               <!-- 결제 방법 선택 전 -->
@@ -229,8 +224,7 @@
           <!-- //결제 정보 동의 -->
           <!-- 하단 버튼 -->
           <div class="bottom-buttons">
-            <button type="button" class="btn btn-dark btn-lg w-100 px-0"
-              onclick="location.href='../my/my_event_vote.html'">결제하고 투표하기</button>
+            <button type="button" class="btn btn-dark btn-lg w-100 px-0" onclick="location.href='../my/my_event_vote.html'">결제하고 투표하기</button>
           </div>
           <!-- //하단 버튼 -->
         </div>
@@ -238,6 +232,7 @@
         <!-- //실컨텐츠 -->
       </main>
     </div>
+    @@include('@@webRoot/html/_include/_footer.html')
   </div>
 
   @@include('@@webRoot/html/_include/_modal.html')

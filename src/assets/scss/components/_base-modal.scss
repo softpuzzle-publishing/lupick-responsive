@@ -10,6 +10,9 @@ body.modal-open{
 .modal-dialog {
   position: relative; width: auto; pointer-events: none; display: flex; align-items: center; min-height: 100%; margin: 8px auto;max-width: 280px;
   .modal.show & { transform: none; }
+  @include media-breakpoint-up(lg){
+    max-width: 320px;
+  }
 }
 
 .modal-content {
@@ -42,6 +45,9 @@ body.modal-open{
 .modal-header {
   position: relative; display: flex; flex-shrink: 0; align-items: center; justify-content: center; height: $header-height;padding: 0 20px;
   border-radius: 7px 7px 0 0;
+  @include media-breakpoint-up(lg){
+    padding-left: 30px;padding-right: 30px;
+  }
 }
 
 .modal-title {
@@ -54,11 +60,17 @@ body.modal-open{
   padding: 0 20px $padding-bottom;
   padding-bottom: calc(constant(safe-area-inset-bottom) + $padding-bottom);
   padding-bottom: calc(env(safe-area-inset-bottom) + $padding-bottom);
+  @include media-breakpoint-up(lg){
+    padding-left: 30px;padding-right: 30px;
+  }
 }
 
 .modal-footer {
   padding: 15px 20px;
   border-radius: 0 0 7px 7px;
+  @include media-breakpoint-up(lg){
+    padding-left: 30px;padding-right: 30px;
+  }
 }
 
 .modal.alert {
@@ -66,6 +78,9 @@ body.modal-open{
     max-width: 280px; margin: 0 auto;width: 100%;
     @media(max-width:320px) {
       max-width: 250px;
+    }
+    @include media-breakpoint-up(lg){
+      max-width: 320px;
     }
   }
   .modal-content{border: 0;}
@@ -78,6 +93,9 @@ body.modal-open{
 }
 .alert-text {
   text-align: center; font-size: 14px;line-height: 1.5714; word-break: keep-all;padding: 28px 0;
+  @include media-breakpoint-up(lg){
+    padding: 40px 0;font-size: 15px;
+  }
 }
 
 .modal.slide-up {
@@ -102,17 +120,18 @@ body.modal-open{
   &.show {
     .modal-content { opacity: 1; transform: translateY(0);transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 150ms }
   }
+  @include media-breakpoint-up(lg){
+    transition: none !important;
+    .modal-dialog{align-items: center;margin: 0 auto;max-width: 360px;}
+    .modal-content{transition: none !important;}
+    .modal-body{border-radius: 7px;}
+  }
 }
 
 .modal-fullscreen {
-  width: 100%;
-  max-width: none;
-  height: 100%;
-  margin: 0;
+  width: 100%;max-width: none;height: 100%;margin: 0;
   .modal-content {
-    height: 100%;
-    border: 0;
-    border-radius: 0;
+    height: 100%;border: 0;border-radius: 0;
   }
   .modal-header,
   .modal-footer,
@@ -127,6 +146,11 @@ body.modal-open{
   .modal-body{
     overflow-y: auto;
   }
+  @include media-breakpoint-up(lg){
+    width: auto;max-width: 540px;height: auto;margin: 0 auto;
+    .modal-content{height: auto;border-radius: 7px;}
+    .modal-header{height: 75px;}
+  }
 }
 
 .modal-dialog-scrollable {
@@ -140,6 +164,10 @@ body.modal-open{
   .modal-body {
     overflow-y: auto;
   }
+  @include media-breakpoint-up(lg){
+    height: calc(100% - 60px);
+    .modal-content{margin: 30px auto;max-height: 92%;}
+  }
 }
 
 .modal-dialog-centered {
@@ -150,4 +178,7 @@ body.modal-open{
 
 .modal-md{
   max-width: 340px;
+  @include media-breakpoint-up(lg){
+    max-width: 400px;
+  }
 }

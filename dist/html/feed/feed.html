@@ -317,6 +317,35 @@
           <!-- //실컨텐츠 -->
         </main>
       </div>
+      <footer id="footer">
+        <div class="container">
+          <div class="d-flex align-items-center">
+            <div class="footer-logo">
+              <img src="../../assets/images/logo-gray.svg" alt="Lupick Logo" />
+            </div>
+            <a href="#footer-info" role="button" class="btn-info-toggler" data-bs-toggle="collapse" aria-expanded="false">사업자정보</a>
+          </div>
+          <div class="footer-info collapse" id="footer-info">
+            <div>(주) 루픽</div>
+            <div>대표자 : 신선호</div>
+            <div>개인정보보호책임자 : 신선호</div>
+            <div>사업자등록번호 : 346-87-01740 <a href="#none">사업자정보확인</a></div>
+            <div>통신판매업 : 제 2020-부산부산진-1526 호</div>
+            <div>주소 : 부산광역시 부산진구 서전로 8, 6층 105호 (부전동)</div>
+            <div>대표전화 : 02-6951-0507</div>
+          </div>
+          <ul class="footer-menu">
+            <li><a href="">이용약관</a></li>
+            <li><a href="">개인정보처리방침</a></li>
+            <li><a href="">콜라보문의</a></li>
+          </ul>
+          <p class="copyright">© 2022 Lupick. All Rights Reserved.</p>
+          <div class="footer-warning">
+            루픽은 통신판매중개자이며 통신판매의 당사자가 아닙니다. <br />
+            따라서 루픽은 상품, 거래정보 및 거래에 대해 책임을 지지 않습니다.
+          </div>
+        </div>
+      </footer>
       <div id="navbar">
         <div class="inner">
           <nav class="navbar">
@@ -436,7 +465,7 @@
 
     <!-- modal: 알림 -->
     <div class="modal" tabindex="-1" id="modal-alarm">
-      <div class="modal-dialog modal-fullscreen">
+      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
             <div class="d-flex align-items-center">
@@ -517,6 +546,33 @@
                   <div class="time">1시간 전</div>
                 </div>
               </div>
+
+              <div class="alarm-list-item">
+                <div class="img"><img src="../../assets/images/@profile.jpg" alt="" /></div>
+                <div class="text">
+                  <div class="title">알림</div>
+                  <div class="desc">투표 시작! 거대벽화 그리기에 참여하는 911명 중 9명은 포르쉐 911 타고 귀가하자 투표에 참여해주세요.</div>
+                  <div class="time">1시간 전</div>
+                </div>
+              </div>
+
+              <div class="alarm-list-item">
+                <div class="img"><img src="../../assets/images/@profile.jpg" alt="" /></div>
+                <div class="text">
+                  <div class="title">알림</div>
+                  <div class="desc">투표 시작! 거대벽화 그리기에 참여하는 911명 중 9명은 포르쉐 911 타고 귀가하자 투표에 참여해주세요.</div>
+                  <div class="time">1시간 전</div>
+                </div>
+              </div>
+
+              <div class="alarm-list-item">
+                <div class="img"><img src="../../assets/images/@profile.jpg" alt="" /></div>
+                <div class="text">
+                  <div class="title">알림</div>
+                  <div class="desc">투표 시작! 거대벽화 그리기에 참여하는 911명 중 9명은 포르쉐 911 타고 귀가하자 투표에 참여해주세요.</div>
+                  <div class="time">1시간 전</div>
+                </div>
+              </div>
             </div>
             <div class="more-text">
               <a href="javascript:;" role="button">더보기</a>
@@ -528,7 +584,7 @@
 
     <!-- modal: 투표결과 리스트 보기 -->
     <div class="modal" tabindex="-1" id="modal-result-list">
-      <div class="modal-dialog modal-fullscreen">
+      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
             <div class="d-flex align-items-center">
@@ -939,7 +995,7 @@
 
     <!-- modal: 배송지 추가 -->
     <div class="modal" tabindex="-1" id="modal-address-add">
-      <div class="modal-dialog modal-fullscreen">
+      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
             <div class="d-flex align-items-center">
@@ -970,7 +1026,7 @@
               <input type="text" class="form-control mt-10px" placeholder="" id="formAddr2" readonly />
               <input type="text" class="form-control mt-10px" placeholder="상세주소를 입력해주세요" id="formAddr3" />
             </div>
-            <div class="form-check square mt-20px">
+            <div class="form-check mt-20px">
               <input type="checkbox" value="" id="defaultAddress" />
               <label for="defaultAddress" class="font-14px">기본 배송지로 등록</label>
             </div>
@@ -986,7 +1042,7 @@
 
     <!-- modal: 배송지 수정 -->
     <div class="modal" tabindex="-1" id="modal-address-edit">
-      <div class="modal-dialog modal-fullscreen">
+      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
             <div class="d-flex align-items-center">
@@ -1017,7 +1073,7 @@
               <input type="text" class="form-control mt-10px" placeholder="" id="formMyAddr2" readonly />
               <input type="text" class="form-control mt-10px" placeholder="상세주소를 입력해주세요" id="formMyAddr3" />
             </div>
-            <div class="form-check square mt-20px">
+            <div class="form-check mt-20px">
               <input type="checkbox" value="" id="defaultMyAddress" checked />
               <label for="defaultMyAddress" class="font-14px">기본 배송지로 등록</label>
             </div>
@@ -1183,7 +1239,7 @@
 
     <!-- modal: 리뷰 확대 보기 -->
     <div class="modal modal-review" tabindex="-1" id="modal-review">
-      <div class="modal-dialog modal-fullscreen">
+      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
         <div class="modal-content">
           <button type="button" class="btn-close white" data-bs-dismiss="modal" aria-label="Close"></button>
           <div class="modal-body">
@@ -1404,7 +1460,7 @@
 
     <!-- modal: 배송 조회 -->
     <div class="modal" tabindex="-1" id="modal-shipping">
-      <div class="modal-dialog modal-fullscreen">
+      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
             <div class="d-flex align-items-center">
@@ -1523,7 +1579,7 @@
 
     <!-- modal: 영수증 받기 -->
     <div class="modal" tabindex="-1" id="modal-invoice">
-      <div class="modal-dialog modal-fullscreen">
+      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
             <div class="d-flex align-items-center">
@@ -1554,7 +1610,7 @@
 
     <!-- modal: 루픽 앱 유도 -->
     <div class="modal" tabindex="-1" id="modal-app-intro">
-      <div class="modal-dialog modal-fullscreen">
+      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-body p-0">
             <!-- modal 내용 -->

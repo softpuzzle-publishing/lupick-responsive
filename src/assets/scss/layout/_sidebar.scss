@@ -3,8 +3,9 @@
   font-size: 30px;font-weight: 700;padding-bottom: 30px;padding-top: 15px;height: 78px;
 }
 .sidebar{
-  border: 1px solid $border-color;padding: 0 20px;margin-bottom: 20px;
+  position: sticky;top: 75px;
   ul{
+    border: 1px solid $border-color;padding: 0 20px;margin-bottom: 20px;
     > li{
       border-top: 1px solid $border-color;
       &:first-child{border-top: 0;}

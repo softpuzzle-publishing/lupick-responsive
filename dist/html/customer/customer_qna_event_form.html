@@ -95,74 +95,234 @@
         </div>
       </header>
       <div id="container">
-        <main id="main">
-          <!-- 실컨텐츠 -->
-
-          <div class="container pt-20px">
-            <!-- 선택한 이벤트 -->
-            <div class="qna-seleted-event">
-              <div class="d-flex align-items-center">
-                <div class="img">
-                  <img src="../../assets/images/@portrait.jpg" alt="" />
-                </div>
-                <div class="title">거대벽화 그리기에 참여하는 911명 중 9명은 포르쉐 911 타고 귀가하자</div>
-              </div>
-            </div>
-            <!-- //선택한 이벤트 -->
-
-            <!-- 이벤트 문의 form -->
-            <div class="form-group">
-              <label for="formQnaType" class="form-label visually-hidden">문의유형</label>
-              <select class="form-select form-select-lg w-100" id="formQnaType">
-                <option selected>문의유형</option>
-                <option value="">이벤트</option>
-                <option value="">이벤트상품</option>
-                <option value="">루픽리워드</option>
-                <option value="">배송</option>
-                <option value="">루피커선정</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="formQnaTitle" class="form-label">제목</label>
-              <input type="text" class="form-control border form-control-lg" placeholder="제목을 입력해주세요 (35자 제한)" id="formQnaTitle" maxlength="35" />
-            </div>
-            <div class="form-group">
-              <label for="formQnaContent" class="form-label">문의내용</label>
-              <div class="textarea">
-                <textarea rows="6" class="form-control" placeholder="내용을 입력해주세요" maxlength="300" id="formQnaContent"></textarea>
-                <div class="byte"><span>0</span>/300자</div>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="uploaded-file">
-                <div class="row align-items-center h-100">
-                  <div class="col">
-                    <div class="file-name">img0456.jpg</div>
-                  </div>
-                  <div class="col-auto">
-                    <button type="button" class="btn-file-delete"><i class="icon-file-delete"></i></button>
+        <div id="my-top">
+          <div class="container">
+            <div class="row gx-2">
+              <div class="col-auto">
+                <div class="my-top-left">
+                  <div class="my-top-box">
+                    <div class="my-profile">
+                      <div class="img">
+                        <!-- <img src="../../assets/images/profile-before-login-1.svg" alt="프로필 사진 없음(로그인 전)" class="default">
+                  <img src="../../assets/images/profile-after-login-1.svg" alt="프로필 사진 없음(로그인 후)" class="default"> -->
+                        <img src="../../assets/images/@profile.jpg" alt="복남이 프로필 사진" />
+                      </div>
+                      <div class="info">
+                        <!-- 로그인 전 -->
+                        <!-- <a href="../login/login.html" class="username">로그인 <i class="icon-full-menu-arr"></i></a> -->
+                        <!-- 로그인 후 -->
+                        <div class="username">복남이</div>
+                      </div>
+                      <a href="../../html/my/my_profile.html" class="btn btn-xs btn-outline-light">설정</a>
+                    </div>
+                    <div class="my-point">
+                      <div class="point">
+                        <i class="icon-point"></i>
+                        <strong>77,000</strong>
+                      </div>
+                      <div class="menu">
+                        <a href="../util/lupickguide.html">사용방법</a>
+                        <span class="bar"></span>
+                        <a href="my_point.html">사용내역</a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <button type="button" class="btn btn-outline-light btn-flat btn-lg w-100 justify-content-start text-gray-light" id="btn-file">+ 첨부파일 추가</button>
-              <input type="file" class="visually-hidden" />
-              <script>
-                $('#btn-file').on('click', function () {
-                  $(this).siblings('input[type=file]').click();
-                });
-              </script>
-              <p class="form-text font-13px">포맷 jpg/png/gif, 최대 3개, 개당 5MB, 총 10MB 등록 가능</p>
-            </div>
-            <!-- //이벤트 문의 form -->
-
-            <div class="bottom-buttons">
-              <button type="button" class="btn btn-dark btn-round btn-lg w-100">등록</button>
+              <div class="col">
+                <div class="my-top-right">
+                  <div class="my-top-box">
+                    <div class="my-event-state">
+                      <div class="section-title">참여 이벤트 상태 <small>(최근 3개월)</small></div>
+                      <div class="my-event-step">
+                        <div class="row gx-2 justify-content-between align-items-center">
+                          <a href="../../html/my/my_event_ing.html" class="col">
+                            <div class="event-count"><span class="text-secondary">21</span></div>
+                            <div class="event-order">참여중 이벤트</div>
+                          </a>
+                          <div class="col-auto"><i class="icon-step-arr-right"></i></div>
+                          <a href="../../html/my/my_event_votable.html" class="col">
+                            <div class="event-count"><span class="text-secondary">4</span></div>
+                            <div class="event-order">투표 요청</div>
+                          </a>
+                          <div class="col-auto"><i class="icon-step-arr-right"></i></div>
+                          <a href="../../html/my/my_event_shipping.html" class="col">
+                            <div class="event-count"><span>0</span></div>
+                            <div class="event-order">상품 배송중</div>
+                          </a>
+                          <div class="col-auto"><i class="icon-step-arr-right"></i></div>
+                          <a href="../../html/my/my_event_purchasing_confirmation.html" class="col">
+                            <div class="event-count"><span>0</span></div>
+                            <div class="event-order">구매확정 확인</div>
+                          </a>
+                          <div class="col-auto"><i class="icon-step-arr-right"></i></div>
+                          <a href="../../html/my/my_event_result.html" class="col">
+                            <div class="event-count"><span>0</span></div>
+                            <div class="event-order">이벤트 결과</div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="my-top-buttons">
+                    <div class="row g-2">
+                      <div class="col">
+                        <button type="button" class="btn btn-white btn-round btn-xl fw-bold w-100" onclick="location.href='../../html/my/my_event_writable_reviews.html'">리뷰쓰고 포인트 받자 <span class="text-secondary ms-2">21</span></button>
+                      </div>
+                      <div class="col">
+                        <button type="button" class="btn btn-dark btn-round btn-xl fw-bold w-100 text-primary" onclick="location.href='../../html/my/my_event_selected_lupicker.html'">선정된 이벤트 확인</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-
-          <!-- //실컨텐츠 -->
-        </main>
+        </div>
+        <div id="layout">
+          <aside id="aside">
+            <h1 class="sidebar-title">마이페이지</h1>
+            <nav class="sidebar">
+              <ul>
+                <!-- <li><a href="../../html/my/my_event_ing.html"><span>참여중 이벤트</span></a></li>
+      <li><a href="../../html/my/my_event_votable.html"><span>투표 요청</span></a></li>
+      <li><a href="../../html/my/my_event_shipping.html"><span>상품 배송중</span></a></li>
+      <li><a href="../../html/my/my_event_purchasing_confirmation.html"><span>구매확정 확인</span></a></li>
+      <li><a href="../../html/my/my_event_result.html"><span>이벤트 결과</span></a></li>
+      <li><a href="../../html/my/my_event_writable_reviews.html"><span>리뷰쓰기</span></a></li>
+      <li><a href="../../html/my/my_event_selected_lupicker.html"><span>선정된 이벤트</span></a></li> -->
+                <li class="active">
+                  <a href="../../html/my/my_event_order_history.html"><span>주문 및 참여 내역</span></a>
+                </li>
+                <li>
+                  <a href="../../html/my/my_event_cancel_history.html"><span>취소/교환/반품 내역</span></a>
+                </li>
+                <li>
+                  <a href="../../html/my/my_event_reviews.html"><span>나의 리뷰</span></a>
+                </li>
+                <li>
+                  <a href="../../html/customer/customer_my_qna.html"><span>문의 내역</span></a>
+                </li>
+                <!-- <li><a href="../../html/util/lupickguide.html"><span>포인트 사용방법</span></a></li> -->
+                <li>
+                  <a href="../../html/my/my_point.html"><span>포인트 사용내역</span></a>
+                </li>
+                <li>
+                  <a href="../../html/my/my_profile.html"><span>프로필 편집</span></a>
+                </li>
+                <li>
+                  <a href="../../html/my/my_info_password.html"><span>내 정보 관리</span></a>
+                </li>
+                <li>
+                  <a href="../../html/my/my_address.html"><span>배송지 관리</span></a>
+                </li>
+                <li>
+                  <a href="../../html/notice/notice.html"><span>공지사항</span></a>
+                </li>
+                <li>
+                  <a href="../../html/customer/customer.html"><span>고객센터</span></a>
+                </li>
+              </ul>
+              <a href="javascript:;" class="btn-friend-invite">친구초대하고 <span class="text-secondary">1,000P</span>씩 받기</a>
+            </nav>
+          </aside>
+          <main id="main">
+            <!-- 실컨텐츠 -->
+            <div class="main-title-area">
+              <h2 class="main-title">이벤트 문의</h2>
+            </div>
+            <div class="container pt-20px">
+              <!-- 선택한 이벤트 -->
+              <div class="qna-seleted-event">
+                <div class="d-flex align-items-center">
+                  <div class="img">
+                    <img src="../../assets/images/@portrait.jpg" alt="" />
+                  </div>
+                  <div class="title">거대벽화 그리기에 참여하는 911명 중 9명은 포르쉐 911 타고 귀가하자</div>
+                </div>
+              </div>
+              <!-- //선택한 이벤트 -->
+              <!-- 이벤트 문의 form -->
+              <div class="form-group">
+                <label for="formQnaType" class="form-label visually-hidden">문의유형</label>
+                <select class="form-select form-select-lg w-100" id="formQnaType">
+                  <option selected>문의유형</option>
+                  <option value="">이벤트</option>
+                  <option value="">이벤트상품</option>
+                  <option value="">루픽리워드</option>
+                  <option value="">배송</option>
+                  <option value="">루피커선정</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="formQnaTitle" class="form-label">제목</label>
+                <input type="text" class="form-control border form-control-lg" placeholder="제목을 입력해주세요 (35자 제한)" id="formQnaTitle" maxlength="35" />
+              </div>
+              <div class="form-group">
+                <label for="formQnaContent" class="form-label">문의내용</label>
+                <div class="textarea">
+                  <textarea rows="6" class="form-control" placeholder="내용을 입력해주세요" maxlength="300" id="formQnaContent"></textarea>
+                  <div class="byte"><span>0</span>/300자</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="uploaded-file">
+                  <div class="row align-items-center h-100">
+                    <div class="col">
+                      <div class="file-name">img0456.jpg</div>
+                    </div>
+                    <div class="col-auto">
+                      <button type="button" class="btn-file-delete"><i class="icon-file-delete"></i></button>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-outline-light btn-flat btn-lg w-100 justify-content-start text-gray-light" id="btn-file">+ 첨부파일 추가</button>
+                <input type="file" class="visually-hidden" />
+                <script>
+                  $('#btn-file').on('click', function () {
+                    $(this).siblings('input[type=file]').click();
+                  });
+                </script>
+                <p class="form-text font-13px">포맷 jpg/png/gif, 최대 3개, 개당 5MB, 총 10MB 등록 가능</p>
+              </div>
+              <!-- //이벤트 문의 form -->
+              <div class="bottom-buttons">
+                <button type="button" class="btn btn-dark btn-round btn-lg w-100">등록</button>
+              </div>
+            </div>
+            <!-- //실컨텐츠 -->
+          </main>
+        </div>
       </div>
+      <footer id="footer">
+        <div class="container">
+          <div class="d-flex align-items-center">
+            <div class="footer-logo">
+              <img src="../../assets/images/logo-gray.svg" alt="Lupick Logo" />
+            </div>
+            <a href="#footer-info" role="button" class="btn-info-toggler" data-bs-toggle="collapse" aria-expanded="false">사업자정보</a>
+          </div>
+          <div class="footer-info collapse" id="footer-info">
+            <div>(주) 루픽</div>
+            <div>대표자 : 신선호</div>
+            <div>개인정보보호책임자 : 신선호</div>
+            <div>사업자등록번호 : 346-87-01740 <a href="#none">사업자정보확인</a></div>
+            <div>통신판매업 : 제 2020-부산부산진-1526 호</div>
+            <div>주소 : 부산광역시 부산진구 서전로 8, 6층 105호 (부전동)</div>
+            <div>대표전화 : 02-6951-0507</div>
+          </div>
+          <ul class="footer-menu">
+            <li><a href="">이용약관</a></li>
+            <li><a href="">개인정보처리방침</a></li>
+            <li><a href="">콜라보문의</a></li>
+          </ul>
+          <p class="copyright">© 2022 Lupick. All Rights Reserved.</p>
+          <div class="footer-warning">
+            루픽은 통신판매중개자이며 통신판매의 당사자가 아닙니다. <br />
+            따라서 루픽은 상품, 거래정보 및 거래에 대해 책임을 지지 않습니다.
+          </div>
+        </div>
+      </footer>
     </div>
   </body>
 </html>

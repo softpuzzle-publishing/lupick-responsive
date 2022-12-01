@@ -2,12 +2,22 @@
 .container-fluid{
   padding-left: 20px;padding-right: 20px;max-width: $container-max-width !important;
 }
+@include media-breakpoint-up(lg){
+  .container.pt-20px{
+    padding-top: 0 !important;
+  }
+}
+
 
 .bottom-buttons{
   margin-top: 30px;
   display: grid;gap: 15px;
   &.horizontal{
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));gap: 12px;
+  }
+  @include media-breakpoint-up(lg){
+    display: flex;align-items: center;justify-content: center;
+    .btn{width: auto !important;min-width: 300px !important;max-width: 100%;}
   }
 }
 .has-fixed-bottom-buttons {
@@ -30,6 +40,12 @@
 
 .page-title{
   font-size: 40px;line-height: 1.25;margin-bottom: 27px;
+  @include media-breakpoint-up(lg){
+    font-size: 30px;font-weight: 700;text-align: center;margin-bottom: 15px;
+  }
+}
+.page-desc{
+  font-size: 30px;text-align: center;
 }
 
 .title-ball{
@@ -53,7 +69,16 @@
 
 .top-text-lg{
   font-size: 28px;line-height: 1.428;
-  &.has-border-bottom{border-bottom: 2px solid #000;padding-bottom: 10px;margin-bottom: 15px;}
+  @include media-breakpoint-up(lg){
+    text-align: center;
+    br{display: none;}
+  }
+  &.has-border-bottom{
+    border-bottom: 2px solid #000;padding-bottom: 10px;margin-bottom: 15px;
+    @include media-breakpoint-up(lg){
+      padding-bottom: 25px;
+    }
+  }
 }
 
 .more-text{
@@ -62,6 +87,9 @@
     font-size: 13px;font-weight: 700;line-height: 1.1538;color: $gray;
     display: inline-flex;align-items: center;justify-content: center;
     &::after{content: '';display: inline-block;width: 12px;height: 6px;background: url('../images/icon-arr-down-gray.svg') no-repeat 0 0;margin-left: 8px;}
+    @include media-breakpoint-up(lg){
+      font-size: 14px;
+    }
   }
   .active{
     &::after{transform: rotate(180deg);}
@@ -81,9 +109,17 @@
 
 .form{
   .form-control + .form-control{margin-top: 10px;}
+  @include media-breakpoint-up(lg){
+    max-width: 620px;margin: 0 auto;
+  }
 }
 
-.form-text{margin-top: 4px;font-size: 10px;color: $gray-light;}
+.form-text{
+  font-size: 10px;color: $gray-light;margin-top: 5px;
+  @include media-breakpoint-up(lg){
+    font-size: 14px;
+  }
+}
 
 .form-desc{
   font-size: 14px;color: rgba(0,0,0,0.5);line-height: 1.714;
@@ -94,6 +130,10 @@
 
 .form-group{
   & + .form-group{margin-top: 30px;}
+  @include media-breakpoint-up(lg){
+    position: relative;padding-left: 140px;
+    .form-label{position: absolute;left: 0;top: 10px;}
+  }
 }
 .form-label{
   font-size: 14px;color: $dark;margin-bottom: 5px;font-weight: 700;
@@ -105,9 +145,12 @@
 .required{color: $danger;font-size: 14px;}
 
 .feedback {
-  display: none;width: 100%;margin-top: 4px;font-size: 10px;
+  display: none;width: 100%;margin-top: 5px;font-size: 10px;
   &.valid{color: $success;}
   &.invalid{color: $danger;}
+  @include media-breakpoint-up(lg){
+    font-size: 14px;
+  }
 }
 
 @keyframes bounce {
@@ -187,7 +230,12 @@
   text-align: center;padding-top: 50px;
   i{margin-bottom: 30px;}
   strong{display: block;font-size: 18px;font-weight: 700;}
-  p{font-size: 13px;color: $gray;margin-top: 15px;margin-bottom: 30px;word-break: keep-all;}
+  p{
+    font-size: 13px;color: $gray;margin-top: 15px;margin-bottom: 30px;word-break: keep-all;
+    @include media-breakpoint-up(lg){
+      font-size: 14px;
+    }
+  }
   .btn-lg{font-size: 14px;padding-left: 45px;padding-right: 45px;}
 }
 

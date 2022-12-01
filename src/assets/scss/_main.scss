@@ -175,6 +175,10 @@
     .title{font-weight: 700;line-height: 1.1875;}
     .desc{line-height: 1.538;font-size: 13px;font-weight: 700;margin-top: 7px;}
     .time{color: $gray-light;font-size: 12px;margin-top: 9px;}
+    @include media-breakpoint-up(lg){
+      .desc{font-size: 14px;}
+      .time{font-size: 13px;}
+    }
   }
 }
 
