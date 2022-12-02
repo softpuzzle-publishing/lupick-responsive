@@ -176,6 +176,9 @@
 
 .my-profile-edit{
   margin-top: 30px;margin-bottom: 35px;
+  @include media-breakpoint-up(lg){
+    max-width: 620px;margin: 50px auto;
+  }
   .img{
     position: relative;width: 120px;height: 120px;margin: 0 auto;display: flex;align-items: center;justify-content: center;margin-bottom: 35px;
     &::before{content: '';border: 1px solid $border-color;border-radius: 50%;position: absolute;left: 0;top: 0;right: 0;bottom: 0;}
@@ -211,15 +214,28 @@
   background: rgba(0,0,0,0.8);color: #fff;font-size: 10px;font-weight: 700;padding: 13px 20px;margin: 30px -20px;
 }
 
-.my-item-count{display: block;color: $sky;font-size: 18px;line-height: 1.111;}
+.my-item-count{
+  display: block;color: $sky;font-size: 18px;line-height: 1.111;
+  @include media-breakpoint-up(lg){
+    font-size: 20px;
+  }
+}
 
 .my-lucky-number-is{
   display: flex;align-items: center;font-size: 14px;color: rgba(0,0,0,0.5);line-height: 1;text-decoration: underline;
   a{font-size: 14px;color: rgba(0,0,0,0.5);line-height: 1;text-decoration: underline;}
   i{margin-right: 5px;transform: translateY(-1px);}
+  @include media-breakpoint-up(lg){
+    a{font-size: 16px;}
+  }
 }
 
-.system-guide{font-size: 14px;margin-bottom: 10px;color: rgba(0,0,0,0.5);margin-top: 18px;}
+.system-guide{
+  font-size: 14px;margin-bottom: 10px;color: rgba(0,0,0,0.5);margin-top: 18px;
+  @include media-breakpoint-up(lg){
+    font-size: 16px;
+  }
+}
 
 .my-vote-list{
   ul{display: flex;flex-wrap: wrap;margin: -5px;}
@@ -230,8 +246,11 @@
   display: flex;flex-wrap: wrap;margin: -6px;
   .my-item-card{
     padding: 6px;flex: 0 0 50%;
-    @include media-breakpoint-up(lg){
-      flex: 0 0 33.33333%;
+  }
+  @include media-breakpoint-up(lg){
+    margin: -8px;
+    .my-item-card{
+      padding: 8px;flex: 0 0 33.33333%;
     }
   }
 }
@@ -240,7 +259,7 @@
   .inner{
     padding: 12px;border: 1px solid $border-color;border-radius: 7px;display: flex;flex-direction: column;min-height: 190px;
     @include media-breakpoint-up(lg){
-      min-height: 240px;
+      min-height: 260px;
     }
   }
   .my-item-card-head{
@@ -264,15 +283,18 @@
     line-height: 1;padding-top: 37px;
     &::before{
       content: '투표입력하기';font-size: 14px;font-weight: 700;color: $muted;line-height: 1.1428;
-      @include media-breakpoint-up(lg){
+    }
+    @include media-breakpoint-up(lg){
+      padding-top: 80px;
+      &::before{
         font-size: 16px;
       }
     }
   }
   .form-control{
-    padding-left: 3px !important;padding-right: 3px !important;
+    padding-left: 3px !important;padding-right: 3px !important;border-radius: 7px;font-size: 14px;
     @include media-breakpoint-up(lg){
-      height: 50px;
+      height: 50px;font-size: 16px;
     }
   }
 
@@ -363,13 +385,16 @@
   .form-control{
     font-family: $font-family-eng;font-weight: 700;
     &::placeholder{font-weight: 400;font-family: 'NanumBarunGothic';}
+    @include media-breakpoint-up(lg){
+      font-size: 16px;
+    }
   }
   .button{
     margin: 30px -20px 0;
     @include media-breakpoint-up(lg){
       margin-left: -30px;margin-right: -30px;
     }
-    .btn-round{border-radius: 0 0 7px 7px;}
+    .btn-round{border-radius: 0 0 7px 7px;border: 0;}
   }
 }
 

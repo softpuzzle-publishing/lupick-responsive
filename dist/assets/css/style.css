@@ -879,7 +879,7 @@ body.modal-open {
   display: flex;
   align-items: center;
   min-height: 100%;
-  margin: 8px auto;
+  margin: 0 auto;
   max-width: 280px;
 }
 .modal.show .modal-dialog {
@@ -1133,7 +1133,7 @@ body.modal-open {
 
 .modal-fullscreen {
   width: 100%;
-  max-width: none;
+  max-width: 100%;
   height: 100%;
   margin: 0;
 }
@@ -1158,7 +1158,6 @@ body.modal-open {
 @media (min-width: 992px) {
   .modal-fullscreen {
     width: auto;
-    max-width: 540px;
     height: auto;
     margin: 0 auto;
   }
@@ -1202,7 +1201,13 @@ body.modal-open {
 }
 @media (min-width: 992px) {
   .modal-md {
-    max-width: 400px;
+    max-width: 420px;
+  }
+}
+
+@media (min-width: 992px) {
+  .modal-lg {
+    max-width: 560px;
   }
 }
 
@@ -2171,10 +2176,15 @@ progress {
 .container-fluid {
   padding-left: 20px;
   padding-right: 20px;
-  max-width: 1234px !important;
+  max-width: 1194px !important;
 }
 
 @media (min-width: 992px) {
+  .container,
+  .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
   .container.pt-20px {
     padding-top: 0 !important;
   }
@@ -2193,6 +2203,7 @@ progress {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 50px;
   }
   .bottom-buttons .btn {
     width: auto !important;
@@ -2220,6 +2231,9 @@ progress {
   padding-bottom: calc(env(safe-area-inset-bottom) + 8px);
 }
 @media (min-width: 992px) {
+  .has-fixed-bottom-buttons {
+    padding-bottom: 0;
+  }
   .has-fixed-bottom-buttons .bottom-buttons {
     position: static;
     margin-top: 30px;
@@ -2238,6 +2252,7 @@ progress {
     font-weight: 700;
     text-align: center;
     margin-bottom: 15px;
+    margin-top: 30px;
   }
 }
 
@@ -2310,6 +2325,7 @@ progress {
 @media (min-width: 992px) {
   .top-text-lg.has-border-bottom {
     padding-bottom: 25px;
+    margin-bottom: 25px;
   }
 }
 
@@ -2733,6 +2749,71 @@ progress {
   height: auto !important;
 }
 
+.event-information {
+  padding: 0 20px;
+  margin-top: 20px;
+}
+.event-information .brand {
+  font-size: 16px;
+  font-weight: 700;
+  color: #666;
+  margin-bottom: 10px;
+}
+.event-information .title {
+  line-height: 1.44;
+}
+.event-information .desc {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  margin-top: 2px;
+}
+.event-information .price {
+  margin: 15px 0 10px;
+  line-height: 1.1818;
+}
+.event-information .price del {
+  color: rgba(0, 0, 0, 0.25);
+  font-size: 14px;
+  margin-bottom: 3px;
+  display: inline-block;
+}
+.event-information .price .icon-point {
+  margin-right: 4px;
+  transform: translateY(-1px);
+}
+.event-information .price .discount {
+  font-size: 22px;
+  font-weight: 700;
+  color: #4ac0ff;
+  margin-right: 5px;
+}
+.event-information .price .final {
+  font-size: 22px;
+  font-weight: 700;
+}
+.event-information .badges {
+  display: flex;
+  gap: 5px;
+}
+@media (min-width: 992px) {
+  .event-information {
+    margin-top: 0;
+  }
+  .event-information .title {
+    font-size: 26px;
+  }
+  .event-information .desc {
+    font-size: 18px;
+  }
+  .event-information .price del {
+    font-size: 18px;
+  }
+  .event-information .price .discount,
+  .event-information .price .final {
+    font-size: 36px;
+  }
+}
+
 .event-item {
   margin-top: 40px;
   position: relative;
@@ -2818,48 +2899,8 @@ progress {
   width: calc((100% - 15px) / 4);
   margin-right: 5px;
 }
-.event-item .event-gift ~ .event-info {
+.event-item .event-gift ~ .event-information {
   margin-top: 16px;
-}
-.event-item .event-info {
-  padding: 0 20px;
-  margin-top: 20px;
-}
-.event-item .event-info .title {
-  line-height: 1.44;
-}
-.event-item .event-info .desc {
-  color: rgba(0, 0, 0, 0.5);
-  font-size: 14px;
-  margin-top: 2px;
-}
-.event-item .event-info .price {
-  margin: 15px 0 10px;
-  line-height: 1.1818;
-}
-.event-item .event-info .price del {
-  color: rgba(0, 0, 0, 0.25);
-  font-size: 14px;
-  margin-bottom: 3px;
-  display: inline-block;
-}
-.event-item .event-info .price .icon-point {
-  margin-right: 4px;
-  transform: translateY(-1px);
-}
-.event-item .event-info .price .discount {
-  font-size: 22px;
-  font-weight: 700;
-  color: #4ac0ff;
-  margin-right: 5px;
-}
-.event-item .event-info .price .final {
-  font-size: 22px;
-  font-weight: 700;
-}
-.event-item .event-info .badges {
-  display: flex;
-  gap: 5px;
 }
 .event-item.ended .event-state .img::after {
   content: "";
@@ -2969,6 +3010,99 @@ progress {
   border-color: #f7f7f7;
 }
 
+#layout.layout-event #main:first-child {
+  max-width: 100%;
+}
+
+@media (min-width: 992px) {
+  .layout-event-top {
+    display: flex;
+    justify-content: space-between;
+  }
+  .layout-event-top .event-item .event-state .img {
+    border-radius: 7px;
+    overflow: hidden;
+  }
+  .layout-event-top .event-item .event-state .state {
+    border-radius: 0 0 7px 7px;
+    height: 40px;
+    font-size: 18px;
+  }
+  .layout-event-top .event-item .event-state .state > .row {
+    margin-top: 6px;
+  }
+  .layout-event-top .event-item .event-state .icon-clock-white {
+    width: 22px;
+    height: 22px;
+  }
+  .layout-event-top .event-price-info {
+    margin: 0 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    margin-top: 30px;
+    padding-top: 30px;
+    position: sticky;
+    top: 100px;
+    align-self: auto;
+  }
+  .layout-event-top .event-price-info .bottom-buttons {
+    display: block;
+  }
+  .layout-event-top .event-price-info .bottom-buttons .stock-count {
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+  .layout-event-top .event-price-info .bottom-buttons .btn {
+    width: 100% !important;
+  }
+  .layout-event-top-left {
+    width: 582px;
+  }
+  .layout-event-top-right {
+    width: 520px;
+  }
+  .layout-event-body-left {
+    max-width: 684px;
+  }
+  .event-nav-bar {
+    background: #e8e8e9;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    height: 60px;
+    position: sticky;
+    top: 60px;
+    z-index: 10;
+    margin-top: 110px;
+  }
+  .event-nav-bar nav {
+    height: 100%;
+    display: flex;
+    gap: 40px;
+  }
+  .event-nav-bar a {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    position: relative;
+    font-size: 18px;
+    font-weight: 700;
+    color: #666;
+  }
+  .event-nav-bar a.active {
+    color: #000;
+  }
+  .event-nav-bar a.active::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: #000;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+  }
+  [id^=spy-] {
+    padding-top: 150px;
+  }
+}
 .event-review {
   margin-top: 30px;
 }
@@ -3665,6 +3799,7 @@ progress {
   }
   .event-result-list .help-text {
     font-size: 13px;
+    margin-bottom: 5px;
   }
   .event-result-list .table thead th {
     font-size: 14px;
@@ -3769,6 +3904,11 @@ progress {
   font-size: 12px;
   font-weight: 700;
 }
+@media (min-width: 992px) {
+  .purchasable {
+    font-size: 16px;
+  }
+}
 
 .options .item {
   margin-top: 10px;
@@ -3798,6 +3938,11 @@ progress {
   background: url("../images/icon-x-sm.svg") no-repeat 0 0;
   background-size: contain;
   margin-left: 40px;
+}
+@media (min-width: 992px) {
+  .selected-option .title {
+    font-size: 18px;
+  }
 }
 
 .quantity {
@@ -3831,10 +3976,24 @@ progress {
 .quantity button:disabled {
   opacity: 0.3;
 }
+@media (min-width: 992px) {
+  .quantity input {
+    width: 50px;
+  }
+  .quantity button {
+    width: 24px;
+    height: 24px;
+  }
+}
 
 .quantity-sum {
   font-size: 14px;
   font-weight: 700;
+}
+@media (min-width: 992px) {
+  .quantity-sum {
+    font-size: 18px;
+  }
 }
 
 .total-price {
@@ -3852,11 +4011,23 @@ progress {
 .total-price .count {
   font-weight: 700;
   margin-left: 2px;
+  font-weight: 700;
 }
 .total-price .price {
   font-size: 20px;
   font-weight: 700;
   margin-left: 18px;
+}
+@media (min-width: 992px) {
+  .total-price {
+    font-size: 18px;
+  }
+  .total-price .count {
+    font-size: 18px;
+  }
+  .total-price .price {
+    font-size: 24px;
+  }
 }
 
 .item-info {
@@ -4605,6 +4776,12 @@ progress {
   margin-top: 30px;
   margin-bottom: 35px;
 }
+@media (min-width: 992px) {
+  .my-profile-edit {
+    max-width: 620px;
+    margin: 50px auto;
+  }
+}
 .my-profile-edit .img {
   position: relative;
   width: 120px;
@@ -4715,6 +4892,11 @@ progress {
   font-size: 18px;
   line-height: 1.111;
 }
+@media (min-width: 992px) {
+  .my-item-count {
+    font-size: 20px;
+  }
+}
 
 .my-lucky-number-is {
   display: flex;
@@ -4734,12 +4916,22 @@ progress {
   margin-right: 5px;
   transform: translateY(-1px);
 }
+@media (min-width: 992px) {
+  .my-lucky-number-is a {
+    font-size: 16px;
+  }
+}
 
 .system-guide {
   font-size: 14px;
   margin-bottom: 10px;
   color: rgba(0, 0, 0, 0.5);
   margin-top: 18px;
+}
+@media (min-width: 992px) {
+  .system-guide {
+    font-size: 16px;
+  }
 }
 
 .my-vote-list ul {
@@ -4762,7 +4954,11 @@ progress {
   flex: 0 0 50%;
 }
 @media (min-width: 992px) {
+  .my-items {
+    margin: -8px;
+  }
   .my-items .my-item-card {
+    padding: 8px;
     flex: 0 0 33.33333%;
   }
 }
@@ -4777,7 +4973,7 @@ progress {
 }
 @media (min-width: 992px) {
   .my-item-card .inner {
-    min-height: 240px;
+    min-height: 260px;
   }
 }
 .my-item-card .my-item-card-head {
@@ -4830,6 +5026,9 @@ progress {
   line-height: 1.1428;
 }
 @media (min-width: 992px) {
+  .my-item-card .status {
+    padding-top: 80px;
+  }
   .my-item-card .status::before {
     font-size: 16px;
   }
@@ -4837,10 +5036,13 @@ progress {
 .my-item-card .form-control {
   padding-left: 3px !important;
   padding-right: 3px !important;
+  border-radius: 7px;
+  font-size: 14px;
 }
 @media (min-width: 992px) {
   .my-item-card .form-control {
     height: 50px;
+    font-size: 16px;
   }
 }
 .my-item-card[data-type=reward][data-winning=Y] .my-item-card-head {
@@ -5052,6 +5254,11 @@ progress {
   font-weight: 400;
   font-family: "NanumBarunGothic";
 }
+@media (min-width: 992px) {
+  .modal-vote-input .form-control {
+    font-size: 16px;
+  }
+}
 .modal-vote-input .button {
   margin: 30px -20px 0;
 }
@@ -5063,6 +5270,7 @@ progress {
 }
 .modal-vote-input .button .btn-round {
   border-radius: 0 0 7px 7px;
+  border: 0;
 }
 
 .modal-voted-ok {

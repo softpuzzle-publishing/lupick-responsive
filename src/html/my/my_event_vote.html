@@ -5,23 +5,22 @@
   @@include('@@webRoot/html/_include/_head.html')
   <script>
     $(document).ready(function () {
+      const modalVoteIsEl = document.getElementById('modal-vote-is');
       const modalVoteIs = new bootstrap.Modal(document.getElementById('modal-vote-is')); // eslint-disable-line
       modalVoteIs.show();
 
-
-
-      /* 럭키번호 생성 애니메이션 */
-      function luckyCreateEffect() {
+      modalVoteIsEl.addEventListener('hidden.bs.modal', () => {
+        luckyNiumberAnimation();
         setTimeout(function () {
           $('.vote-loading').addClass('active');
           setTimeout(function () {
+            $('.my-items').removeClass('visually-hidden-focusable')
             $('.balls').fadeOut(120);
           }, 1500);
         }, 2000);
-      }
-      //luckyCreateEffect();
+      })
 
-      function luckyCreate() {
+      function luckyNiumberAnimation() {
         var canvas = document.querySelector('#balls-canvas');
         var pen = canvas.getContext('2d');
         var stageWidth = $('.balls').width();
@@ -174,7 +173,7 @@
               <div class="system-guide text-danger">
                 ● 입력가능한 숫자범위 <strong>1~10,000</strong>
               </div>
-              <div class="my-items">
+              <div class="my-items visually-hidden-focusable">
                 <div class="my-item-card" data-type="vote" data-voted="N">
                   <div class="inner">
                     <div class="my-item-card-head">
