@@ -6,6 +6,11 @@
 .form-group-header{
   height: 50px;display: flex;align-items: center;justify-content: space-between;
   .label{font-size: 16px;font-weight: 700;}
+  @include media-breakpoint-up(lg){
+    height: 65px;
+    .label{font-size: 20px;}
+    .form-check input[type=radio]{transform: translateY(3px);}
+  }
 }
 
 .form-group-body{
@@ -21,11 +26,24 @@
     flex: 0 0 70px;width: 70px;height: 70px;
     img{width: 100%;height: 100%;object-fit: cover;}
   }
+  @include media-breakpoint-up(lg){
+    .price{font-size: 16px;}
+  }
 }
 
-.available-point{font-size: 14px;}
+.available-point{
+  font-size: 14px;
+  @include media-breakpoint-up(lg){
+    font-size: 16px;
+  }
+}
 
-.help-text{font-size: 12px;color: $gray-light;margin-top: 15px;}
+.help-text{
+  font-size: 12px;color: $gray-light;margin-top: 15px;
+  @include media-breakpoint-up(lg){
+    font-size: 14px;
+  }
+}
 
 .sum-pay{font-size: 20px;font-weight: 700;}
 
@@ -51,6 +69,16 @@
 .lupickpay-card-img{
   margin-bottom: 15px;
   img{width: 100%;}
+  @include media-breakpoint-up(lg){
+    display: flex;justify-content: space-between;
+    img{flex: 0 0 0 520px;max-width: 520px;}
+    .btn-card-add-desktop{
+      border: 2px dashed #bfbfbf;border-radius: 30px;
+      background: rgba(0, 0, 0, 0.05);color: $gray-light;
+      flex: 0 0 247px;font-size: 22px;font-weight: 700;
+      span{display: block;}
+    }
+  }
 }
 
 .lupickpay-added-card{
@@ -63,6 +91,11 @@
       &::before{content: '';background: url('../images/icon-check-white.svg') no-repeat 0 0;background-size: contain;width: 22px;height: 22px;position: absolute;left: 10px;top: 50%;transform: translateY(-50%);}
     }
     & + li{margin-top: 10px;}
+  }
+  @include media-breakpoint-up(lg){
+    li{
+      a{font-size: 20px;}
+    }
   }
 }
 
@@ -154,4 +187,29 @@
 
 .invoice{
   p{font-size: 30px;line-height: 1.3333;margin-bottom: 40px;}
+}
+
+@include media-breakpoint-up(lg){
+  .fixed-price-wrap{
+    position: absolute;left: 50%;margin-left: 157px;top: 0;width: 440px;margin-top: 0;border: 2px solid #000;padding: 30px;display: flex;flex-direction: column;transition: top .5s;
+    .form-group-header{
+      height: auto;padding-bottom: 20px;
+
+    }
+    .form-group-body{padding-bottom: 0;}
+    .price-calc{
+      .col-auto{display: none;}
+      .col{display: flex;align-items: center;justify-content: space-between;}
+      dl{
+        margin: 5px 0;
+        dt,
+        dd{font-size: 18px;margin: 0;}
+      }
+    }
+    .help-text{font-size: 14px;}
+    .form-check{margin-top: 20px;}
+    &.fixed{
+      position: fixed;top: 100px;
+    }
+  }
 }

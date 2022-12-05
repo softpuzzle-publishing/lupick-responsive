@@ -1,3 +1,34 @@
+var html = document.querySelector("html");
+var body = document.querySelector("body");
+
+var Init = {
+  defaults: function () {
+    this.resize();
+    window.addEventListener("resize", this.resize);
+  },
+  resize: function () {
+    Init.getBrowserSize();
+    Init.drawBreakPoint();
+
+    Init.breakpoint = window.matchMedia("(min-width:992px)").matches;
+    if (!Init.breakpoint) {
+      html.classList.remove("is-desktop");
+      html.classList.add("is-mobile");
+    } else {
+      html.classList.remove("is-mobile");
+      html.classList.add("is-desktop");
+    }
+  },
+  getBrowserSize: function () {
+    this.bodyHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
+    this.bodyWidth = Math.max(document.body.scrollWidth, document.body.offsetWidth, document.documentElement.clientWidth, document.documentElement.scrollWidth, document.documentElement.offsetWidth);
+  },
+  drawBreakPoint: function () {
+    html.setAttribute("data-width", this.bodyWidth);
+    html.setAttribute("data-height", this.bodyHeight);
+  },
+};
+
 var Common = {
   init: function () {
     this.accordion();
@@ -82,8 +113,6 @@ var Common = {
   },
 };
 
-var html = document.querySelector("html");
-var body = document.querySelector("body");
 var Header = {
   init: function () {
     this.scrolling();
@@ -91,10 +120,12 @@ var Header = {
     window.addEventListener("touchmove", Header.scrolling);
     $(window).scroll(function () {
       Header.scrolling();
+      Header.fixedOption();
     });
     $(window).resize(function () {
       Header.scrolling();
     });
+    const optionOffsetTop = $(".layout-event-top-right .event-price-info");
   },
   scrolling: function (e) {
     var doc = document.documentElement;
@@ -138,9 +169,13 @@ var Header = {
 
     window.addEventListener("scroll", checkScroll);
   },
+  fixedOption: function () {
+    //var
+  },
 };
 
 $(function () {
+  Init.defaults();
   Header.init();
   Common.init();
 });

@@ -64,7 +64,7 @@
   font-size: 20px;font-weight: 700;line-height: 1.11;margin-bottom: 15px;margin-top: 30px;
   small{color: rgba(0,0,0,0.3);font-size: 12px;vertical-align: middle;}
   @include media-breakpoint-up(lg){
-    font-size: 24px;
+    font-size: 24px;margin-bottom: 30px;
     small{font-size: 18px;}
   }
 }
@@ -124,7 +124,7 @@
 .form-text{
   font-size: 10px;color: $gray-light;margin-top: 5px;
   @include media-breakpoint-up(lg){
-    font-size: 14px;
+    font-size: 14px;margin-top: 8px;
   }
 }
 
@@ -138,8 +138,10 @@
 .form-group{
   & + .form-group{margin-top: 30px;}
   @include media-breakpoint-up(lg){
-    position: relative;padding-left: 140px;
-    .form-label{position: absolute;left: 0;top: 10px;}
+    &.horizontal{
+      position: relative;padding-left: 140px;
+      .form-label{position: absolute;left: 0;top: 9px;margin-bottom: 0;}
+    }
   }
 }
 .form-label{
@@ -254,6 +256,9 @@
     span{color: $secondary;margin-left: 10px;}
   }
   .hr + &{margin-top: 50px;}
+  @include media-breakpoint-up(lg){
+    a{font-size: 18px;}
+  }
 }
 
 .data-empty{
@@ -272,11 +277,17 @@
   .badge{margin-top: 10px;}
   & + .address-item{border-top: 1px solid $border-color;}
   .form-group-body &{padding: 0 0 20px 0;}
+  @include media-breakpoint-up(lg){
+    .name{font-size: 14px;}
+  }
 }
 
 .guide-text{
   padding-left: 10px;font-size: 13px;color: $gray;margin-top: 10px;
   span{display: inline-block;margin-left: -10px;width: 10px;}
+  @include media-breakpoint-up(lg){
+    font-size: 14px;
+  }
 }
 
 .bottom-text-guide{

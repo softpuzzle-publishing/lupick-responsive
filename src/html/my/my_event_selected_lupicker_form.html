@@ -9,105 +9,109 @@
   <div id="wrap">
     @@include('@@webRoot/html/_include/_header.html', { "title": "루피커 정보 입력" })
     <div id="container">
-      <main id="main">
-        <!-- 실컨텐츠 -->
-
-        <div class="container pt-20px">
-          <div class="form-group">
-            <div class="form-label">루픽리워드 지급 프로세스</div>
-            <div class="reward-process">
-              <ol class="row gx-0">
-                <li class="col">
-                  <span class="number">1</span>
-                  <span class="title">루피커 정보 입력</span>
-                </li>
-                <li class="col-auto"><i class="icon-full-menu-arr"></i></li>
-                <li class="col">
-                  <span class="number">2</span>
-                  <span class="title">루픽에서 연락</span>
-                </li>
-                <li class="col-auto"><i class="icon-full-menu-arr"></i></li>
-                <li class="col">
-                  <span class="number">3</span>
-                  <span class="title">루픽리워드 지급</span>
-                </li>
-              </ol>
-            </div>
+      @@include('@@webRoot/html/_include/_top-my.html')
+      <div id="layout">
+        @@include('@@webRoot/html/_include/_sidebar-my.html')
+        <main id="main">
+          <!-- 실컨텐츠 -->
+          <div class="main-title-area">
+            <h2 class="main-title">루피커 정보 입력</h2>
           </div>
-          <div class="form-group">
-            <label for="formName" class="form-label">이름</label>
-            <input type="text" class="form-control" placeholder="이름을 입력해주세요" id="formName">
-          </div>
-          <div class="form-group">
-            <label for="formEmail" class="form-label">이메일</label>
-            <input type="email" class="form-control" placeholder="예 : lupick@lupick.com" id="formEmail">
-          </div>
-          <div class="form-group">
-            <label for="formMobile" class="form-label">휴대폰 번호</label>
-            <input type="tel" class="form-control" placeholder="- 없이 숫자만 입력" id="formMobile">
-          </div>
-          <div class="tip-divider">
-            <p>* 이름, 이메일, 연락처가 다를 시 [마이]-[설정]-[내 정보 수정]에서 수정해 주세요</p>
-          </div>
-          <div class="form-group">
-            <label for="formMyAddr1" class="form-label">루픽리워드 받을 주소 <span class="required">*</span></label>
-            <div class="row gx-10px">
-              <div class="col">
-                <input type="text" class="form-control" placeholder="" id="formMyAddr1" readonly>
+          <div class="container pt-20px">
+            <div class="form pt-3">
+              <div class="form-group">
+                <div class="form-label">루픽리워드 지급 프로세스</div>
+                <div class="reward-process">
+                  <ol class="row gx-0">
+                    <li class="col">
+                      <span class="number">1</span>
+                      <span class="title">루피커 정보 입력</span>
+                    </li>
+                    <li class="col-auto"><i class="icon-full-menu-arr"></i></li>
+                    <li class="col">
+                      <span class="number">2</span>
+                      <span class="title">루픽에서 연락</span>
+                    </li>
+                    <li class="col-auto"><i class="icon-full-menu-arr"></i></li>
+                    <li class="col">
+                      <span class="number">3</span>
+                      <span class="title">루픽리워드 지급</span>
+                    </li>
+                  </ol>
+                </div>
               </div>
-              <div class="col-auto">
-                <button type="button" class="btn btn-outline-dark btn-flat btn-md">우편번호 검색</button>
+              <div class="form-group">
+                <label for="formName" class="form-label">이름</label>
+                <input type="text" class="form-control" placeholder="이름을 입력해주세요" id="formName">
+              </div>
+              <div class="form-group">
+                <label for="formEmail" class="form-label">이메일</label>
+                <input type="email" class="form-control" placeholder="예 : lupick@lupick.com" id="formEmail">
+              </div>
+              <div class="form-group">
+                <label for="formMobile" class="form-label">휴대폰 번호</label>
+                <input type="tel" class="form-control" placeholder="- 없이 숫자만 입력" id="formMobile">
+              </div>
+              <div class="tip-divider">
+                <p>* 이름, 이메일, 연락처가 다를 시 [마이]-[설정]-[내 정보 수정]에서 수정해 주세요</p>
+              </div>
+              <div class="form-group">
+                <label for="formMyAddr1" class="form-label">루픽리워드 받을 주소 <span class="required">*</span></label>
+                <div class="row gx-10px">
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="" id="formMyAddr1" readonly>
+                  </div>
+                  <div class="col-auto">
+                    <button type="button" class="btn btn-outline-dark btn-flat btn-md">우편번호 검색</button>
+                  </div>
+                </div>
+                <input type="text" class="form-control mt-10px" placeholder="" id="formMyAddr2" readonly>
+                <input type="text" class="form-control mt-10px" placeholder="상세주소를 입력해주세요" id="formMyAddr3">
+                <p class="form-text">* 배송 주소를 확인해 주세요(배송지가 다를 시 주소 변경을 해주세요)</p>
+              </div>
+              <!-- 5만원 이상 -->
+              <div class="form-group">
+                <label for="btn-id-card" class="form-label">신분증 사본 업로드(세금처리를 위한 정보로 활용) <span class="required">*</span></label>
+                <button type="button" class="btn btn-outline-light btn-flat btn-lg w-100 justify-content-start text-gray-light" id="btn-id-card">+ 신분증 사본 추가</button>
+                <input type="file" class="visually-hidden">
+                <script>
+                  $('#btn-file').on('click', function () {
+                    $(this).siblings('input[type=file]').click();
+                  })
+                </script>
+                <p class="guide-text"><span>*</span> 신분증(주민등록증 또는 운전면허증)을 준비해 주세요.</p>
+                <div class="mt-10px">
+                  <img src="@@webRoot/assets/images/img-id-card.svg" alt="">
+                </div>
+                <p class="guide-text"><span>*</span>포맷 jpg/png, 10MB 등록 가능</p>
+                <p class="guide-text"><span>*</span>가이드 영역에 맞추어 반드시 <strong>신분증 원본</strong>으로 촬영하세요.</p>
+                <p class="guide-text"><span>*</span>훼손되거나 유효하지 않은 신분증은 <strong>거절되거나 루픽리워드 수령이 제한</strong>될 수 있습니다.</p>
+                <p class="guide-text"><span>*</span>이벤트상품 세금처리를 위한 정보로 신분증은 활용되며, 세금처리 후 해당정보는 폐기됩니다. <strong class="text-danger text-decoration-underline">다른 용도로 개인정보는 활용되지 않음을 알려드립니다.</strong></p>
+              </div>
+              <!-- //5만원 이상 -->
+              <div class="agree-area">
+                <div class="form-check square">
+                  <input type="checkbox" value="" id="agreeAll">
+                  <label for="agreeAll">아래 내용을 확인했으며 이에 동의합니다.</label>
+                </div>
+                <div class="form-check agree-style">
+                  <input type="checkbox" value="" id="agree1">
+                  <label for="agree1">본인은 만 14세 이상이며 <a href="#none" class="text-info fw-bold text-decoration-underline">서비스 이용약관</a>, <a href="#none" class="text-info fw-bold text-decoration-underline">개인정보수집 및 이용</a>에 동의합니다. (필수)</label>
+                </div>
+                <div class="form-check agree-style">
+                  <input type="checkbox" value="" id="agree2">
+                  <label for="agree2">가입 시 입력한 이름과 럭키상품 수령자의 개인정보가 동일해야합니다. (필수)</label>
+                </div>
+              </div>
+              <div class="bottom-buttons horizontal">
+                <button type="button" class="btn btn-outline-dark btn-lg w-100 px-0" data-bs-toggle="modal" data-bs-target="#alert-giveup">루픽리워드 포기</button>
+                <button type="button" class="btn btn-dark btn-lg w-100 px-0">등록</button>
               </div>
             </div>
-            <input type="text" class="form-control mt-10px" placeholder="" id="formMyAddr2" readonly>
-            <input type="text" class="form-control mt-10px" placeholder="상세주소를 입력해주세요" id="formMyAddr3">
-            <p class="form-text">* 배송 주소를 확인해 주세요(배송지가 다를 시 주소 변경을 해주세요)</p>
           </div>
-
-          <!-- 5만원 이상 -->
-          <div class="form-group">
-            <label for="btn-id-card" class="form-label">신분증 사본 업로드(세금처리를 위한 정보로 활용) <span class="required">*</span></label>
-            <button type="button" class="btn btn-outline-light btn-flat btn-lg w-100 justify-content-start text-gray-light" id="btn-id-card">+ 신분증 사본 추가</button>
-            <input type="file" class="visually-hidden">
-            <script>
-              $('#btn-file').on('click', function () {
-                $(this).siblings('input[type=file]').click();
-              })
-            </script>
-            <p class="guide-text"><span>*</span> 신분증(주민등록증 또는 운전면허증)을 준비해 주세요.</p>
-            <div class="mt-10px">
-              <img src="@@webRoot/assets/images/img-id-card.svg" alt="">
-            </div>
-            <p class="guide-text"><span>*</span>포맷 jpg/png, 10MB 등록 가능</p>
-            <p class="guide-text"><span>*</span>가이드 영역에 맞추어 반드시 <strong>신분증 원본</strong>으로 촬영하세요.</p>
-            <p class="guide-text"><span>*</span>훼손되거나 유효하지 않은 신분증은 <strong>거절되거나 루픽리워드 수령이 제한</strong>될 수 있습니다.</p>
-            <p class="guide-text"><span>*</span>이벤트상품 세금처리를 위한 정보로 신분증은 활용되며, 세금처리 후 해당정보는 폐기됩니다. <strong class="text-danger text-decoration-underline">다른 용도로 개인정보는 활용되지 않음을 알려드립니다.</strong></p>
-          </div>
-          <!-- //5만원 이상 -->
-
-          <div class="agree-area">
-            <div class="form-check square">
-              <input type="checkbox" value="" id="agreeAll">
-              <label for="agreeAll">아래 내용을 확인했으며 이에 동의합니다.</label>
-            </div>
-            <div class="form-check agree-style">
-              <input type="checkbox" value="" id="agree1">
-              <label for="agree1">본인은 만 14세 이상이며 <a href="#none" class="text-info fw-bold text-decoration-underline">서비스 이용약관</a>, <a href="#none" class="text-info fw-bold text-decoration-underline">개인정보수집 및 이용</a>에 동의합니다. (필수)</label>
-            </div>
-            <div class="form-check agree-style">
-              <input type="checkbox" value="" id="agree2">
-              <label for="agree2">가입 시 입력한 이름과 럭키상품 수령자의 개인정보가 동일해야합니다. (필수)</label>
-            </div>
-          </div>
-
-          <div class="bottom-buttons horizontal">
-            <button type="button" class="btn btn-outline-dark btn-lg w-100 px-0" data-bs-toggle="modal" data-bs-target="#alert-giveup">루픽리워드 포기</button>
-            <button type="button" class="btn btn-dark btn-lg w-100 px-0">등록</button>
-          </div>
-        </div>
-
-        <!-- //실컨텐츠 -->
-      </main>
+          <!-- //실컨텐츠 -->
+        </main>
+      </div>
     </div>
     @@include('@@webRoot/html/_include/_footer.html')
   </div>

@@ -5,6 +5,9 @@
   padding-left: 30px;
   label {
     font-size: 14px;font-weight: 700;line-height: $line-height-base;vertical-align: top;
+    @include media-breakpoint-up(lg){
+      font-size: 15px;
+    }
   }
   input {
     -webkit-appearance: none;
@@ -80,7 +83,12 @@
       background-image: url('../images/checkbox-agree-style.svg');
       &:checked{background-image: url('../images/checkbox-agree-style-checked.svg');}
     }
-    label{font-weight: 400;font-size: 13px;padding-top: 2px;}
+    label{
+      font-weight: 400;font-size: 13px;padding-top: 2px;
+      @include media-breakpoint-up(lg){
+        font-size: 14px;
+      }
+    }
   }
 
   &.point-style{
@@ -139,6 +147,9 @@
       }
       & ~ label{
         min-width: 105px;height: 40px;border: 1px solid $muted;font-size: 14px;text-align: center;line-height: 38px;padding-left: .5rem;padding-right: .5rem;font-weight: 400;
+        @include media-breakpoint-up(lg){
+          font-size: 15px;
+        }
       }
     }
     /* button style - checkbox */

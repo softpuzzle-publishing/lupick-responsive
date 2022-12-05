@@ -95,105 +95,237 @@
         </div>
       </header>
       <div id="container">
-        <main id="main">
-          <!-- 실컨텐츠 -->
-
-          <div class="container pt-20px">
-            <div class="form-group">
-              <div class="form-label">루픽리워드 지급 프로세스</div>
-              <div class="reward-process">
-                <ol class="row gx-0">
-                  <li class="col">
-                    <span class="number">1</span>
-                    <span class="title">루피커 정보 입력</span>
-                  </li>
-                  <li class="col-auto"><i class="icon-full-menu-arr"></i></li>
-                  <li class="col">
-                    <span class="number">2</span>
-                    <span class="title">루픽에서 연락</span>
-                  </li>
-                  <li class="col-auto"><i class="icon-full-menu-arr"></i></li>
-                  <li class="col">
-                    <span class="number">3</span>
-                    <span class="title">루픽리워드 지급</span>
-                  </li>
-                </ol>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="formName" class="form-label">이름</label>
-              <input type="text" class="form-control" placeholder="이름을 입력해주세요" id="formName" />
-            </div>
-            <div class="form-group">
-              <label for="formEmail" class="form-label">이메일</label>
-              <input type="email" class="form-control" placeholder="예 : lupick@lupick.com" id="formEmail" />
-            </div>
-            <div class="form-group">
-              <label for="formMobile" class="form-label">휴대폰 번호</label>
-              <input type="tel" class="form-control" placeholder="- 없이 숫자만 입력" id="formMobile" />
-            </div>
-            <div class="tip-divider">
-              <p>* 이름, 이메일, 연락처가 다를 시 [마이]-[설정]-[내 정보 수정]에서 수정해 주세요</p>
-            </div>
-            <div class="form-group">
-              <label for="formMyAddr1" class="form-label">루픽리워드 받을 주소 <span class="required">*</span></label>
-              <div class="row gx-10px">
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="" id="formMyAddr1" readonly />
-                </div>
-                <div class="col-auto">
-                  <button type="button" class="btn btn-outline-dark btn-flat btn-md">우편번호 검색</button>
+        <div id="my-top">
+          <div class="container">
+            <div class="row gx-2">
+              <div class="col-auto">
+                <div class="my-top-left">
+                  <div class="my-top-box">
+                    <div class="my-profile">
+                      <div class="img">
+                        <!-- <img src="../../assets/images/profile-before-login-1.svg" alt="프로필 사진 없음(로그인 전)" class="default">
+                  <img src="../../assets/images/profile-after-login-1.svg" alt="프로필 사진 없음(로그인 후)" class="default"> -->
+                        <img src="../../assets/images/@profile.jpg" alt="복남이 프로필 사진" />
+                      </div>
+                      <div class="info">
+                        <!-- 로그인 전 -->
+                        <!-- <a href="../login/login.html" class="username">로그인 <i class="icon-full-menu-arr"></i></a> -->
+                        <!-- 로그인 후 -->
+                        <div class="username">복남이</div>
+                      </div>
+                      <a href="../../html/my/my_profile.html" class="btn btn-xs btn-outline-light">설정</a>
+                    </div>
+                    <div class="my-point">
+                      <div class="point">
+                        <i class="icon-point"></i>
+                        <strong>77,000</strong>
+                      </div>
+                      <div class="menu">
+                        <a href="../util/lupickguide.html">사용방법</a>
+                        <span class="bar"></span>
+                        <a href="my_point.html">사용내역</a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <input type="text" class="form-control mt-10px" placeholder="" id="formMyAddr2" readonly />
-              <input type="text" class="form-control mt-10px" placeholder="상세주소를 입력해주세요" id="formMyAddr3" />
-              <p class="form-text">* 배송 주소를 확인해 주세요(배송지가 다를 시 주소 변경을 해주세요)</p>
-            </div>
-
-            <!-- 5만원 이상 -->
-            <div class="form-group">
-              <label for="btn-id-card" class="form-label">신분증 사본 업로드(세금처리를 위한 정보로 활용) <span class="required">*</span></label>
-              <button type="button" class="btn btn-outline-light btn-flat btn-lg w-100 justify-content-start text-gray-light" id="btn-id-card">+ 신분증 사본 추가</button>
-              <input type="file" class="visually-hidden" />
-              <script>
-                $('#btn-file').on('click', function () {
-                  $(this).siblings('input[type=file]').click();
-                });
-              </script>
-              <p class="guide-text"><span>*</span> 신분증(주민등록증 또는 운전면허증)을 준비해 주세요.</p>
-              <div class="mt-10px">
-                <img src="../../assets/images/img-id-card.svg" alt="" />
+              <div class="col">
+                <div class="my-top-right">
+                  <div class="my-top-box">
+                    <div class="my-event-state">
+                      <div class="section-title">참여 이벤트 상태 <small>(최근 3개월)</small></div>
+                      <div class="my-event-step">
+                        <div class="row gx-2 justify-content-between align-items-center">
+                          <a href="../../html/my/my_event_ing.html" class="col">
+                            <div class="event-count"><span class="text-secondary">21</span></div>
+                            <div class="event-order">참여중 이벤트</div>
+                          </a>
+                          <div class="col-auto"><i class="icon-step-arr-right"></i></div>
+                          <a href="../../html/my/my_event_votable.html" class="col">
+                            <div class="event-count"><span class="text-secondary">4</span></div>
+                            <div class="event-order">투표 요청</div>
+                          </a>
+                          <div class="col-auto"><i class="icon-step-arr-right"></i></div>
+                          <a href="../../html/my/my_event_shipping.html" class="col">
+                            <div class="event-count"><span>0</span></div>
+                            <div class="event-order">상품 배송중</div>
+                          </a>
+                          <div class="col-auto"><i class="icon-step-arr-right"></i></div>
+                          <a href="../../html/my/my_event_purchasing_confirmation.html" class="col">
+                            <div class="event-count"><span>0</span></div>
+                            <div class="event-order">구매확정 확인</div>
+                          </a>
+                          <div class="col-auto"><i class="icon-step-arr-right"></i></div>
+                          <a href="../../html/my/my_event_result.html" class="col">
+                            <div class="event-count"><span>0</span></div>
+                            <div class="event-order">이벤트 결과</div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="my-top-buttons">
+                    <div class="row g-2">
+                      <div class="col">
+                        <button type="button" class="btn btn-white btn-round btn-xl fw-bold w-100" onclick="location.href='../../html/my/my_event_writable_reviews.html'">리뷰쓰고 포인트 받자 <span class="text-secondary ms-2">21</span></button>
+                      </div>
+                      <div class="col">
+                        <button type="button" class="btn btn-dark btn-round btn-xl fw-bold w-100 text-primary" onclick="location.href='../../html/my/my_event_selected_lupicker.html'">선정된 이벤트 확인</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <p class="guide-text"><span>*</span>포맷 jpg/png, 10MB 등록 가능</p>
-              <p class="guide-text"><span>*</span>가이드 영역에 맞추어 반드시 <strong>신분증 원본</strong>으로 촬영하세요.</p>
-              <p class="guide-text"><span>*</span>훼손되거나 유효하지 않은 신분증은 <strong>거절되거나 루픽리워드 수령이 제한</strong>될 수 있습니다.</p>
-              <p class="guide-text"><span>*</span>이벤트상품 세금처리를 위한 정보로 신분증은 활용되며, 세금처리 후 해당정보는 폐기됩니다. <strong class="text-danger text-decoration-underline">다른 용도로 개인정보는 활용되지 않음을 알려드립니다.</strong></p>
-            </div>
-            <!-- //5만원 이상 -->
-
-            <div class="agree-area">
-              <div class="form-check square">
-                <input type="checkbox" value="" id="agreeAll" />
-                <label for="agreeAll">아래 내용을 확인했으며 이에 동의합니다.</label>
-              </div>
-              <div class="form-check agree-style">
-                <input type="checkbox" value="" id="agree1" />
-                <label for="agree1">본인은 만 14세 이상이며 <a href="#none" class="text-info fw-bold text-decoration-underline">서비스 이용약관</a>, <a href="#none" class="text-info fw-bold text-decoration-underline">개인정보수집 및 이용</a>에 동의합니다. (필수)</label>
-              </div>
-              <div class="form-check agree-style">
-                <input type="checkbox" value="" id="agree2" />
-                <label for="agree2">가입 시 입력한 이름과 럭키상품 수령자의 개인정보가 동일해야합니다. (필수)</label>
-              </div>
-            </div>
-
-            <div class="bottom-buttons horizontal">
-              <button type="button" class="btn btn-outline-dark btn-lg w-100 px-0" data-bs-toggle="modal" data-bs-target="#alert-giveup">루픽리워드 포기</button>
-              <button type="button" class="btn btn-dark btn-lg w-100 px-0">등록</button>
             </div>
           </div>
-
-          <!-- //실컨텐츠 -->
-        </main>
+        </div>
+        <div id="layout">
+          <aside id="aside">
+            <h1 class="sidebar-title">마이페이지</h1>
+            <nav class="sidebar">
+              <ul>
+                <!-- <li><a href="../../html/my/my_event_ing.html"><span>참여중 이벤트</span></a></li>
+      <li><a href="../../html/my/my_event_votable.html"><span>투표 요청</span></a></li>
+      <li><a href="../../html/my/my_event_shipping.html"><span>상품 배송중</span></a></li>
+      <li><a href="../../html/my/my_event_purchasing_confirmation.html"><span>구매확정 확인</span></a></li>
+      <li><a href="../../html/my/my_event_result.html"><span>이벤트 결과</span></a></li>
+      <li><a href="../../html/my/my_event_writable_reviews.html"><span>리뷰쓰기</span></a></li>
+      <li><a href="../../html/my/my_event_selected_lupicker.html"><span>선정된 이벤트</span></a></li> -->
+                <li class="active">
+                  <a href="../../html/my/my_event_order_history.html"><span>주문 및 참여 내역</span></a>
+                </li>
+                <li>
+                  <a href="../../html/my/my_event_cancel_history.html"><span>취소/교환/반품 내역</span></a>
+                </li>
+                <li>
+                  <a href="../../html/my/my_event_reviews.html"><span>나의 리뷰</span></a>
+                </li>
+                <li>
+                  <a href="../../html/customer/customer_my_qna.html"><span>문의 내역</span></a>
+                </li>
+                <!-- <li><a href="../../html/util/lupickguide.html"><span>포인트 사용방법</span></a></li> -->
+                <li>
+                  <a href="../../html/my/my_point.html"><span>포인트 사용내역</span></a>
+                </li>
+                <li>
+                  <a href="../../html/my/my_profile.html"><span>프로필 편집</span></a>
+                </li>
+                <li>
+                  <a href="../../html/my/my_info_password.html"><span>내 정보 관리</span></a>
+                </li>
+                <li>
+                  <a href="../../html/my/my_address.html"><span>배송지 관리</span></a>
+                </li>
+                <li>
+                  <a href="../../html/notice/notice.html"><span>공지사항</span></a>
+                </li>
+                <li>
+                  <a href="../../html/customer/customer.html"><span>고객센터</span></a>
+                </li>
+              </ul>
+              <a href="javascript:;" class="btn-friend-invite">친구초대하고 <span class="text-secondary">1,000P</span>씩 받기</a>
+            </nav>
+          </aside>
+          <main id="main">
+            <!-- 실컨텐츠 -->
+            <div class="main-title-area">
+              <h2 class="main-title">루피커 정보 입력</h2>
+            </div>
+            <div class="container pt-20px">
+              <div class="form pt-3">
+                <div class="form-group">
+                  <div class="form-label">루픽리워드 지급 프로세스</div>
+                  <div class="reward-process">
+                    <ol class="row gx-0">
+                      <li class="col">
+                        <span class="number">1</span>
+                        <span class="title">루피커 정보 입력</span>
+                      </li>
+                      <li class="col-auto"><i class="icon-full-menu-arr"></i></li>
+                      <li class="col">
+                        <span class="number">2</span>
+                        <span class="title">루픽에서 연락</span>
+                      </li>
+                      <li class="col-auto"><i class="icon-full-menu-arr"></i></li>
+                      <li class="col">
+                        <span class="number">3</span>
+                        <span class="title">루픽리워드 지급</span>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="formName" class="form-label">이름</label>
+                  <input type="text" class="form-control" placeholder="이름을 입력해주세요" id="formName" />
+                </div>
+                <div class="form-group">
+                  <label for="formEmail" class="form-label">이메일</label>
+                  <input type="email" class="form-control" placeholder="예 : lupick@lupick.com" id="formEmail" />
+                </div>
+                <div class="form-group">
+                  <label for="formMobile" class="form-label">휴대폰 번호</label>
+                  <input type="tel" class="form-control" placeholder="- 없이 숫자만 입력" id="formMobile" />
+                </div>
+                <div class="tip-divider">
+                  <p>* 이름, 이메일, 연락처가 다를 시 [마이]-[설정]-[내 정보 수정]에서 수정해 주세요</p>
+                </div>
+                <div class="form-group">
+                  <label for="formMyAddr1" class="form-label">루픽리워드 받을 주소 <span class="required">*</span></label>
+                  <div class="row gx-10px">
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="" id="formMyAddr1" readonly />
+                    </div>
+                    <div class="col-auto">
+                      <button type="button" class="btn btn-outline-dark btn-flat btn-md">우편번호 검색</button>
+                    </div>
+                  </div>
+                  <input type="text" class="form-control mt-10px" placeholder="" id="formMyAddr2" readonly />
+                  <input type="text" class="form-control mt-10px" placeholder="상세주소를 입력해주세요" id="formMyAddr3" />
+                  <p class="form-text">* 배송 주소를 확인해 주세요(배송지가 다를 시 주소 변경을 해주세요)</p>
+                </div>
+                <!-- 5만원 이상 -->
+                <div class="form-group">
+                  <label for="btn-id-card" class="form-label">신분증 사본 업로드(세금처리를 위한 정보로 활용) <span class="required">*</span></label>
+                  <button type="button" class="btn btn-outline-light btn-flat btn-lg w-100 justify-content-start text-gray-light" id="btn-id-card">+ 신분증 사본 추가</button>
+                  <input type="file" class="visually-hidden" />
+                  <script>
+                    $('#btn-file').on('click', function () {
+                      $(this).siblings('input[type=file]').click();
+                    });
+                  </script>
+                  <p class="guide-text"><span>*</span> 신분증(주민등록증 또는 운전면허증)을 준비해 주세요.</p>
+                  <div class="mt-10px">
+                    <img src="../../assets/images/img-id-card.svg" alt="" />
+                  </div>
+                  <p class="guide-text"><span>*</span>포맷 jpg/png, 10MB 등록 가능</p>
+                  <p class="guide-text"><span>*</span>가이드 영역에 맞추어 반드시 <strong>신분증 원본</strong>으로 촬영하세요.</p>
+                  <p class="guide-text"><span>*</span>훼손되거나 유효하지 않은 신분증은 <strong>거절되거나 루픽리워드 수령이 제한</strong>될 수 있습니다.</p>
+                  <p class="guide-text"><span>*</span>이벤트상품 세금처리를 위한 정보로 신분증은 활용되며, 세금처리 후 해당정보는 폐기됩니다. <strong class="text-danger text-decoration-underline">다른 용도로 개인정보는 활용되지 않음을 알려드립니다.</strong></p>
+                </div>
+                <!-- //5만원 이상 -->
+                <div class="agree-area">
+                  <div class="form-check square">
+                    <input type="checkbox" value="" id="agreeAll" />
+                    <label for="agreeAll">아래 내용을 확인했으며 이에 동의합니다.</label>
+                  </div>
+                  <div class="form-check agree-style">
+                    <input type="checkbox" value="" id="agree1" />
+                    <label for="agree1">본인은 만 14세 이상이며 <a href="#none" class="text-info fw-bold text-decoration-underline">서비스 이용약관</a>, <a href="#none" class="text-info fw-bold text-decoration-underline">개인정보수집 및 이용</a>에 동의합니다. (필수)</label>
+                  </div>
+                  <div class="form-check agree-style">
+                    <input type="checkbox" value="" id="agree2" />
+                    <label for="agree2">가입 시 입력한 이름과 럭키상품 수령자의 개인정보가 동일해야합니다. (필수)</label>
+                  </div>
+                </div>
+                <div class="bottom-buttons horizontal">
+                  <button type="button" class="btn btn-outline-dark btn-lg w-100 px-0" data-bs-toggle="modal" data-bs-target="#alert-giveup">루픽리워드 포기</button>
+                  <button type="button" class="btn btn-dark btn-lg w-100 px-0">등록</button>
+                </div>
+              </div>
+            </div>
+            <!-- //실컨텐츠 -->
+          </main>
+        </div>
       </div>
       <footer id="footer">
         <div class="container">
@@ -957,18 +1089,22 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <div class="img">
-              <img src="../../assets/images/@landscape.jpg" alt="" />
+            <div class="d-lg-flex justify-content-lg-between">
+              <div class="img">
+                <img src="../../assets/images/@landscape.jpg" alt="" />
+              </div>
+              <div class="info">
+                <div class="text-lg"><strong>티도</strong>님 <br />루픽리워드 선정을 <br />축하합니다!</div>
+                <div class="event-info">
+                  <div class="won-reward">선정된 리워드</div>
+                  <div class="product">패밀리 SUV의 진화, 현대 2022 SANTA FE</div>
+                  <div class="price">34,750,000원</div>
+                </div>
+                <button type="button" class="btn btn-white btn-lg w-100">루피커 정보 입력하기</button>
+                <button type="button" class="btn btn-white btn-lg w-100" disabled>정보 입력 완료</button>
+                <button type="button" class="btn btn-white btn-lg w-100" disabled>루픽리워드 포기</button>
+              </div>
             </div>
-            <div class="text-lg"><strong>티도</strong>님 <br />루픽리워드 선정을 <br />축하합니다!</div>
-            <div class="event-info">
-              <div class="won-reward">선정된 리워드</div>
-              <div class="product">패밀리 SUV의 진화, 현대 2022 SANTA FE</div>
-              <div class="price">34,750,000원</div>
-            </div>
-            <button type="button" class="btn btn-white btn-lg w-100">루피커 정보 입력하기</button>
-            <button type="button" class="btn btn-white btn-lg w-100" disabled>정보 입력 완료</button>
-            <button type="button" class="btn btn-white btn-lg w-100" disabled>루픽리워드 포기</button>
           </div>
           <div class="result-open-animation">
             <div>1</div>
@@ -991,15 +1127,19 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <div class="img">
-              <img src="../../assets/images/img-result-fail.png" alt="" />
+            <div class="d-lg-flex justify-content-lg-between">
+              <div class="img">
+                <img src="../../assets/images/img-result-fail.png" alt="" />
+              </div>
+              <div class="info">
+                <div class="text-lg"><strong>티비보는도라에몽</strong>님 <br />아쉽지만 다음 기회를 <br />기약해요!</div>
+                <div class="event-info">
+                  <div class="won-reward">투표 결과확인</div>
+                  <div class="desc">모든 투표결과 데이터는 이벤트 결과보기를 참고하시면 상세하게 확인하실 수 있습니다.</div>
+                </div>
+                <button type="button" class="btn btn-white btn-lg w-100">확인</button>
+              </div>
             </div>
-            <div class="text-lg"><strong>티비보는도라에몽</strong>님 <br />아쉽지만 다음 기회를 <br />기약해요!</div>
-            <div class="event-info">
-              <div class="won-reward">투표 결과확인</div>
-              <div class="desc">모든 투표결과 데이터는 이벤트 결과보기를 참고하시면 상세하게 확인하실 수 있습니다.</div>
-            </div>
-            <button type="button" class="btn btn-white btn-lg w-100">확인</button>
           </div>
         </div>
       </div>

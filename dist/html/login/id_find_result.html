@@ -95,21 +95,25 @@
         </div>
       </header>
       <div id="container">
-        <main id="main">
-          <!-- 실컨텐츠 -->
-
-          <div class="bg-circle">
-            <span class="circle"></span>
-          </div>
-
-          <div class="container">
-            <h1 class="page-title">아이디 찾기 완료.</h1>
-            <div class="login-message">찾으셨던 아이디는 다음과 같습니다.</div>
-            <div class="find-result">row***</div>
-          </div>
-
-          <!-- //실컨텐츠 -->
-        </main>
+        <div id="layout">
+          <main id="main">
+            <!-- 실컨텐츠 -->
+            <div class="bg-circle">
+              <span class="circle"></span>
+            </div>
+            <div class="container">
+              <div class="center-wrap center-wrap-login">
+                <h1 class="page-title">아이디 찾기 완료.</h1>
+                <div class="login-message">찾으셨던 아이디는 다음과 같습니다.</div>
+                <div class="find-result">row***</div>
+                <div class="bottom-buttons">
+                  <button type="button" class="btn btn-dark btn-lg w-100" onclick="location.href='login.html'">로그인</button>
+                </div>
+              </div>
+            </div>
+            <!-- //실컨텐츠 -->
+          </main>
+        </div>
       </div>
       <footer id="footer">
         <div class="container">

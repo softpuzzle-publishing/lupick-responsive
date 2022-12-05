@@ -95,70 +95,71 @@
         </div>
       </header>
       <div id="container">
-        <main id="main">
-          <!-- 실컨텐츠 -->
-
-          <div class="container pt-20px">
-            <div class="form-group-wrap">
-              <div class="form-group-body">
-                <div class="form-group">
-                  <label for="formCardNumber" class="form-label font-16px">카드 번호</label>
-                  <div class="row gx-10px">
-                    <div class="col">
-                      <input type="text" class="form-control form-control-lg border w-100 text-center font-16px px-0" placeholder="0000" id="formCardNumber" inputmode="numeric" maxlength="4" />
-                    </div>
-                    <div class="col">
-                      <input type="password" class="form-control form-control-lg border w-100 text-center font-16px px-0" placeholder="0000" id="formCardNumber2" inputmode="numeric" maxlength="4" />
-                    </div>
-                    <div class="col">
-                      <input type="password" class="form-control form-control-lg border w-100 text-center font-16px px-0" placeholder="0000" id="formCardNumber3" inputmode="numeric" maxlength="4" />
-                    </div>
-                    <div class="col">
-                      <input type="text" class="form-control form-control-lg border w-100 text-center font-16px px-0" placeholder="0000" id="formCardNumber4" inputmode="numeric" maxlength="4" />
+        <div id="layout">
+          <main id="main">
+            <!-- 실컨텐츠 -->
+            <div class="container pt-20px">
+              <h1 class="page-title d-none d-lg-block mb-5">결제방법</h1>
+              <div class="form-group-wrap">
+                <div class="form-group-body">
+                  <div class="form-group horizontal">
+                    <label for="formCardNumber" class="form-label font-16px">카드 번호</label>
+                    <div class="row gx-10px">
+                      <div class="col">
+                        <input type="text" class="form-control form-control-lg border w-100 text-center font-16px px-0" placeholder="0000" id="formCardNumber" inputmode="numeric" maxlength="4" />
+                      </div>
+                      <div class="col">
+                        <input type="password" class="form-control form-control-lg border w-100 text-center font-16px px-0" placeholder="0000" id="formCardNumber2" inputmode="numeric" maxlength="4" />
+                      </div>
+                      <div class="col">
+                        <input type="password" class="form-control form-control-lg border w-100 text-center font-16px px-0" placeholder="0000" id="formCardNumber3" inputmode="numeric" maxlength="4" />
+                      </div>
+                      <div class="col">
+                        <input type="text" class="form-control form-control-lg border w-100 text-center font-16px px-0" placeholder="0000" id="formCardNumber4" inputmode="numeric" maxlength="4" />
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="row gx-10px mt-25px">
-                  <div class="col">
-                    <div class="form-group">
-                      <label for="formCardMonth" class="form-label font-16px">유효기간</label>
-                      <div class="row gx-10px">
-                        <div class="col-auto">
-                          <input type="text" class="form-control form-control-lg border text-center font-16px px-0" placeholder="MM" id="formCardMonth" inputmode="numeric" maxlength="2" style="width: 54px" />
+                  <div class="row gx-10px mt-25px flex-lg-column">
+                    <div class="col">
+                      <div class="form-group horizontal">
+                        <label for="formCardMonth" class="form-label font-16px">유효기간</label>
+                        <div class="row gx-10px">
+                          <div class="col-auto">
+                            <input type="text" class="form-control form-control-lg border text-center font-16px px-0" placeholder="MM" id="formCardMonth" inputmode="numeric" maxlength="2" style="width: 54px" />
+                          </div>
+                          <div class="col-auto">
+                            <input type="text" class="form-control form-control-lg border text-center font-16px px-0" placeholder="YY" id="formCardYear" inputmode="numeric" maxlength="2" style="width: 54px" />
+                          </div>
                         </div>
-                        <div class="col-auto">
-                          <input type="text" class="form-control form-control-lg border text-center font-16px px-0" placeholder="YY" id="formCardYear" inputmode="numeric" maxlength="2" style="width: 54px" />
+                      </div>
+                    </div>
+                    <div class="col mt-lg-4">
+                      <div class="form-group horizontal">
+                        <label for="formCardPassword" class="form-label font-16px">비밀번호 앞 2자리</label>
+                        <div class="row row-10 align-items-center">
+                          <div class="col-auto">
+                            <input type="text" class="form-control form-control-lg border text-center font-16px px-0" placeholder="00" id="formCardPassword" inputmode="numeric" maxlength="2" style="width: 54px" />
+                          </div>
+                          <div class="col-auto">**</div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="col">
-                    <div class="form-group">
-                      <label for="formCardPassword" class="form-label font-16px">비밀번호 앞 2자리</label>
-                      <div class="row row-10 align-items-center">
-                        <div class="col-auto">
-                          <input type="text" class="form-control form-control-lg border text-center font-16px px-0" placeholder="00" id="formCardPassword" inputmode="numeric" maxlength="2" style="width: 54px" />
-                        </div>
-                        <div class="col-auto">**</div>
-                      </div>
-                    </div>
+                  <div class="form-group mt-25px horizontal">
+                    <label for="formCardBirth" class="form-label font-16px">주민번호 앞 6자리 <small class="d-lg-none">*법인카드는 사업자등록번호 10자리</small></label>
+                    <input type="text" class="form-control form-control-lg border text-center font-16px px-0" placeholder="YYMMDD" id="formCardBirth" inputmode="numeric" maxlength="6" style="width: 140px" />
                   </div>
-                </div>
-                <div class="form-group mt-25px">
-                  <label for="formCardBirth" class="form-label font-16px">카드 번호주민번호 앞 6자리 <small>*법인카드는 사업자등록번호 10자리</small></label>
-                  <input type="text" class="form-control form-control-lg border text-center font-16px px-0" placeholder="YYMMDD" id="formCardBirth" inputmode="numeric" maxlength="6" style="width: 140px" />
                 </div>
               </div>
+              <!-- 하단 버튼 -->
+              <div class="bottom-buttons">
+                <button type="button" class="btn btn-dark btn-lg w-100 px-0" onclick="location.href='payment_type.html'">등록하기</button>
+              </div>
+              <!-- //하단 버튼 -->
             </div>
-            <!-- 하단 버튼 -->
-            <div class="bottom-buttons">
-              <button type="button" class="btn btn-dark btn-lg w-100 px-0" onclick="location.href='payment_type.html'">등록하기</button>
-            </div>
-            <!-- //하단 버튼 -->
-          </div>
-
-          <!-- //실컨텐츠 -->
-        </main>
+            <!-- //실컨텐츠 -->
+          </main>
+        </div>
       </div>
       <footer id="footer">
         <div class="container">
@@ -922,18 +923,22 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <div class="img">
-              <img src="../../assets/images/@landscape.jpg" alt="" />
+            <div class="d-lg-flex justify-content-lg-between">
+              <div class="img">
+                <img src="../../assets/images/@landscape.jpg" alt="" />
+              </div>
+              <div class="info">
+                <div class="text-lg"><strong>티도</strong>님 <br />루픽리워드 선정을 <br />축하합니다!</div>
+                <div class="event-info">
+                  <div class="won-reward">선정된 리워드</div>
+                  <div class="product">패밀리 SUV의 진화, 현대 2022 SANTA FE</div>
+                  <div class="price">34,750,000원</div>
+                </div>
+                <button type="button" class="btn btn-white btn-lg w-100">루피커 정보 입력하기</button>
+                <button type="button" class="btn btn-white btn-lg w-100" disabled>정보 입력 완료</button>
+                <button type="button" class="btn btn-white btn-lg w-100" disabled>루픽리워드 포기</button>
+              </div>
             </div>
-            <div class="text-lg"><strong>티도</strong>님 <br />루픽리워드 선정을 <br />축하합니다!</div>
-            <div class="event-info">
-              <div class="won-reward">선정된 리워드</div>
-              <div class="product">패밀리 SUV의 진화, 현대 2022 SANTA FE</div>
-              <div class="price">34,750,000원</div>
-            </div>
-            <button type="button" class="btn btn-white btn-lg w-100">루피커 정보 입력하기</button>
-            <button type="button" class="btn btn-white btn-lg w-100" disabled>정보 입력 완료</button>
-            <button type="button" class="btn btn-white btn-lg w-100" disabled>루픽리워드 포기</button>
           </div>
           <div class="result-open-animation">
             <div>1</div>
@@ -956,15 +961,19 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <div class="img">
-              <img src="../../assets/images/img-result-fail.png" alt="" />
+            <div class="d-lg-flex justify-content-lg-between">
+              <div class="img">
+                <img src="../../assets/images/img-result-fail.png" alt="" />
+              </div>
+              <div class="info">
+                <div class="text-lg"><strong>티비보는도라에몽</strong>님 <br />아쉽지만 다음 기회를 <br />기약해요!</div>
+                <div class="event-info">
+                  <div class="won-reward">투표 결과확인</div>
+                  <div class="desc">모든 투표결과 데이터는 이벤트 결과보기를 참고하시면 상세하게 확인하실 수 있습니다.</div>
+                </div>
+                <button type="button" class="btn btn-white btn-lg w-100">확인</button>
+              </div>
             </div>
-            <div class="text-lg"><strong>티비보는도라에몽</strong>님 <br />아쉽지만 다음 기회를 <br />기약해요!</div>
-            <div class="event-info">
-              <div class="won-reward">투표 결과확인</div>
-              <div class="desc">모든 투표결과 데이터는 이벤트 결과보기를 참고하시면 상세하게 확인하실 수 있습니다.</div>
-            </div>
-            <button type="button" class="btn btn-white btn-lg w-100">확인</button>
           </div>
         </div>
       </div>

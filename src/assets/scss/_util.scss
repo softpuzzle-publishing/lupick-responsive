@@ -12,6 +12,9 @@
 }
 .login-message{
   font-size: 14px;color: rgba(0,0,0,0.5);line-height: 1.714;margin-bottom: 20px;
+  @include media-breakpoint-up(lg){
+    font-size: 16px;;
+  }
 }
 
 .find-result{font-size: 28px;line-height: 1.78;}
@@ -28,6 +31,18 @@
 .agree-area{
   margin-top: 40px;
   .form-check{margin-top: 15px;}
+}
+
+@include media-breakpoint-up(lg){
+  .center-wrap-login{
+    .page-title{text-align: left;}
+    .page-desc{
+      text-align: left;font-size: 20px;color: $gray;
+      a{color: #000;font-weight: 700;}
+    }
+    .form{margin-top: 50px;}
+    .bottom-buttons .btn{width: 100% !important;}
+  }
 }
 
 .lupick-collabo{

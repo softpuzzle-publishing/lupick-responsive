@@ -31,6 +31,23 @@
 
     <!-- publishing js -->
     <script src="../../assets/js/ui.js" async></script>
+    <script>
+      $(function () {
+        const $fixedPrice = $('.fixed-price-wrap');
+        const fixedPriceOffsetTop = $('.fixed-price-wrap').offset().top - 50;
+        function scrollFixedPrice() {
+          let scrollTop = $(window).scrollTop();
+          if (scrollTop > fixedPriceOffsetTop) {
+            $fixedPrice.addClass('fixed');
+          } else {
+            $fixedPrice.removeClass('fixed');
+          }
+        }
+        $(window).scroll(function () {
+          scrollFixedPrice();
+        });
+      });
+    </script>
   </head>
 
   <body>
@@ -95,228 +112,240 @@
         </div>
       </header>
       <div id="container">
-        <main id="main">
-          <!-- 실컨텐츠 -->
-
-          <div class="container pt-20px">
-            <!-- 주문 정보 -->
-            <div class="form-group-wrap">
-              <div class="form-group-header">
-                <div class="label">주문 정보</div>
-              </div>
-              <div class="form-group-body pt-0">
-                <div class="my-order-item">
-                  <div class="d-flex">
-                    <div class="info">
-                      <div class="title">감자볶음밥 세트 (감자)감자볶음밥 세트 (감자)감자볶음밥 세트 (감자)</div>
-                      <div class="price"><span>1개</span> / <span>13,800원</span></div>
+        <div id="layout">
+          <main id="main" class="max-width-100">
+            <!-- 실컨텐츠 -->
+            <h1 class="page-title d-none d-lg-block mb-5">결제하기</h1>
+            <div class="container pt-20px position-relative">
+              <div class="layout-body">
+                <div class="layout-body-left">
+                  <!-- 주문 정보 -->
+                  <div class="form-group-wrap">
+                    <div class="form-group-header">
+                      <div class="label">주문 정보</div>
                     </div>
-                    <div class="img">
-                      <img src="../../assets/images/@portrait.jpg" alt="" />
-                    </div>
-                  </div>
-                </div>
-                <div class="my-order-item">
-                  <div class="d-flex">
-                    <div class="info">
-                      <div class="title">감자볶음밥 세트 (감자)</div>
-                      <div class="price"><span>1개</span> / <span>13,800원</span></div>
-                    </div>
-                    <div class="img">
-                      <img src="../../assets/images/@portrait.jpg" alt="" />
-                    </div>
-                  </div>
-                </div>
-                <div class="more-text">
-                  <a href="javascript:;" role="button">총 2건 전체보기</a>
-                </div>
-              </div>
-            </div>
-            <!-- //주문 정보 -->
-            <!-- 주문자 정보 -->
-            <div class="form-group-wrap">
-              <div class="form-group-header">
-                <div class="label" for="orderUser">주문자 정보</div>
-              </div>
-              <div class="form-group-body">
-                <div class="form-group">
-                  <label for="orderUser" class="form-label">이름 <span class="required">*</span></label>
-                  <input type="text" class="form-control" placeholder="주문자의 실명을 입력해주세요" id="orderUser" />
-                </div>
-                <div class="form-group">
-                  <label for="orderMobile" class="form-label">휴대폰 번호</label>
-                  <div class="row gx-10px">
-                    <div class="col">
-                      <input type="tel" class="form-control" placeholder="- 없이 숫자만 입력" id="orderMobile" />
-                    </div>
-                    <div class="col-auto">
-                      <button type="button" class="btn btn-outline-dark btn-flat btn-md">인증번호 발송</button>
+                    <div class="form-group-body pt-0">
+                      <div class="my-order-item">
+                        <div class="d-flex">
+                          <div class="info">
+                            <div class="title">감자볶음밥 세트 (감자)감자볶음밥 세트 (감자)감자볶음밥 세트 (감자)</div>
+                            <div class="price"><span>1개</span> / <span>13,800원</span></div>
+                          </div>
+                          <div class="img">
+                            <img src="../../assets/images/@portrait.jpg" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="my-order-item">
+                        <div class="d-flex">
+                          <div class="info">
+                            <div class="title">감자볶음밥 세트 (감자)</div>
+                            <div class="price"><span>1개</span> / <span>13,800원</span></div>
+                          </div>
+                          <div class="img">
+                            <img src="../../assets/images/@portrait.jpg" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="more-text">
+                        <a href="javascript:;" role="button">총 2건 전체보기</a>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label for="orderEmail" class="form-label">이메일</label>
-                  <input type="email" class="form-control" placeholder="이메일 주소를 입력해주세요" id="orderEmail" />
-                </div>
-              </div>
-            </div>
-            <!-- //주문자 정보 -->
-            <!-- 배송 정보 -->
-            <div class="form-group-wrap">
-              <div class="form-group-header">
-                <div class="label">배송 정보</div>
-                <button type="button" class="btn btn-muted btn-sm btn-flat text-gray" data-bs-toggle="modal" data-bs-target="#modal-address-edit">변경하기</button>
-              </div>
-              <div class="form-group-body">
-                <!-- 배송지 추가 전 -->
-                <button type="button" class="btn btn-outline-light btn-flat btn-lg w-100 justify-content-start text-gray-light" data-bs-toggle="modal" data-bs-target="#modal-address-add">+ 배송지 추가</button>
-                <!-- 배송지 추가 후 -->
-                <address class="address-item">
-                  <div class="zipcode">04720</div>
-                  <div class="addr">서울시 강남구 도산대로 54길 32 (도산아파트) 도산아파트 101동 202호</div>
-                  <div class="name">이정후, 010-1234-5678</div>
-                  <span class="badge dark">기본 배송지</span>
-                </address>
-                <select class="form-select form-select-lg w-100">
-                  <option value="">배송 메모 (선택)</option>
-                  <option value="">배송 전에 미리 연락 바랍니다.</option>
-                  <option value="">부재 시 경비실에 맡겨주세요.</option>
-                  <option value="">부재 시 문 앞에 놓아주세요.</option>
-                  <option value="">부재 시 전화나 문자 남겨주세요.</option>
-                  <option value="직접 입력">직접 입력</option>
-                </select>
-                <div class="textarea visually-hidden mt-10px">
-                  <textarea rows="2" class="form-control" placeholder="직접 입력" maxlength="100"></textarea>
-                </div>
-              </div>
-            </div>
-            <!-- //배송 정보 -->
-            <!-- 루픽 포인트 -->
-            <div class="form-group-wrap">
-              <div class="form-group-header">
-                <div class="label" for="orderPoint">루픽 포인트</div>
-                <div class="available-point">사용가능 포인트 <strong>150P</strong></div>
-              </div>
-              <div class="form-group-body border-top-0 pt-0">
-                <div class="row gx-10px">
-                  <div class="col">
-                    <input type="tel" class="form-control border form-control-lg font-16px" placeholder="0" id="orderPoint" />
+                  <!-- //주문 정보 -->
+                  <!-- 주문자 정보 -->
+                  <div class="form-group-wrap">
+                    <div class="form-group-header">
+                      <div class="label" for="orderUser">주문자 정보</div>
+                    </div>
+                    <div class="form-group-body">
+                      <div class="form-group">
+                        <label for="orderUser" class="form-label">이름 <span class="required">*</span></label>
+                        <input type="text" class="form-control" placeholder="주문자의 실명을 입력해주세요" id="orderUser" />
+                      </div>
+                      <div class="form-group">
+                        <label for="orderMobile" class="form-label">휴대폰 번호</label>
+                        <div class="row gx-10px">
+                          <div class="col">
+                            <input type="tel" class="form-control" placeholder="- 없이 숫자만 입력" id="orderMobile" />
+                          </div>
+                          <div class="col-auto">
+                            <button type="button" class="btn btn-outline-dark btn-flat btn-md">인증번호 발송</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="orderEmail" class="form-label">이메일</label>
+                        <input type="email" class="form-control" placeholder="이메일 주소를 입력해주세요" id="orderEmail" />
+                      </div>
+                    </div>
                   </div>
-                  <div class="col-auto">
-                    <button type="button" class="btn btn-outline-dark btn-flat btn-lg fw-normal">모두 사용</button>
+                  <!-- //주문자 정보 -->
+                  <!-- 배송 정보 -->
+                  <div class="form-group-wrap">
+                    <div class="form-group-header">
+                      <div class="label">배송 정보</div>
+                      <button type="button" class="btn btn-muted btn-sm btn-flat text-gray" data-bs-toggle="modal" data-bs-target="#modal-address-edit">변경하기</button>
+                    </div>
+                    <div class="form-group-body">
+                      <!-- 배송지 추가 전 -->
+                      <button type="button" class="btn btn-outline-light btn-flat btn-lg w-100 justify-content-start text-gray-light" data-bs-toggle="modal" data-bs-target="#modal-address-add">+ 배송지 추가</button>
+                      <!-- 배송지 추가 후 -->
+                      <address class="address-item">
+                        <div class="zipcode">04720</div>
+                        <div class="addr">서울시 강남구 도산대로 54길 32 (도산아파트) 도산아파트 101동 202호</div>
+                        <div class="name">이정후, 010-1234-5678</div>
+                        <span class="badge dark">기본 배송지</span>
+                      </address>
+                      <select class="form-select form-select-lg w-100">
+                        <option value="">배송 메모 (선택)</option>
+                        <option value="">배송 전에 미리 연락 바랍니다.</option>
+                        <option value="">부재 시 경비실에 맡겨주세요.</option>
+                        <option value="">부재 시 문 앞에 놓아주세요.</option>
+                        <option value="">부재 시 전화나 문자 남겨주세요.</option>
+                        <option value="직접 입력">직접 입력</option>
+                      </select>
+                      <div class="textarea visually-hidden mt-10px">
+                        <textarea rows="2" class="form-control" placeholder="직접 입력" maxlength="100"></textarea>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </div>
-            <!-- //루픽 포인트 -->
-            <!-- 결제 포인트 -->
-            <div class="form-group-wrap">
-              <div class="form-group-header">
-                <div class="label">결제 포인트</div>
-                <div class="sum-pay"><i class="icon-point me-1"></i><strong>400</strong></div>
-              </div>
-              <div class="form-group-body pt-0">
-                <p class="help-text">*포인트 이벤트는 루픽포인트로만 결제가 가능합니다</p>
-              </div>
-            </div>
-            <!-- //결제 포인트 -->
-            <!-- 결제 금액 -->
-            <div class="form-group-wrap">
-              <div class="form-group-header">
-                <div class="label">결제 금액</div>
-                <div class="sum-pay">16,800원</div>
-              </div>
-              <div class="form-group-body">
-                <div class="price-calc">
-                  <div class="row gx-0 align-items-center">
-                    <dl class="col">
-                      <dt>상품 금액</dt>
-                      <dd>2,114,000원</dd>
-                    </dl>
-                    <div class="col-auto"><span class="plus"></span></div>
-                    <dl class="col">
-                      <dt>배송비</dt>
-                      <dd>3,000원</dd>
-                    </dl>
-                    <div class="col-auto"><span class="minus"></span></div>
-                    <dl class="col">
-                      <dt>루픽 포인트</dt>
-                      <dd>1500P</dd>
-                    </dl>
+                  <!-- //배송 정보 -->
+                  <!-- 루픽 포인트 -->
+                  <div class="form-group-wrap">
+                    <div class="form-group-header">
+                      <div class="label" for="orderPoint">루픽 포인트</div>
+                      <div class="available-point">사용가능 포인트 <strong>150P</strong></div>
+                    </div>
+                    <div class="form-group-body border-top-0 pt-0">
+                      <div class="row gx-10px">
+                        <div class="col">
+                          <input type="tel" class="form-control border form-control-lg font-16px" placeholder="0" id="orderPoint" />
+                        </div>
+                        <div class="col-auto">
+                          <button type="button" class="btn btn-outline-dark btn-flat btn-lg fw-normal">모두 사용</button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                  <!-- //루픽 포인트 -->
+                  <!-- 결제 포인트 -->
+                  <div class="form-group-wrap">
+                    <div class="form-group-header">
+                      <div class="label">결제 포인트</div>
+                      <div class="sum-pay"><i class="icon-point me-1"></i><strong>400</strong></div>
+                    </div>
+                    <div class="form-group-body pt-0">
+                      <p class="help-text">*포인트 이벤트는 루픽포인트로만 결제가 가능합니다</p>
+                    </div>
+                  </div>
+                  <!-- //결제 포인트 -->
+                  <!-- 결제 금액 -->
+                  <div class="form-group-wrap fixed-price-wrap">
+                    <div class="form-group-header">
+                      <div class="label">결제 금액</div>
+                      <div class="sum-pay">16,800원</div>
+                    </div>
+                    <div class="form-group-body">
+                      <div class="price-calc">
+                        <div class="row gx-0 align-items-center flex-lg-column">
+                          <dl class="col">
+                            <dt>상품 금액</dt>
+                            <dd>2,114,000원</dd>
+                          </dl>
+                          <div class="col-auto"><span class="plus"></span></div>
+                          <dl class="col">
+                            <dt>배송비</dt>
+                            <dd><span class="d-none d-lg-inline-block">+</span>3,000원</dd>
+                          </dl>
+                          <div class="col-auto"><span class="minus"></span></div>
+                          <dl class="col">
+                            <dt>루픽 포인트</dt>
+                            <dd><span class="d-none d-lg-inline-block">-</span>1500P</dd>
+                          </dl>
+                        </div>
+                      </div>
+                      <p class="help-text">*제주 및 도서산간 지역 : 추가 배송비 3,000원 발생</p>
+                      <div class="form-check d-none d-lg-block">
+                        <input type="checkbox" id="orderAgreeDesktop" />
+                        <label for="orderAgreeDesktop">결제 정보를 확인하였으며, 동의합니다. (필수)</label>
+                      </div>
+                      <div class="mt-30px d-none d-lg-block">
+                        <button type="button" class="btn btn-dark btn-lg w-100 px-0" onclick="location.href='../my/my_event_vote.html'">결제하고 투표하기</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //결제 금액 -->
+                  <!-- 결제 방법 -->
+                  <div class="form-group-wrap">
+                    <div class="form-group-header">
+                      <div class="label">결제 방법</div>
+                      <!-- 결제 방법 선택 후 -->
+                      <button type="button" class="btn btn-muted btn-sm btn-flat text-gray" onclick="location.href='payment_type.html'">변경하기</button>
+                    </div>
+                    <div class="form-group-body border-top-0 pt-0">
+                      <!-- 결제 방법 선택 전 -->
+                      <button type="button" class="btn btn-outline-dark btn-flat btn-lg w-100 fw-normal">+ 결제수단 추가하기</button>
+                      <!-- 결제 방법 선택 후 -->
+                      <div class="added-payment-type">
+                        <div class="badge dark">루픽페이</div>
+                        <span>[신한] 4890 **** **** 2834</span>
+                      </div>
+                      <div class="added-payment-type">
+                        <div class="badge dark">카카오페이</div>
+                        <span><img src="../../assets/images/pay-kakao.svg" alt="" /></span>
+                      </div>
+                      <div class="added-payment-type">
+                        <div class="badge dark">네이버페이</div>
+                        <span><img src="../../assets/images/pay-naver.svg" alt="" /></span>
+                      </div>
+                      <div class="added-payment-type">
+                        <div class="badge dark">토스페이</div>
+                        <span><img src="../../assets/images/pay-toss.svg" alt="" /></span>
+                      </div>
+                      <div class="added-payment-type">
+                        <div class="badge dark">페이코</div>
+                        <span><img src="../../assets/images/pay-payco.svg" alt="" /></span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //결제 금액 -->
+                  <!-- 할부 방법 -->
+                  <div class="form-group-wrap">
+                    <div class="form-group-header">
+                      <div class="label">할부 방법</div>
+                    </div>
+                    <div class="form-group-body">
+                      <select class="form-select form-select-lg w-100">
+                        <option value="">일시불</option>
+                        <option value="">2개월</option>
+                        <option value="">3개월</option>
+                        <option value="">4개월</option>
+                      </select>
+                    </div>
+                  </div>
+                  <!-- //할부 방법 -->
+                  <!-- 결제 정보 동의 -->
+                  <div class="form-group-wrap d-lg-none">
+                    <div class="form-group-body">
+                      <div class="form-check">
+                        <input type="checkbox" id="orderAgree" />
+                        <label for="orderAgree">결제 정보를 확인하였으며, 동의합니다. (필수)</label>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //결제 정보 동의 -->
+                  <!-- 하단 버튼 -->
+                  <div class="bottom-buttons d-lg-none">
+                    <button type="button" class="btn btn-dark btn-lg w-100 px-0" onclick="location.href='../my/my_event_vote.html'">결제하고 투표하기</button>
+                  </div>
+                  <!-- //하단 버튼 -->
                 </div>
-                <p class="help-text">*제주 및 도서산간 지역 : 추가 배송비 3,000원 발생</p>
               </div>
             </div>
-            <!-- //결제 금액 -->
-            <!-- 결제 방법 -->
-            <div class="form-group-wrap">
-              <div class="form-group-header">
-                <div class="label">결제 방법</div>
-                <!-- 결제 방법 선택 후 -->
-                <button type="button" class="btn btn-muted btn-sm btn-flat text-gray" onclick="location.href='payment_type.html'">변경하기</button>
-              </div>
-              <div class="form-group-body border-top-0 pt-0">
-                <!-- 결제 방법 선택 전 -->
-                <button type="button" class="btn btn-outline-dark btn-flat btn-lg w-100 fw-normal">+ 결제수단 추가하기</button>
-                <!-- 결제 방법 선택 후 -->
-                <div class="added-payment-type">
-                  <div class="badge dark">루픽페이</div>
-                  <span>[신한] 4890 **** **** 2834</span>
-                </div>
-                <div class="added-payment-type">
-                  <div class="badge dark">카카오페이</div>
-                  <span><img src="../../assets/images/pay-kakao.svg" alt="" /></span>
-                </div>
-                <div class="added-payment-type">
-                  <div class="badge dark">네이버페이</div>
-                  <span><img src="../../assets/images/pay-naver.svg" alt="" /></span>
-                </div>
-                <div class="added-payment-type">
-                  <div class="badge dark">토스페이</div>
-                  <span><img src="../../assets/images/pay-toss.svg" alt="" /></span>
-                </div>
-                <div class="added-payment-type">
-                  <div class="badge dark">페이코</div>
-                  <span><img src="../../assets/images/pay-payco.svg" alt="" /></span>
-                </div>
-              </div>
-            </div>
-            <!-- //결제 금액 -->
-            <!-- 할부 방법 -->
-            <div class="form-group-wrap">
-              <div class="form-group-header">
-                <div class="label">할부 방법</div>
-              </div>
-              <div class="form-group-body">
-                <select class="form-select form-select-lg w-100">
-                  <option value="">일시불</option>
-                  <option value="">2개월</option>
-                  <option value="">3개월</option>
-                  <option value="">4개월</option>
-                </select>
-              </div>
-            </div>
-            <!-- //할부 방법 -->
-            <!-- 결제 정보 동의 -->
-            <div class="form-group-wrap">
-              <div class="form-group-body">
-                <div class="form-check">
-                  <input type="checkbox" id="orderAgree" />
-                  <label for="orderAgree">결제 정보를 확인하였으며, 동의합니다. (필수)</label>
-                </div>
-              </div>
-            </div>
-            <!-- //결제 정보 동의 -->
-            <!-- 하단 버튼 -->
-            <div class="bottom-buttons">
-              <button type="button" class="btn btn-dark btn-lg w-100 px-0" onclick="location.href='../my/my_event_vote.html'">결제하고 투표하기</button>
-            </div>
-            <!-- //하단 버튼 -->
-          </div>
-
+          </main>
           <!-- //실컨텐츠 -->
-        </main>
+        </div>
       </div>
       <footer id="footer">
         <div class="container">
@@ -1080,18 +1109,22 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <div class="img">
-              <img src="../../assets/images/@landscape.jpg" alt="" />
+            <div class="d-lg-flex justify-content-lg-between">
+              <div class="img">
+                <img src="../../assets/images/@landscape.jpg" alt="" />
+              </div>
+              <div class="info">
+                <div class="text-lg"><strong>티도</strong>님 <br />루픽리워드 선정을 <br />축하합니다!</div>
+                <div class="event-info">
+                  <div class="won-reward">선정된 리워드</div>
+                  <div class="product">패밀리 SUV의 진화, 현대 2022 SANTA FE</div>
+                  <div class="price">34,750,000원</div>
+                </div>
+                <button type="button" class="btn btn-white btn-lg w-100">루피커 정보 입력하기</button>
+                <button type="button" class="btn btn-white btn-lg w-100" disabled>정보 입력 완료</button>
+                <button type="button" class="btn btn-white btn-lg w-100" disabled>루픽리워드 포기</button>
+              </div>
             </div>
-            <div class="text-lg"><strong>티도</strong>님 <br />루픽리워드 선정을 <br />축하합니다!</div>
-            <div class="event-info">
-              <div class="won-reward">선정된 리워드</div>
-              <div class="product">패밀리 SUV의 진화, 현대 2022 SANTA FE</div>
-              <div class="price">34,750,000원</div>
-            </div>
-            <button type="button" class="btn btn-white btn-lg w-100">루피커 정보 입력하기</button>
-            <button type="button" class="btn btn-white btn-lg w-100" disabled>정보 입력 완료</button>
-            <button type="button" class="btn btn-white btn-lg w-100" disabled>루픽리워드 포기</button>
           </div>
           <div class="result-open-animation">
             <div>1</div>
@@ -1114,15 +1147,19 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <div class="img">
-              <img src="../../assets/images/img-result-fail.png" alt="" />
+            <div class="d-lg-flex justify-content-lg-between">
+              <div class="img">
+                <img src="../../assets/images/img-result-fail.png" alt="" />
+              </div>
+              <div class="info">
+                <div class="text-lg"><strong>티비보는도라에몽</strong>님 <br />아쉽지만 다음 기회를 <br />기약해요!</div>
+                <div class="event-info">
+                  <div class="won-reward">투표 결과확인</div>
+                  <div class="desc">모든 투표결과 데이터는 이벤트 결과보기를 참고하시면 상세하게 확인하실 수 있습니다.</div>
+                </div>
+                <button type="button" class="btn btn-white btn-lg w-100">확인</button>
+              </div>
             </div>
-            <div class="text-lg"><strong>티비보는도라에몽</strong>님 <br />아쉽지만 다음 기회를 <br />기약해요!</div>
-            <div class="event-info">
-              <div class="won-reward">투표 결과확인</div>
-              <div class="desc">모든 투표결과 데이터는 이벤트 결과보기를 참고하시면 상세하게 확인하실 수 있습니다.</div>
-            </div>
-            <button type="button" class="btn btn-white btn-lg w-100">확인</button>
           </div>
         </div>
       </div>
