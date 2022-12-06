@@ -27,9 +27,9 @@
 }
 
 #aside{
-  display: none;margin-right: 50px;
+  display: none;
   @include media-breakpoint-up(lg){
-    display: block;flex: 0 0 220px;margin-right: 50px;
+    display: block;flex: 0 0 220px;margin-right: 60px;
   }
 }
 

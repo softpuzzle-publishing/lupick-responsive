@@ -41,7 +41,7 @@
             <button type="button" class="btn-back" aria-label="뒤로" onclick="window.history.back()">
               <i class="icon-back"></i>
             </button>
-            <h1 class="header-title">이벤트 상세보기</h1>
+            <h1 class="header-title">이벤트상품 정보 상세보기</h1>
             <div class="buttons">
               <!-- 이벤트 상세에서만 노출 -->
               <button type="button" aria-label="공유" data-bs-toggle="modal" data-bs-target="#modal-event-share" class="btn-share"><i class="icon-share"></i></button>
@@ -95,25 +95,28 @@
         </div>
       </header>
       <div id="container">
-        <main id="main">
-          <!-- 실컨텐츠 -->
-          <div class="container">
-            <div class="cms-area">
-              <div class="wrappers" style="max-width: 375px">
-                <div class="container-wrap">
-                  <div class="item article">
-                    <div class="content" style="background-color: #000">
-                      <img alt="" src="https://m.lupick.com//upload/ckeditor/20221028/17895330902788261.png" style="width: 750px; height: 5256px" /> <img alt="" src="https://m.lupick.com//upload/ckeditor/20221028/17895699953801391.gif" style="width: 400px; height: 225px" />
-                      <div class="wrappers" style="max-width: 375px">
-                        <div class="container-wrap">
-                          <div class="item article">
-                            <div class="content">
-                              <img alt="" src="https://m.lupick.com//upload/ckeditor/20221028/17895809632181751.png" style="width: 750px; height: 402px" /> <img alt="" src="https://m.lupick.com//upload/ckeditor/20221028/17895829027295128.gif" style="width: 100%; height: 207px" />
-                              <div class="wrappers" style="max-width: 375px">
-                                <div class="container-wrap">
-                                  <div class="item article">
-                                    <div class="content">
-                                      <img alt="" src="https://m.lupick.com//upload/ckeditor/20221028/17895849777280924.png" style="width: 750px; height: 402px" /> <img alt="" src="https://m.lupick.com//upload/ckeditor/20221028/17895874800941654.png" style="width: 750px; height: 2796px" />
+        <div id="layout">
+          <main id="main">
+            <!-- 실컨텐츠 -->
+            <div class="container">
+              <h1 class="page-title d-none d-lg-block mb-5">이벤트상품 정보 상세보기</h1>
+              <div class="cms-area">
+                <div class="wrappers" style="max-width: 375px">
+                  <div class="container-wrap">
+                    <div class="item article">
+                      <div class="content" style="background-color: #000">
+                        <img alt="" src="https://m.lupick.com//upload/ckeditor/20221028/17895330902788261.png" style="width: 750px; height: 5256px" /> <img alt="" src="https://m.lupick.com//upload/ckeditor/20221028/17895699953801391.gif" style="width: 400px; height: 225px" />
+                        <div class="wrappers" style="max-width: 375px">
+                          <div class="container-wrap">
+                            <div class="item article">
+                              <div class="content">
+                                <img alt="" src="https://m.lupick.com//upload/ckeditor/20221028/17895809632181751.png" style="width: 750px; height: 402px" /> <img alt="" src="https://m.lupick.com//upload/ckeditor/20221028/17895829027295128.gif" style="width: 100%; height: 207px" />
+                                <div class="wrappers" style="max-width: 375px">
+                                  <div class="container-wrap">
+                                    <div class="item article">
+                                      <div class="content">
+                                        <img alt="" src="https://m.lupick.com//upload/ckeditor/20221028/17895849777280924.png" style="width: 750px; height: 402px" /> <img alt="" src="https://m.lupick.com//upload/ckeditor/20221028/17895874800941654.png" style="width: 750px; height: 2796px" />
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
@@ -127,9 +130,9 @@
                 </div>
               </div>
             </div>
-          </div>
-          <!-- //실컨텐츠 -->
-        </main>
+            <!-- //실컨텐츠 -->
+          </main>
+        </div>
       </div>
       <footer id="footer">
         <div class="container">
@@ -1037,43 +1040,59 @@
 
     <!-- modal: 리뷰 확대 보기 -->
     <div class="modal modal-review" tabindex="-1" id="modal-review">
-      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable modal-lg">
+      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable modal-xl">
         <div class="modal-content">
-          <button type="button" class="btn-close white" data-bs-dismiss="modal" aria-label="Close"></button>
-          <div class="modal-body">
-            <div class="user">
-              <div class="user-profile"><img src="../../assets/images/@profile.jpg" alt="티도" /></div>
-              <div class="user-info">
-                <div class="name">티도</div>
-                <div class="date">2022.05.20 작성</div>
-              </div>
+          <button type="button" class="btn-close white d-lg-none" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-header justify-content-between d-none d-lg-flex">
+            <div class="d-flex align-items-center">
+              <h5 class="modal-title">리뷰 상세보기</h5>
             </div>
-            <div class="photos">
-              <div class="swiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
-                  </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="d-lg-flex">
+              <div class="user d-lg-none">
+                <div class="user-profile"><img src="../../assets/images/@profile.jpg" alt="티도" /></div>
+                <div class="user-info">
+                  <div class="name">티도</div>
+                  <div class="date">2022.05.20 작성</div>
                 </div>
               </div>
-              <div class="swiper-pagination review-swiper-pagination"></div>
-            </div>
-            <div class="review-collapse">
-              <div class="option">[옵션] 감자볶음밥</div>
-              <div class="content">
-                <span id="reviewContent"></span> <a href="javascript:;" class="more"><span>더보기</span><i class="icon-more-arrow-down m-l-5"></i></a>
+              <div class="photos">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination review-swiper-pagination"></div>
+              </div>
+              <div class="review-collapse">
+                <div class="user d-none d-lg-flex">
+                  <div class="user-profile"><img src="../../assets/images/@profile.jpg" alt="티도" /></div>
+                  <div class="user-info">
+                    <div class="name">티도</div>
+                    <div class="date">2022.05.20 작성</div>
+                  </div>
+                </div>
+                <div class="option">[옵션] 감자볶음밥</div>
+                <div class="content">
+                  <span id="reviewContent"></span>
+                  <a href="javascript:;" class="more"><span>더보기</span><i class="icon-more-arrow-down m-l-5"></i></a>
+                </div>
               </div>
             </div>
           </div>

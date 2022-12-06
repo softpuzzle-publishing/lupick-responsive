@@ -9,18 +9,21 @@
   <div id="wrap">
     @@include('@@webRoot/html/_include/_header.html', { "title": "이벤트 프로세스" })
     <div id="container">
-      <main id="main">
-        <!-- 실컨텐츠 -->
-        <div class="event-process">
-          <!-- 일반이벤트 -->
-          <img src="@@webRoot/assets/images/img-event-process-normal.png" alt="">
-          <!-- 포인트이벤트 -->
-          <img src="@@webRoot/assets/images/img-event-process-point.png" alt="">
-          <!-- 프리이벤트 -->
-          <img src="@@webRoot/assets/images/img-event-process-free.png" alt="">
-        </div>
-        <!-- //실컨텐츠 -->
-      </main>
+      <div id="layout">
+        <main id="main">
+          <!-- 실컨텐츠 -->
+          <h1 class="page-title d-none d-lg-block mb-5">이벤트 프로세스</h1>
+          <div class="event-process">
+            <!-- 일반이벤트 -->
+            <img src="@@webRoot/assets/images/img-event-process-normal.png" alt="">
+            <!-- 포인트이벤트 -->
+            <img src="@@webRoot/assets/images/img-event-process-point.png" alt="">
+            <!-- 프리이벤트 -->
+            <img src="@@webRoot/assets/images/img-event-process-free.png" alt="">
+          </div>
+          <!-- //실컨텐츠 -->
+        </main>
+      </div>
     </div>
     @@include('@@webRoot/html/_include/_footer.html')
   </div>

@@ -9,20 +9,23 @@
   <div id="wrap">
     @@include('@@webRoot/html/_include/_header.html', { "title": "안내사항" })
     <div id="container">
-      <main id="main">
-        <!-- 실컨텐츠 -->
-        <div class="container">
-          <dl class="item-info">
-            <dt>안내사항</dt>
-            <dd class="white-break-spaces">- 아이템 배송은 결제 순서대로 순차 출고됩니다.
-              - 럭키템에 대한 제세공과금은 루픽이 부담합니다.
-              - 개인소득에 따른 차이로 발생하는 추가 공과금은 개인이 부담하여야 합니다.
-              - 주문취소로 인해 발생하는 차액은 ‘포인트’ 럭키템에서 차감되며 이벤트 상세페이지 내 명시된 포인트와 이후 지급되는 포인트에 차이가 있을 수 있습니다.
-            </dd>
-          </dl>
-        </div>
-        <!-- //실컨텐츠 -->
-      </main>
+      <div id="layout">
+        <main id="main">
+          <!-- 실컨텐츠 -->
+          <div class="container">
+            <h1 class="page-title d-none d-lg-block mb-5">안내사항</h1>
+            <dl class="item-info">
+              <dt>안내사항</dt>
+              <dd class="white-break-spaces">- 아이템 배송은 결제 순서대로 순차 출고됩니다.
+                - 럭키템에 대한 제세공과금은 루픽이 부담합니다.
+                - 개인소득에 따른 차이로 발생하는 추가 공과금은 개인이 부담하여야 합니다.
+                - 주문취소로 인해 발생하는 차액은 ‘포인트’ 럭키템에서 차감되며 이벤트 상세페이지 내 명시된 포인트와 이후 지급되는 포인트에 차이가 있을 수 있습니다.
+              </dd>
+            </dl>
+          </div>
+          <!-- //실컨텐츠 -->
+        </main>
+      </div>
     </div>
     @@include('@@webRoot/html/_include/_footer.html')
   </div>

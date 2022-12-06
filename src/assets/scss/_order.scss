@@ -115,7 +115,12 @@
 
 .my-exchange-item{
   margin-bottom: 25px;
-  a{font-size: 16px;line-height: 1.625;font-weight: 700;text-decoration: underline;}
+  a{
+    font-size: 16px;line-height: 1.625;font-weight: 700;text-decoration: underline;
+    @include media-breakpoint-up(lg){
+      font-size: 18px;
+    }
+  }
 }
 
 .my-exchange-item-number{font-size: 14px;margin-bottom: 15px;}
@@ -136,8 +141,16 @@
 
 .process-finish{
   padding: 65px 0 180px;
+  @include media-breakpoint-up(lg){
+    padding-bottom: 80px;
+  }
   .heading-text{display: block;font-size: 40px;line-height: 1.25;margin-bottom: 30px;}
-  .desc{font-size: 13px;line-height: 1.846;}
+  .desc{
+    font-size: 13px;line-height: 1.846;
+    @include media-breakpoint-up(lg){
+      font-size: 16px;
+    }
+  }
 }
 
 .leave{

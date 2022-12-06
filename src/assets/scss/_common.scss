@@ -293,5 +293,10 @@
 .bottom-text-guide{
   margin-top: 30px;
   .help-text{margin-top: 0;}
-  .link{font-size: 13px;font-weight: 700;display: inline-block;margin-top: 8px;}
+  .link{
+    font-size: 13px;font-weight: 700;display: inline-block;margin-top: 8px;
+    @include media-breakpoint-up(lg){
+      font-size: 14px;
+    }
+  }
 }

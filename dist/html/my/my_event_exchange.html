@@ -95,193 +95,326 @@
         </div>
       </header>
       <div id="container">
-        <main id="main">
-          <!-- 실컨텐츠 -->
-
-          <div class="container pt-20px">
-            <div class="my-exchange-item">
-              <a href="#none">믿고 먹는 추멘세끼 감자볶음밥, 성원에 힘입어 이번엔 🚙와 컴백!!</a>
-            </div>
-            <div class="my-exchange-item-number">2022.06.14 / 주문번호 200020264169</div>
-            <!-- 사유 선택 -->
-            <div class="form-group-wrap mt-0">
-              <div class="form-group-header">
-                <div class="label">사유 선택(필수)</div>
-              </div>
-              <div class="form-group-body">
-                <div class="form-group">
-                  <label for="exchangeFeeType1" class="form-label">배송비 판매자 부담</label>
-                  <div class="row g-10px">
-                    <div class="col-6">
-                      <div class="form-check button w-100">
-                        <input type="radio" id="exchangeFeeType1" name="exchangeFeeType" />
-                        <label for="exchangeFeeType1">파손 및 불량</label>
+        <div id="my-top">
+          <div class="container">
+            <div class="row gx-2">
+              <div class="col-auto">
+                <div class="my-top-left">
+                  <div class="my-top-box">
+                    <div class="my-profile">
+                      <div class="img">
+                        <!-- <img src="../../assets/images/profile-before-login-1.svg" alt="프로필 사진 없음(로그인 전)" class="default">
+                  <img src="../../assets/images/profile-after-login-1.svg" alt="프로필 사진 없음(로그인 후)" class="default"> -->
+                        <img src="../../assets/images/@profile.jpg" alt="복남이 프로필 사진" />
                       </div>
-                    </div>
-                    <div class="col-6">
-                      <div class="form-check button w-100">
-                        <input type="radio" id="exchangeFeeType2" name="exchangeFeeType" />
-                        <label for="exchangeFeeType2">오배송</label>
+                      <div class="info">
+                        <!-- 로그인 전 -->
+                        <!-- <a href="../login/login.html" class="username">로그인 <i class="icon-full-menu-arr"></i></a> -->
+                        <!-- 로그인 후 -->
+                        <div class="username">복남이</div>
                       </div>
+                      <a href="../../html/my/my_profile.html" class="btn btn-xs btn-outline-light">설정</a>
                     </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="exchangeFeeType3" class="form-label">배송비 구매자 부담</label>
-                  <div class="row g-10px">
-                    <div class="col-6">
-                      <div class="form-check button w-100">
-                        <input type="radio" id="exchangeFeeType3" name="exchangeFeeType" />
-                        <label for="exchangeFeeType3">단순 변심</label>
+                    <div class="my-point">
+                      <div class="point">
+                        <i class="icon-point"></i>
+                        <strong>77,000</strong>
                       </div>
-                    </div>
-                    <div class="col-6">
-                      <div class="form-check button w-100">
-                        <input type="radio" id="exchangeFeeType4" name="exchangeFeeType" />
-                        <label for="exchangeFeeType4">주문 실수</label>
+                      <div class="menu">
+                        <a href="../util/lupickguide.html">사용방법</a>
+                        <span class="bar"></span>
+                        <a href="my_point.html">사용내역</a>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- //사유 선택 -->
-            <!-- 상세 내용 -->
-            <div class="form-group-wrap">
-              <div class="form-group-header">
-                <div class="label">상세 내용(필수)</div>
-              </div>
-              <div class="form-group-body">
-                <div class="textarea">
-                  <textarea rows="6" class="form-control" placeholder="내용을 입력해주세요" maxlength="300"></textarea>
-                  <div class="byte"><span>0</span>/300자</div>
-                </div>
-              </div>
-            </div>
-            <!-- //상세 내용 -->
-            <!-- 첨부파일 -->
-            <div class="form-group-wrap">
-              <div class="form-group-header">
-                <div class="label">첨부파일(선택)</div>
-              </div>
-              <div class="form-group-body">
-                <div class="uploaded-file">
-                  <div class="row align-items-center h-100">
-                    <div class="col">
-                      <div class="file-name">img0456.jpg</div>
+              <div class="col">
+                <div class="my-top-right">
+                  <div class="my-top-box">
+                    <div class="my-event-state">
+                      <div class="section-title">참여 이벤트 상태 <small>(최근 3개월)</small></div>
+                      <div class="my-event-step">
+                        <div class="row gx-2 justify-content-between align-items-center">
+                          <a href="../../html/my/my_event_ing.html" class="col">
+                            <div class="event-count"><span class="text-secondary">21</span></div>
+                            <div class="event-order">참여중 이벤트</div>
+                          </a>
+                          <div class="col-auto"><i class="icon-step-arr-right"></i></div>
+                          <a href="../../html/my/my_event_votable.html" class="col">
+                            <div class="event-count"><span class="text-secondary">4</span></div>
+                            <div class="event-order">투표 요청</div>
+                          </a>
+                          <div class="col-auto"><i class="icon-step-arr-right"></i></div>
+                          <a href="../../html/my/my_event_shipping.html" class="col">
+                            <div class="event-count"><span>0</span></div>
+                            <div class="event-order">상품 배송중</div>
+                          </a>
+                          <div class="col-auto"><i class="icon-step-arr-right"></i></div>
+                          <a href="../../html/my/my_event_purchasing_confirmation.html" class="col">
+                            <div class="event-count"><span>0</span></div>
+                            <div class="event-order">구매확정 확인</div>
+                          </a>
+                          <div class="col-auto"><i class="icon-step-arr-right"></i></div>
+                          <a href="../../html/my/my_event_result.html" class="col">
+                            <div class="event-count"><span>0</span></div>
+                            <div class="event-order">이벤트 결과</div>
+                          </a>
+                        </div>
+                      </div>
                     </div>
-                    <div class="col-auto">
-                      <button type="button" class="btn-file-delete"><i class="icon-file-delete"></i></button>
+                  </div>
+                  <div class="my-top-buttons">
+                    <div class="row g-2">
+                      <div class="col">
+                        <button type="button" class="btn btn-white btn-round btn-xl fw-bold w-100" onclick="location.href='../../html/my/my_event_writable_reviews.html'">리뷰쓰고 포인트 받자 <span class="text-secondary ms-2">21</span></button>
+                      </div>
+                      <div class="col">
+                        <button type="button" class="btn btn-dark btn-round btn-xl fw-bold w-100 text-primary" onclick="location.href='../../html/my/my_event_selected_lupicker.html'">선정된 이벤트 확인</button>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="uploaded-file">
-                  <div class="row align-items-center h-100">
-                    <div class="col">
-                      <div class="file-name">img0456.jpg</div>
-                    </div>
-                    <div class="col-auto">
-                      <button type="button" class="btn-file-delete"><i class="icon-file-delete"></i></button>
-                    </div>
-                  </div>
-                </div>
-                <button type="button" class="btn btn-outline-light btn-flat btn-lg w-100 justify-content-start text-gray-light" id="btn-file">+ 첨부파일 추가</button>
-                <input type="file" class="visually-hidden" />
-                <script>
-                  $('#btn-file').on('click', function () {
-                    $(this).siblings('input[type=file]').click();
-                  });
-                </script>
-                <p class="help-text">포맷 jpg/png/gif, 최대 3개, 개당 5MB, 총 10MB 등록 가능</p>
               </div>
             </div>
-            <!-- //첨부파일 -->
-            <!-- 해결 방법 -->
-            <div class="form-group-wrap">
-              <div class="form-group-header">
-                <label for="solutionType1" class="label">해결 방법(필수)</label>
-              </div>
-              <div class="form-group-body">
-                <div class="form-check inline">
-                  <input type="radio" id="solutionType1" name="solutionType" />
-                  <label for="solutionType1">교환</label>
-                </div>
-                <div class="form-check inline">
-                  <input type="radio" id="solutionType2" name="solutionType" />
-                  <label for="solutionType2">반품 후 환불</label>
-                </div>
-              </div>
-            </div>
-            <!-- //첨부파일 -->
-            <!-- 상품 회수지 정보 -->
-            <div class="form-group-wrap">
-              <div class="form-group-header">
-                <label for="solutionType1" class="label">상품 회수지 정보</label>
-                <button type="button" class="btn btn-muted btn-sm btn-flat text-gray" data-bs-toggle="modal" data-bs-target="#modal-address-edit">변경하기</button>
-              </div>
-              <div class="form-group-body">
-                <address class="address-item">
-                  <div class="zipcode">04720</div>
-                  <div class="addr">서울시 강남구 도산대로 54길 32 (도산아파트) 도산아파트 101동 202호</div>
-                  <div class="name">이정후, 010-1234-5678</div>
-                  <span class="badge dark">기본 배송지</span>
-                </address>
-                <select class="form-select form-select-lg w-100">
-                  <option value="">배송 메모 (선택)</option>
-                  <option value="" selected>배송 전에 미리 연락 바랍니다.</option>
-                  <option value="">부재 시 경비실에 맡겨주세요.</option>
-                  <option value="">부재 시 문 앞에 놓아주세요.</option>
-                  <option value="">부재 시 전화나 문자 남겨주세요.</option>
-                  <option value="직접 입력">직접 입력</option>
-                </select>
-                <div class="textarea visually-hidden mt-10px">
-                  <textarea rows="2" class="form-control" placeholder="직접 입력" maxlength="100"></textarea>
-                </div>
-              </div>
-            </div>
-            <!-- //상품 회수지 정보 -->
-            <!-- 환불 예정 금액 -->
-            <div class="form-group-wrap">
-              <div class="form-group-header">
-                <div class="label">환불 예정 금액</div>
-                <div class="sum-pay">14,850원</div>
-              </div>
-              <div class="form-group-body">
-                <dl class="info-list between">
-                  <dt>상품금액</dt>
-                  <dd>11,500 원</dd>
-                  <dt>포인트</dt>
-                  <dd>850 원</dd>
-                  <dt>배송비</dt>
-                  <dd>2,500원</dd>
-                </dl>
-              </div>
-            </div>
-            <!-- //환불 예정 금액 -->
-            <!-- 추가 결제 비용 -->
-            <div class="form-group-wrap">
-              <div class="form-group-header">
-                <div class="label">추가 결제 비용</div>
-                <div class="sum-pay">5,000원</div>
-              </div>
-              <div class="form-group-body">
-                <dl class="info-list between">
-                  <dt>반품 및 배송비</dt>
-                  <dd>5,000 원</dd>
-                </dl>
-                <p class="help-text">*제주 및 도서산간 지역 : 추가 배송비 3,000원 발생</p>
-              </div>
-            </div>
-            <!-- //추가 결제 비용 -->
-            <!-- 하단 버튼 -->
-            <div class="bottom-buttons">
-              <button type="button" class="btn btn-dark btn-lg w-100 px-0" onclick="location.href='my_event_exchange_payment.html'">신청하기</button>
-            </div>
-            <!-- //하단 버튼 -->
           </div>
-
-          <!-- //실컨텐츠 -->
-        </main>
+        </div>
+        <div id="layout">
+          <aside id="aside">
+            <h1 class="sidebar-title">마이페이지</h1>
+            <nav class="sidebar">
+              <ul>
+                <!-- <li><a href="../../html/my/my_event_ing.html"><span>참여중 이벤트</span></a></li>
+      <li><a href="../../html/my/my_event_votable.html"><span>투표 요청</span></a></li>
+      <li><a href="../../html/my/my_event_shipping.html"><span>상품 배송중</span></a></li>
+      <li><a href="../../html/my/my_event_purchasing_confirmation.html"><span>구매확정 확인</span></a></li>
+      <li><a href="../../html/my/my_event_result.html"><span>이벤트 결과</span></a></li>
+      <li><a href="../../html/my/my_event_writable_reviews.html"><span>리뷰쓰기</span></a></li>
+      <li><a href="../../html/my/my_event_selected_lupicker.html"><span>선정된 이벤트</span></a></li> -->
+                <li class="active">
+                  <a href="../../html/my/my_event_order_history.html"><span>주문 및 참여 내역</span></a>
+                </li>
+                <li>
+                  <a href="../../html/my/my_event_cancel_history.html"><span>취소/교환/반품 내역</span></a>
+                </li>
+                <li>
+                  <a href="../../html/my/my_event_reviews.html"><span>나의 리뷰</span></a>
+                </li>
+                <li>
+                  <a href="../../html/customer/customer_my_qna.html"><span>문의 내역</span></a>
+                </li>
+                <!-- <li><a href="../../html/util/lupickguide.html"><span>포인트 사용방법</span></a></li> -->
+                <li>
+                  <a href="../../html/my/my_point.html"><span>포인트 사용내역</span></a>
+                </li>
+                <li>
+                  <a href="../../html/my/my_profile.html"><span>프로필 편집</span></a>
+                </li>
+                <li>
+                  <a href="../../html/my/my_info_password.html"><span>내 정보 관리</span></a>
+                </li>
+                <li>
+                  <a href="../../html/my/my_address.html"><span>배송지 관리</span></a>
+                </li>
+                <li>
+                  <a href="../../html/notice/notice.html"><span>공지사항</span></a>
+                </li>
+                <li>
+                  <a href="../../html/customer/customer.html"><span>고객센터</span></a>
+                </li>
+              </ul>
+              <a href="javascript:;" class="btn-friend-invite">친구초대하고 <span class="text-secondary">1,000P</span>씩 받기</a>
+            </nav>
+          </aside>
+          <main id="main">
+            <!-- 실컨텐츠 -->
+            <div class="main-title-area">
+              <h2 class="main-title">교환 및 반품 신청</h2>
+            </div>
+            <div class="container pt-20px">
+              <div class="my-exchange-item">
+                <a href="#none">믿고 먹는 추멘세끼 감자볶음밥, 성원에 힘입어 이번엔 🚙와 컴백!!</a>
+              </div>
+              <div class="my-exchange-item-number">2022.06.14 / 주문번호 200020264169</div>
+              <!-- 사유 선택 -->
+              <div class="form-group-wrap mt-0">
+                <div class="form-group-header">
+                  <div class="label">사유 선택(필수)</div>
+                </div>
+                <div class="form-group-body">
+                  <div class="form-group">
+                    <label for="exchangeFeeType1" class="form-label">배송비 판매자 부담</label>
+                    <div class="row g-10px">
+                      <div class="col-6">
+                        <div class="form-check button w-100">
+                          <input type="radio" id="exchangeFeeType1" name="exchangeFeeType" />
+                          <label for="exchangeFeeType1">파손 및 불량</label>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-check button w-100">
+                          <input type="radio" id="exchangeFeeType2" name="exchangeFeeType" />
+                          <label for="exchangeFeeType2">오배송</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="exchangeFeeType3" class="form-label">배송비 구매자 부담</label>
+                    <div class="row g-10px">
+                      <div class="col-6">
+                        <div class="form-check button w-100">
+                          <input type="radio" id="exchangeFeeType3" name="exchangeFeeType" />
+                          <label for="exchangeFeeType3">단순 변심</label>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-check button w-100">
+                          <input type="radio" id="exchangeFeeType4" name="exchangeFeeType" />
+                          <label for="exchangeFeeType4">주문 실수</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- //사유 선택 -->
+              <!-- 상세 내용 -->
+              <div class="form-group-wrap">
+                <div class="form-group-header">
+                  <div class="label">상세 내용(필수)</div>
+                </div>
+                <div class="form-group-body">
+                  <div class="textarea">
+                    <textarea rows="6" class="form-control" placeholder="내용을 입력해주세요" maxlength="300"></textarea>
+                    <div class="byte"><span>0</span>/300자</div>
+                  </div>
+                </div>
+              </div>
+              <!-- //상세 내용 -->
+              <!-- 첨부파일 -->
+              <div class="form-group-wrap">
+                <div class="form-group-header">
+                  <div class="label">첨부파일(선택)</div>
+                </div>
+                <div class="form-group-body">
+                  <div class="uploaded-file">
+                    <div class="row align-items-center h-100">
+                      <div class="col">
+                        <div class="file-name">img0456.jpg</div>
+                      </div>
+                      <div class="col-auto">
+                        <button type="button" class="btn-file-delete"><i class="icon-file-delete"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="uploaded-file">
+                    <div class="row align-items-center h-100">
+                      <div class="col">
+                        <div class="file-name">img0456.jpg</div>
+                      </div>
+                      <div class="col-auto">
+                        <button type="button" class="btn-file-delete"><i class="icon-file-delete"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-outline-light btn-flat btn-lg w-100 justify-content-start text-gray-light" id="btn-file">+ 첨부파일 추가</button>
+                  <input type="file" class="visually-hidden" />
+                  <script>
+                    $('#btn-file').on('click', function () {
+                      $(this).siblings('input[type=file]').click();
+                    });
+                  </script>
+                  <p class="help-text">포맷 jpg/png/gif, 최대 3개, 개당 5MB, 총 10MB 등록 가능</p>
+                </div>
+              </div>
+              <!-- //첨부파일 -->
+              <!-- 해결 방법 -->
+              <div class="form-group-wrap">
+                <div class="form-group-header">
+                  <label for="solutionType1" class="label">해결 방법(필수)</label>
+                </div>
+                <div class="form-group-body">
+                  <div class="form-check inline">
+                    <input type="radio" id="solutionType1" name="solutionType" />
+                    <label for="solutionType1">교환</label>
+                  </div>
+                  <div class="form-check inline">
+                    <input type="radio" id="solutionType2" name="solutionType" />
+                    <label for="solutionType2">반품 후 환불</label>
+                  </div>
+                </div>
+              </div>
+              <!-- //첨부파일 -->
+              <!-- 상품 회수지 정보 -->
+              <div class="form-group-wrap">
+                <div class="form-group-header">
+                  <label for="solutionType1" class="label">상품 회수지 정보</label>
+                  <button type="button" class="btn btn-muted btn-sm btn-flat text-gray" data-bs-toggle="modal" data-bs-target="#modal-address-edit">변경하기</button>
+                </div>
+                <div class="form-group-body">
+                  <address class="address-item">
+                    <div class="zipcode">04720</div>
+                    <div class="addr">서울시 강남구 도산대로 54길 32 (도산아파트) 도산아파트 101동 202호</div>
+                    <div class="name">이정후, 010-1234-5678</div>
+                    <span class="badge dark">기본 배송지</span>
+                  </address>
+                  <select class="form-select form-select-lg w-100">
+                    <option value="">배송 메모 (선택)</option>
+                    <option value="" selected>배송 전에 미리 연락 바랍니다.</option>
+                    <option value="">부재 시 경비실에 맡겨주세요.</option>
+                    <option value="">부재 시 문 앞에 놓아주세요.</option>
+                    <option value="">부재 시 전화나 문자 남겨주세요.</option>
+                    <option value="직접 입력">직접 입력</option>
+                  </select>
+                  <div class="textarea visually-hidden mt-10px">
+                    <textarea rows="2" class="form-control" placeholder="직접 입력" maxlength="100"></textarea>
+                  </div>
+                </div>
+              </div>
+              <!-- //상품 회수지 정보 -->
+              <!-- 환불 예정 금액 -->
+              <div class="form-group-wrap">
+                <div class="form-group-header">
+                  <div class="label">환불 예정 금액</div>
+                  <div class="sum-pay">14,850원</div>
+                </div>
+                <div class="form-group-body">
+                  <dl class="info-list between">
+                    <dt>상품금액</dt>
+                    <dd>11,500 원</dd>
+                    <dt>포인트</dt>
+                    <dd>850 원</dd>
+                    <dt>배송비</dt>
+                    <dd>2,500원</dd>
+                  </dl>
+                </div>
+              </div>
+              <!-- //환불 예정 금액 -->
+              <!-- 추가 결제 비용 -->
+              <div class="form-group-wrap">
+                <div class="form-group-header">
+                  <div class="label">추가 결제 비용</div>
+                  <div class="sum-pay">5,000원</div>
+                </div>
+                <div class="form-group-body">
+                  <dl class="info-list between">
+                    <dt>반품 및 배송비</dt>
+                    <dd>5,000 원</dd>
+                  </dl>
+                  <p class="help-text">*제주 및 도서산간 지역 : 추가 배송비 3,000원 발생</p>
+                </div>
+              </div>
+              <!-- //추가 결제 비용 -->
+              <!-- 하단 버튼 -->
+              <div class="bottom-buttons">
+                <button type="button" class="btn btn-dark btn-lg w-100 px-0" onclick="location.href='my_event_exchange_payment.html'">신청하기</button>
+              </div>
+              <!-- //하단 버튼 -->
+            </div>
+            <!-- //실컨텐츠 -->
+          </main>
+        </div>
       </div>
       <footer id="footer">
         <div class="container">
@@ -1190,43 +1323,59 @@
 
     <!-- modal: 리뷰 확대 보기 -->
     <div class="modal modal-review" tabindex="-1" id="modal-review">
-      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable modal-lg">
+      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable modal-xl">
         <div class="modal-content">
-          <button type="button" class="btn-close white" data-bs-dismiss="modal" aria-label="Close"></button>
-          <div class="modal-body">
-            <div class="user">
-              <div class="user-profile"><img src="../../assets/images/@profile.jpg" alt="티도" /></div>
-              <div class="user-info">
-                <div class="name">티도</div>
-                <div class="date">2022.05.20 작성</div>
-              </div>
+          <button type="button" class="btn-close white d-lg-none" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-header justify-content-between d-none d-lg-flex">
+            <div class="d-flex align-items-center">
+              <h5 class="modal-title">리뷰 상세보기</h5>
             </div>
-            <div class="photos">
-              <div class="swiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
-                  </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="d-lg-flex">
+              <div class="user d-lg-none">
+                <div class="user-profile"><img src="../../assets/images/@profile.jpg" alt="티도" /></div>
+                <div class="user-info">
+                  <div class="name">티도</div>
+                  <div class="date">2022.05.20 작성</div>
                 </div>
               </div>
-              <div class="swiper-pagination review-swiper-pagination"></div>
-            </div>
-            <div class="review-collapse">
-              <div class="option">[옵션] 감자볶음밥</div>
-              <div class="content">
-                <span id="reviewContent"></span> <a href="javascript:;" class="more"><span>더보기</span><i class="icon-more-arrow-down m-l-5"></i></a>
+              <div class="photos">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination review-swiper-pagination"></div>
+              </div>
+              <div class="review-collapse">
+                <div class="user d-none d-lg-flex">
+                  <div class="user-profile"><img src="../../assets/images/@profile.jpg" alt="티도" /></div>
+                  <div class="user-info">
+                    <div class="name">티도</div>
+                    <div class="date">2022.05.20 작성</div>
+                  </div>
+                </div>
+                <div class="option">[옵션] 감자볶음밥</div>
+                <div class="content">
+                  <span id="reviewContent"></span>
+                  <a href="javascript:;" class="more"><span>더보기</span><i class="icon-more-arrow-down m-l-5"></i></a>
+                </div>
               </div>
             </div>
           </div>

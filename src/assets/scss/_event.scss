@@ -238,7 +238,7 @@
     .date{font-size: 12px;color: $gray-light;line-height: 1;margin-top: 7px;}
   }
   @include media-breakpoint-up(lg){
-    .user-profile{width: 44px;height: 44px;}
+    .user-profile{width: 44px;height: 44px;margin-right: 8px;}
     .user-info{
       .name{font-size: 18px;}
       .date{font-size: 16px;}
@@ -313,7 +313,12 @@
         &::after{content: '했어요';}
       }
     }
-    p{font-size: 14px;color: rgb(153,153,153);}
+    p{
+      font-size: 14px;color: rgb(153,153,153);
+      @include media-breakpoint-up(lg){
+        font-size: 16px;
+      }
+    }
   }
   @include media-breakpoint-up(lg){
     .title{font-size: 14px;}
@@ -360,6 +365,38 @@
     font-size: 14px;line-height: 1.571;color: #fff;
     .more{color: rgba(255,255,255,.6);margin-left: 10px;}
   }
+  @include media-breakpoint-up(lg){
+    .modal-content{background: #fff;}
+    .user{position: static;}
+    .user-info{
+      .name{color: #000;}
+    }
+    .photos{
+      position: static;flex: 0 0 480px;border-radius: 7px;overflow: hidden;
+      .swiper{height: auto;}
+      .swiper-slide{
+        width: 480px !important;height: 480px !important;
+        .img{
+          border-radius: 7px;overflow: hidden;background: #000;
+          img{object-fit: contain;}
+          &::before{display: none;}
+        }
+      }
+      .swiper-pagination{
+        position: static;margin-top: 10px;
+        .swiper-pagination-bullet{background: rgba(0,0,0,0.25);}
+        .swiper-pagination-bullet-active{background: #000;}
+      }
+    }
+    .review-collapse{
+      position: static;background: transparent;padding: 0 0 0 30px;
+    }
+    .option{font-size: 14px;}
+    .content{
+      font-size: 16px;color: #000;
+      .more{color: $gray-light;}
+    }
+  }
 }
 
 .review-sort{
@@ -375,6 +412,9 @@
       &::before{color: $secondary;}
     }
     & + a{margin-left: 5px;}
+    @include media-breakpoint-up(lg){
+      font-size: 16px;
+    }
   }
 }
 
@@ -654,6 +694,9 @@
   dt{margin-top: 20px;}
   dd{
     line-height: 1.8;
+  }
+  @include media-breakpoint-up(lg){
+    font-size: 16px;
   }
 }
 

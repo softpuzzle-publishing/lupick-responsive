@@ -10,6 +10,9 @@
     line-height: 1.6666;
     color: $gray;
     margin-top: 10px;
+    @include media-breakpoint-up(lg){
+      font-size: 14px;
+    }
   }
   &.active {
     border-color: $dark;
@@ -28,6 +31,9 @@ textarea {
     color: $dark;
     flex-grow: 1;
     width: 100%;
+    @include media-breakpoint-up(lg){
+      font-size: 15px;
+    }
     &:focus-visible {
       outline: 0;
     }

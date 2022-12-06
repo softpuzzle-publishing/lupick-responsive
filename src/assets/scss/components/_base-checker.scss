@@ -98,6 +98,9 @@
       &:checked{background-color: $secondary;background-image: url('../images/checkbox-arr-white.svg');}
     }
     label{font-weight: 400;line-height: 1;}
+    @include media-breakpoint-up(lg){
+      label{font-size: 16px;}
+    }
   }
 
   /* checkbox - switch */
@@ -161,6 +164,9 @@
       }
       & ~ label{
         width: 100%;background: #f7f7f7;height: 35px;line-height: 35px;color: $dark;border: 0;border-radius: 7px;text-align: left;padding-left: 10px;padding-right: 10px;transition: background-color .2s;
+        @include media-breakpoint-up(lg){
+          height: 48px;line-height: 48px;font-size: 18px;
+        }
       }
     }
   }

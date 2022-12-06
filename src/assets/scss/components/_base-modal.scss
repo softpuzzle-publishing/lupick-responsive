@@ -188,3 +188,9 @@ body.modal-open{
     max-width: 560px;
   }
 }
+
+.modal-xl{
+  @include media-breakpoint-up(lg){
+    max-width: 920px;
+  }
+}

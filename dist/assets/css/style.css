@@ -419,6 +419,11 @@ input.form-control.form-control-lg {
   color: #666;
   margin-top: 10px;
 }
+@media (min-width: 992px) {
+  .textarea .byte {
+    font-size: 14px;
+  }
+}
 .textarea.active {
   border-color: #000;
 }
@@ -435,6 +440,11 @@ textarea.form-control {
   color: #000;
   flex-grow: 1;
   width: 100%;
+}
+@media (min-width: 992px) {
+  textarea.form-control {
+    font-size: 15px;
+  }
 }
 textarea.form-control:focus-visible {
   outline: 0;
@@ -567,6 +577,11 @@ textarea.form-control::placeholder {
   font-weight: 400;
   line-height: 1;
 }
+@media (min-width: 992px) {
+  .form-check.point-style label {
+    font-size: 16px;
+  }
+}
 .form-check.switch {
   padding-left: 60px;
   min-height: 30px;
@@ -662,6 +677,13 @@ textarea.form-control::placeholder {
   padding-left: 10px;
   padding-right: 10px;
   transition: background-color 0.2s;
+}
+@media (min-width: 992px) {
+  .form-check.button input[type=checkbox] ~ label {
+    height: 48px;
+    line-height: 48px;
+    font-size: 18px;
+  }
 }
 
 .form-select {
@@ -1235,6 +1257,12 @@ body.modal-open {
 @media (min-width: 992px) {
   .modal-lg {
     max-width: 560px;
+  }
+}
+
+@media (min-width: 992px) {
+  .modal-xl {
+    max-width: 920px;
   }
 }
 
@@ -1874,13 +1902,12 @@ progress {
 
 #aside {
   display: none;
-  margin-right: 50px;
 }
 @media (min-width: 992px) {
   #aside {
     display: block;
     flex: 0 0 220px;
-    margin-right: 50px;
+    margin-right: 60px;
   }
 }
 
@@ -1907,8 +1934,6 @@ progress {
 }
 #header {
   background: #fff;
-  padding-left: 20px;
-  padding-right: 20px;
   position: fixed;
   left: 0;
   top: 0;
@@ -1980,6 +2005,10 @@ progress {
 }
 
 @media (min-width: 992px) {
+  #hader {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   .header-main,
   .header-sub {
     display: none !important;
@@ -2752,6 +2781,11 @@ progress {
   display: inline-block;
   margin-top: 8px;
 }
+@media (min-width: 992px) {
+  .bottom-text-guide .link {
+    font-size: 14px;
+  }
+}
 
 .cms-area {
   overflow: hidden;
@@ -3313,6 +3347,7 @@ progress {
   .user .user-profile {
     width: 44px;
     height: 44px;
+    margin-right: 8px;
   }
   .user .user-info .name {
     font-size: 18px;
@@ -3452,6 +3487,11 @@ progress {
   color: rgb(153, 153, 153);
 }
 @media (min-width: 992px) {
+  .reviews .refer-to p {
+    font-size: 16px;
+  }
+}
+@media (min-width: 992px) {
   .reviews .title {
     font-size: 14px;
   }
@@ -3554,6 +3594,67 @@ progress {
   color: rgba(255, 255, 255, 0.6);
   margin-left: 10px;
 }
+@media (min-width: 992px) {
+  .modal-review .modal-content {
+    background: #fff;
+  }
+  .modal-review .user {
+    position: static;
+  }
+  .modal-review .user-info .name {
+    color: #000;
+  }
+  .modal-review .photos {
+    position: static;
+    flex: 0 0 480px;
+    border-radius: 7px;
+    overflow: hidden;
+  }
+  .modal-review .photos .swiper {
+    height: auto;
+  }
+  .modal-review .photos .swiper-slide {
+    width: 480px !important;
+    height: 480px !important;
+  }
+  .modal-review .photos .swiper-slide .img {
+    border-radius: 7px;
+    overflow: hidden;
+    background: #000;
+  }
+  .modal-review .photos .swiper-slide .img img {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .modal-review .photos .swiper-slide .img::before {
+    display: none;
+  }
+  .modal-review .photos .swiper-pagination {
+    position: static;
+    margin-top: 10px;
+  }
+  .modal-review .photos .swiper-pagination .swiper-pagination-bullet {
+    background: rgba(0, 0, 0, 0.25);
+  }
+  .modal-review .photos .swiper-pagination .swiper-pagination-bullet-active {
+    background: #000;
+  }
+  .modal-review .review-collapse {
+    position: static;
+    background: transparent;
+    padding: 0 0 0 30px;
+  }
+  .modal-review .option {
+    font-size: 14px;
+  }
+  .modal-review .content {
+    font-size: 16px;
+    color: #000;
+  }
+  .modal-review .content .more {
+    color: #999;
+  }
+}
 
 .review-sort {
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
@@ -3584,6 +3685,11 @@ progress {
 }
 .sort > a + a {
   margin-left: 5px;
+}
+@media (min-width: 992px) {
+  .sort > a {
+    font-size: 16px;
+  }
 }
 
 .text-banner-img {
@@ -4217,6 +4323,11 @@ progress {
 .item-info dd {
   line-height: 1.8;
 }
+@media (min-width: 992px) {
+  .item-info {
+    font-size: 16px;
+  }
+}
 
 /* old style 개발 이슈로 추가 */
 .spinner {
@@ -4768,6 +4879,10 @@ progress {
   .my-event-list.mt-n10px {
     margin-top: 0 !important;
   }
+  .my-event-list .item {
+    padding-left: 0;
+    padding-right: 0;
+  }
   .my-event-list .number {
     font-size: 13px;
   }
@@ -4778,6 +4893,11 @@ progress {
     flex: 0 0 110px;
     width: 110px;
     height: 110px;
+    order: 1;
+  }
+  .my-event-list .info {
+    order: 2;
+    margin-left: 15px;
   }
   .my-event-list .info .title {
     font-size: 14px;
@@ -4786,11 +4906,15 @@ progress {
     font-size: 16px;
   }
   .my-event-list .btns {
+    order: 3;
     display: flex;
     flex-direction: column;
     gap: 10px;
     width: 150px;
     margin-left: 40px;
+  }
+  .my-event-list .price {
+    font-size: 16px;
   }
 }
 .my-event-list.img-first .item {
@@ -5192,6 +5316,11 @@ progress {
   border-radius: 2px;
   font-size: 18px;
   font-weight: 700;
+}
+@media (min-width: 992px) {
+  .my-item-card .btn-outline-light {
+    border-radius: 7px;
+  }
 }
 .my-item-card .title {
   font-size: 16px;
@@ -5721,10 +5850,23 @@ progress {
 .review-form .review-form-title .badge {
   margin-left: 5px;
 }
+@media (min-width: 992px) {
+  .review-form .review-form-title p {
+    font-size: 20px;
+  }
+  .review-form .review-form-title small {
+    font-size: 16px;
+  }
+}
 .review-form .review-form-title-desc {
   font-size: 12px;
   color: #666;
   word-break: keep-all;
+}
+@media (min-width: 992px) {
+  .review-form .review-form-title-desc {
+    font-size: 14px;
+  }
 }
 
 .checkbox-button-wrap .form-check label {
@@ -6078,6 +6220,11 @@ progress {
   color: #666;
   margin-bottom: 8px;
 }
+@media (min-width: 992px) {
+  .invitaion .id-copy p {
+    font-size: 16px;
+  }
+}
 .invitaion .id-copy .my-id {
   border-bottom: 3px solid #000;
   color: #4ac0ff;
@@ -6217,6 +6364,12 @@ progress {
   margin: 0 20px;
   display: block;
 }
+@media (min-width: 992px) {
+  .accordion .item-header {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 .accordion .item-header .title {
   font-size: 15px;
   font-weight: 700;
@@ -6278,6 +6431,12 @@ progress {
   padding: 20px;
   position: relative;
 }
+@media (min-width: 992px) {
+  .accordion.qna-type .my {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 .accordion.qna-type .my::before {
   content: "";
   height: 1px;
@@ -6305,6 +6464,12 @@ progress {
   padding: 20px;
 }
 
+@media (min-width: 992px) {
+  .customer-main {
+    max-width: 620px;
+    margin: 0 auto;
+  }
+}
 .customer-main-top {
   margin-top: 34px;
   padding: 0 10px;
@@ -6319,6 +6484,18 @@ progress {
   line-height: 1.5384;
   color: #999;
   margin-bottom: 15px;
+}
+@media (min-width: 992px) {
+  .customer-main-top {
+    padding: 0;
+  }
+  .customer-main-top .top-text {
+    font-size: 34px;
+    margin-bottom: 15px;
+  }
+  .customer-main-top .info {
+    font-size: 18px;
+  }
 }
 
 .btn-kakao {
@@ -6368,6 +6545,17 @@ progress {
 }
 .customer-main-menu .item + .item {
   margin-top: 15px;
+}
+@media (min-width: 992px) {
+  .customer-main-menu .item .title {
+    font-size: 20px;
+  }
+  .customer-main-menu .item .desc {
+    font-size: 16px;
+  }
+  .customer-main-menu .item .desc-sub {
+    font-size: 16px;
+  }
 }
 
 .uploaded-file {
@@ -6660,6 +6848,11 @@ progress {
   font-weight: 700;
   text-decoration: underline;
 }
+@media (min-width: 992px) {
+  .my-exchange-item a {
+    font-size: 18px;
+  }
+}
 
 .my-exchange-item-number {
   font-size: 14px;
@@ -6696,6 +6889,11 @@ progress {
 .process-finish {
   padding: 65px 0 180px;
 }
+@media (min-width: 992px) {
+  .process-finish {
+    padding-bottom: 80px;
+  }
+}
 .process-finish .heading-text {
   display: block;
   font-size: 40px;
@@ -6705,6 +6903,11 @@ progress {
 .process-finish .desc {
   font-size: 13px;
   line-height: 1.846;
+}
+@media (min-width: 992px) {
+  .process-finish .desc {
+    font-size: 16px;
+  }
 }
 
 .leave .heading-text {

@@ -95,93 +95,94 @@
         </div>
       </header>
       <div id="container">
-        <main id="main">
-          <!-- 실컨텐츠 -->
-
-          <div class="container pt-20px">
-            <!-- 결제 금액 -->
-            <div class="form-group-wrap">
-              <div class="form-group-header">
-                <div class="label">결제 금액</div>
-                <div class="sum-pay">16,800원</div>
+        <div id="layout">
+          <main id="main">
+            <!-- 실컨텐츠 -->
+            <h1 class="page-title d-none d-lg-block mb-5">결제하기</h1>
+            <div class="container pt-20px">
+              <!-- 결제 금액 -->
+              <div class="form-group-wrap">
+                <div class="form-group-header">
+                  <div class="label">결제 금액</div>
+                  <div class="sum-pay">16,800원</div>
+                </div>
+                <div class="form-group-body">
+                  <dl class="info-list between">
+                    <dt>반품 및 배송비</dt>
+                    <dd>5,000 원</dd>
+                  </dl>
+                  <p class="help-text">*제주 및 도서산간 지역 : 추가 배송비 3,000원 발생</p>
+                </div>
               </div>
-              <div class="form-group-body">
-                <dl class="info-list between">
-                  <dt>반품 및 배송비</dt>
-                  <dd>5,000 원</dd>
-                </dl>
-                <p class="help-text">*제주 및 도서산간 지역 : 추가 배송비 3,000원 발생</p>
+              <!-- //결제 금액 -->
+              <!-- 결제 방법 -->
+              <div class="form-group-wrap">
+                <div class="form-group-header">
+                  <div class="label">결제 방법</div>
+                  <!-- 결제 방법 선택 후 -->
+                  <button type="button" class="btn btn-muted btn-sm btn-flat text-gray" onclick="location.href='../payment/payment_type.html'">변경하기</button>
+                </div>
+                <div class="form-group-body border-top-0 pt-0">
+                  <!-- 결제 방법 선택 전 -->
+                  <button type="button" class="btn btn-outline-dark btn-flat btn-lg w-100 fw-normal">+ 결제수단 추가하기</button>
+                  <!-- 결제 방법 선택 후 -->
+                  <div class="added-payment-type">
+                    <div class="badge dark">루픽페이</div>
+                    <span>[신한] 4890 **** **** 2834</span>
+                  </div>
+                  <div class="added-payment-type">
+                    <div class="badge dark">카카오페이</div>
+                    <span><img src="../../assets/images/pay-kakao.svg" alt="" /></span>
+                  </div>
+                  <div class="added-payment-type">
+                    <div class="badge dark">네이버페이</div>
+                    <span><img src="../../assets/images/pay-naver.svg" alt="" /></span>
+                  </div>
+                  <div class="added-payment-type">
+                    <div class="badge dark">토스페이</div>
+                    <span><img src="../../assets/images/pay-toss.svg" alt="" /></span>
+                  </div>
+                  <div class="added-payment-type">
+                    <div class="badge dark">페이코</div>
+                    <span><img src="../../assets/images/pay-payco.svg" alt="" /></span>
+                  </div>
+                </div>
               </div>
+              <!-- //결제 금액 -->
+              <!-- 할부 방법 -->
+              <div class="form-group-wrap">
+                <div class="form-group-header">
+                  <div class="label">할부 방법</div>
+                </div>
+                <div class="form-group-body">
+                  <select class="form-select form-select-lg w-100">
+                    <option value="">일시불</option>
+                    <option value="">2개월</option>
+                    <option value="">3개월</option>
+                    <option value="">4개월</option>
+                  </select>
+                </div>
+              </div>
+              <!-- //할부 방법 -->
+              <!-- 결제 정보 동의 -->
+              <div class="form-group-wrap">
+                <div class="form-group-body">
+                  <div class="form-check">
+                    <input type="checkbox" id="orderAgree" />
+                    <label for="orderAgree">결제 정보를 확인하였으며, 동의합니다. (필수)</label>
+                  </div>
+                </div>
+              </div>
+              <!-- //결제 정보 동의 -->
+              <!-- 하단 버튼 -->
+              <div class="bottom-buttons">
+                <button type="button" class="btn btn-dark btn-lg w-100 px-0" onclick="location.href='my_event_exchange_finish.html'">결제하기</button>
+              </div>
+              <!-- //하단 버튼 -->
             </div>
-            <!-- //결제 금액 -->
-            <!-- 결제 방법 -->
-            <div class="form-group-wrap">
-              <div class="form-group-header">
-                <div class="label">결제 방법</div>
-                <!-- 결제 방법 선택 후 -->
-                <button type="button" class="btn btn-muted btn-sm btn-flat text-gray" onclick="location.href='../payment/payment_type.html'">변경하기</button>
-              </div>
-              <div class="form-group-body border-top-0 pt-0">
-                <!-- 결제 방법 선택 전 -->
-                <button type="button" class="btn btn-outline-dark btn-flat btn-lg w-100 fw-normal">+ 결제수단 추가하기</button>
-                <!-- 결제 방법 선택 후 -->
-                <div class="added-payment-type">
-                  <div class="badge dark">루픽페이</div>
-                  <span>[신한] 4890 **** **** 2834</span>
-                </div>
-                <div class="added-payment-type">
-                  <div class="badge dark">카카오페이</div>
-                  <span><img src="../../assets/images/pay-kakao.svg" alt="" /></span>
-                </div>
-                <div class="added-payment-type">
-                  <div class="badge dark">네이버페이</div>
-                  <span><img src="../../assets/images/pay-naver.svg" alt="" /></span>
-                </div>
-                <div class="added-payment-type">
-                  <div class="badge dark">토스페이</div>
-                  <span><img src="../../assets/images/pay-toss.svg" alt="" /></span>
-                </div>
-                <div class="added-payment-type">
-                  <div class="badge dark">페이코</div>
-                  <span><img src="../../assets/images/pay-payco.svg" alt="" /></span>
-                </div>
-              </div>
-            </div>
-            <!-- //결제 금액 -->
-            <!-- 할부 방법 -->
-            <div class="form-group-wrap">
-              <div class="form-group-header">
-                <div class="label">할부 방법</div>
-              </div>
-              <div class="form-group-body">
-                <select class="form-select form-select-lg w-100">
-                  <option value="">일시불</option>
-                  <option value="">2개월</option>
-                  <option value="">3개월</option>
-                  <option value="">4개월</option>
-                </select>
-              </div>
-            </div>
-            <!-- //할부 방법 -->
-            <!-- 결제 정보 동의 -->
-            <div class="form-group-wrap">
-              <div class="form-group-body">
-                <div class="form-check">
-                  <input type="checkbox" id="orderAgree" />
-                  <label for="orderAgree">결제 정보를 확인하였으며, 동의합니다. (필수)</label>
-                </div>
-              </div>
-            </div>
-            <!-- //결제 정보 동의 -->
-            <!-- 하단 버튼 -->
-            <div class="bottom-buttons">
-              <button type="button" class="btn btn-dark btn-lg w-100 px-0" onclick="location.href='my_event_exchange_finish.html'">결제하기</button>
-            </div>
-            <!-- //하단 버튼 -->
-          </div>
-
-          <!-- //실컨텐츠 -->
-        </main>
+            <!-- //실컨텐츠 -->
+          </main>
+        </div>
       </div>
       <footer id="footer">
         <div class="container">
@@ -1090,43 +1091,59 @@
 
     <!-- modal: 리뷰 확대 보기 -->
     <div class="modal modal-review" tabindex="-1" id="modal-review">
-      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable modal-lg">
+      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable modal-xl">
         <div class="modal-content">
-          <button type="button" class="btn-close white" data-bs-dismiss="modal" aria-label="Close"></button>
-          <div class="modal-body">
-            <div class="user">
-              <div class="user-profile"><img src="../../assets/images/@profile.jpg" alt="티도" /></div>
-              <div class="user-info">
-                <div class="name">티도</div>
-                <div class="date">2022.05.20 작성</div>
-              </div>
+          <button type="button" class="btn-close white d-lg-none" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-header justify-content-between d-none d-lg-flex">
+            <div class="d-flex align-items-center">
+              <h5 class="modal-title">리뷰 상세보기</h5>
             </div>
-            <div class="photos">
-              <div class="swiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
-                  </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="d-lg-flex">
+              <div class="user d-lg-none">
+                <div class="user-profile"><img src="../../assets/images/@profile.jpg" alt="티도" /></div>
+                <div class="user-info">
+                  <div class="name">티도</div>
+                  <div class="date">2022.05.20 작성</div>
                 </div>
               </div>
-              <div class="swiper-pagination review-swiper-pagination"></div>
-            </div>
-            <div class="review-collapse">
-              <div class="option">[옵션] 감자볶음밥</div>
-              <div class="content">
-                <span id="reviewContent"></span> <a href="javascript:;" class="more"><span>더보기</span><i class="icon-more-arrow-down m-l-5"></i></a>
+              <div class="photos">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination review-swiper-pagination"></div>
+              </div>
+              <div class="review-collapse">
+                <div class="user d-none d-lg-flex">
+                  <div class="user-profile"><img src="../../assets/images/@profile.jpg" alt="티도" /></div>
+                  <div class="user-info">
+                    <div class="name">티도</div>
+                    <div class="date">2022.05.20 작성</div>
+                  </div>
+                </div>
+                <div class="option">[옵션] 감자볶음밥</div>
+                <div class="content">
+                  <span id="reviewContent"></span>
+                  <a href="javascript:;" class="more"><span>더보기</span><i class="icon-more-arrow-down m-l-5"></i></a>
+                </div>
               </div>
             </div>
           </div>

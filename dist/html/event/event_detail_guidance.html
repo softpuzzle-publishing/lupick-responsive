@@ -95,19 +95,22 @@
         </div>
       </header>
       <div id="container">
-        <main id="main">
-          <!-- 실컨텐츠 -->
-          <div class="container">
-            <dl class="item-info">
-              <dt>안내사항</dt>
-              <dd class="white-break-spaces">
-                - 아이템 배송은 결제 순서대로 순차 출고됩니다. - 럭키템에 대한 제세공과금은 루픽이 부담합니다. - 개인소득에 따른 차이로 발생하는 추가 공과금은 개인이 부담하여야 합니다. - 주문취소로 인해 발생하는 차액은 ‘포인트’ 럭키템에서 차감되며 이벤트 상세페이지 내 명시된 포인트와 이후 지급되는
-                포인트에 차이가 있을 수 있습니다.
-              </dd>
-            </dl>
-          </div>
-          <!-- //실컨텐츠 -->
-        </main>
+        <div id="layout">
+          <main id="main">
+            <!-- 실컨텐츠 -->
+            <div class="container">
+              <h1 class="page-title d-none d-lg-block mb-5">안내사항</h1>
+              <dl class="item-info">
+                <dt>안내사항</dt>
+                <dd class="white-break-spaces">
+                  - 아이템 배송은 결제 순서대로 순차 출고됩니다. - 럭키템에 대한 제세공과금은 루픽이 부담합니다. - 개인소득에 따른 차이로 발생하는 추가 공과금은 개인이 부담하여야 합니다. - 주문취소로 인해 발생하는 차액은 ‘포인트’ 럭키템에서 차감되며 이벤트 상세페이지 내 명시된 포인트와 이후 지급되는
+                  포인트에 차이가 있을 수 있습니다.
+                </dd>
+              </dl>
+            </div>
+            <!-- //실컨텐츠 -->
+          </main>
+        </div>
       </div>
       <footer id="footer">
         <div class="container">
@@ -1015,43 +1018,59 @@
 
     <!-- modal: 리뷰 확대 보기 -->
     <div class="modal modal-review" tabindex="-1" id="modal-review">
-      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable modal-lg">
+      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable modal-xl">
         <div class="modal-content">
-          <button type="button" class="btn-close white" data-bs-dismiss="modal" aria-label="Close"></button>
-          <div class="modal-body">
-            <div class="user">
-              <div class="user-profile"><img src="../../assets/images/@profile.jpg" alt="티도" /></div>
-              <div class="user-info">
-                <div class="name">티도</div>
-                <div class="date">2022.05.20 작성</div>
-              </div>
+          <button type="button" class="btn-close white d-lg-none" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-header justify-content-between d-none d-lg-flex">
+            <div class="d-flex align-items-center">
+              <h5 class="modal-title">리뷰 상세보기</h5>
             </div>
-            <div class="photos">
-              <div class="swiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
-                  </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="d-lg-flex">
+              <div class="user d-lg-none">
+                <div class="user-profile"><img src="../../assets/images/@profile.jpg" alt="티도" /></div>
+                <div class="user-info">
+                  <div class="name">티도</div>
+                  <div class="date">2022.05.20 작성</div>
                 </div>
               </div>
-              <div class="swiper-pagination review-swiper-pagination"></div>
-            </div>
-            <div class="review-collapse">
-              <div class="option">[옵션] 감자볶음밥</div>
-              <div class="content">
-                <span id="reviewContent"></span> <a href="javascript:;" class="more"><span>더보기</span><i class="icon-more-arrow-down m-l-5"></i></a>
+              <div class="photos">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination review-swiper-pagination"></div>
+              </div>
+              <div class="review-collapse">
+                <div class="user d-none d-lg-flex">
+                  <div class="user-profile"><img src="../../assets/images/@profile.jpg" alt="티도" /></div>
+                  <div class="user-info">
+                    <div class="name">티도</div>
+                    <div class="date">2022.05.20 작성</div>
+                  </div>
+                </div>
+                <div class="option">[옵션] 감자볶음밥</div>
+                <div class="content">
+                  <span id="reviewContent"></span>
+                  <a href="javascript:;" class="more"><span>더보기</span><i class="icon-more-arrow-down m-l-5"></i></a>
+                </div>
               </div>
             </div>
           </div>
