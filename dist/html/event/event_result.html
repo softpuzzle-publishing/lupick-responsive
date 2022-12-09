@@ -77,7 +77,7 @@
             <a href="../../html/main/main.html" class="logo"><span class="visually-hidden">Lupick Logo</span></a>
             <nav id="gnb">
               <ul>
-                <li>
+                <li class="active">
                   <a href="../../html/main/main.html"><span>루픽 홈</span></a>
                 </li>
                 <li>
@@ -108,94 +108,100 @@
         </div>
       </header>
       <div id="container">
-        <main id="main">
-          <!-- 실컨텐츠 -->
-          <div class="container">
-            <div class="reward">
-              <h2 class="heading-text">루픽리워드 받으신 분들 <br />진심으로 축하합니다!</h2>
-              <!-- 3명에게 -->
-              <div class="reward-item">
-                <div class="reward-item-img">
-                  <img src="../../assets/images/@landscape.jpg" alt="" />
+        <div id="layout">
+          <main id="main">
+            <!-- 실컨텐츠 -->
+            <div class="container">
+              <h1 class="page-title d-none d-lg-block">이벤트 결과</h1>
+              <div class="reward">
+                <h2 class="heading-text text-lg-center">루픽리워드 받으신 분들 <br class="d-lg-none" />진심으로 축하합니다!</h2>
+                <div class="bottom-buttons d-none d-lg-flex mt-4">
+                  <button type="button" class="btn btn-outline-dark btn-round btn-lg w-100" data-bs-toggle="modal" data-bs-target="#modal-result-list">투표결과 리스트 보기</button>
                 </div>
-                <div class="name">패밀리 SUV의 진화, 현대 2022 SANTA FE</div>
-                <div class="to">오직 3명에게</div>
-                <ul class="lucky-user">
-                  <li>•버터</li>
-                  <li>•티비보는도라에몽</li>
-                  <li>•데부루</li>
-                </ul>
-              </div>
-              <!-- 5명에게 -->
-              <div class="reward-item">
-                <div class="reward-item-img">
-                  <img src="../../assets/images/@landscape.jpg" alt="" />
+                <!-- 3명에게 -->
+                <div class="reward-item first">
+                  <div class="reward-item-img">
+                    <img src="../../assets/images/@landscape.jpg" alt="" />
+                  </div>
+                  <div class="name">패밀리 SUV의 진화, 현대 2022 SANTA FE</div>
+                  <div class="to">오직 3명에게</div>
+                  <ul class="lucky-user">
+                    <li>•버터</li>
+                    <li>•티비보는도라에몽</li>
+                    <li>•데부루</li>
+                  </ul>
                 </div>
-                <div class="name">도미노 포테이토피자L+콜라</div>
-                <div class="to">오직 5명에게</div>
-                <ul class="lucky-user">
-                  <li>•버터</li>
-                  <li>•티비보는도라에몽</li>
-                  <li>•데부루</li>
-                  <li>•버터</li>
-                  <li>•티비보는도라에몽</li>
-                </ul>
-              </div>
-              <!-- 10명에게 -->
-              <div class="reward-item">
-                <div class="reward-item-img">
-                  <img src="../../assets/images/@landscape.jpg" alt="" />
+                <!-- 5명에게 -->
+                <div class="reward-item">
+                  <div class="reward-item-img">
+                    <img src="../../assets/images/@landscape.jpg" alt="" />
+                  </div>
+                  <div class="name">도미노 포테이토피자L+콜라</div>
+                  <div class="to">오직 5명에게</div>
+                  <ul class="lucky-user">
+                    <li>•버터</li>
+                    <li>•티비보는도라에몽</li>
+                    <li>•데부루</li>
+                    <li>•버터</li>
+                    <li>•티비보는도라에몽</li>
+                  </ul>
                 </div>
-                <div class="name">BHC 후라이드치킨+콜라</div>
-                <div class="to">오직 10명에게</div>
-                <ul class="lucky-user">
-                  <li>•버터</li>
-                  <li>•티비보는도라에몽</li>
-                  <li>•데부루</li>
-                  <li>•버터</li>
-                  <li>•티비보는도라에몽</li>
-                  <li>•데부루</li>
-                  <li>•버터</li>
-                  <li>•티비보는도라에몽</li>
-                  <li>•데부루</li>
-                  <li>•데부루</li>
-                </ul>
-                <div class="toggler">
-                  <a href="javascript:;"><span>전체보기</span> <i class="icon-arr-down-gray"></i></a>
+                <!-- 10명에게 -->
+                <div class="reward-item">
+                  <div class="reward-item-img">
+                    <img src="../../assets/images/@landscape.jpg" alt="" />
+                  </div>
+                  <div class="name">BHC 후라이드치킨+콜라</div>
+                  <div class="to">오직 10명에게</div>
+                  <ul class="lucky-user">
+                    <li>•버터</li>
+                    <li>•티비보는도라에몽</li>
+                    <li>•데부루</li>
+                    <li>•버터</li>
+                    <li>•티비보는도라에몽</li>
+                    <li>•데부루</li>
+                    <li>•버터</li>
+                    <li>•티비보는도라에몽</li>
+                    <li>•데부루</li>
+                    <li>•데부루</li>
+                  </ul>
+                  <div class="toggler">
+                    <a href="javascript:;"><span>전체보기</span> <i class="icon-arr-down-gray"></i></a>
+                  </div>
                 </div>
-              </div>
-              <!-- 15명에게 -->
-              <div class="reward-item">
-                <div class="reward-item-img">
-                  <img src="../../assets/images/@portrait.jpg" alt="" />
-                </div>
-                <div class="name">배스킨라빈스 싱글레귤러</div>
-                <div class="to">오직 15명에게</div>
-                <ul class="lucky-user">
-                  <li>•버터</li>
-                  <li>•티비보는도라에몽</li>
-                  <li>•데부루</li>
-                  <li>•버터</li>
-                  <li>•티비보는도라에몽</li>
-                  <li>•데부루</li>
-                  <li>•버터</li>
-                  <li>•티비보는도라에몽</li>
-                  <li>•데부루</li>
-                  <li>•데부루</li>
-                  <li>•버터</li>
-                  <li>•티비보는도라에몽</li>
-                  <li>•데부루</li>
-                  <li>•버터</li>
-                  <li>•티비보는도라에몽</li>
-                </ul>
-                <div class="toggler">
-                  <a href="javascript:;"><span>전체보기</span> <i class="icon-arr-down-gray"></i></a>
+                <!-- 15명에게 -->
+                <div class="reward-item">
+                  <div class="reward-item-img">
+                    <img src="../../assets/images/@portrait.jpg" alt="" />
+                  </div>
+                  <div class="name">배스킨라빈스 싱글레귤러</div>
+                  <div class="to">오직 15명에게</div>
+                  <ul class="lucky-user">
+                    <li>•버터</li>
+                    <li>•티비보는도라에몽</li>
+                    <li>•데부루</li>
+                    <li>•버터</li>
+                    <li>•티비보는도라에몽</li>
+                    <li>•데부루</li>
+                    <li>•버터</li>
+                    <li>•티비보는도라에몽</li>
+                    <li>•데부루</li>
+                    <li>•데부루</li>
+                    <li>•버터</li>
+                    <li>•티비보는도라에몽</li>
+                    <li>•데부루</li>
+                    <li>•버터</li>
+                    <li>•티비보는도라에몽</li>
+                  </ul>
+                  <div class="toggler">
+                    <a href="javascript:;"><span>전체보기</span> <i class="icon-arr-down-gray"></i></a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <!-- //실컨텐츠 -->
-        </main>
+            <!-- //실컨텐츠 -->
+          </main>
+        </div>
       </div>
       <footer id="footer">
         <div class="container">

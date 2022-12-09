@@ -7,28 +7,29 @@
 
 <body>
   <div id="wrap">
-    @@include('@@webRoot/html/_include/_header.html', { "title": "루피커 인터뷰" })
+    @@include('@@webRoot/html/_include/_header.html', { "title": "루픽 스토리" })
     <div id="container">
-      <main id="main">
-        <!-- 실컨텐츠 -->
-
-        <div class="pt-20px">
-          <div class="story-list">
-            @@for (var i = 4; i > 0; i--) {
-            <a href="feed_lupick_story_detail.html" class="item">
-              <div class="img"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
-              <div class="title">[OFF-WHITE] 현시대의 예술, 그래피티 작가 ‘로니나’와 오프화이트의 만남</div>
-              <div class="info">
-                <div class="hit">조회수 10만회</div>
-                <div class="date">2022.05.20 작성</div>
-              </div>
-            </a>
-            }
+      <div id="layout">
+        <main id="main" class="max-width-100">
+          <!-- 실컨텐츠 -->
+          <h1 class="page-title d-none d-lg-block mb-5">루픽 스토리</h1>
+          <div class="pt-20px">
+            <div class="story-list">
+              @@for (var i = 4; i > 0; i--) {
+              <a href="feed_lupick_story_detail.html" class="item">
+                <div class="img"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
+                <div class="title">[OFF-WHITE] 현시대의 예술, 그래피티 작가 ‘로니나’와 오프화이트의 만남</div>
+                <div class="info">
+                  <div class="hit">조회수 10만회</div>
+                  <div class="date">2022.05.20 작성</div>
+                </div>
+              </a>
+              }
+            </div>
           </div>
-        </div>
-
-        <!-- //실컨텐츠 -->
-      </main>
+          <!-- //실컨텐츠 -->
+        </main>
+      </div>
     </div>
     @@include('@@webRoot/html/_include/_footer.html')
   </div>

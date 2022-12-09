@@ -9,188 +9,189 @@
   <div id="wrap">
     @@include('@@webRoot/html/_include/_header.html', { "title": "추멘세끼 브랜드관" })
     <div id="container">
-      <main id="main">
-        <!-- 실컨텐츠 -->
-
-        <div class="tab">
-          <ul class="nav nav-tabs justify-content-around" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <a href="#t1" class="nav-link active" data-bs-toggle="tab" role="tab">이벤트 전체</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a href="#t2" class="nav-link" data-bs-toggle="tab" role="tab">감자볶음밥 세트</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a href="#t3" class="nav-link" data-bs-toggle="tab" role="tab">돌돌만 세트</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="brand-top">
-          <div class="brand-banner">
-            <img src="@@webRoot/assets/images/@landscape.jpg" alt="">
-            <div class="brand-profile">
-              <img src="@@webRoot/assets/images/@profile.jpg" alt="">
+      <div class="brand-visual">
+        <img src="@@webRoot/assets/images/@landscape.jpg" alt="">
+      </div>
+      <div id="layout">
+        <main id="main" class="max-width-100">
+          <!-- 실컨텐츠 -->
+          <div class="brand-top-wrap">
+            <div class="tab">
+              <ul class="nav nav-tabs justify-content-around justify-content-lg-center nav-lg-badges" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <a href="#t1" class="nav-link active" data-bs-toggle="tab" role="tab">이벤트 전체</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a href="#t2" class="nav-link" data-bs-toggle="tab" role="tab">감자볶음밥 세트</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a href="#t3" class="nav-link" data-bs-toggle="tab" role="tab">돌돌만 세트</a>
+                </li>
+              </ul>
+            </div>
+            <div class="brand-top">
+              <div class="brand-banner">
+                <img src="@@webRoot/assets/images/@landscape.jpg" alt="">
+                <div class="brand-profile">
+                  <img src="@@webRoot/assets/images/@profile.jpg" alt="">
+                </div>
+              </div>
+              <div class="container">
+                <div class="brand-name">추멘세끼 브랜드관</div>
+                <div class="brand-intro">대한민국 최고의 축구 예능 채널, 이스타TV와의 콜라보레이션오직 루픽에서만 가능한 이벤트를 만나보세요. <br>이스타TV와의 협업으로 탄생한 ‘추멘세끼’ 감자볶음밥이 루픽 앱에서 판매시작 1시간 만에 4,000세트 완판 성공!</div>
+              </div>
             </div>
           </div>
-          <div class="container">
-            <div class="brand-name">추멘세끼 브랜드관</div>
-            <div class="brand-intro">대한민국 최고의 축구 예능 채널, 이스타TV와의 콜라보레이션오직 루픽에서만 가능한 이벤트를 만나보세요. 이스타TV와의 협업으로 탄생한 ‘추멘세끼’ 감자볶음밥이 루픽 앱에서 판매시작 1시간 만에 4,000세트 완판 성공!</div>
+          <div class="container d-lg-none">
+            <div class="section-title font-eng has-border-top">Related Events</div>
           </div>
-        </div>
-
-        <div class="container">
-          <div class="section-title font-eng has-border-top">Related Events</div>
-        </div>
-
-        <div class="events">
-          <div class="event-item">
-            <div class="event-state">
-              <div class="inner">
-                <div class="img round"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
-                <span class="badge secondary lg round">베스트</span>
-                <div class="state">
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 88%" data-percent="88">
-                    </div>
-                  </div>
-                  <div class="row align-items-center justify-content-between px-3">
-                    <div class="col-auto">
-                      <div class="d-flex align-items-center">
-                        <i class="icon-clock-white"></i> <span>12일 남음</span>
+          <div class="events">
+            <div class="event-item">
+              <div class="event-state">
+                <div class="inner">
+                  <div class="img round"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
+                  <span class="badge secondary lg round">베스트</span>
+                  <div class="state">
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 88%" data-percent="88">
                       </div>
                     </div>
-                    <div class="col-auto">
-                      <span>67% 참여 중</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="event-gift">
-              <div class="swiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <div class="item">
-                      <div class="img"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="item">
-                      <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="item">
-                      <div class="img"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="item">
-                      <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="event-info">
-              <!-- 이벤트 실패 일때 .fail 추가 -->
-              <div class="title">[하이브로우] 미니캐리어 테이블 구매하고 랜드로버 뉴 디펜더 타고 캠핑가자!</div>
-              <div class="desc">1명 8000만원 랜드로버 지급, 2명에게는 200,000포인트</div>
-              <div class="price">
-                <del>67,350원</del>
-                <div class="d-flex align-items-center">
-                  <div class="discount">15%</div>
-                  <div class="final">57,000원</div>
-                </div>
-              </div>
-              <div class="badges">
-                <span class="badge outline-gray">3차 오픈</span>
-                <span class="badge outline-gray">1,342,432개 누적 구매</span>
-              </div>
-            </div>
-          </div>
-          <div class="event-item ended">
-            <!-- 종료 이벤트 .ended 추가 -->
-            <div class="event-state">
-              <div class="inner">
-                <div class="img round"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
-                <div class="state">
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 67%" data-percent="67">
-                    </div>
-                  </div>
-                  <div class="row align-items-center justify-content-between px-3">
-                    <div class="col-auto">
-                      <div class="d-flex align-items-center">
-                        <i class="icon-clock-white"></i> <span>이벤트 종료</span>
+                    <div class="row align-items-center justify-content-between px-3">
+                      <div class="col-auto">
+                        <div class="d-flex align-items-center">
+                          <i class="icon-clock-white"></i> <span>12일 남음</span>
+                        </div>
+                      </div>
+                      <div class="col-auto">
+                        <span>67% 참여 중</span>
                       </div>
                     </div>
-                    <div class="col-auto">
-                      <span>67% 참여 완료</span>
+                  </div>
+                </div>
+              </div>
+              <div class="event-gift">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="item">
+                        <div class="img"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="item">
+                        <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="item">
+                        <div class="img"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="item">
+                        <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
+                      </div>
                     </div>
                   </div>
+                </div>
+              </div>
+              <div class="event-information">
+                <!-- 이벤트 실패 일때 .fail 추가 -->
+                <div class="title">[하이브로우] 미니캐리어 테이블 구매하고 랜드로버 뉴 디펜더 타고 캠핑가자!</div>
+                <div class="desc">1명 8000만원 랜드로버 지급, 2명에게는 200,000포인트</div>
+                <div class="price">
+                  <del>67,350원</del>
+                  <div class="d-flex align-items-center">
+                    <div class="discount">15%</div>
+                    <div class="final">57,000원</div>
+                  </div>
+                </div>
+                <div class="badges">
+                  <span class="badge outline-gray">3차 오픈</span>
+                  <span class="badge outline-gray">1,342,432개 누적 구매</span>
                 </div>
               </div>
             </div>
-            <div class="event-gift">
-              <div class="swiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <div class="item">
-                      <div class="img"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
+            <div class="event-item ended">
+              <!-- 종료 이벤트 .ended 추가 -->
+              <div class="event-state">
+                <div class="inner">
+                  <div class="img round"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
+                  <div class="state">
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 67%" data-percent="67">
+                      </div>
                     </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="item">
-                      <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="item">
-                      <div class="img"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="item">
-                      <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="item">
-                      <div class="img"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="item">
-                      <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
+                    <div class="row align-items-center justify-content-between px-3">
+                      <div class="col-auto">
+                        <div class="d-flex align-items-center">
+                          <i class="icon-clock-white"></i> <span>이벤트 종료</span>
+                        </div>
+                      </div>
+                      <div class="col-auto">
+                        <span>67% 참여 완료</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="event-info">
-              <!-- 이벤트 실패 일때 .fail 추가 -->
-              <div class="title">[하이브로우] 미니캐리어 테이블 구매하고 랜드로버 뉴 디펜더 타고 캠핑가자!</div>
-              <div class="desc">1명 8000만원 랜드로버 지급, 2명에게는 200,000포인트</div>
-              <div class="price">
-                <del>67,350원</del>
-                <div class="d-flex align-items-center">
-                  <div class="discount">15%</div>
-                  <div class="final">57,000원</div>
+              <div class="event-gift">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="item">
+                        <div class="img"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="item">
+                        <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="item">
+                        <div class="img"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="item">
+                        <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="item">
+                        <div class="img"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="item">
+                        <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="badges">
-                <span class="badge outline-gray">3차 오픈</span>
-                <span class="badge outline-gray">1,342,432개 누적 구매</span>
+              <div class="event-information">
+                <!-- 이벤트 실패 일때 .fail 추가 -->
+                <div class="title">[하이브로우] 미니캐리어 테이블 구매하고 랜드로버 뉴 디펜더 타고 캠핑가자!</div>
+                <div class="desc">1명 8000만원 랜드로버 지급, 2명에게는 200,000포인트</div>
+                <div class="price">
+                  <del>67,350원</del>
+                  <div class="d-flex align-items-center">
+                    <div class="discount">15%</div>
+                    <div class="final">57,000원</div>
+                  </div>
+                </div>
+                <div class="badges">
+                  <span class="badge outline-gray">3차 오픈</span>
+                  <span class="badge outline-gray">1,342,432개 누적 구매</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <script>
-          var mainEventGiftSwiper = [];
-          $('.event-gift .swiper').each(function (i) {
-            if ($(this).find('.swiper-slide').length > 4) {
+          <script>
+            var mainEventGiftSwiper = [];
+            $('.event-gift .swiper').each(function (i) {
               mainEventGiftSwiper[i] = new Swiper($(this)[0], {// eslint-disable-line
                 slidesPerView: 4.4,
                 freeMode: true,
@@ -199,18 +200,22 @@
                 slidesOffsetAfter: 20,
                 observeParents: true,
                 observeSlideChildren: true,
-                observer: true
+                observer: true,
+                breakpoints: {
+                  992: {
+                    slidesOffsetBefore: 0,
+                    slidesOffsetAfter: 0,
+                  }
+                }
               });
-            }
-          });
-        </script>
-
-        <div class="more-text">
-          <a href="javascript:;" role="button">더보기</a>
-        </div>
-
-        <!-- //실컨텐츠 -->
-      </main>
+            });
+          </script>
+          <div class="more-text">
+            <a href="javascript:;" role="button">더보기</a>
+          </div>
+          <!-- //실컨텐츠 -->
+        </main>
+      </div>
     </div>
     @@include('@@webRoot/html/_include/_footer.html')
   </div>

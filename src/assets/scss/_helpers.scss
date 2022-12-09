@@ -3,6 +3,11 @@
 .font-16px{font-size: 16px !important;}
 .font-20px{font-size: 20px !important;}
 
+@include media-breakpoint-up(lg){
+  .font-lg-16px{font-size: 16px !important;}
+  .font-lg-20px{font-size: 20px !important;}
+}
+
 .font-eng{font-family: $font-family-eng !important;}
 
 .max-width-100{max-width: 100% !important}
@@ -24,6 +29,10 @@
 .pt-50px{padding-top: 50px !important;}
 
 .mt-n10px{margin-top: -10px !important;}
+
+@include media-breakpoint-up(lg){
+  .mb-lg-25px{margin-bottom: 25px !important;}
+}
 
 .gx-10px{
   margin-left: -5px;margin-right: -5px;

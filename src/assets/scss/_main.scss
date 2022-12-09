@@ -18,6 +18,9 @@
   html.scroll-down &{
     #header{
       transform: translateY(-$header-height);
+      @include media-breakpoint-up(lg){
+        transform: translateY(-$header-lg-height);
+      }
     }
   }
 }
@@ -80,6 +83,21 @@
   .swiper-pagination-progressbar{
     height: 2px;background: rgba(0,0,0,0.07);position: static;margin: 0 20px;width: auto;
     .swiper-pagination-progressbar-fill{background: #000;}
+  }
+  @include media-breakpoint-up(lg){
+    background: none;margin-left: -20px;margin-right: -20px;height: 480px;position: relative;
+    .container{position: absolute;left: 50%;top: 0;height: 100%;transform: translateX(-50%);}
+    .img{
+      height: 480px;padding-bottom: 0;
+      img{border-radius: 0;position: static;}
+    }
+    .title{position: absolute;position: absolute;left: 50%;margin-left: calc( $container-max-width / 2 * -1);}
+    .state{left: 0;bottom: 76px;position: absolute;left: 50%;margin-left: calc( $container-max-width / 2 * -1);}
+    .open{
+      top: auto;right: auto;bottom: 142px;text-align: left;align-items: flex-start;
+      strong{font-size: 40px;font-family: $font-family-eng;}
+      small{font-size: 18px;}
+    }
   }
 }
 
@@ -206,6 +224,35 @@
     .timer{font-size: 12px;color: $danger;line-height: 1.166;}
     .percent{font-size: 12px;color: $gray-light;line-height: 1.166;}
   }
+  @include media-breakpoint-up(lg){
+    display: flex;flex-wrap: wrap;gap: 30px;
+    .item{
+      flex: 0 0 calc(33.33333% - 22.5px);margin: 0 0 20px !important;
+      .title{
+        font-size: 20px;margin-top: 16px;
+      }
+      .desc{font-size: 16px;}
+      .price{font-size: 24px;margin-top: 15px;}
+      .timer{font-size: 14px;}
+      .percent{font-size: 14px;}
+    }
+  }
+}
+
+.brand-visual{
+  display: none;
+  @include media-breakpoint-up(lg){
+    display: block;
+    img{width: 100%;}
+  }
+}
+
+@include media-breakpoint-up(lg){
+  .brand-top-wrap{
+    display: flex;flex-direction: column;
+    .tab{order:2;margin-bottom: 50px;}
+    .brand-top{order:1}
+  }
 }
 
 .brand-top{
@@ -219,6 +266,17 @@
   }
   .brand-name{margin-top: 46px;font-size: 28px; font-weight: 700;line-height: 1.0714;margin-bottom: 15px;}
   .brand-intro{font-size: 14px;color: rgba(0,0,0,0.8);line-height: 1.5714;}
+  @include media-breakpoint-up(lg){
+    display: flex;flex-direction: column;justify-content: center;align-items: center;
+    .brand-banner{
+      > img{display: none;}
+    }
+    .brand-profile{
+      width: 120px;height: 120px;position: static;
+    }
+    .brand-name{text-align: center;}
+    .brand-intro{text-align: center;font-size: 18px;max-width: 820px;margin: 0 auto;}
+  }
 }
 
 #modal-app-intro{
