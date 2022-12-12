@@ -1250,19 +1250,19 @@ body.modal-open {
 }
 @media (min-width: 992px) {
   .modal-md {
-    max-width: 420px;
+    max-width: 420px !important;
   }
 }
 
 @media (min-width: 992px) {
   .modal-lg {
-    max-width: 560px;
+    max-width: 560px !important;
   }
 }
 
 @media (min-width: 992px) {
   .modal-xl {
-    max-width: 920px;
+    max-width: 920px !important;
   }
 }
 
@@ -2986,6 +2986,16 @@ ul.text-menu li + li::before {
   right: 30px;
 }
 
+@media (max-width: 991.98px) {
+  .swiper-button-prev {
+    left: 15px;
+    display: none;
+  }
+  .swiper-button-next {
+    right: 15px;
+    display: none;
+  }
+}
 .swiper-button-next.swiper-button-disabled,
 .swiper-button-prev.swiper-button-disabled {
   opacity: 0;
@@ -3987,7 +3997,7 @@ ul.text-menu li + li::before {
     color: #000;
   }
   .modal-review .photos {
-    position: static;
+    position: relative;
     flex: 0 0 480px;
     border-radius: 7px;
     overflow: hidden;
@@ -4021,6 +4031,12 @@ ul.text-menu li + li::before {
   }
   .modal-review .photos .swiper-pagination .swiper-pagination-bullet-active {
     background: #000;
+  }
+  .modal-review .photos .swiper-button-prev {
+    left: 20px;
+  }
+  .modal-review .photos .swiper-button-next {
+    right: 20px;
   }
   .modal-review .review-collapse {
     position: static;
@@ -4571,6 +4587,11 @@ ul.text-menu li + li::before {
 }
 .share-event .title p:not(:first-of-type) {
   display: none;
+}
+@media (min-width: 992px) {
+  .share-event .title {
+    font-size: 16px;
+  }
 }
 .share-event .link {
   font-size: 14px;

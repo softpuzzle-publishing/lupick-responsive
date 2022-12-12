@@ -446,7 +446,7 @@
       .name{color: #000;}
     }
     .photos{
-      position: static;flex: 0 0 480px;border-radius: 7px;overflow: hidden;
+      position: relative;flex: 0 0 480px;border-radius: 7px;overflow: hidden;
       .swiper{height: auto;border-radius: 7px;}
       .swiper-slide{
         width: 480px !important;height: 480px !important;
@@ -461,6 +461,8 @@
         .swiper-pagination-bullet{background: rgba(0,0,0,0.25);}
         .swiper-pagination-bullet-active{background: #000;}
       }
+      .swiper-button-prev{left: 20px;}
+      .swiper-button-next{right: 20px;}
     }
     .review-collapse{
       position: static;background: transparent;padding: 0 0 0 30px;
@@ -706,6 +708,9 @@
   .title{
     margin-top: 0;font-size: 14px;font-weight: 700;
     @include ellipsis-multiline(14,1.428,2,$height-fix: true);margin-bottom: 3px;
+    @include media-breakpoint-up(lg){
+      font-size: 16px;
+    }
   }
   .link{font-size: 14px;}
 }

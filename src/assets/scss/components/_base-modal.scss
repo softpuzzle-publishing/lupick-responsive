@@ -179,18 +179,18 @@ body.modal-open{
 .modal-md{
   max-width: 340px;
   @include media-breakpoint-up(lg){
-    max-width: 420px;
+    max-width: 420px !important;
   }
 }
 
 .modal-lg{
   @include media-breakpoint-up(lg){
-    max-width: 560px;
+    max-width: 560px !important;
   }
 }
 
 .modal-xl{
   @include media-breakpoint-up(lg){
-    max-width: 920px;
+    max-width: 920px !important;
   }
 }

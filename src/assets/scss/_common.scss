@@ -311,6 +311,10 @@
 }
 .swiper-button-prev{left: 30px;}
 .swiper-button-next{right: 30px;}
+@include media-breakpoint-down(lg){
+  .swiper-button-prev{left: 15px;display: none;}
+  .swiper-button-next{right: 15px;display: none;}
+}
 .swiper-button-next.swiper-button-disabled,
 .swiper-button-prev.swiper-button-disabled{opacity: 0;}
 /* .swiper-button-prev{
