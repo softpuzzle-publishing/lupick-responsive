@@ -68,7 +68,7 @@
                   <a href="../../html/main/main.html"><span>루픽 홈</span></a>
                 </li>
                 <li>
-                  <a href="../../html/brand/brand.html"><span>브랜드관</span></a>
+                  <a href="../../html/brand/index.html"><span>브랜드관</span></a>
                 </li>
                 <li>
                   <a href=""><span>쇼핑</span></a>
@@ -85,11 +85,35 @@
               </ul>
             </nav>
             <div class="buttons">
+              <!-- 로그인 전 -->
+              <ul class="text-menu">
+                <li><a href="../../html/login/login.html">로그인</a></li>
+                <li><a href="../../html/join/join.html">회원가입</a></li>
+                <li><a href="../../html/customer/customer.html">고객센터</a></li>
+              </ul>
+              <!-- //로그인 전 -->
+              <!-- 로그인 후 -->
+              <ul class="text-menu">
+                <li><a href="../../html/customer/customer.html">고객센터</a></li>
+              </ul>
               <button type="button" aria-label="알림" data-bs-toggle="modal" data-bs-target="#modal-alarm"><i class="icon-bell"></i></button>
-              <button type="button" class="btn-mypage" aria-label="마이페이지" onclick="location.href='../../html/my/my.html'">
-                <!-- <img src="../../assets/images/profile-after-login-1.svg" alt="프로필 사진 없음(로그인 후)" class="default"> -->
-                <img src="../../assets/images/@profile.jpg" alt="{{유저 닉네임}} 프로필 사진" />
-              </button>
+              <div class="btn-mypage-wrap">
+                <button type="button" class="btn-mypage" aria-label="마이페이지">
+                  <!-- <img src=" ../../assets/images/profile-after-login-1.svg" alt="프로필 사진 없음(로그인 후)" class="default"> -->
+                  <img src="../../assets/images/@profile.jpg" alt="{{유저 닉네임}} 프로필 사진" />
+                </button>
+                <div class="my-layer-menu">
+                  <ul>
+                    <li><a href="../../html/my/my_event_order_history.html">주문 및 참여 내역</a></li>
+                    <li><a href="../../html/my/my_event_reviews.html">나의 리뷰</a></li>
+                    <li><a href="../../html/customer/my_qna.html">문의 내역</a></li>
+                    <li><a href="../../html/my/my_info_password.html">내 정보 관리</a></li>
+                    <li><a href="../../html/notice/notice.html">공지사항</a></li>
+                    <li><a href="#none">로그아웃</a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- //로그인 후 -->
             </div>
           </div>
         </div>
@@ -745,6 +769,8 @@
                   </div>
                 </div>
                 <div class="swiper-pagination swiper-pagination-main-slideup-banner"></div>
+                <div class="swiper-button-prev swiper-button-prev-main-slideup"></div>
+                <div class="swiper-button-next swiper-button-next-main-slideup"></div>
               </div>
               <script>
                 // 메인 슬라이드업 배너 swiper
@@ -756,6 +782,14 @@
                     observer: true,
                     pagination: {
                       el: '.swiper-pagination-main-slideup-banner',
+                    },
+                    breakpoints: {
+                      992: {
+                        navigation: {
+                          nextEl: '.swiper-button-next-main-slideup',
+                          prevEl: '.swiper-button-prev-main-slideup',
+                        },
+                      },
                     },
                   });
                 });

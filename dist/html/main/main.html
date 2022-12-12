@@ -35,7 +35,7 @@
     <script>
       $(document).ready(function () {
         /* const myModal = new bootstrap.Modal(document.getElementById('modal-main-slideup')); // eslint-disable-line
-      myModal.show() */
+      myModal.show(); */
 
         setTimeout(function () {
           if ($('html').hasClass('is-mobile')) {
@@ -43,6 +43,77 @@
             modalAppIntro.show();
           }
         }, 100);
+
+        //포토리뷰 swiper
+        var photosSwiper = [];
+        $('.reviews .photos .swiper').each(function (i) {
+          photosSwiper[i] = new Swiper($(this)[0], {
+            // eslint-disable-line
+            slidesPerView: 4.5,
+            freeMode: true,
+            spaceBetween: 5,
+            slidesOffsetBefore: 20,
+            slidesOffsetAfter: 20,
+            observeParents: true,
+            observeSlideChildren: true,
+            observer: true,
+          });
+        });
+
+        let photoIdx; //클릭한 사진의 인덱스
+        $('.main-review-list a').on('click', function (e) {
+          e.preventDefault();
+          photoIdx = $(this).index();
+          $('#modal-review').modal('show');
+        });
+
+        // 모달이 열릴때 swiper 실행
+        var modalReviewSwiper;
+        $('#modal-review').on('shown.bs.modal', function (event) {
+          modalReviewSwiper = new Swiper('.modal-review .swiper', {
+            // eslint-disable-line
+            initialSlide: photoIdx,
+            pagination: {
+              el: '.review-swiper-pagination',
+            },
+            observeParents: true,
+            observeSlideChildren: true,
+            observer: true,
+          });
+        });
+        // 모달이 닫힐때 swiper destroy
+        $('#modal-review').on('hidden.bs.modal', function (event) {
+          modalReviewSwiper.destroy(true, true);
+        });
+
+        //리뷰 내용 100자까지 ... 처리
+        const maxLength = 95;
+        let str =
+          '하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다. 하나를 둘이서 갈라먹어서 하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다. 하나를 둘이서 갈라먹어서 하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 감자 으깨서 케찹에 비비면 진짜 맛있습니다.';
+        let strShort;
+        if (str.length > maxLength) {
+          strShort = str.substr(0, maxLength - 2) + '...';
+          $('#reviewContent').text(strShort);
+        } else {
+          $('.review-collapse .more').remove();
+        }
+        $('.review-collapse .more').on('click', function (e) {
+          e.preventDefault();
+          if (!$('.review-collapse').hasClass('expanded')) {
+            $('#reviewContent').text(str);
+            $('.review-collapse .more span').text('접기');
+          } else {
+            $('#reviewContent').text(strShort);
+            $('.review-collapse .more span').text('더보기');
+          }
+          $('.review-collapse').toggleClass('expanded');
+        });
+
+        //참고할게요 버튼
+        $('.refer-to .btn').on('click', function (e) {
+          e.preventDefault();
+          $(this).toggleClass('clicked');
+        });
       });
     </script>
   </head>
@@ -83,7 +154,7 @@
                   <a href="../../html/main/main.html"><span>루픽 홈</span></a>
                 </li>
                 <li>
-                  <a href="../../html/brand/brand.html"><span>브랜드관</span></a>
+                  <a href="../../html/brand/index.html"><span>브랜드관</span></a>
                 </li>
                 <li>
                   <a href=""><span>쇼핑</span></a>
@@ -100,11 +171,35 @@
               </ul>
             </nav>
             <div class="buttons">
+              <!-- 로그인 전 -->
+              <ul class="text-menu">
+                <li><a href="../../html/login/login.html">로그인</a></li>
+                <li><a href="../../html/join/join.html">회원가입</a></li>
+                <li><a href="../../html/customer/customer.html">고객센터</a></li>
+              </ul>
+              <!-- //로그인 전 -->
+              <!-- 로그인 후 -->
+              <ul class="text-menu">
+                <li><a href="../../html/customer/customer.html">고객센터</a></li>
+              </ul>
               <button type="button" aria-label="알림" data-bs-toggle="modal" data-bs-target="#modal-alarm"><i class="icon-bell"></i></button>
-              <button type="button" class="btn-mypage" aria-label="마이페이지" onclick="location.href='../../html/my/my.html'">
-                <!-- <img src="../../assets/images/profile-after-login-1.svg" alt="프로필 사진 없음(로그인 후)" class="default"> -->
-                <img src="../../assets/images/@profile.jpg" alt="{{유저 닉네임}} 프로필 사진" />
-              </button>
+              <div class="btn-mypage-wrap">
+                <button type="button" class="btn-mypage" aria-label="마이페이지">
+                  <!-- <img src=" ../../assets/images/profile-after-login-1.svg" alt="프로필 사진 없음(로그인 후)" class="default"> -->
+                  <img src="../../assets/images/@profile.jpg" alt="{{유저 닉네임}} 프로필 사진" />
+                </button>
+                <div class="my-layer-menu">
+                  <ul>
+                    <li><a href="../../html/my/my_event_order_history.html">주문 및 참여 내역</a></li>
+                    <li><a href="../../html/my/my_event_reviews.html">나의 리뷰</a></li>
+                    <li><a href="../../html/customer/my_qna.html">문의 내역</a></li>
+                    <li><a href="../../html/my/my_info_password.html">내 정보 관리</a></li>
+                    <li><a href="../../html/notice/notice.html">공지사항</a></li>
+                    <li><a href="#none">로그아웃</a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- //로그인 후 -->
             </div>
           </div>
         </div>
@@ -118,12 +213,6 @@
                 <a href="../event/event_detail.html" class="item reservation">
                   <div class="img">
                     <img src="../../assets/images/@visual.jpg" alt="" />
-                  </div>
-                  <div class="container">
-                    <div class="open">
-                      <strong>72:13:29</strong>
-                      <small>5월19일 10시 오픈</small>
-                    </div>
                   </div>
                 </a>
               </div>
@@ -144,19 +233,25 @@
               </div>
             </div>
             <div class="state" data-event-state="alarm-before">
-              <button type="button" class="btn-alarm-before" aria-label="알림신청"></button>
-              <button type="button" class="btn-alarm-after" aria-label="등록완료"></button>
+              <div class="open">
+                <strong>72:13:29</strong>
+                <small>5월19일 10시 오픈</small>
+              </div>
+              <button type="button" class="btn-alarm-before"><i></i><span>알림신청</span></button>
+              <button type="button" class="btn-alarm-after"><i></i><span>등록완료</span></button>
               <div class="ing">
                 <strong>18%</strong>
                 <span>참여 중</span>
               </div>
+              <div class="end"><i></i><span>이벤트종료</span></div>
             </div>
+            <div class="swiper-button-prev swiper-button-prev-main-top-banner"></div>
+            <div class="swiper-button-next swiper-button-next-main-top-banner"></div>
           </div>
           <div class="title" style="color: #fff">
             다시 돌아온 추멘세끼, <br />
             2편은 돌고 돌아 군만두다!
           </div>
-          <div class="swiper-pagination swiper-pagination-main-top-banner"></div>
         </div>
         <div id="layout">
           <main id="main" class="max-width-100">
@@ -192,12 +287,13 @@
                   </div>
                 </div>
                 <div class="state" data-event-state="alarm-before">
-                  <button type="button" class="btn-alarm-before" aria-label="알림신청"></button>
-                  <button type="button" class="btn-alarm-after" aria-label="등록완료"></button>
+                  <button type="button" class="btn-alarm-before"><i></i><span>알림신청</span></button>
+                  <button type="button" class="btn-alarm-after"><i></i><span>등록완료</span></button>
                   <div class="ing">
                     <strong>18%</strong>
                     <span>참여 중</span>
                   </div>
+                  <div class="end"><i></i><span>이벤트종료</span></div>
                 </div>
               </div>
               <div class="title">
@@ -208,13 +304,21 @@
               <script>
                 const mainTopBannerSwiper = new Swiper('.main-top-banner .swiper', {
                   // eslint-disable-line
-                  /* loop: true,
-                autoplay: {
-                  delay: 6000,
-                }, */
+                  loop: true,
+                  autoplay: {
+                    delay: 6000,
+                  },
                   pagination: {
                     el: '.swiper-pagination-main-top-banner',
                     type: 'progressbar',
+                  },
+                  breakpoints: {
+                    992: {
+                      navigation: {
+                        nextEl: '.swiper-button-next-main-top-banner',
+                        prevEl: '.swiper-button-prev-main-top-banner',
+                      },
+                    },
                   },
                   on: {
                     slideChangeTransitionStart: function () {
@@ -237,7 +341,8 @@
             <!-- //메인 상단 이벤트 배너 -->
             <!-- 브랜드관 -->
             <div class="main-brands">
-              <h2 class="main-brands-title">Only Lupick.</h2>
+              <h2 class="main-brands-title d-lg-none">Only Lupick.</h2>
+              <h2 class="section-title d-none d-lg-block">오직 루픽, 브랜드관</h2>
               <div class="swiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
@@ -274,190 +379,235 @@
                   spaceBetween: 5,
                   slidesOffsetBefore: 20,
                   slidesOffsetAfter: 20,
-                });
-              </script>
-            </div>
-            <!-- //브랜드관 -->
-            <!-- 통이미지 배너 -->
-            <div class="main-image-banner">
-              <div class="swiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <a href="#none"><img src="../../assets/images/@banner.png" alt="" /></a>
-                  </div>
-                  <div class="swiper-slide">
-                    <a href="#none"><img src="../../assets/images/@banner.png" alt="" /></a>
-                  </div>
-                </div>
-                <div class="swiper-pagination swiper-pagination-main-image-banner"></div>
-              </div>
-              <script>
-                const mainImageBannerrSwiper = new Swiper('.main-image-banner .swiper', {
-                  // eslint-disable-line
-                  spaceBetween: 5,
-                  pagination: {
-                    el: '.swiper-pagination-main-image-banner',
-                    type: 'fraction',
+                  breakpoints: {
+                    992: {
+                      slidesPerView: 6,
+                      spaceBetween: 30,
+                      slidesOffsetBefore: 0,
+                      slidesOffsetAfter: 0,
+                    },
                   },
                 });
               </script>
             </div>
-            <!-- //통이미지 배너 -->
-            <!-- 이벤트 리스트 -->
-            <div class="main-events">
-              <div class="event-item">
-                <div class="event-state">
-                  <a href="../event/event_detail.html" class="inner">
-                    <div class="img round"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                    <div class="state">
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 88%" data-percent="88"></div>
-                      </div>
-                      <div class="row align-items-center justify-content-between px-3">
-                        <div class="col-auto">
-                          <div class="d-flex align-items-center"><i class="icon-clock-white"></i> <span>12일 남음</span></div>
-                        </div>
-                        <div class="col-auto">
-                          <span>67% 참여 중</span>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="event-gift">
+            <!-- //브랜드관 -->
+            <div class="d-flex flex-column">
+              <!-- 통이미지 배너 -->
+              <div class="order-lg-2">
+                <div class="main-image-banner">
                   <div class="swiper">
                     <div class="swiper-wrapper">
                       <div class="swiper-slide">
-                        <div class="item">
-                          <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                        </div>
+                        <a href="#none">
+                          <img src="../../assets/images/@banner.png" class="d-lg-none" alt="" />
+                          <img src="../../assets/images/@banner-desktop.png" class="d-none d-lg-block" alt="" />
+                        </a>
                       </div>
+
                       <div class="swiper-slide">
-                        <div class="item">
-                          <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="item">
-                          <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="item">
-                          <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
-                        </div>
+                        <a href="#none">
+                          <img src="../../assets/images/@banner.png" class="d-lg-none" alt="" />
+                          <img src="../../assets/images/@banner-desktop.png" class="d-none d-lg-block" alt="" />
+                        </a>
                       </div>
                     </div>
+                    <div class="swiper-pagination swiper-pagination-main-image-banner"></div>
                   </div>
-                </div>
-                <div class="event-info">
-                  <div class="title">[하이브로우] 미니캐리어 테이블 구매하고 랜드로버 뉴 디펜더 타고 캠핑가자!</div>
-                  <div class="desc">1명 8000만원 랜드로버 지급, 2명에게는 200,000포인트</div>
-                  <div class="price">
-                    <del>67,350원</del>
-                    <div class="d-flex align-items-center">
-                      <div class="discount">15%</div>
-                      <div class="final">57,000원</div>
-                    </div>
-                  </div>
-                  <div class="badges">
-                    <span class="badge outline-gray">3차 오픈</span>
-                    <span class="badge outline-gray">1,342,432개 누적 구매</span>
-                  </div>
+                  <script>
+                    const mainImageBannerrSwiper = new Swiper('.main-image-banner .swiper', {
+                      // eslint-disable-line
+                      spaceBetween: 5,
+                      pagination: {
+                        el: '.swiper-pagination-main-image-banner',
+                        type: 'fraction',
+                      },
+                    });
+                  </script>
                 </div>
               </div>
-              <div class="event-item ended">
-                <!-- 종료 이벤트 .ended 추가 -->
-                <div class="event-state">
-                  <a href="../event/event_detail.html" class="inner">
-                    <div class="img round"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                    <div class="state">
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 67%" data-percent="67"></div>
-                      </div>
-                      <div class="row align-items-center justify-content-between px-3">
-                        <div class="col-auto">
-                          <div class="d-flex align-items-center"><i class="icon-clock-white"></i> <span>이벤트 종료</span></div>
-                        </div>
-                        <div class="col-auto">
-                          <span>67% 참여 완료</span>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="event-gift">
-                  <div class="swiper">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <div class="item">
-                          <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="item">
-                          <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="item">
-                          <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="item">
-                          <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="item">
-                          <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="item">
-                          <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
-                        </div>
-                      </div>
-                    </div>
+              <!-- //통이미지 배너 -->
+              <!-- 이벤트 리스트 -->
+              <div class="order-lg-1">
+                <div class="row align-items-center justify-content-between mb-15px mt-30px mt-lg-80px mb-lg-15px d-none d-lg-flex">
+                  <div class="col-auto">
+                    <h2 class="section-title mb-0 mt-0">쇼핑 이벤트</h2>
+                  </div>
+                  <div class="col-auto">
+                    <a href="#none" class="text-secondary font-14px fw-bold font-lg-16px">더보기</a>
                   </div>
                 </div>
-                <div class="event-info">
-                  <div class="title">[하이브로우] 미니캐리어 테이블 구매하고 랜드로버 뉴 디펜더 타고 캠핑가자!</div>
-                  <div class="desc">1명 8000만원 랜드로버 지급, 2명에게는 200,000포인트</div>
-                  <div class="price">
-                    <del>67,350원</del>
-                    <div class="d-flex align-items-center">
-                      <div class="discount">15%</div>
-                      <div class="final">57,000원</div>
+                <div class="section-title-desc d-none d-lg-block">모든 이벤트 상품에 리워드가 포함되어 있어 즐겁게 이벤트를 쇼핑할 수 있습니다.</div>
+                <div class="main-events">
+                  <div class="event-item">
+                    <div class="event-state">
+                      <a href="../event/event_detail.html" class="inner">
+                        <div class="img round"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                        <div class="state">
+                          <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 88%" data-percent="88"></div>
+                          </div>
+                          <div class="row align-items-center justify-content-between px-3">
+                            <div class="col-auto">
+                              <div class="d-flex align-items-center"><i class="icon-clock-white"></i> <span>12일 남음</span></div>
+                            </div>
+                            <div class="col-auto">
+                              <span>67% 참여 중</span>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="event-gift">
+                      <div class="swiper">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <div class="item">
+                              <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="item">
+                              <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="item">
+                              <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="item">
+                              <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="event-information">
+                      <div class="title">[하이브로우] 미니캐리어 테이블 구매하고 랜드로버 뉴 디펜더 타고 캠핑가자!</div>
+                      <div class="desc">1명 8000만원 랜드로버 지급, 2명에게는 200,000포인트</div>
+                      <div class="price">
+                        <del>67,350원</del>
+                        <div class="d-flex align-items-center">
+                          <div class="discount">15%</div>
+                          <div class="final">57,000원</div>
+                        </div>
+                      </div>
+                      <div class="badges">
+                        <span class="badge outline-gray">3차 오픈</span>
+                        <span class="badge outline-gray">1,342,432개 누적 구매</span>
+                      </div>
                     </div>
                   </div>
-                  <div class="badges">
-                    <span class="badge outline-gray">3차 오픈</span>
-                    <span class="badge outline-gray">1,342,432개 누적 구매</span>
+                  <div class="event-item ended">
+                    <!-- 종료 이벤트 .ended 추가 -->
+                    <div class="event-state">
+                      <a href="../event/event_detail.html" class="inner">
+                        <div class="img round"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                        <div class="state">
+                          <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 67%" data-percent="67"></div>
+                          </div>
+                          <div class="row align-items-center justify-content-between px-3">
+                            <div class="col-auto">
+                              <div class="d-flex align-items-center"><i class="icon-clock-white"></i> <span>이벤트 종료</span></div>
+                            </div>
+                            <div class="col-auto">
+                              <span>67% 참여 완료</span>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="event-gift">
+                      <div class="swiper">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <div class="item">
+                              <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="item">
+                              <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="item">
+                              <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="item">
+                              <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="item">
+                              <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="item">
+                              <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="event-information">
+                      <div class="title">[하이브로우] 미니캐리어 테이블 구매하고 랜드로버 뉴 디펜더 타고 캠핑가자!</div>
+                      <div class="desc">1명 8000만원 랜드로버 지급, 2명에게는 200,000포인트</div>
+                      <div class="price">
+                        <del>67,350원</del>
+                        <div class="d-flex align-items-center">
+                          <div class="discount">15%</div>
+                          <div class="final">57,000원</div>
+                        </div>
+                      </div>
+                      <div class="badges">
+                        <span class="badge outline-gray">3차 오픈</span>
+                        <span class="badge outline-gray">1,342,432개 누적 구매</span>
+                      </div>
+                    </div>
                   </div>
+                  <script>
+                    var mainEventGiftSwiper = [];
+                    $('.event-gift .swiper').each(function (i) {
+                      mainEventGiftSwiper[i] = new Swiper($(this)[0], {
+                        // eslint-disable-line
+                        slidesPerView: 4.4,
+                        freeMode: true,
+                        spaceBetween: 5,
+                        slidesOffsetBefore: 20,
+                        slidesOffsetAfter: 20,
+                        breakpoints: {
+                          992: {
+                            slidesOffsetBefore: 0,
+                            slidesOffsetAfter: 0,
+                          },
+                        },
+                      });
+                    });
+                  </script>
                 </div>
               </div>
-              <script>
-                var mainEventGiftSwiper = [];
-                $('.event-gift .swiper').each(function (i) {
-                  mainEventGiftSwiper[i] = new Swiper($(this)[0], {
-                    // eslint-disable-line
-                    slidesPerView: 4.4,
-                    freeMode: true,
-                    spaceBetween: 5,
-                    slidesOffsetBefore: 20,
-                    slidesOffsetAfter: 20,
-                  });
-                });
-              </script>
+              <!-- //이벤트 리스트 -->
             </div>
-            <!-- //이벤트 리스트 -->
             <!-- 프리&이벤트 모아보기 -->
+            <div class="row align-items-center justify-content-between mb-15px mt-30px mt-lg-80px mb-lg-15px d-none d-lg-flex">
+              <div class="col-auto">
+                <h2 class="section-title mb-0 mt-0">프리&amp;포인트 이벤트</h2>
+              </div>
+              <div class="col-auto">
+                <a href="#none" class="text-secondary font-14px fw-bold font-lg-16px">더보기</a>
+              </div>
+            </div>
+            <div class="section-title-desc d-none d-lg-block">모든 이벤트 상품에 리워드가 포함되어 있어 즐겁게 이벤트를 쇼핑할 수 있습니다.</div>
             <div class="main-events-free">
               <div class="events-free">
                 <a href="#none" class="item">
-                  <div class="row gx-10px">
+                  <div class="row gx-10px gx-lg-30px">
                     <div class="col">
                       <div class="img"><img src="../../assets/images/@product.png" alt="" /></div>
                     </div>
@@ -483,7 +633,7 @@
                   </div>
                 </a>
                 <a href="#none" class="item">
-                  <div class="row gx-10px">
+                  <div class="row gx-10px gx-lg-30px">
                     <div class="col">
                       <div class="img"><img src="../../assets/images/@product.png" alt="" /></div>
                     </div>
@@ -512,17 +662,100 @@
                   </div>
                 </a>
               </div>
-              <button type="button" class="btn btn-secondary btn-lg w-100">프리&amp;포인트 모아보기</button>
+              <button type="button" class="btn btn-secondary btn-lg w-100 d-lg-none">프리&amp;포인트 모아보기</button>
             </div>
             <!-- //프리&이벤트 모아보기 -->
             <!-- 통이미지 배너 -->
-            <div class="main-image-banner">
+            <div class="main-image-banner d-lg-none">
               <a href="#none"><img src="../../assets/images/@banner.png" alt="" /></a>
               <a href="#none"><img src="../../assets/images/@banner.png" alt="" /></a>
             </div>
             <!-- //통이미지 배너 -->
             <!-- 퀴즈 -->
+            <h2 class="section-title mb-0 mt-0 mt-lg-80px mb-lg-15px d-none d-lg-block">루픽 질문</h2>
             <div class="main-quiz">
+              <div class="quiz">
+                <div class="img">
+                  <img src="../../assets/images/img-main-question.png" alt="" />
+                  <span>질문</span>
+                </div>
+                <div class="question">[퀴즈] 내가 빼먹지 않고 챙겨보는 유튜브 콘텐츠는?</div>
+                <div class="choice">
+                  <a href="javascript:;" role="button" data-percent="50">
+                    <span class="progress" style="width: 50%"></span>
+                    <span class="answer">패션👗</span>
+                    <span class="percent">50%</span>
+                  </a>
+                  <a href="javascript:;" role="button" data-percent="30">
+                    <span class="progress" style="width: 30%"></span>
+                    <span class="answer">식품🍕</span>
+                    <span class="percent">30%</span>
+                  </a>
+                  <a href="javascript:;" role="button" data-percent="10">
+                    <span class="progress" style="width: 10%"></span>
+                    <span class="answer">생활🧻</span>
+                    <span class="percent">10%</span>
+                  </a>
+                  <a href="javascript:;" role="button" data-percent="0">
+                    <span class="progress" style="width: 0%"></span>
+                    <span class="answer">테크🎮</span>
+                    <span class="percent">0%</span>
+                  </a>
+                </div>
+                <script>
+                  $('.choice a').on('click', function (e) {
+                    e.preventDefault();
+                    $(this).siblings().removeClass('active');
+                    $(this).addClass('active');
+                  });
+                </script>
+                <div class="participants">
+                  <div>12,421,286명 참여</div>
+                  <div>참여자 5,000명 2,000P 랜덤 지급</div>
+                </div>
+              </div>
+
+              <div class="quiz">
+                <div class="img">
+                  <img src="../../assets/images/img-main-question.png" alt="" />
+                  <span>질문</span>
+                </div>
+                <div class="question">[퀴즈] 내가 빼먹지 않고 챙겨보는 유튜브 콘텐츠는?</div>
+                <div class="choice">
+                  <a href="javascript:;" role="button" data-percent="50">
+                    <span class="progress" style="width: 50%"></span>
+                    <span class="answer">패션👗</span>
+                    <span class="percent">50%</span>
+                  </a>
+                  <a href="javascript:;" role="button" data-percent="30">
+                    <span class="progress" style="width: 30%"></span>
+                    <span class="answer">식품🍕</span>
+                    <span class="percent">30%</span>
+                  </a>
+                  <a href="javascript:;" role="button" data-percent="10">
+                    <span class="progress" style="width: 10%"></span>
+                    <span class="answer">생활🧻</span>
+                    <span class="percent">10%</span>
+                  </a>
+                  <a href="javascript:;" role="button" data-percent="0">
+                    <span class="progress" style="width: 0%"></span>
+                    <span class="answer">테크🎮</span>
+                    <span class="percent">0%</span>
+                  </a>
+                </div>
+                <script>
+                  $('.choice a').on('click', function (e) {
+                    e.preventDefault();
+                    $(this).siblings().removeClass('active');
+                    $(this).addClass('active');
+                  });
+                </script>
+                <div class="participants">
+                  <div>12,421,286명 참여</div>
+                  <div>참여자 5,000명 2,000P 랜덤 지급</div>
+                </div>
+              </div>
+
               <div class="quiz">
                 <div class="img">
                   <img src="../../assets/images/img-main-question.png" alt="" />
@@ -565,6 +798,66 @@
               </div>
             </div>
             <!-- //퀴즈 -->
+            <!-- 실제 구매자 리뷰 -->
+            <div>
+              <div class="main-reviews">
+                <h2 class="section-title mt-lg-80px mb-lg-15px">실제 구매자 리뷰</h2>
+                <div class="main-review-list">
+                  <div class="review-item">
+                    <a href="javascript:;">
+                      <div class="img">
+                        <img src="../../assets/images/@portrait.jpg" alt="" />
+                      </div>
+                      <div class="title">감자볶음밥 세트</div>
+                      <div class="content">하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 지인들에게 나눠주고 싶은 그런 맛…</div>
+                      <div class="refer-to">
+                        <p><strong class="text-secondary">108</strong>명이 참고하였습니다.</p>
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="review-item">
+                    <a href="javascript:;">
+                      <div class="img">
+                        <img src="../../assets/images/@portrait.jpg" alt="" />
+                      </div>
+                      <div class="title">감자볶음밥 세트</div>
+                      <div class="content">하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 지인들에게 나눠주고 싶은 그런 맛…</div>
+                      <div class="refer-to">
+                        <p><strong class="text-secondary">108</strong>명이 참고하였습니다.</p>
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="review-item">
+                    <a href="javascript:;">
+                      <div class="img">
+                        <img src="../../assets/images/@portrait.jpg" alt="" />
+                      </div>
+                      <div class="title">감자볶음밥 세트</div>
+                      <div class="content">하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 지인들에게 나눠주고 싶은 그런 맛…</div>
+                      <div class="refer-to">
+                        <p><strong class="text-secondary">108</strong>명이 참고하였습니다.</p>
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="review-item">
+                    <a href="javascript:;">
+                      <div class="img">
+                        <img src="../../assets/images/@portrait.jpg" alt="" />
+                      </div>
+                      <div class="title">감자볶음밥 세트</div>
+                      <div class="content">하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 지인들에게 나눠주고 싶은 그런 맛…</div>
+                      <div class="refer-to">
+                        <p><strong class="text-secondary">108</strong>명이 참고하였습니다.</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //실제 구매자 리뷰 -->
             <!-- //실컨텐츠 -->
           </main>
         </div>
@@ -1224,6 +1517,8 @@
                   </div>
                 </div>
                 <div class="swiper-pagination swiper-pagination-main-slideup-banner"></div>
+                <div class="swiper-button-prev swiper-button-prev-main-slideup"></div>
+                <div class="swiper-button-next swiper-button-next-main-slideup"></div>
               </div>
               <script>
                 // 메인 슬라이드업 배너 swiper
@@ -1235,6 +1530,14 @@
                     observer: true,
                     pagination: {
                       el: '.swiper-pagination-main-slideup-banner',
+                    },
+                    breakpoints: {
+                      992: {
+                        navigation: {
+                          nextEl: '.swiper-button-next-main-slideup',
+                          prevEl: '.swiper-button-prev-main-slideup',
+                        },
+                      },
                     },
                   });
                 });

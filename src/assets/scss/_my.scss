@@ -45,8 +45,8 @@
     a{font-size: 13px;color: $gray;font-weight: 700;font-family: $font-family-eng, $font-family-base;}
   }
   @include media-breakpoint-up(lg){
-    border: 1px solid $border-color;margin-top: 20px;
-    .bg-circle{margin: 0 100px;}
+    border: 1px solid $border-color;margin-top: 20px;position: relative;top: 0;
+    .bg-circle{margin: 0 100px;z-index: 1;}
     .point-desc{
       font-size: 16px;
       a{font-size: 16px;

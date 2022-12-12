@@ -46,7 +46,8 @@
             <div class="section-title font-eng has-border-top">Related Events</div>
           </div>
           <div class="events">
-            <div class="event-item">
+            @@for (var i = 2; i > 0; i--) {
+            <a href="@@webRoot/html/event/event_detail.html" class="event-item">
               <div class="event-state">
                 <div class="inner">
                   <div class="img round"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
@@ -111,8 +112,8 @@
                   <span class="badge outline-gray">1,342,432개 누적 구매</span>
                 </div>
               </div>
-            </div>
-            <div class="event-item ended">
+            </a>
+            <a href="@@webRoot/html/event/event_detail.html" class="event-item ended">
               <!-- 종료 이벤트 .ended 추가 -->
               <div class="event-state">
                 <div class="inner">
@@ -187,7 +188,8 @@
                   <span class="badge outline-gray">1,342,432개 누적 구매</span>
                 </div>
               </div>
-            </div>
+            </a>
+            }
           </div>
           <script>
             var mainEventGiftSwiper = [];

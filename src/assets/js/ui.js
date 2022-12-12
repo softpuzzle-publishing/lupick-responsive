@@ -36,6 +36,7 @@ var Common = {
     this.byte();
     this.address();
     this.moreToggle();
+    this.myMenuBtn();
   },
   accordion: function () {
     $(".accordion .item-header").on("click", function (e) {
@@ -110,6 +111,23 @@ var Common = {
         $(this).text("간략히 보기");
       }
     });
+  },
+  myMenuBtn: function () {
+    /* My Profile */
+    const myProfileBtn = document.querySelector(".btn-mypage");
+    if (myProfileBtn != undefined) {
+      myProfileBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        this.classList.toggle("active");
+      });
+      document.addEventListener("mouseup", function (e) {
+        let target = e.target;
+        let myMenu = target.closest(".btn-mypage-wrap");
+        if (!myMenu) {
+          myProfileBtn.classList.remove("active");
+        }
+      });
+    }
   },
 };
 

@@ -670,6 +670,8 @@
                   </div>
                 </div>
                 <div class="swiper-pagination swiper-pagination-main-slideup-banner"></div>
+                <div class="swiper-button-prev swiper-button-prev-main-slideup"></div>
+                <div class="swiper-button-next swiper-button-next-main-slideup"></div>
               </div>
               <script>
                 // 메인 슬라이드업 배너 swiper
@@ -681,6 +683,14 @@
                     observer: true,
                     pagination: {
                       el: '.swiper-pagination-main-slideup-banner',
+                    },
+                    breakpoints: {
+                      992: {
+                        navigation: {
+                          nextEl: '.swiper-button-next-main-slideup',
+                          prevEl: '.swiper-button-prev-main-slideup',
+                        },
+                      },
                     },
                   });
                 });

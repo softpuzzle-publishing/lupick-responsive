@@ -1,5 +1,5 @@
 #footer{
-  padding: 0 20px;display: none;
+  display: none;
   $padding-bottom: $navbar-height + 40px;
   padding-bottom: $padding-bottom;
   padding-bottom: calc(constant(safe-area-inset-bottom) + $padding-bottom);

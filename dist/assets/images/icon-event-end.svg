@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>btn_go</title>
-    <defs>
-        <filter id="filter-1">
-            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"></feColorMatrix>
-        </filter>
-    </defs>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ic_arrow</title>
     <g id="-iOS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="홈---Main-4" transform="translate(-280.000000, -369.000000)">
+        <g id="홈---Main-4" transform="translate(-305.000000, -383.000000)">
             <g id="Main" transform="translate(-18.000000, 104.000000)">
                 <g id="btn_go" transform="translate(298.000000, 265.000000)">
-                    <circle id="Oval-Copy-6" fill="#000000" cx="40" cy="40" r="40"></circle>
-                    <text id="이벤트종료" font-family="NanumBarunGothicOTFBold, NanumBarunGothicOTF" font-size="12" font-weight="bold" fill="#FFFFFF">
-                        <tspan x="13.74" y="57">이벤트종료</tspan>
-                    </text>
-                    <g filter="url(#filter-1)" id="ic_arrow">
-                        <g transform="translate(25.000000, 14.000000)">
-                            <rect id="Rectangle" x="0" y="0" width="30" height="30"></rect>
-                            <polyline id="Path-4" stroke="#FFFF00" stroke-width="2" points="7 17 11.2274687 21 23 9"></polyline>
-                        </g>
+                    <g id="ic_arrow" transform="translate(25.000000, 14.000000)">
+                        <rect id="Rectangle" x="0" y="0" width="30" height="30"></rect>
+                        <polyline id="Path-4" stroke="#FFFFFF" stroke-width="2" points="7 17 11.2274687 21 23 9"></polyline>
                     </g>
                 </g>
             </g>

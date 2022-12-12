@@ -21,8 +21,12 @@
       left: 30px;bottom: 30px;right: 30px;
       .title{font-size: 26px;}
     }
+    .swiper-pagination-feed-top-banner{font-size: 16px;}
   }
-  .swiper-pagination-feed-top-banner{font-size: 16px;}
+  @include media-breakpoint-down(lg){
+    .swiper-button-prev-feed-top-banner,
+    .swiper-button-next-feed-top-banner{display: none;}
+  }
 }
 
 .story-list{

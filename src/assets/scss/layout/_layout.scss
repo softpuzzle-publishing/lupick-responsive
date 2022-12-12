@@ -19,11 +19,12 @@
 
 #layout{
   max-width: calc($container-max-width + 40px);margin: 0 auto;display: flex;justify-content: center;
-  @include media-breakpoint-up(lg){
-    padding-top: 30px;padding-left: 20px;padding-right: 20px;
-  }
   #main{flex-grow: 1;max-width: 100%;
     &:first-child{max-width: 786px}
+  }
+  @include media-breakpoint-up(lg){
+    padding-top: 30px;padding-left: 20px;padding-right: 20px;
+    #main{padding-bottom: 0;}
   }
 }
 
@@ -43,7 +44,7 @@
 
 @include media-breakpoint-up(lg){
   .center-wrap{
-    margin: 0 auto;width: 600px;padding-top: 70px;
+    margin: 0 auto;width: 600px;/* padding-top: 70px; */
   }
   .center-wrap-login{
     width: 400px;

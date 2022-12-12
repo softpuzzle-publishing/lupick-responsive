@@ -31,12 +31,24 @@
 .mt-n10px{margin-top: -10px !important;}
 
 @include media-breakpoint-up(lg){
+  .mt-lg-20px{margin-top: 20px !important;}
+
+  .mt-lg-80px{margin-top: 80px !important;}
+  .mb-lg-15px{margin-bottom: 15px !important;}
   .mb-lg-25px{margin-bottom: 25px !important;}
+
 }
 
 .gx-10px{
   margin-left: -5px;margin-right: -5px;
   > *{padding-left: 5px;padding-right: 5px;}
+}
+
+@include media-breakpoint-up(lg){
+  .gx-lg-30px{
+    margin-left: -15px;margin-right: -15px;
+    > *{padding-left: 15px;padding-right: 15px;}
+  }
 }
 
 .g-10px{

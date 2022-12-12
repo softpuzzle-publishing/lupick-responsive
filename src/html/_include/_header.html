@@ -28,7 +28,7 @@
       <nav id="gnb">
         <ul>
           <li class="active"><a href="@@webRoot/html/main/main.html"><span>루픽 홈</span></a></li>
-          <li><a href="@@webRoot/html/brand/brand.html"><span>브랜드관</span></a></li>
+          <li><a href="@@webRoot/html/brand/index.html"><span>브랜드관</span></a></li>
           <li><a href=""><span>쇼핑</span></a></li>
           <li><a href="@@webRoot/html/free_point/free_point.html"><span>프리&amp;포인트</span></a></li>
           <li><a href="@@webRoot/html/feed/feed.html"><span>피드</span></a></li>
@@ -36,11 +36,35 @@
         </ul>
       </nav>
       <div class="buttons">
+        <!-- 로그인 전 -->
+        <ul class="text-menu">
+          <li><a href="@@webRoot/html/login/login.html">로그인</a></li>
+          <li><a href="@@webRoot/html/join/join.html">회원가입</a></li>
+          <li><a href="@@webRoot/html/customer/customer.html">고객센터</a></li>
+        </ul>
+        <!-- //로그인 전 -->
+        <!-- 로그인 후 -->
+        <ul class="text-menu">
+          <li><a href="@@webRoot/html/customer/customer.html">고객센터</a></li>
+        </ul>
         <button type="button" aria-label="알림" data-bs-toggle="modal" data-bs-target="#modal-alarm"><i class="icon-bell"></i></button>
-        <button type="button" class="btn-mypage" aria-label="마이페이지" onclick="location.href='@@webRoot/html/my/my.html'">
-          <!-- <img src="@@webRoot/assets/images/profile-after-login-1.svg" alt="프로필 사진 없음(로그인 후)" class="default"> -->
-          <img src="@@webRoot/assets/images/@profile.jpg" alt="{{유저 닉네임}} 프로필 사진">
-        </button>
+        <div class="btn-mypage-wrap">
+          <button type="button" class="btn-mypage" aria-label="마이페이지">
+            <!-- <img src=" @@webRoot/assets/images/profile-after-login-1.svg" alt="프로필 사진 없음(로그인 후)" class="default"> -->
+            <img src="@@webRoot/assets/images/@profile.jpg" alt="{{유저 닉네임}} 프로필 사진">
+          </button>
+          <div class="my-layer-menu">
+            <ul>
+              <li><a href="@@webRoot/html/my/my_event_order_history.html">주문 및 참여 내역</a></li>
+              <li><a href="@@webRoot/html/my/my_event_reviews.html">나의 리뷰</a></li>
+              <li><a href="@@webRoot/html/customer/my_qna.html">문의 내역</a></li>
+              <li><a href="@@webRoot/html/my/my_info_password.html">내 정보 관리</a></li>
+              <li><a href="@@webRoot/html/notice/notice.html">공지사항</a></li>
+              <li><a href="#none">로그아웃</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- //로그인 후 -->
       </div>
     </div>
   </div>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <g id="Page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="이벤트-상세" transform="translate(-1507.000000, -158.000000)" stroke="#000000">
+            <g id="Group" transform="translate(1507.000000, 158.000000)">
+                <circle id="Oval" stroke-opacity="0.6" fill="#FFFFFF" cx="25" cy="25" r="24.5"></circle>
+                <g id="ic_share" transform="translate(16.000000, 15.100000)" stroke-linecap="round" stroke-width="1.5">
+                    <g id="Group">
+                        <path d="M10,0.9 L17,0.9 C17.5522847,0.9 18,1.34771525 18,1.9 L18,17.9 C18,18.4522847 17.5522847,18.9 17,18.9 L1,18.9 C0.44771525,18.9 5.11724585e-16,18.4522847 0,17.9 L0,10.9 L0,10.9" id="Rectangle" transform="translate(9.000000, 9.900000) scale(-1, 1) translate(-9.000000, -9.900000) "></path>
+                        <path d="M12.6,0.9 L17,0.9 C17.5522847,0.9 18,1.34771525 18,1.9 L18,6.3 L18,6.3" id="Path-6"></path>
+                        <line x1="13.05" y1="2.30926389e-14" x2="13.05" y2="11.7" id="Line" transform="translate(13.050000, 5.850000) rotate(-135.000000) translate(-13.050000, -5.850000) "></line>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

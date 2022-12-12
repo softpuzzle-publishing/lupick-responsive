@@ -79,6 +79,25 @@
         }
         $(".review-collapse").toggleClass("expanded");
       });
+
+      const $fixedPrice = $('.event-price-info');
+      const $fixedPriceHeight = $fixedPrice.outerHeight();
+      $('.event-price-info-wrap').css('height', $fixedPriceHeight);
+      let layoutBodyOffsetTop;
+      setTimeout(function () {
+        layoutBodyOffsetTop = $('.layout-body').offset().top;
+      }, 100);
+      function scrollFixedPrice() {
+        let scrollTop = $(window).scrollTop();
+        if (scrollTop > layoutBodyOffsetTop) {
+          $fixedPrice.addClass('fixed');
+        } else {
+          $fixedPrice.removeClass('fixed');
+        }
+      }
+      $(window).scroll(function () {
+        scrollFixedPrice();
+      });
     });
   </script>
 </head>
@@ -119,7 +138,14 @@
               <div class="layout-top-right">
                 <div class="event-information">
                   <div class="brand d-none d-lg-block">추멘세끼</div>
-                  <div class="title">[하이브로우] 미니캐리어 테이블 구매하고 랜드로버 뉴 디펜더 타고 캠핑가자!</div>
+                  <div class="row gx-2">
+                    <div class="col">
+                      <div class="title">[하이브로우] 미니캐리어 테이블 구매하고 랜드로버 뉴 디펜더 타고 캠핑가자!</div>
+                    </div>
+                    <div class="col-auto">
+                      <button type="button" class="btn-share" aria-label="공유하기" data-bs-toggle="modal" data-bs-target="#modal-event-share"><i></i></button>
+                    </div>
+                  </div>
                   <div class="desc">1명 8000만원 랜드로버 지급, 2명에게는 200,000포인트</div>
                   <div class="price">
                     <del>67,350원</del>
@@ -150,38 +176,40 @@
                     <p>이벤트 모집이 완료 후 구매 취소가 불가합니다.</p>
                   </div>
                 </div>
-                <div class="event-price-info d-none d-lg-block">
-                  <p class="purchasable">총<span>3</span>개까지 구매할 수 있어요!</p>
-                  <div class="selected-option-quantity">
-                    <div class="selected-option">
-                      <p class="title">추멘세끼 볶음밥 (햄)</p>
-                      <button type="button" aria-label="삭제"><i></i></button>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                      <div class="quantity">
-                        <button class="decrement" aria-label="Decrease Value" disabled><i class="icon-decrease"></i></button>
-                        <input type="text" value="1" max="3" min="1" readonly />
-                        <button class="increment" aria-label="Increase Value"><i class="icon-increase"></i></button>
+                <div class="event-price-info-wrap d-none d-lg-block">
+                  <div class="event-price-info">
+                    <p class="purchasable">총<span>3</span>개까지 구매할 수 있어요!</p>
+                    <div class="selected-option-quantity">
+                      <div class="selected-option">
+                        <p class="title">추멘세끼 볶음밥 (햄)</p>
+                        <button type="button" aria-label="삭제"><i></i></button>
                       </div>
-                      <div class="quantity-sum">57,000원</div>
+                      <div class="d-flex align-items-center justify-content-between">
+                        <div class="quantity">
+                          <button class="decrement" aria-label="Decrease Value" disabled><i class="icon-decrease"></i></button>
+                          <input type="text" value="1" max="3" min="1" readonly />
+                          <button class="increment" aria-label="Increase Value"><i class="icon-increase"></i></button>
+                        </div>
+                        <div class="quantity-sum">57,000원</div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="total-price">
-                    <div>
-                      <span class="label">총 수량</span>
-                      <span class="count">200개</span>
+                    <div class="total-price">
+                      <div>
+                        <span class="label">총 수량</span>
+                        <span class="count">200개</span>
+                      </div>
+                      <div>
+                        <span class="label">총 금액</span>
+                        <span class="price">1,171,000원</span>
+                      </div>
                     </div>
-                    <div>
-                      <span class="label">총 금액</span>
-                      <span class="price">1,171,000원</span>
+                    <div class="bottom-buttons">
+                      <p class="stock-count"><span>16,000</span>개 모집 중, <strong>302</strong>개 남음</p>
+                      <button type="button" class="btn btn-dark btn-lg w-100 px-0" onclick="location.href='@@webRoot/html/payment/payment.html'">구매하기</button>
+                      <button type="button" class="btn btn-dark btn-lg w-100 px-0" onclick="location.href='@@webRoot/html/event/event_result.html'">이벤트 결과 확인하기</button>
+                      <!-- <button type="button" class="btn btn-dark btn-lg w-100 px-0"><i class="icon-bell-white mr-5px"></i>알림신청</button>
+                        <button type="button" class="btn btn-dark btn-lg w-100 px-0 text-primary"><i class="icon-alarm-yellow mr-5px"></i>등록완료</button> -->
                     </div>
-                  </div>
-                  <div class="bottom-buttons">
-                    <p class="stock-count"><span>16,000</span>개 모집 중, <strong>302</strong>개 남음</p>
-                    <button type="button" class="btn btn-dark btn-lg w-100 px-0" onclick="location.href='@@webRoot/html/payment/payment.html'">구매하기</button>
-                    <button type="button" class="btn btn-dark btn-lg w-100 px-0" onclick="location.href='@@webRoot/html/event/event_result.html'">이벤트 결과 확인하기</button>
-                    <!-- <button type="button" class="btn btn-dark btn-lg w-100 px-0"><i class="icon-bell-white mr-5px"></i>알림신청</button>
-                      <button type="button" class="btn btn-dark btn-lg w-100 px-0 text-primary"><i class="icon-alarm-yellow mr-5px"></i>등록완료</button> -->
                   </div>
                 </div>
               </div>

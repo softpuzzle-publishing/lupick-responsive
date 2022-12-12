@@ -37,6 +37,7 @@
           &::before{content: '';display: block;width: 1px;height: 14px;background: $border-color;margin: 0 15px 0 5px;}
         }
       }
+      .nav-link{padding: 0;}
     }
   }
 }
