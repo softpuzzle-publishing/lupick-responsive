@@ -138,7 +138,6 @@ var Header = {
     window.addEventListener("touchmove", Header.scrolling);
     $(window).scroll(function () {
       Header.scrolling();
-      Header.fixedOption();
     });
     $(window).resize(function () {
       Header.scrolling();
@@ -186,9 +185,6 @@ var Header = {
     };
 
     window.addEventListener("scroll", checkScroll);
-  },
-  fixedOption: function () {
-    //var
   },
 };
 

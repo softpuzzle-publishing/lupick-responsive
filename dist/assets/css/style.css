@@ -8116,12 +8116,14 @@ html.scroll-down body.body-main #header {
 @media (min-width: 992px) {
   .main-events {
     display: flex;
+    flex-wrap: wrap;
     gap: 30px;
     margin-top: 30px;
   }
   .main-events .event-item {
     flex: 0 0 calc(25% - 22.5px);
     margin-top: 0;
+    display: none;
   }
   .main-events .event-item .event-state {
     padding: 0;
