@@ -156,9 +156,12 @@
         font-size: 20px;margin-top: 16px;
       }
       .desc{font-size: 16px;}
-      .price{font-size: 24px;margin-top: 15px;margin-bottom: 10px;}
-      .timer{font-size: 14px;}
-      .percent{font-size: 14px;}
+      .price{
+        font-size: 24px;margin-top: 15px;margin-bottom: 10px;
+        .icon-point{width: 24px;height: 24px;}
+      }
+      .timer{font-size: 20px;}
+      .percent{font-size: 20px;}
     }
   }
 }
@@ -377,6 +380,9 @@
   .content{font-size: 14px;line-height: 1.571;}
   .declaration{font-size: 14px;color: $gray-light;text-decoration: underline;display: inline-block;margin-top: 9px;}
   @include media-breakpoint-up(lg){
+    .item{
+      & + .item{border-top: 5px solid rgba(0,0,0,0.05);}
+    }
     .title{font-size: 14px;}
     .option{font-size: 14px;}
     .content{font-size: 16px;}

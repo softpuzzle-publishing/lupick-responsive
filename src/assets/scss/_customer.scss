@@ -1,7 +1,12 @@
 .accordion{
   .item{
     position: relative;
-    &::after{content: '';height: 1px;background-color: $border-color;position: absolute;left: 20px;bottom: 0;right: 20px;}
+    &::after{
+      content: '';height: 1px;background-color: $border-color;position: absolute;left: 20px;bottom: 0;right: 20px;
+      @include media-breakpoint-up(lg){
+        left: 0;right: 0;
+      }
+    }
   }
   .item-header{
     padding: 20px 0;margin: 0 20px;display: block;

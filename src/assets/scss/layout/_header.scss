@@ -43,10 +43,14 @@
     display: flex;align-items: center;height: 100%;
   }
   .btn-mypage{
-    width: 40px;height: 40px;border: 1px solid $border-color;
     border-radius: 50%;display: flex;align-items: center;justify-content: center;overflow: hidden;
-    img{width: 100%;height: 100%;object-fit: cover;}
-    .default{width: 22px;height: 22px;}
+    .img{
+      flex: 0 0 40px;display: flex;align-items: center;justify-content: center;
+      width: 40px;height: 40px;border-radius: 50rem;position: relative;overflow: hidden;
+      &::before{content: '';border: 1px solid $border-color;border-radius: 50%;position: absolute;left: 0;top: 0;right: 0;bottom: 0;}
+      img{width: 100%;height: 100%;object-fit: cover;position: relative;}
+      img.default{object-fit: contain;width: 22px;height: 22px;}
+    }
   }
 
   #gnb{

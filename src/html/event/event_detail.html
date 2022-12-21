@@ -15,7 +15,7 @@
       const firstScrollSpyEl = document.querySelector('body');
       firstScrollSpyEl.addEventListener('activate.bs.scrollspy', () => {
         // do something...
-        console.log(1);
+        //console.log(1);
       })
       //포토리뷰 swiper
       var photosSwiper = [];
@@ -184,6 +184,7 @@
                     <p>이벤트 모집이 완료 후 구매 취소가 불가합니다.</p>
                   </div>
                 </div>
+                <!-- pc용 옵션 선택 -->
                 <div class="event-price-info-wrap d-none d-lg-block">
                   <div class="event-price-info">
                     <p class="purchasable">총<span>3</span>개까지 구매할 수 있어요!</p>
@@ -215,13 +216,24 @@
                       <p class="stock-count"><span>16,000</span>개 모집 중, <strong>302</strong>개 남음</p>
                       <button type="button" class="btn btn-dark btn-lg w-100 px-0" onclick="location.href='@@webRoot/html/payment/payment.html'">구매하기</button>
                       <button type="button" class="btn btn-dark btn-lg w-100 px-0" onclick="location.href='@@webRoot/html/event/event_result.html'">이벤트 결과 확인하기</button>
-                      <!-- <button type="button" class="btn btn-dark btn-lg w-100 px-0"><i class="icon-bell-white mr-5px"></i>알림신청</button>
-                        <button type="button" class="btn btn-dark btn-lg w-100 px-0 text-primary"><i class="icon-alarm-yellow mr-5px"></i>등록완료</button> -->
+                      <button type="button" class="btn btn-dark btn-lg w-100 px-0"><i class="icon-bell-white mr-5px"></i>알림신청</button>
+                      <button type="button" class="btn btn-dark btn-lg w-100 px-0 text-primary"><i class="icon-alarm-yellow mr-5px"></i>등록완료</button>
+                      <div class="row gx-10px">
+                        <div class="col-6">
+                          <a class="btn btn-outline-dark btn-lg w-100 px-0 min-width-0" th:href="'/event/result/' + ${eventInfo.sEventCd}">전체 결과 보기</a>
+                        </div>
+                        <div class="col-6">
+                          <a class="btn btn-dark btn-lg w-100 px-0 min-width-0" th:href="'/my/eventResult/result/' + ${eventInfo.sEventCd}">나의 결과 보기</a>
+                        </div>
+                      </div>
+                      <button type="button" class="btn btn-dark btn-lg w-100 px-0" disabled>이벤트 종료</button>
                     </div>
                   </div>
                 </div>
+                <!-- //pc용 옵션 선택 -->
               </div>
             </div>
+            <!-- Pc용 중간 nav bar -->
             <div class="event-nav-bar d-none d-lg-block">
               <nav id="event-detail-spy">
                 <a href="#spy-1"><span>실제 구매자 리뷰</span></a>
@@ -232,6 +244,7 @@
                 <a href="#spy-6"><span>기타</span></a>
               </nav>
             </div>
+            <!-- //Pc용 중간 nav bar -->
             <div class="layout-body">
               <div class="layout-body-left">
                 <div class="event-shipping-info-detail">
@@ -393,6 +406,7 @@
                   </div>
                 </div>
                 <!-- //에디터 컨텐츠 -->
+                <div class="hr"></div>
                 <!-- 이벤트 상품 -->
                 <div class="event-product" id="spy-3">
                   <div class="container">
@@ -484,40 +498,44 @@
                 <!-- //이벤트 모집 미달 시 보상 포인트 -->
                 <div class="hr"></div>
                 <!-- 메뉴 -->
-                <div class="full-menu" id="spy-6">
-                  <ul>
-                    <li>
-                      <a href="event_detail_lupick.html" class="justify-content-between font-eng font-20px">Lupick. <i class="icon-full-menu-arr"></i></a>
-                    </li>
-                    <li>
-                      <a href="event_detail_process.html" class="justify-content-between fw-normal">이벤트 프로세스<i class="icon-full-menu-arr"></i></a>
-                    </li>
-                    <li>
-                      <a href="event_detail_notice.html" class="justify-content-between fw-normal">상품정보고지<i class="icon-full-menu-arr"></i></a>
-                    </li>
-                    <li>
-                      <a href="event_detail_refund.html" class="justify-content-between fw-normal">취소/교환/환불<i class="icon-full-menu-arr"></i></a>
-                    </li>
-                    <li>
-                      <a href="event_detail_vote.html" class="justify-content-between fw-normal">루픽 투표<i class="icon-full-menu-arr"></i></a>
-                    </li>
-                    <li>
-                      <a href="event_detail_guidance.html" class="justify-content-between fw-normal">안내사항<i class="icon-full-menu-arr"></i></a>
-                    </li>
-                    <li>
-                      <a href="../customer/customer_qna_event_form.html" class="justify-content-between fw-normal">문의하기<i class="icon-full-menu-arr"></i></a>
-                    </li>
-                  </ul>
+                <div id="spy-6">
+                  <div class="full-menu">
+                    <ul>
+                      <li>
+                        <a href="event_detail_lupick.html" class="justify-content-between font-eng font-20px">Lupick. <i class="icon-full-menu-arr"></i></a>
+                      </li>
+                      <li>
+                        <a href="event_detail_process.html" class="justify-content-between fw-normal">이벤트 프로세스<i class="icon-full-menu-arr"></i></a>
+                      </li>
+                      <li>
+                        <a href="event_detail_notice.html" class="justify-content-between fw-normal">상품정보고지<i class="icon-full-menu-arr"></i></a>
+                      </li>
+                      <li>
+                        <a href="event_detail_refund.html" class="justify-content-between fw-normal">취소/교환/환불<i class="icon-full-menu-arr"></i></a>
+                      </li>
+                      <li>
+                        <a href="event_detail_vote.html" class="justify-content-between fw-normal">루픽 투표<i class="icon-full-menu-arr"></i></a>
+                      </li>
+                      <li>
+                        <a href="event_detail_guidance.html" class="justify-content-between fw-normal">안내사항<i class="icon-full-menu-arr"></i></a>
+                      </li>
+                      <li>
+                        <a href="../customer/customer_qna_event_form.html" class="justify-content-between fw-normal">문의하기<i class="icon-full-menu-arr"></i></a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
                 <!-- //메뉴 -->
               </div>
             </div>
             <!-- 하단 버튼 -->
-            <div class="bottom-buttons d-lg-none">
-              <p class="stock-count"><span>16,000</span>개 모집 중, <strong>302</strong>개 남음</p>
-              <button type="button" class="btn btn-dark btn-lg w-100 px-0" data-bs-toggle="modal" data-bs-target="#modal-event-option">구매하기</button>
-              <!-- <button type="button" class="btn btn-dark btn-lg w-100 px-0"><i class="icon-bell-white mr-5px"></i>알림신청</button>
-                <button type="button" class="btn btn-dark btn-lg w-100 px-0 text-primary"><i class="icon-alarm-yellow mr-5px"></i>등록완료</button> -->
+            <div class="d-lg-none">
+              <div class="bottom-buttons">
+                <p class="stock-count"><span>16,000</span>개 모집 중, <strong>302</strong>개 남음</p>
+                <button type="button" class="btn btn-dark btn-lg w-100 px-0" data-bs-toggle="modal" data-bs-target="#modal-event-option">구매하기</button>
+                <!-- <button type="button" class="btn btn-dark btn-lg w-100 px-0"><i class="icon-bell-white mr-5px"></i>알림신청</button>
+                  <button type="button" class="btn btn-dark btn-lg w-100 px-0 text-primary"><i class="icon-alarm-yellow mr-5px"></i>등록완료</button> -->
+              </div>
             </div>
             <!-- //하단 버튼 -->
           </div>

@@ -61,9 +61,9 @@
   .nav-lg-badges{
     display: flex;align-items: center;gap: 10px;
     .nav-link{
-      display: inline-block;height: 40px;font-size: 12px;font-weight:700;line-height: 40px;color: #fff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: 50rem;padding: 0 15px;
+      display: inline-block;height: 40px;line-height: 40px;color: #fff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: 50rem;padding: 0 15px;
       border: 1px solid $gray-light;color: $gray-light;font-size: 18px;
-      &.active{background: $dark;color: #fff;border-color: $dark;}
+      &.active{background: $dark;color: #fff;border-color: $dark;font-weight:700;}
     }
   }
 }

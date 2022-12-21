@@ -40,6 +40,9 @@ body.modal-open{
   text-align: center;width: 100%;padding: 10px;position: absolute;
   left: 0;top: 0;line-height: 1;font-size: 0;z-index: 2;
   &::before{content: '';width: 34px;height: 4px;background: $muted;display: inline-block;}
+  @include media-breakpoint-up(lg){
+    display: none;
+  }
 }
 
 .modal-header {

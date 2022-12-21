@@ -146,7 +146,7 @@
           2편은 돌고 돌아 군만두다!
         </div>
       </div>
-      <div id="layout">
+      <div id="layout" class="pt-lg-0">
         <main id="main" class="max-width-100">
           <!-- 실컨텐츠 -->
           <!-- 메인 상단 이벤트 배너 -->
@@ -303,6 +303,8 @@
                     </div>
                     }
                   </div>
+                  <div class="swiper-button-prev swiper-button-prev-main-image-banner"></div>
+                  <div class="swiper-button-next swiper-button-next-main-image-banner"></div>
                   <div class="swiper-pagination swiper-pagination-main-image-banner"></div>
                 </div>
                 <script>
@@ -311,6 +313,14 @@
                     pagination: {
                       el: '.swiper-pagination-main-image-banner',
                       type: 'fraction',
+                    },
+                    breakpoints: {
+                      992: {
+                        navigation: {
+                          nextEl: '.swiper-button-next-main-image-banner',
+                          prevEl: '.swiper-button-prev-main-image-banner',
+                        },
+                      }
                     },
                   });
                 </script>
@@ -324,7 +334,7 @@
                   <h2 class="section-title mb-0 mt-0">쇼핑 이벤트</h2>
                 </div>
                 <div class="col-auto">
-                  <a href="#none" class="text-secondary font-14px fw-bold font-lg-16px">더보기</a>
+                  <a href="#none" class="text-secondary font-14px fw-bold font-lg-20px">더보기</a>
                 </div>
               </div>
               <div class="section-title-desc d-none d-lg-block">모든 이벤트 상품에 리워드가 포함되어 있어 즐겁게 이벤트를 쇼핑할 수 있습니다.</div>
@@ -496,7 +506,7 @@
               <h2 class="section-title mb-0 mt-0">프리&amp;포인트 이벤트</h2>
             </div>
             <div class="col-auto">
-              <a href="@@webRoot/html/free_point/free_point.html" class="text-secondary font-14px fw-bold font-lg-16px">더보기</a>
+              <a href="@@webRoot/html/free_point/free_point.html" class="text-secondary font-14px fw-bold font-lg-20px">더보기</a>
             </div>
           </div>
           <div class="section-title-desc d-none d-lg-block">모든 이벤트 상품에 리워드가 포함되어 있어 즐겁게 이벤트를 쇼핑할 수 있습니다.</div>
@@ -617,15 +627,22 @@
           </div>
           <!-- //퀴즈 -->
           <!-- 실제 구매자 리뷰 -->
-          <div>
+          <div class="d-none d-lg-block">
             <div class="main-reviews">
               <h2 class="section-title mt-lg-80px mb-lg-15px">실제 구매자 리뷰</h2>
               <div class="main-review-list">
                 @@for (var i = 4; i > 0; i--) {
                 <div class="review-item">
                   <a href="javascript:;">
-                    <div class="img">
-                      <img src="@@webRoot/assets/images/@portrait.jpg" alt="">
+                    <div class="position-relative">
+                      <div class="img">
+                        <img src="@@webRoot/assets/images/@portrait.jpg" alt="">
+                      </div>
+                      <div class="user">
+                        <div class="user-profile">
+                          <img src="../../assets/images/@profile.jpg" alt="티도">
+                        </div>
+                      </div>
                     </div>
                     <div class="title">감자볶음밥 세트</div>
                     <div class="content">하나를 둘이서 갈라먹어서 이건 반정도 되는양이에요! 내용물도 큼직큼직하고 양이 많아요. 지인들에게 나눠주고 싶은 그런 맛…</div>

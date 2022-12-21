@@ -56,6 +56,12 @@
   }
   .plus{display: inline-block;background: url('../images/icon-calc-plus.svg') no-repeat center;background-size: contain;width: 10px;height: 10px;vertical-align: top;}
   .minus{display: inline-block;background: url('../images/icon-calc-minus.svg') no-repeat center;background-size: contain;width: 10px;height: 10px;vertical-align: top;}
+  @include media-breakpoint-up(lg){
+    dl{
+      dt{font-size: 18px;}
+      dd{font-size: 20px;}
+    }
+  }
 }
 
 .added-payment-type{
@@ -74,9 +80,9 @@
     img{flex: 0 0 0 520px;max-width: 520px;}
     .btn-card-add-desktop{
       border: 2px dashed #bfbfbf;border-radius: 30px;
-      background: rgba(0, 0, 0, 0.05);color: $gray-light;
+      background: rgba(0, 0, 0, 0.05);color: #bfbfbf;
       flex: 0 0 247px;font-size: 22px;font-weight: 700;
-      span{display: block;}
+      span{display: block;background: url('../images/icon-card-add-pc.svg') no-repeat 0 0;width: 39px;height: 39px;margin: 0 auto 2rem;}
     }
   }
 }
