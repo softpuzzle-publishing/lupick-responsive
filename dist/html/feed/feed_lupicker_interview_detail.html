@@ -139,6 +139,148 @@
                 </div>
                 상세 이미지 영역
               </div>
+              <div class="events justify-content-center mt-4">
+                <div class="event-item">
+                  <div class="event-state">
+                    <a href="../event/event_detail.html" class="inner">
+                      <div class="img round"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                      <div class="state">
+                        <div class="progress">
+                          <div class="progress-bar" role="progressbar" style="width: 88%" data-percent="88"></div>
+                        </div>
+                        <div class="row align-items-center justify-content-between px-3">
+                          <div class="col-auto">
+                            <div class="d-flex align-items-center"><i class="icon-clock-white"></i> <span>12일 남음</span></div>
+                          </div>
+                          <div class="col-auto">
+                            <span>67% 참여 중</span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="event-gift">
+                    <div class="swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <div class="item">
+                            <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="item">
+                            <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="item">
+                            <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="item">
+                            <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <script>
+                    var interviewEventGiftSwiper = [];
+                    $('.event-gift .swiper').each(function (i) {
+                      interviewEventGiftSwiper[i] = new Swiper($(this)[0], {
+                        // eslint-disable-line
+                        slidesPerView: 4.4,
+                        freeMode: true,
+                        spaceBetween: 5,
+                        slidesOffsetBefore: 20,
+                        slidesOffsetAfter: 20,
+                        breakpoints: {
+                          992: {
+                            slidesOffsetBefore: 0,
+                            slidesOffsetAfter: 0,
+                          },
+                        },
+                      });
+                    });
+                  </script>
+                  <div class="event-information">
+                    <div class="title">[하이브로우] 미니캐리어 테이블 구매하고 랜드로버 뉴 디펜더 타고 캠핑가자!</div>
+                    <div class="desc">1명 8000만원 랜드로버 지급, 2명에게는 200,000포인트</div>
+                    <div class="price">
+                      <del>67,350원</del>
+                      <div class="d-flex align-items-center">
+                        <div class="discount">15%</div>
+                        <div class="final">57,000원</div>
+                      </div>
+                    </div>
+                    <div class="badges">
+                      <span class="badge outline-gray">3차 오픈</span>
+                      <span class="badge outline-gray">1,342,432개 누적 구매</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="section-title-lg font-eng has-border-top mt-5">Related Events</div>
+              <div class="main-events-free">
+                <div class="events-free">
+                  <a href="#none" class="item">
+                    <div class="row gx-10px gx-lg-30px">
+                      <div class="col">
+                        <div class="img"><img src="../../assets/images/@product.png" alt="" /></div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column justify-content-between h-100">
+                          <div>
+                            <div class="title">500포인트로 300명 모아서 롯데 시그니엘 숙박권(조식)쏜다🏨</div>
+                            <div class="desc">롯데 시그니엘 1명, 숙박권 전달하고 나머지는 100P씩</div>
+                          </div>
+                          <div>
+                            <div class="price">무료참여</div>
+                            <div class="row gx-0 justify-content-between">
+                              <div class="col-auto">
+                                <div class="timer">22:24:24</div>
+                              </div>
+                              <div class="col-auto">
+                                <div class="percent">67% 참여 중</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="#none" class="item">
+                    <div class="row gx-10px gx-lg-30px">
+                      <div class="col">
+                        <div class="img"><img src="../../assets/images/@product.png" alt="" /></div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex flex-column justify-content-between h-100">
+                          <div>
+                            <div class="title">500포인트로 300명 모아서 롯데 시그니엘 숙박권(조식)쏜다🏨</div>
+                            <div class="desc">롯데 시그니엘 1명, 숙박권 전달하고 나머지는 100P씩</div>
+                          </div>
+                          <div>
+                            <div class="price">
+                              <i class="icon-point"></i>
+                              <strong class="point">500</strong>
+                            </div>
+                            <div class="row gx-0 justify-content-between">
+                              <div class="col-auto">
+                                <div class="timer">22:24:24</div>
+                              </div>
+                              <div class="col-auto">
+                                <div class="percent">67% 참여 중</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
             </div>
             <!-- //실컨텐츠 -->
           </main>

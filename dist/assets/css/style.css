@@ -1876,7 +1876,7 @@ progress {
 }
 
 .mt-n10px {
-  margin-top: -10px !important;
+  margin-top: -10px;
 }
 
 @media (min-width: 992px) {
@@ -2644,6 +2644,11 @@ ul.text-menu li + li::before {
 .section-title-lg.has-border-top {
   border-top: 2px solid #000;
   padding-top: 15px;
+}
+@media (min-width: 992px) {
+  .section-title-lg {
+    font-size: 30px;
+  }
 }
 
 .section-title-desc {
@@ -5645,12 +5650,10 @@ ul.text-menu li + li::before {
   .my-event-list {
     border-top: 0;
   }
-  .my-event-list.mt-n10px {
-    margin-top: 0 !important;
-  }
   .my-event-list .item {
     padding-left: 0;
     padding-right: 0;
+    border-width: 5px;
   }
   .my-event-list .item:first-child {
     padding-top: 0;
@@ -5733,6 +5736,15 @@ ul.text-menu li + li::before {
   margin-top: 5px;
 }
 @media (min-width: 992px) {
+  .my-event-list.img-first .item {
+    border-top: 5px solid rgba(0, 0, 0, 0.05);
+    padding-top: 20px;
+    margin-top: 20px;
+  }
+  .my-event-list.img-first .item:first-child {
+    border-top: 0;
+    margin-top: 0;
+  }
   .my-event-list.img-first .title {
     font-size: 16px;
     display: block;
@@ -6845,6 +6857,13 @@ ul.text-menu li + li::before {
   font-weight: 700;
 }
 
+@media (min-width: 992px) {
+  .form-wrap {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 30px 100px 50px;
+  }
+}
 .error-wrap {
   display: flex;
   align-items: center;
