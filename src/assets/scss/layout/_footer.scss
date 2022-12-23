@@ -32,23 +32,23 @@
   }
   @include media-breakpoint-up(lg){
     display: block !important;padding-bottom: 0;border-top: 1px solid $border-color;
-    > .container{padding-bottom: 30px;}
+    > .container{padding-bottom: 50px;padding-top: 50px;}
     .btn-info-toggler{display: none;}
+    .footer-menu{
+      margin-top: 0;margin-bottom: 30px;
+      li + li::before{height: 14px;margin: 0 15px;transform: translateY(1px);}
+      a{font-size: 14px;color: $gray-light;}
+    }
     .footer-logo{
       img{height: 30px;width: auto;}
     }
     .footer-info{
-      display: block !important;font-size: 16px;margin-top: 25px;
-      > div{display: inline-block;margin-right: 30px;margin-bottom: 8px;}
+      display: block !important;font-size: 12px;margin-top: 25px;
+      > div{display: inline-block;margin-right: 30px;margin-bottom: 2px;}
     }
-    .footer-warning{font-size: 14px;}
-    .footer-menu{
-      margin-top: 0;margin-bottom: 30px;
-      li + li::before{height: 14px;margin: 0 15px;transform: translateY(1px);}
-      a{font-size: 18px;color: $gray-light;}
-    }
+    .footer-warning{font-size: 11px;}
     .footer-customer{
-      margin-top: 25px;color: $gray-light;font-size: 16px;
+      margin-top: 25px;color: $gray-light;font-size: 12px;
       a{color: $gray-light;}
     }
   }

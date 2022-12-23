@@ -236,15 +236,6 @@
   .circle:nth-of-type(4){right: 100px;top: 10px;animation: bounce2 20s .8s infinite alternate;}
 }
 
-.full-video{
-  position: relative;height: 0;padding-bottom: 56.25%;
-  > video,
-  > iframe{position: absolute;left: 0;top: 0;width: 100% !important;height: 100% !important;}
-  .container &{
-    margin-left: -20px;margin-right: -20px;
-  }
-}
-
 .fail-message{
   text-align: center;padding-top: 50px;
   i{margin-bottom: 30px;}

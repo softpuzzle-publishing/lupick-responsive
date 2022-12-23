@@ -247,12 +247,45 @@
             </div>
             <div class="swiper-button-prev swiper-button-prev-main-top-banner"></div>
             <div class="swiper-button-next swiper-button-next-main-top-banner"></div>
+            <div class="swiper-pagination swiper-pagination-main-top-banner-pc"></div>
           </div>
           <div class="title" style="color: #fff">
             다시 돌아온 추멘세끼, <br />
             2편은 돌고 돌아 군만두다!
           </div>
         </div>
+        <script>
+          const mainTopBannerSwiperPc = new Swiper('.main-top-banner.d-lg-block .swiper', {
+            // eslint-disable-line
+            loop: true,
+            autoplay: {
+              delay: 6000,
+            },
+            pagination: {
+              el: '.swiper-pagination-main-top-banner-pc',
+              type: 'bullets',
+            },
+            navigation: {
+              nextEl: '.swiper-button-next-main-top-banner',
+              prevEl: '.swiper-button-prev-main-top-banner',
+            },
+            on: {
+              slideChangeTransitionStart: function () {
+                setTimeout(function () {
+                  $('.main-top-banner .state').addClass('zoom');
+                }, 50);
+              },
+              slideChangeTransitionEnd: function () {
+                $('.main-top-banner .state').removeClass('zoom');
+                //슬라이드 변경될 때 각 슬라이드의 상태값을 변경
+                let activeIdx = $('.main-top-banner .swiper-slide-active');
+                $('.main-top-banner .state').attr('data-event-state', activeIdx.attr('data-event-state'));
+                //슬라이드 변경될 때 각 슬라이드의 타이틀 변경
+                $('.main-top-banner .title').html(activeIdx.attr('data-event-title'));
+              },
+            },
+          });
+        </script>
         <div id="layout" class="pt-lg-0">
           <main id="main" class="max-width-100">
             <!-- 실컨텐츠 -->
@@ -302,7 +335,7 @@
               </div>
               <div class="swiper-pagination swiper-pagination-main-top-banner"></div>
               <script>
-                const mainTopBannerSwiper = new Swiper('.main-top-banner .swiper', {
+                const mainTopBannerSwiperMobile = new Swiper('.main-top-banner.d-lg-none .swiper', {
                   // eslint-disable-line
                   loop: true,
                   autoplay: {
@@ -311,14 +344,6 @@
                   pagination: {
                     el: '.swiper-pagination-main-top-banner',
                     type: 'progressbar',
-                  },
-                  breakpoints: {
-                    992: {
-                      navigation: {
-                        nextEl: '.swiper-button-next-main-top-banner',
-                        prevEl: '.swiper-button-prev-main-top-banner',
-                      },
-                    },
                   },
                   on: {
                     slideChangeTransitionStart: function () {
@@ -443,7 +468,7 @@
                     <h2 class="section-title mb-0 mt-0">쇼핑 이벤트</h2>
                   </div>
                   <div class="col-auto">
-                    <a href="#none" class="text-secondary font-14px fw-bold font-lg-20px">더보기</a>
+                    <a href="#none" class="text-secondary font-14px fw-bold font-lg-18px">더보기</a>
                   </div>
                 </div>
                 <div class="section-title-desc d-none d-lg-block">모든 이벤트 상품에 리워드가 포함되어 있어 즐겁게 이벤트를 쇼핑할 수 있습니다.</div>
@@ -610,7 +635,7 @@
                 <h2 class="section-title mb-0 mt-0">프리&amp;포인트 이벤트</h2>
               </div>
               <div class="col-auto">
-                <a href="../../html/free_point/free_point.html" class="text-secondary font-14px fw-bold font-lg-20px">더보기</a>
+                <a href="../../html/free_point/free_point.html" class="text-secondary font-14px fw-bold font-lg-18px">더보기</a>
               </div>
             </div>
             <div class="section-title-desc d-none d-lg-block">모든 이벤트 상품에 리워드가 포함되어 있어 즐겁게 이벤트를 쇼핑할 수 있습니다.</div>

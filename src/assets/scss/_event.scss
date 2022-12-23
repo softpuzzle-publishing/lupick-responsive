@@ -14,13 +14,14 @@
 }
 
 .full-video{
-  position: relative;height: 0;padding-bottom: 56.25%;margin: 0 -20px 20px;
+  position: relative;height: 0;padding-bottom: 56.25%;
+  > video,
   > iframe{position: absolute;left: 0;top: 0;width: 100% !important;height: 100% !important;}
 }
 
 .full-img{
-  margin: 0 -20px;overflow: hidden;
-  img{width: auto !important;max-width: 100% !important;height: auto !important;}
+  overflow: hidden;
+  img{width: auto !important;width: 100% !important;height: auto !important;}
 }
 
 .event-information{
@@ -160,8 +161,8 @@
         font-size: 24px;margin-top: 15px;margin-bottom: 10px;
         .icon-point{width: 24px;height: 24px;}
       }
-      .timer{font-size: 20px;}
-      .percent{font-size: 20px;}
+      .timer{font-size: 16px;}
+      .percent{font-size: 16px;}
     }
   }
 }
