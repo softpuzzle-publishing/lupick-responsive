@@ -6,6 +6,23 @@
 
   <script>
     $(document).ready(function () {
+      var link = $('#event-detail-spy a');
+
+      $(window).on('scroll', function () {
+        findPosition();
+      });
+
+      function findPosition() {
+        $('[id^="spy-"]').each(function () {
+          if (($(this).offset().top - $(window).scrollTop()) < 20) {
+            link.removeClass('active');
+            $('#event-detail-spy').find('[data-scroll="' + $(this).attr('id') + '"]').addClass('active');
+          }
+        });
+      }
+
+      findPosition();
+
       //포토리뷰 swiper
       var photosSwiper = [];
       $(".reviews .photos .swiper").each(function (i) {
@@ -91,6 +108,13 @@
         } else {
           $fixedPrice.removeClass('fixed');
         }
+
+        //footer 보이면 footer위로 위치 이동
+        if ($(window).scrollTop() + $(window).height() > $('#footer').offset().top + 100) {
+          $fixedPrice.addClass('footer-visible');
+        } else {
+          $fixedPrice.removeClass('footer-visible');
+        }
       }
       $(window).scroll(function () {
         scrollFixedPrice();
@@ -99,7 +123,7 @@
   </script>
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#event-detail-spy">
+<body>
   <div id="wrap">
     @@include('@@webRoot/html/_include/_header.html', { "title": "이벤트 상세보기" })
     <div id="container">
@@ -225,15 +249,15 @@
             <!-- Pc용 중간 nav bar -->
             <div class="event-nav-bar d-none d-lg-block">
               <nav id="event-detail-spy">
-                <a href="#spy-1">
+                <a href="#spy-1" data-scroll="spy-1">
                   <span>리뷰</span>
                   <span class="text-secondary ms-1">223</span>
                 </a>
-                <a href="#spy-2"><span>이벤트 스토리</span></a>
-                <a href="#spy-3"><span>이벤트 상품</span></a>
-                <a href="#spy-4"><span>루픽리워드</span></a>
-                <a href="#spy-5"><span>보상 포인트</span></a>
-                <a href="#spy-6"><span>기타</span></a>
+                <a href="#spy-2" data-scroll="spy-2"><span>이벤트 스토리</span></a>
+                <a href="#spy-3" data-scroll="spy-3"><span>이벤트 상품</span></a>
+                <a href="#spy-4" data-scroll="spy-4"><span>루픽리워드</span></a>
+                <a href="#spy-5" data-scroll="spy-5"><span>보상 포인트</span></a>
+                <a href="#spy-6" data-scroll="spy-6"><span>기타</span></a>
               </nav>
             </div>
             <!-- //Pc용 중간 nav bar -->

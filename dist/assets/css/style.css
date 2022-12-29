@@ -3654,13 +3654,18 @@ ul.text-menu li + li::before {
   .layout-top .event-price-info.fixed {
     position: fixed;
     left: 50%;
-    top: 190px;
+    bottom: 30px;
     width: 380px;
     margin-left: 220px;
     z-index: 11;
     border-top: 0;
     margin-top: 0;
     padding-top: 0;
+    transition: bottom 0.4s;
+  }
+  .layout-top .event-price-info.footer-visible {
+    bottom: 435px;
+    transition-duration: 0.5s;
   }
   .layout-top-left {
     width: 582px;
@@ -6948,6 +6953,54 @@ ul.text-menu li + li::before {
   .login-message {
     font-size: 16px;
   }
+}
+
+.sns-login {
+  text-align: center;
+  margin-top: 40px;
+}
+.sns-login > p {
+  position: relative;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.sns-login > p span {
+  font-size: 14px;
+  line-height: 20px;
+  display: inline-block;
+  background: #fff;
+  padding: 0 5px;
+  color: #999;
+}
+.sns-login > p::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-1px);
+  z-index: -1;
+}
+.sns-login button {
+  position: relative;
+  overflow: hidden;
+}
+.sns-login button img {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sns-login button.btn-login-kakao {
+  background: #fae300;
+  border-color: #fae300;
+}
+.sns-login button.btn-login-naver {
+  background: #1ec801;
+  border-color: #1ec801;
+  color: #fff;
 }
 
 .find-result {
