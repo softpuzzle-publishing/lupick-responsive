@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  @@include('@@webRoot/html/_include/_head.html')
+</head>
+
+<body>
+  <div id="wrap">
+    @@include('@@webRoot/html/_include/_header.html', { "title": "연동 계정 관리" })
+    <div id="container">
+      @@include('@@webRoot/html/_include/_top-my.html')
+      <div id="layout">
+        @@include('@@webRoot/html/_include/_sidebar-my.html')
+        <main id="main">
+          <!-- 실컨텐츠 -->
+          <div class="main-title-area">
+            <h2 class="main-title">연동 계정 관리</h2>
+          </div>
+          <div class="container pt-20px">
+            <div class="my-social-account">
+              <ul>
+                <li>
+                  <label for="socialKakao" class="social-account">
+                    <i class="icon-social-kakao"></i>
+                    <span>카카오 계정 연동</span>
+                  </label>
+                  <div class="form-check switch">
+                    <input type="checkbox" id="socialKakao">
+                    <label for="socialKakao"></label>
+                  </div>
+                </li>
+                <li>
+                  <label for="socialNaver" class="social-account">
+                    <i class="icon-social-naver"></i>
+                    <span>네이버 계정 연동</span>
+                  </label>
+                  <div class="form-check switch">
+                    <input type="checkbox" id="socialNaver">
+                    <label for="socialNaver"></label>
+                  </div>
+                </li>
+                <li>
+                  <label for="socialApple" class="social-account">
+                    <i class="icon-social-apple"></i>
+                    <span>애플 계정 연동</span>
+                  </label>
+                  <div class="form-check switch">
+                    <input type="checkbox" id="socialApple">
+                    <label for="socialApple"></label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- //실컨텐츠 -->
+        </main>
+      </div>
+    </div>
+    @@include('@@webRoot/html/_include/_footer.html')
+  </div>
+
+  @@include('@@webRoot/html/_include/_modal.html')
+
+</body>
+
+</html>

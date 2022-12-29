@@ -95,9 +95,9 @@
               <!-- 로그인 후 -->
               <button type="button" aria-label="알림" data-bs-toggle="modal" data-bs-target="#modal-alarm"><i class="icon-bell"></i></button>
               <div class="btn-mypage-wrap">
-                <button type="button" class="btn-mypage" aria-label="마이페이지">
-                  <div class="img"><img src=" ../../assets/images/profile-after-login-1.svg" alt="프로필 사진 없음(로그인 후)" class="default" /></div>
-                </button>
+                <!-- <button type="button" class="btn-mypage" aria-label="마이페이지">
+            <div class="img"><img src=" ../../assets/images/profile-after-login-1.svg" alt="프로필 사진 없음(로그인 후)" class="default"></div>
+          </button> -->
                 <button type="button" class="btn-mypage" aria-label="마이페이지">
                   <!-- <img src=" ../../assets/images/profile-after-login-1.svg" alt="프로필 사진 없음(로그인 후)" class="default"> -->
                   <div class="img"><img src="../../assets/images/@profile.jpg" alt="{{유저 닉네임}} 프로필 사진" /></div>
@@ -106,7 +106,7 @@
                   <ul>
                     <li><a href="../../html/my/my_event_order_history.html">주문 및 참여 내역</a></li>
                     <li><a href="../../html/my/my_event_reviews.html">나의 리뷰</a></li>
-                    <li><a href="../../html/customer/my_qna.html">문의 내역</a></li>
+                    <li><a href="../../html/customer/customer_my_qna.html">문의 내역</a></li>
                     <li><a href="../../html/my/my_info_password.html">내 정보 관리</a></li>
                     <li><a href="../../html/notice/notice.html">공지사항</a></li>
                     <li><a href="#none">로그아웃</a></li>
@@ -189,6 +189,23 @@
         </div>
       </footer>
     </div>
+    <div class="modal alert" tabindex="-1" id="modal-brand-ready">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="alert-text">해당 브랜드관은 준비중입니다.</div>
+          </div>
+          <div class="modal-footer">
+            <div class="row gx-0">
+              <div class="col">
+                <button type="button" class="btn btn-outline-light btn-lg w-100 fw-bold" data-bs-dismiss="modal">확인</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- alert: 새 비밀번호 등록 확인  -->
     <div class="modal alert" tabindex="-1" id="alert-confirm">
       <div class="modal-dialog">

@@ -6,17 +6,6 @@
 
   <script>
     $(document).ready(function () {
-      // eslint-disable-next-line
-      const scrollSpy = new bootstrap.ScrollSpy(document.body, {
-        target: '#event-detail-spy',
-        rootMargin: "0px"
-      })
-
-      const firstScrollSpyEl = document.querySelector('body');
-      firstScrollSpyEl.addEventListener('activate.bs.scrollspy', () => {
-        // do something...
-        //console.log(1);
-      })
       //포토리뷰 swiper
       var photosSwiper = [];
       $(".reviews .photos .swiper").each(function (i) {
@@ -110,7 +99,7 @@
   </script>
 </head>
 
-<body>
+<body data-bs-spy="scroll" data-bs-target="#event-detail-spy">
   <div id="wrap">
     @@include('@@webRoot/html/_include/_header.html', { "title": "이벤트 상세보기" })
     <div id="container">

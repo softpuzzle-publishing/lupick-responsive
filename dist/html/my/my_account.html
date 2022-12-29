@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-Compatible" content="IE=edge" />
+    <title>Lupick</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no, viewport-fit=cover" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <link rel="icon" type="image/png" href="../../assets/images/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../../assets/images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../../assets/images/favicon-152x152.png" sizes="152x152" />
+    <link rel="icon" type="image/png" href="../../assets/images/favicon-512x512.png" sizes="512x512" />
+
+    <!-- library css -->
+    <link rel="stylesheet" href="../../assets/lib/jquery-ui/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../../assets/lib/swiper/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../../assets/lib/select2/css/select2.min.css" />
+
+    <!-- publilshing css -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap-grid.css" />
+    <link rel="stylesheet" href="../../assets/css/bootstrap-utilities.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+    <!-- library js -->
+    <script src="../../assets/lib/jquery/jquery.min.js"></script>
+    <script src="../../assets/lib/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../../assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/lib/select2/js/select2.min.js"></script>
+    <script src="../../assets/lib/swiper/js/swiper-bundle.min.js"></script>
+
+    <!-- publishing js -->
+    <script src="../../assets/js/ui.js" async></script>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <header id="header">
+        <div class="container">
+          <div class="header-sub">
+            <button type="button" class="btn-back" aria-label="뒤로" onclick="window.history.back()">
+              <i class="icon-back"></i>
+            </button>
+            <h1 class="header-title">연동 계정 관리</h1>
+            <div class="buttons">
+              <!-- 이벤트 상세에서만 노출 -->
+              <button type="button" aria-label="공유" data-bs-toggle="modal" data-bs-target="#modal-event-share" class="btn-share"><i class="icon-share"></i></button>
+              <!-- //이벤트 상세에서만 노출 -->
+              <!-- 이벤트 결과에서만 노출 -->
+              <button type="button" aria-label="리스트" data-bs-toggle="modal" data-bs-target="#modal-result-list" class="btn-list"><i class="icon-list"></i></button>
+              <!-- //이벤트 결과에서만 노출 -->
+            </div>
+          </div>
+          <div class="header-main">
+            <div class="logo"><span class="visually-hidden">Lupick Logo</span></div>
+            <div class="logo-feed"><span class="visually-hidden">Feed</span></div>
+            <div class="logo-my"><span class="visually-hidden">My</span></div>
+            <div class="buttons">
+              <button type="button" aria-label="알림" data-bs-toggle="modal" data-bs-target="#modal-alarm"><i class="icon-bell"></i></button>
+              <button type="button" aria-label="환경설정" onclick="location.href='../../html/setting/setting.html'"><i class="icon-gear"></i></button>
+            </div>
+          </div>
+          <div class="header-desktop">
+            <a href="../../html/main/main.html" class="logo"><span class="visually-hidden">Lupick Logo</span></a>
+            <nav id="gnb">
+              <ul>
+                <li class="active">
+                  <a href="../../html/main/main.html"><span>루픽 홈</span></a>
+                </li>
+                <li>
+                  <a href="../../html/brand/index.html"><span>브랜드관</span></a>
+                </li>
+                <li>
+                  <a href=""><span>쇼핑</span></a>
+                </li>
+                <li>
+                  <a href="../../html/free_point/free_point.html"><span>프리&amp;포인트</span></a>
+                </li>
+                <li>
+                  <a href="../../html/feed/feed.html"><span>피드</span></a>
+                </li>
+                <li>
+                  <a href="about.lupick.com" target="_blank"><span>About</span></a>
+                </li>
+              </ul>
+            </nav>
+            <div class="buttons">
+              <!-- 로그인 전 -->
+              <ul class="text-menu">
+                <li><a href="../../html/login/login.html">로그인</a></li>
+                <li><a href="../../html/join/join.html">회원가입</a></li>
+                <li><a href="../../html/customer/customer.html">고객센터</a></li>
+              </ul>
+              <!-- //로그인 전 -->
+              <!-- 로그인 후 -->
+              <button type="button" aria-label="알림" data-bs-toggle="modal" data-bs-target="#modal-alarm"><i class="icon-bell"></i></button>
+              <div class="btn-mypage-wrap">
+                <!-- <button type="button" class="btn-mypage" aria-label="마이페이지">
+            <div class="img"><img src=" ../../assets/images/profile-after-login-1.svg" alt="프로필 사진 없음(로그인 후)" class="default"></div>
+          </button> -->
+                <button type="button" class="btn-mypage" aria-label="마이페이지">
+                  <!-- <img src=" ../../assets/images/profile-after-login-1.svg" alt="프로필 사진 없음(로그인 후)" class="default"> -->
+                  <div class="img"><img src="../../assets/images/@profile.jpg" alt="{{유저 닉네임}} 프로필 사진" /></div>
+                </button>
+                <div class="my-layer-menu">
+                  <ul>
+                    <li><a href="../../html/my/my_event_order_history.html">주문 및 참여 내역</a></li>
+                    <li><a href="../../html/my/my_event_reviews.html">나의 리뷰</a></li>
+                    <li><a href="../../html/customer/customer_my_qna.html">문의 내역</a></li>
+                    <li><a href="../../html/my/my_info_password.html">내 정보 관리</a></li>
+                    <li><a href="../../html/notice/notice.html">공지사항</a></li>
+                    <li><a href="#none">로그아웃</a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- //로그인 후 -->
+            </div>
+          </div>
+        </div>
+      </header>
+      <div id="container">
+        <div id="my-top">
+          <div class="container">
+            <div class="row gx-2">
+              <div class="col-auto">
+                <div class="my-top-left">
+                  <div class="my-top-box">
+                    <div class="my-profile">
+                      <div class="img">
+                        <!-- <img src="../../assets/images/profile-before-login-1.svg" alt="프로필 사진 없음(로그인 전)" class="default">
+                  <img src="../../assets/images/profile-after-login-1.svg" alt="프로필 사진 없음(로그인 후)" class="default"> -->
+                        <img src="../../assets/images/@profile.jpg" alt="복남이 프로필 사진" />
+                      </div>
+                      <div class="info">
+                        <!-- 로그인 전 -->
+                        <!-- <a href="../login/login.html" class="username">로그인 <i class="icon-full-menu-arr"></i></a> -->
+                        <!-- 로그인 후 -->
+                        <div class="username">복남이</div>
+                      </div>
+                      <a href="../../html/my/my_profile.html" class="btn btn-xs btn-outline-light">설정</a>
+                    </div>
+                    <div class="my-point">
+                      <div class="point">
+                        <i class="icon-point"></i>
+                        <strong>77,000</strong>
+                      </div>
+                      <div class="menu">
+                        <a href="../util/lupickguide.html">사용방법</a>
+                        <span class="bar"></span>
+                        <a href="my_point.html">사용내역</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="my-top-right">
+                  <div class="my-top-box">
+                    <div class="my-event-state">
+                      <div class="section-title">참여 이벤트 상태 <small>(최근 3개월)</small></div>
+                      <div class="my-event-step">
+                        <div class="row gx-2 justify-content-between align-items-center">
+                          <a href="../../html/my/my_event_ing.html" class="col">
+                            <div class="event-count"><span class="text-secondary">21</span></div>
+                            <div class="event-order">참여중 <br />이벤트</div>
+                          </a>
+                          <div class="col-auto"><i class="icon-step-arr-right"></i></div>
+                          <a href="../../html/my/my_event_votable.html" class="col">
+                            <div class="event-count"><span class="text-secondary">4</span></div>
+                            <div class="event-order">투표 <br />요청</div>
+                          </a>
+                          <div class="col-auto"><i class="icon-step-arr-right"></i></div>
+                          <a href="../../html/my/my_event_shipping.html" class="col">
+                            <div class="event-count"><span>0</span></div>
+                            <div class="event-order">상품 <br />배송중</div>
+                          </a>
+                          <div class="col-auto"><i class="icon-step-arr-right"></i></div>
+                          <a href="../../html/my/my_event_purchasing_confirmation.html" class="col">
+                            <div class="event-count"><span>0</span></div>
+                            <div class="event-order">구매확정 <br />확인</div>
+                          </a>
+                          <div class="col-auto"><i class="icon-step-arr-right"></i></div>
+                          <a href="../../html/my/my_event_result.html" class="col">
+                            <div class="event-count"><span>0</span></div>
+                            <div class="event-order">이벤트 <br />결과</div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="my-top-buttons">
+                    <div class="row g-2">
+                      <div class="col">
+                        <button type="button" class="btn btn-white btn-round btn-xl fw-bold w-100" onclick="location.href='../../html/my/my_event_writable_reviews.html'">리뷰쓰고 포인트 받자 <span class="text-secondary ms-2">21</span></button>
+                      </div>
+                      <div class="col">
+                        <button type="button" class="btn btn-dark btn-round btn-xl fw-bold w-100 text-primary" onclick="location.href='../../html/my/my_event_selected_lupicker.html'">선정된 이벤트 확인</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="layout">
+          <aside id="aside">
+            <h1 class="sidebar-title">마이페이지</h1>
+            <nav class="sidebar">
+              <ul>
+                <!-- <li><a href="../../html/my/my_event_ing.html"><span>참여중 이벤트</span></a></li>
+      <li><a href="../../html/my/my_event_votable.html"><span>투표 요청</span></a></li>
+      <li><a href="../../html/my/my_event_shipping.html"><span>상품 배송중</span></a></li>
+      <li><a href="../../html/my/my_event_purchasing_confirmation.html"><span>구매확정 확인</span></a></li>
+      <li><a href="../../html/my/my_event_result.html"><span>이벤트 결과</span></a></li>
+      <li><a href="../../html/my/my_event_writable_reviews.html"><span>리뷰쓰기</span></a></li>
+      <li><a href="../../html/my/my_event_selected_lupicker.html"><span>선정된 이벤트</span></a></li> -->
+                <li class="active">
+                  <a href="../../html/my/my_event_order_history.html"><span>주문 및 참여 내역</span></a>
+                </li>
+                <li>
+                  <a href="../../html/my/my_event_cancel_history.html"><span>취소/교환/반품 내역</span></a>
+                </li>
+                <li>
+                  <a href="../../html/my/my_event_reviews.html"><span>나의 리뷰</span></a>
+                </li>
+                <li>
+                  <a href="../../html/customer/customer_my_qna.html"><span>문의 내역</span></a>
+                </li>
+                <!-- <li><a href="../../html/util/lupickguide.html"><span>포인트 사용방법</span></a></li> -->
+                <li>
+                  <a href="../../html/my/my_point.html"><span>포인트 사용내역</span></a>
+                </li>
+                <li>
+                  <a href="../../html/my/my_profile.html"><span>프로필 편집</span></a>
+                </li>
+                <li>
+                  <a href="../../html/my/my_info_password.html"><span>내 정보 관리</span></a>
+                </li>
+                <li>
+                  <a href="../../html/my/my_account.html"><span>연동 계정 관리</span></a>
+                </li>
+                <li>
+                  <a href="../../html/my/my_address.html"><span>배송지 관리</span></a>
+                </li>
+                <li>
+                  <a href="../../html/notice/notice.html"><span>공지사항</span></a>
+                </li>
+                <li>
+                  <a href="../../html/customer/customer.html"><span>고객센터</span></a>
+                </li>
+              </ul>
+              <a href="javascript:;" class="btn-friend-invite">친구초대하고 <span class="text-secondary">1,000P</span>씩 받기</a>
+            </nav>
+          </aside>
+          <main id="main">
+            <!-- 실컨텐츠 -->
+            <div class="main-title-area">
+              <h2 class="main-title">연동 계정 관리</h2>
+            </div>
+            <div class="container pt-20px">
+              <div class="my-social-account">
+                <ul>
+                  <li>
+                    <label for="socialKakao" class="social-account">
+                      <i class="icon-social-kakao"></i>
+                      <span>카카오 계정 연동</span>
+                    </label>
+                    <div class="form-check switch">
+                      <input type="checkbox" id="socialKakao" />
+                      <label for="socialKakao"></label>
+                    </div>
+                  </li>
+                  <li>
+                    <label for="socialNaver" class="social-account">
+                      <i class="icon-social-naver"></i>
+                      <span>네이버 계정 연동</span>
+                    </label>
+                    <div class="form-check switch">
+                      <input type="checkbox" id="socialNaver" />
+                      <label for="socialNaver"></label>
+                    </div>
+                  </li>
+                  <li>
+                    <label for="socialApple" class="social-account">
+                      <i class="icon-social-apple"></i>
+                      <span>애플 계정 연동</span>
+                    </label>
+                    <div class="form-check switch">
+                      <input type="checkbox" id="socialApple" />
+                      <label for="socialApple"></label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- //실컨텐츠 -->
+          </main>
+        </div>
+      </div>
+      <footer id="footer">
+        <div class="container">
+          <ul class="footer-menu d-none d-lg-flex">
+            <li><a href="">약관 및 정책</a></li>
+            <li><a href="">개인정보 수집 및 이용</a></li>
+            <li><a href="">콜라보문의</a></li>
+            <li><a href="">고객센터</a></li>
+          </ul>
+          <div class="d-flex align-items-center">
+            <div class="footer-logo">
+              <img src="../../assets/images/logo-gray.svg" alt="Lupick Logo" />
+            </div>
+            <a href="#footer-info" role="button" class="btn-info-toggler" data-bs-toggle="collapse" aria-expanded="false">사업자정보</a>
+          </div>
+          <div class="footer-info collapse" id="footer-info">
+            <div>(주) 루픽</div>
+            <div>대표자 : 신선호</div>
+            <div>개인정보보호책임자 : 정민우</div>
+            <div>사업자등록번호 : 346-87-01740 <a href="#none" class="d-lg-none">사업자정보확인</a></div>
+            <br class="d-none d-lg-block" />
+            <div>통신판매업 : 제 2020-부산부산진-1526 호</div>
+            <div>본점 : 부산광역시 금정구 금정로 63-1 꿈터플러스 (장전동)</div>
+            <br class="d-none d-lg-block" />
+            <div>지점 : 서울특별시 강남구 도산대로 54길 23 지하 1층</div>
+            <div>이메일 : help@lupick.com</div>
+            <div>대표전화 : 02-6951-0507</div>
+          </div>
+          <ul class="footer-menu d-lg-none">
+            <li><a href="">약관 및 정책</a></li>
+            <li><a href="">개인정보 수집 및 이용</a></li>
+            <li><a href="">콜라보문의</a></li>
+          </ul>
+          <div class="footer-customer d-none d-lg-block">
+            <strong>고객센터 : <a href="tel:02-6951-0507">02-6951-0507</a></strong> <br />
+            모든 상담 업무는 오전 10시 ~ 오후 6시 <br />
+            (OFF 12:30 ~ 13:30) 토/일/공휴일 휴무
+          </div>
+          <p class="copyright">© 2022 Lupick. All Rights Reserved.</p>
+          <div class="footer-warning">
+            루픽은 통신판매중개자이며 통신판매의 당사자가 아닙니다. <br />
+            따라서 루픽은 상품, 거래정보 및 거래에 대해 책임을 지지 않습니다.
+          </div>
+          <button class="quick-kakao d-none d-lg-flex">
+            <span>카카오톡 문의하기 :)</span>
+            <i class="icon-kakao-channel"></i>
+          </button>
+        </div>
+      </footer>
+    </div>
+
+    <div class="modal alert" tabindex="-1" id="modal-brand-ready">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="alert-text">해당 브랜드관은 준비중입니다.</div>
+          </div>
+          <div class="modal-footer">
+            <div class="row gx-0">
+              <div class="col">
+                <button type="button" class="btn btn-outline-light btn-lg w-100 fw-bold" data-bs-dismiss="modal">확인</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- alert: 새 비밀번호 등록 확인  -->
+    <div class="modal alert" tabindex="-1" id="alert-confirm">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="alert-text">
+              루픽 비밀번호 변경이 <br />
+              완료되었습니다! <br />
+              행운의 주인공이 되어볼까요?
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="row gx-0">
+              <div class="col">
+                <button type="button" class="btn btn-outline-light btn-lg w-100 fw-bold" data-bs-dismiss="modal">확인</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- alert: 구매확정 확인  -->
+    <div class="modal alert" tabindex="-1" id="alert-purchasing-confirmation">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="alert-text">
+              구매확정 시 이벤트상품의 <br />
+              교환 및 반품 신청이 불가합니다. <br />
+              구매확정 하시겠습니까?
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="row gx-0">
+              <div class="col">
+                <button type="button" class="btn btn-outline-light btn-lg w-100" data-bs-dismiss="modal">아니오</button>
+              </div>
+              <div class="col">
+                <button type="button" class="btn btn-outline-light btn-lg w-100 fw-bold">구매확정</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- alert: 루픽리워드 포기 확인  -->
+    <div class="modal alert" tabindex="-1" id="alert-giveup">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="alert-text">
+              리워드 포기 시 지급 예정인 루픽리워드가<br />
+              취소되어 <strong>지급되지 않습니다.</strong><br />
+              루픽리워드 포기 하시겠습니까?
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="row gx-0">
+              <div class="col">
+                <button type="button" class="btn btn-outline-light btn-lg w-100" data-bs-dismiss="modal">취소</button>
+              </div>
+              <div class="col">
+                <button type="button" class="btn btn-outline-light btn-lg w-100 fw-bold">루픽리워드 포기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 인증 실패 -->
+    <div class="modal" tabindex="-1" id="modal-certification-fail">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="fail-message">
+              <i class="icon-exclaimation"></i>
+              <strong>인증에 실패하였습니다</strong>
+              <p>
+                인증 번호를 잘못 입력했거나 <br />
+                유효 시간이 초과되었습니다. <br />
+                인증을 다시 시도해주세요.
+              </p>
+              <button type="button" class="btn btn-dark btn-lg btn-round">인증 재시도</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 알림 -->
+    <div class="modal" tabindex="-1" id="modal-alarm">
+      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="d-flex align-items-center">
+              <h5 class="modal-title">알림</h5>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="top-sort">
+              <select class="form-select w-100">
+                <option selected>전체</option>
+                <option value="">이벤트 알림</option>
+                <option value="">배송 알림</option>
+                <option value="">투표 알림</option>
+                <option value="">루픽 알림</option>
+              </select>
+            </div>
+            <div class="alarm-list">
+              <div class="alarm-list-item">
+                <div class="img"><img src="../../assets/images/@profile.jpg" alt="" /></div>
+                <div class="text">
+                  <div class="title">알림</div>
+                  <div class="desc">투표 시작! 거대벽화 그리기에 참여하는 911명 중 9명은 포르쉐 911 타고 귀가하자 투표에 참여해주세요.</div>
+                  <div class="time">1시간 전</div>
+                </div>
+              </div>
+
+              <div class="alarm-list-item">
+                <div class="img"><img src="../../assets/images/@profile.jpg" alt="" /></div>
+                <div class="text">
+                  <div class="title">알림</div>
+                  <div class="desc">투표 시작! 거대벽화 그리기에 참여하는 911명 중 9명은 포르쉐 911 타고 귀가하자 투표에 참여해주세요.</div>
+                  <div class="time">1시간 전</div>
+                </div>
+              </div>
+
+              <div class="alarm-list-item">
+                <div class="img"><img src="../../assets/images/@profile.jpg" alt="" /></div>
+                <div class="text">
+                  <div class="title">알림</div>
+                  <div class="desc">투표 시작! 거대벽화 그리기에 참여하는 911명 중 9명은 포르쉐 911 타고 귀가하자 투표에 참여해주세요.</div>
+                  <div class="time">1시간 전</div>
+                </div>
+              </div>
+
+              <div class="alarm-list-item">
+                <div class="img"><img src="../../assets/images/@profile.jpg" alt="" /></div>
+                <div class="text">
+                  <div class="title">알림</div>
+                  <div class="desc">투표 시작! 거대벽화 그리기에 참여하는 911명 중 9명은 포르쉐 911 타고 귀가하자 투표에 참여해주세요.</div>
+                  <div class="time">1시간 전</div>
+                </div>
+              </div>
+
+              <div class="alarm-list-item">
+                <div class="img"><img src="../../assets/images/@profile.jpg" alt="" /></div>
+                <div class="text">
+                  <div class="title">알림</div>
+                  <div class="desc">투표 시작! 거대벽화 그리기에 참여하는 911명 중 9명은 포르쉐 911 타고 귀가하자 투표에 참여해주세요.</div>
+                  <div class="time">1시간 전</div>
+                </div>
+              </div>
+
+              <div class="alarm-list-item">
+                <div class="img"><img src="../../assets/images/@profile.jpg" alt="" /></div>
+                <div class="text">
+                  <div class="title">알림</div>
+                  <div class="desc">투표 시작! 거대벽화 그리기에 참여하는 911명 중 9명은 포르쉐 911 타고 귀가하자 투표에 참여해주세요.</div>
+                  <div class="time">1시간 전</div>
+                </div>
+              </div>
+
+              <div class="alarm-list-item">
+                <div class="img"><img src="../../assets/images/@profile.jpg" alt="" /></div>
+                <div class="text">
+                  <div class="title">알림</div>
+                  <div class="desc">투표 시작! 거대벽화 그리기에 참여하는 911명 중 9명은 포르쉐 911 타고 귀가하자 투표에 참여해주세요.</div>
+                  <div class="time">1시간 전</div>
+                </div>
+              </div>
+
+              <div class="alarm-list-item">
+                <div class="img"><img src="../../assets/images/@profile.jpg" alt="" /></div>
+                <div class="text">
+                  <div class="title">알림</div>
+                  <div class="desc">투표 시작! 거대벽화 그리기에 참여하는 911명 중 9명은 포르쉐 911 타고 귀가하자 투표에 참여해주세요.</div>
+                  <div class="time">1시간 전</div>
+                </div>
+              </div>
+
+              <div class="alarm-list-item">
+                <div class="img"><img src="../../assets/images/@profile.jpg" alt="" /></div>
+                <div class="text">
+                  <div class="title">알림</div>
+                  <div class="desc">투표 시작! 거대벽화 그리기에 참여하는 911명 중 9명은 포르쉐 911 타고 귀가하자 투표에 참여해주세요.</div>
+                  <div class="time">1시간 전</div>
+                </div>
+              </div>
+
+              <div class="alarm-list-item">
+                <div class="img"><img src="../../assets/images/@profile.jpg" alt="" /></div>
+                <div class="text">
+                  <div class="title">알림</div>
+                  <div class="desc">투표 시작! 거대벽화 그리기에 참여하는 911명 중 9명은 포르쉐 911 타고 귀가하자 투표에 참여해주세요.</div>
+                  <div class="time">1시간 전</div>
+                </div>
+              </div>
+            </div>
+            <div class="more-text">
+              <a href="javascript:;" role="button">더보기</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 투표결과 리스트 보기 -->
+    <div class="modal" tabindex="-1" id="modal-result-list">
+      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="d-flex align-items-center">
+              <h5 class="modal-title">투표결과 리스트 보기</h5>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="event-result-list">
+              <table class="footnote">
+                <tbody>
+                  <tr>
+                    <td><i class="icon-footnote-black"></i><span>루픽리워드 선정자(루피커)</span></td>
+                    <td><i class="icon-footnote-yellow"></i><span>본인</span></td>
+                  </tr>
+                  <tr>
+                    <td><i class="icon-footnote-time"></i><span>시간차 우선 선정 루피커</span></td>
+                    <td><i class="icon-footnote-point"></i><span>루픽 포인트 루피커</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="help-text">
+                * 본인이 루피커일 경우 검정 박스에 닉네임이 노란색으로 표시됩니다. <br />
+                * 루픽 포인트는 득표수와 관계없이 랜덤하게 지급됩니다.
+              </p>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th class="text-center">닉네임</th>
+                    <th class="text-center">럭키번호</th>
+                    <th class="text-center">득표수</th>
+                    <th class="text-center">투표한 번호</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-start bg-dark text-white">호호호</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">
+                      <div class="row gx-1">
+                        <div class="col">티비보는도라에몽임다</div>
+                        <div class="col-auto"><i class="icon-footnote-point"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">정알파</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-dark text-primary">
+                      <div class="row gx-1">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-primary">
+                      <div class="row">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+
+                  <tr>
+                    <td class="text-start bg-dark text-white">호호호</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">
+                      <div class="row gx-1">
+                        <div class="col">티비보는도라에몽임다</div>
+                        <div class="col-auto"><i class="icon-footnote-point"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">정알파</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-dark text-primary">
+                      <div class="row gx-1">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-primary">
+                      <div class="row">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+
+                  <tr>
+                    <td class="text-start bg-dark text-white">호호호</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">
+                      <div class="row gx-1">
+                        <div class="col">티비보는도라에몽임다</div>
+                        <div class="col-auto"><i class="icon-footnote-point"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">정알파</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-dark text-primary">
+                      <div class="row gx-1">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-primary">
+                      <div class="row">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+
+                  <tr>
+                    <td class="text-start bg-dark text-white">호호호</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">
+                      <div class="row gx-1">
+                        <div class="col">티비보는도라에몽임다</div>
+                        <div class="col-auto"><i class="icon-footnote-point"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">정알파</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-dark text-primary">
+                      <div class="row gx-1">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-primary">
+                      <div class="row">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+
+                  <tr>
+                    <td class="text-start bg-dark text-white">호호호</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">
+                      <div class="row gx-1">
+                        <div class="col">티비보는도라에몽임다</div>
+                        <div class="col-auto"><i class="icon-footnote-point"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">정알파</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-dark text-primary">
+                      <div class="row gx-1">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-primary">
+                      <div class="row">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+
+                  <tr>
+                    <td class="text-start bg-dark text-white">호호호</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">
+                      <div class="row gx-1">
+                        <div class="col">티비보는도라에몽임다</div>
+                        <div class="col-auto"><i class="icon-footnote-point"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">정알파</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-dark text-primary">
+                      <div class="row gx-1">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-primary">
+                      <div class="row">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+
+                  <tr>
+                    <td class="text-start bg-dark text-white">호호호</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">
+                      <div class="row gx-1">
+                        <div class="col">티비보는도라에몽임다</div>
+                        <div class="col-auto"><i class="icon-footnote-point"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">정알파</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">828</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-dark text-primary">
+                      <div class="row gx-1">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start bg-primary">
+                      <div class="row">
+                        <div class="col">김루픽</div>
+                        <div class="col-auto"><i class="icon-footnote-time"></i></div>
+                      </div>
+                    </td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 메인 슬라이드업 배너 -->
+    <div class="modal slide-up" tabindex="-1" id="modal-main-slideup">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body p-0 bg-transparent">
+            <button type="button" class="btn-close circle" aria-label="Close" data-bs-dismiss="modal"><i class="icon-x-white"></i></button>
+            <div class="main-slideup-banner">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="item">
+                      <img src="../../assets/images/@banner-slideup.png" alt="" />
+                      <button type="button" class="btn btn-dark btn-round btn-lg w-100">이벤트 확인하기</button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="item">
+                      <img src="../../assets/images/@banner-slideup.png" alt="" />
+                      <button type="button" class="btn btn-dark btn-round btn-lg w-100">이벤트 확인하기</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination swiper-pagination-main-slideup-banner"></div>
+                <div class="swiper-button-prev swiper-button-prev-main-slideup"></div>
+                <div class="swiper-button-next swiper-button-next-main-slideup"></div>
+              </div>
+              <script>
+                // 메인 슬라이드업 배너 swiper
+                $('#modal-main-slideup').on('shown.bs.modal', function (event) {
+                  // eslint-disable-next-line
+                  const mainTopBannerSwiper = new Swiper('.main-slideup-banner .swiper', {
+                    observeParents: true,
+                    observeSlideChildren: true,
+                    observer: true,
+                    pagination: {
+                      el: '.swiper-pagination-main-slideup-banner',
+                    },
+                    breakpoints: {
+                      992: {
+                        navigation: {
+                          nextEl: '.swiper-button-next-main-slideup',
+                          prevEl: '.swiper-button-prev-main-slideup',
+                        },
+                      },
+                    },
+                  });
+                });
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 배송지 추가 -->
+    <div class="modal" tabindex="-1" id="modal-address-add">
+      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="d-flex align-items-center">
+              <h5 class="modal-title">배송지 추가</h5>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body pt-30px">
+            <!-- modal 내용 -->
+            <div class="form-group">
+              <label for="formReceiver" class="form-label">받는 분</label>
+              <input type="text" class="form-control" placeholder="이름을 입력해주세요" id="formReceiver" />
+            </div>
+            <div class="form-group">
+              <label for="formReceiverMobile" class="form-label">휴대폰 번호</label>
+              <input type="tel" class="form-control" placeholder="- 없이 입력해주세요" id="formReceiverMobile" />
+            </div>
+            <div class="form-group">
+              <label for="formAddr1" class="form-label">주소</label>
+              <div class="row gx-10px">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="" id="formAddr1" readonly />
+                </div>
+                <div class="col-auto">
+                  <button type="button" class="btn btn-outline-dark btn-flat btn-md">우편번호 검색</button>
+                </div>
+              </div>
+              <input type="text" class="form-control mt-10px" placeholder="" id="formAddr2" readonly />
+              <input type="text" class="form-control mt-10px" placeholder="상세주소를 입력해주세요" id="formAddr3" />
+            </div>
+            <div class="form-check mt-20px">
+              <input type="checkbox" value="" id="defaultAddress" />
+              <label for="defaultAddress" class="font-14px">기본 배송지로 등록</label>
+            </div>
+
+            <div class="bottom-buttons">
+              <button type="button" class="btn btn-dark btn-round btn-lg w-100" disabled>저장</button>
+            </div>
+            <!-- //modal 내용 -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 배송지 수정 -->
+    <div class="modal" tabindex="-1" id="modal-address-edit">
+      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="d-flex align-items-center">
+              <h5 class="modal-title">배송지 수정</h5>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body pt-30px">
+            <!-- modal 내용 -->
+            <div class="form-group">
+              <label for="formReceiver" class="form-label">받는 분</label>
+              <input type="text" class="form-control" placeholder="이름을 입력해주세요" id="formMyReceiver" />
+            </div>
+            <div class="form-group">
+              <label for="formReceiverMobile" class="form-label">휴대폰 번호</label>
+              <input type="tel" class="form-control" placeholder="- 없이 입력해주세요" id="formMyReceiverMobile" />
+            </div>
+            <div class="form-group">
+              <label for="formMyAddr1" class="form-label">주소</label>
+              <div class="row gx-10px">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="" id="formMyAddr1" readonly />
+                </div>
+                <div class="col-auto">
+                  <button type="button" class="btn btn-outline-dark btn-flat btn-md">우편번호 검색</button>
+                </div>
+              </div>
+              <input type="text" class="form-control mt-10px" placeholder="" id="formMyAddr2" readonly />
+              <input type="text" class="form-control mt-10px" placeholder="상세주소를 입력해주세요" id="formMyAddr3" />
+            </div>
+            <div class="form-check mt-20px">
+              <input type="checkbox" value="" id="defaultMyAddress" checked />
+              <label for="defaultMyAddress" class="font-14px">기본 배송지로 등록</label>
+            </div>
+            <div class="address-delete">
+              <a href="javascript:;">배송지 삭제</a>
+            </div>
+
+            <div class="bottom-buttons">
+              <button type="button" class="btn btn-dark btn-round btn-lg w-100">저장</button>
+            </div>
+            <!-- //modal 내용 -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 투표 결과 확인 - 당첨 -->
+    <div class="modal modal-vote-card" tabindex="-1" data-bs-backdrop="static" id="modal-vote-card1" data-winning="Y">
+      <!-- 당첨 여부 data-winning Y/N -->
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header justify-content-between">
+            <div class="d-flex align-items-center">
+              <h5 class="modal-title font-eng">REWARD CARD</h5>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="d-lg-flex justify-content-lg-between">
+              <div class="img">
+                <img src="../../assets/images/@landscape.jpg" alt="" />
+              </div>
+              <div class="info">
+                <div class="text-lg"><strong>티도</strong>님 <br />루픽리워드 선정을 <br />축하합니다!</div>
+                <div class="event-info">
+                  <div class="won-reward">선정된 리워드</div>
+                  <div class="product">패밀리 SUV의 진화, 현대 2022 SANTA FE</div>
+                  <div class="price">34,750,000원</div>
+                </div>
+                <button type="button" class="btn btn-white btn-lg w-100">루피커 정보 입력하기</button>
+                <button type="button" class="btn btn-white btn-lg w-100" disabled>정보 입력 완료</button>
+                <button type="button" class="btn btn-white btn-lg w-100" disabled>루픽리워드 포기</button>
+              </div>
+            </div>
+          </div>
+          <div class="result-open-animation">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 투표 결과 확인 - 낙첨 -->
+    <div class="modal modal-vote-card" tabindex="-1" id="modal-vote-card2" data-winning="N">
+      <!-- 당첨 여부 data-winning Y/N -->
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header justify-content-between">
+            <div class="d-flex align-items-center">
+              <h5 class="modal-title font-eng">REWARD CARD</h5>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="d-lg-flex justify-content-lg-between">
+              <div class="img">
+                <img src="../../assets/images/img-result-fail.png" alt="" />
+              </div>
+              <div class="info">
+                <div class="text-lg"><strong>티비보는도라에몽</strong>님 <br />아쉽지만 다음 기회를 <br />기약해요!</div>
+                <div class="event-info">
+                  <div class="won-reward">투표 결과확인</div>
+                  <div class="desc">모든 투표결과 데이터는 이벤트 결과보기를 참고하시면 상세하게 확인하실 수 있습니다.</div>
+                </div>
+                <button type="button" class="btn btn-white btn-lg w-100">확인</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 루픽의 투표는 무엇인가요? -->
+    <div class="modal" tabindex="-1" id="modal-vote-is">
+      <div class="modal-dialog modal-md">
+        <div class="modal-content">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-body">
+            <div class="modal-vote-is">
+              <p class="text">루픽의 투표는 무엇인가요?</p>
+              <strong class="text-lg">가장 많이 투표받은 숫자가 <br />곧 행운의 번호!</strong>
+              <ol class="vote-step">
+                <li>
+                  <div><strong>구매한 아이템 개수만큼 투표</strong>할 수 있는 칸이 주어집니다. 아이템 5개를 구매했다면 투표칸이 5개!</div>
+                </li>
+                <li>
+                  <div>제시된 범위 내에서 <strong>숫자를 직접 입력하거나 ‘랜덤투표’</strong>로 투표해요. 입력 후 ‘투표완료’ 버튼을 누르세요.</div>
+                </li>
+                <li>
+                  <div>모두의 <strong>럭키번호는 발표 전까지 알 수 없어요.</strong> 투표가 끝날 때까지 설레는 마음으로 기다려봐요!</div>
+                </li>
+              </ol>
+              <div class="bottom-buttons">
+                <button type="button" class="btn btn-dark btn-round btn-lg w-100" data-bs-dismiss="modal">다음부터 안볼래요</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 나의 럭키번호란? -->
+    <div class="modal" tabindex="-1" id="modal-vote-help">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="fail-message">
+              <strong>나의 럭키번호란?</strong>
+              <p class="text-dark">
+                럭키번호는 랜덤으로 생성되는 나만의 고유번호입니다. 구매 후 부여받은 투표권을 가지고 나의 럭키번호를 예측해서 투표를 해주시면 됩니다.
+                <br /><br />이제 투표하러 가볼까요?
+              </p>
+              <button type="button" class="btn btn-dark btn-lg btn-round" data-bs-dismiss="modal">확인</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 루픽 투표권 -->
+    <div class="modal" tabindex="-1" id="modal-vote">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body py-0">
+            <div class="modal-vote-input">
+              <div class="title">
+                <span>루픽 투표권<em>01</em></span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <p class="feedback invalid" style="display: block">입력가능한 숫자범위 <strong>1~10,000</strong></p>
+              <p class="feedback invalid">
+                <strong>! 입력 가능한 숫자범위가 아니에요</strong>
+              </p>
+              <input type="text" inputmode="numeric" class="form-control form-control-lg border" placeholder="투표 1 : 숫자를 입력해주세요" />
+              <div class="button">
+                <button type="button" class="btn btn-dark btn-round btn-lg w-100">확인</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 투표 완료! -->
+    <div class="modal slide-up" tabindex="-1" id="modal-voted">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-body">
+            <div class="modal-voted-ok">
+              <strong>투표 완료!</strong>
+              <p>투표를 완료하였습니다. 투표 결과가 나올 때까지 <br />조금만 기다려주세요.</p>
+              <button type="button" class="btn btn-dark btn-round btn-lg w-100" data-bs-dismiss="modal">확인</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 리뷰 확대 보기 -->
+    <div class="modal modal-review" tabindex="-1" id="modal-review">
+      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable modal-xl">
+        <div class="modal-content">
+          <button type="button" class="btn-close white d-lg-none" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-header justify-content-between d-none d-lg-flex">
+            <div class="d-flex align-items-center">
+              <h5 class="modal-title">리뷰 상세보기</h5>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="d-lg-flex">
+              <div class="user d-lg-none">
+                <div class="user-profile"><img src="../../assets/images/@profile.jpg" alt="티도" /></div>
+                <div class="user-info">
+                  <div class="name">티도</div>
+                  <div class="date">2022.05.20 작성</div>
+                </div>
+              </div>
+              <div class="photos">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                    </div>
+                  </div>
+                  <div class="swiper-button-prev swiper-button-prev-review"></div>
+                  <div class="swiper-button-next swiper-button-next-review"></div>
+                </div>
+                <div class="swiper-pagination review-swiper-pagination"></div>
+              </div>
+              <div class="review-collapse">
+                <div class="user d-none d-lg-flex">
+                  <div class="user-profile"><img src="../../assets/images/@profile.jpg" alt="티도" /></div>
+                  <div class="user-info">
+                    <div class="name">티도</div>
+                    <div class="date">2022.05.20 작성</div>
+                  </div>
+                </div>
+                <div class="option">[옵션] 감자볶음밥</div>
+                <div class="content">
+                  <span id="reviewContent"></span>
+                  <a href="javascript:;" class="more"><span>더보기</span><i class="icon-more-arrow-down m-l-5"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 이벤트 공유 -->
+    <div class="modal slide-up" tabindex="-1" id="modal-event-share">
+      <div class="modal-dialog modal-md">
+        <div class="modal-content">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-body">
+            <div class="share-event">
+              <div class="img">
+                <img src="../../assets/images/@portrait.jpg" alt="" />
+              </div>
+              <div class="info">
+                <div class="title">거대벽화 그리기에 참여하는 911명 중 9명 거대벽화 그리기에 참여하는 911명 중 9명</div>
+                <div class="link">lupick.onelink.me</div>
+              </div>
+            </div>
+            <div class="share-list">
+              <a href="javascript:;">
+                <img src="../../assets/images/share-url.png" alt="URL" />
+              </a>
+              <a href="javascript:;">
+                <img src="../../assets/images/share-kakaotalk.png" alt="kakaotalk" />
+              </a>
+              <a href="javascript:;">
+                <img src="../../assets/images/share-facebook.png" alt="facebook" />
+              </a>
+              <a href="javascript:;">
+                <img src="../../assets/images/share-line.png" alt="line" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 구매 옵션 선택 -->
+    <div class="modal fade slide-up" tabindex="-1" id="modal-event-option">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button type="button" class="btn-close-line" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-body">
+            <div class="overflow-y-scroll">
+              <p class="purchasable">총<span>3</span>개까지 구매할 수 있어요!</p>
+              <div class="options">
+                <div class="item">
+                  <select class="form-select static w-100">
+                    <option selected>옵션 선택</option>
+                    <option value="">추멘세끼 볶음밥 (감자)</option>
+                    <option value="">추멘세끼 볶음밥 (햄)</option>
+                    <option value="">추멘세끼 볶음밥 (감자)</option>
+                    <option value="">추멘세끼 볶음밥 (햄)</option>
+                    <option value="">추멘세끼 볶음밥 (감자)</option>
+                    <option value="">추멘세끼 볶음밥 (햄)</option>
+                  </select>
+                  <div class="form-select-zone"></div>
+                </div>
+                <div class="item">
+                  <select class="form-select static w-100">
+                    <option selected>옵션 선택 2</option>
+                    <option value="">추멘세끼 볶음밥 (감자)</option>
+                    <option value="">추멘세끼 볶음밥 (햄)</option>
+                  </select>
+                  <div class="form-select-zone"></div>
+                </div>
+              </div>
+              <div>
+                <div class="sel-option">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <p class="name">미니 캐리어 테이블 (PLAIN)</p>
+                    <button type="button" class="sel-delete" onclick="deleteOption(1);"></button>
+                  </div>
+                  <div class="spinner-wrap d-flex align-items-center justify-content-between">
+                    <div class="spinner" data-max="99" data-min="1">
+                      <div class="spinner-box">
+                        <button type="button" class="spinner-decrement" disabled=""><i class="icon-minus"></i></button>
+                        <input type="tel" class="spinner-input" readonly="" value="1" disabled />
+                        <button type="button" class="spinner-increment"><i class="icon-plus"></i></button>
+                      </div>
+                    </div>
+                    <p class="price">57,000원</p>
+                  </div>
+                </div>
+                <div class="sel-option">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <p class="name">미니 캐리어 테이블 (PLAIN)</p>
+                    <button type="button" class="sel-delete" onclick="deleteOption(1);"></button>
+                  </div>
+                  <div class="spinner-wrap d-flex align-items-center justify-content-between">
+                    <div class="spinner" data-max="99" data-min="1">
+                      <div class="spinner-box">
+                        <button type="button" class="spinner-decrement" disabled=""><i class="icon-minus"></i></button>
+                        <input type="tel" class="spinner-input" readonly="" value="1" disabled />
+                        <button type="button" class="spinner-increment"><i class="icon-plus"></i></button>
+                      </div>
+                    </div>
+                    <p class="price">57,000원</p>
+                  </div>
+                </div>
+              </div>
+              <div class="selected-option-quantity">
+                <div class="selected-option">
+                  <p class="title">추멘세끼 볶음밥 (햄)</p>
+                  <button type="button" aria-label="삭제"><i></i></button>
+                </div>
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="quantity">
+                    <button class="decrement" aria-label="Decrease Value"><i class="icon-decrease"></i></button>
+                    <input type="text" value="1" max="5" min="1" readonly />
+                    <button class="increment" aria-label="Increase Value"><i class="icon-increase"></i></button>
+                  </div>
+                  <div class="quantity-sum">57,000원</div>
+                </div>
+              </div>
+              <div class="selected-option-quantity">
+                <div class="selected-option">
+                  <p class="title">추멘세끼 볶음밥 (햄)</p>
+                  <button type="button" aria-label="삭제"><i></i></button>
+                </div>
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="quantity">
+                    <button class="decrement" aria-label="Decrease Value"><i class="icon-decrease"></i></button>
+                    <input type="text" value="1" max="5" min="1" readonly />
+                    <button class="increment" aria-label="Increase Value"><i class="icon-increase"></i></button>
+                  </div>
+                  <div class="quantity-sum">57,000원</div>
+                </div>
+              </div>
+              <script>
+                /* option quantity */
+                $('.quantity button').on('click', function () {
+                  const max = parseInt($(this).siblings('input').attr('max'));
+                  const min = parseInt($(this).siblings('input').attr('min'));
+                  let count = $(this).siblings('input').val();
+
+                  if ($(this).hasClass('increment')) {
+                    if (count < max) {
+                      count++;
+                      $(this).siblings('input').val(count);
+                      $(this).siblings('.decrement').prop('disabled', false);
+                      $(this).prop('disabled', false);
+                    }
+                    if (count == max) {
+                      $(this).prop('disabled', true);
+                    }
+                  } else if ($(this).hasClass('decrement')) {
+                    if (count > min) {
+                      count--;
+                      $(this).siblings('input').val(count);
+                      $(this).siblings('.increment').prop('disabled', false);
+                      $(this).prop('disabled', false);
+                    }
+                    if (count == min) {
+                      $(this).prop('disabled', true);
+                    }
+                  }
+                });
+              </script>
+              <div class="total-price">
+                <div>
+                  <span class="label">총 수량</span>
+                  <span class="count">200개</span>
+                </div>
+                <div>
+                  <span class="label">총 금액</span>
+                  <span class="price">1,171,000원</span>
+                </div>
+              </div>
+              <div class="bottom-buttons">
+                <button type="button" class="btn btn-dark btn-lg w-100 px-0" onclick="location.href='../payment/payment.html'">결제하고 참여하기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 배송 조회 -->
+    <div class="modal" tabindex="-1" id="modal-shipping">
+      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="d-flex align-items-center">
+              <h5 class="modal-title">배송 조회</h5>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body pt-30px">
+            <!-- modal 내용 -->
+            <!-- 배송 현황 -->
+            <div class="shipping-state">
+              <strong>아직 배송 현황을 확인할 수 없네요.</strong>
+              <p>아이템이 발송되었으나, 아직 택배사로부터 배송 현황이 확인되지 않습니다.</p>
+              <!-- <strong>배송 중</strong>
+          <strong>배송 완료</strong>
+          <p>담당자 : 김배송 (010-1234-5678)</p> -->
+            </div>
+            <!-- //배송 현황 -->
+            <!-- 배송 추적 -->
+            <div class="form-group-wrap">
+              <div class="form-group-header">
+                <div class="label">배송 추적</div>
+              </div>
+              <div class="form-group-body pt-0">
+                <ol class="shipping-tracking">
+                  <li>
+                    <div class="info">
+                      <div class="title">서울신성수</div>
+                      <div class="date">2020.10.12 14:07:38</div>
+                    </div>
+                    <div class="state">배달완료</div>
+                  </li>
+                  <li>
+                    <div class="info">
+                      <div class="title">서울신성수</div>
+                      <div class="date">2020.10.12 14:07:38</div>
+                    </div>
+                    <div class="state">배달중</div>
+                  </li>
+                  <li>
+                    <div class="info">
+                      <div class="title">서울신성수</div>
+                      <div class="date">2020.10.12 14:07:38</div>
+                    </div>
+                    <div class="state">배송중(입고)</div>
+                  </li>
+                  <li>
+                    <div class="info">
+                      <div class="title">서울신성수</div>
+                      <div class="date">2020.10.12 14:07:38</div>
+                    </div>
+                    <div class="state">배송중(출고)</div>
+                  </li>
+                  <li>
+                    <div class="info">
+                      <div class="title">서울신성수</div>
+                      <div class="date">2020.10.12 14:07:38</div>
+                    </div>
+                    <div class="state">집하</div>
+                  </li>
+                </ol>
+                <div class="more-text toggle-view-detail">
+                  <a href="javascript:;" role="button" id="btn-tracking-detail">자세히 보기</a>
+                </div>
+                <script>
+                  //자세히 보기 토글
+                  $('#btn-tracking-detail').on('click', function (e) {
+                    e.preventDefault();
+                    if (!$(this).hasClass('active')) {
+                      $('.shipping-tracking').addClass('expanded');
+                    } else {
+                      $('.shipping-tracking').removeClass('expanded');
+                    }
+                  });
+                </script>
+              </div>
+            </div>
+            <!-- //배송 추적-->
+            <!-- 송장 정보 -->
+            <div class="form-group-wrap mt-0">
+              <div class="form-group-header">
+                <div class="label">판매자 정보</div>
+              </div>
+              <div class="form-group-body">
+                <dl class="info-list">
+                  <dt>송장번호</dt>
+                  <dd>663583305725</dd>
+                  <dt>택배사</dt>
+                  <dd>CJ대한통운</dd>
+                  <dt>대표번호</dt>
+                  <dd>1588-1255</dd>
+                </dl>
+              </div>
+            </div>
+            <!-- //송장 정보-->
+            <!-- 판매자 정보 -->
+            <div class="form-group-wrap mt-0">
+              <div class="form-group-header">
+                <div class="label">판매자 정보</div>
+              </div>
+              <div class="form-group-body">
+                <dl class="info-list">
+                  <dt>판매자</dt>
+                  <dd>김뫄뫄</dd>
+                  <dt>연락처</dt>
+                  <dd>010-1234-5678</dd>
+                </dl>
+              </div>
+            </div>
+            <!-- //판매자 정보-->
+            <!-- //modal 내용 -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 영수증 받기 -->
+    <div class="modal" tabindex="-1" id="modal-invoice">
+      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="d-flex align-items-center">
+              <h5 class="modal-title">영수증 받기</h5>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body pt-30px">
+            <!-- modal 내용 -->
+            <div class="invoice">
+              <p>이메일로 영수증을 <br />받아보세요.</p>
+              <input type="email" class="form-control form-control-lg" placeholder="이메일을 입력해주세요" />
+            </div>
+            <div class="bottom-buttons">
+              <button type="button" class="btn btn-dark btn-round btn-lg w-100">보내기</button>
+            </div>
+            <div class="bottom-text-guide">
+              <p class="help-text">
+                루픽은 상품 판매의 당사자가 아니며 상품 판매와 관련한 일체의 책임은 판매자에게 있습니다. 루픽 서비스는 결제정보의 중개 또는 통신판매중개시스템의 제공만을 대상으로 하고 루픽 서비스의 이용자와 판매자 간의 거래관계, 구매내용 및 이벤트 상세페이지에 게재된 상품 정보, 거래 조건 등에
+                대해서는 어떠한 보증이나 책임도 부담하지 않습니다.
+              </p>
+            </div>
+            <!-- //modal 내용 -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 루픽 앱 유도 -->
+    <div class="modal" tabindex="-1" id="modal-app-intro">
+      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-body p-0">
+            <!-- modal 내용 -->
+            <div class="app-introduction">
+              <div class="app-icon">
+                <img src="../../assets/images/app-icon.png" alt="Lupick 앱 아이콘" />
+              </div>
+              <p class="text">루픽 앱에서 제공되는 <br />혜택과 이벤트를 놓칠 수 있어요!</p>
+              <button type="button" class="btn btn-white btn-round btn-lg w-100">루픽 앱 이용하기</button>
+              <a href="javascript:;" data-bs-dismiss="modal" class="close">괜찮아요. 모바일웹으로 볼게요.</a>
+            </div>
+            <!-- //modal 내용 -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

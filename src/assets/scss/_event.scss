@@ -51,7 +51,7 @@
 .badges{
   display: flex;gap: 5px;
   @include media-breakpoint-up(lg){
-    gap: 10px;
+    gap: 7px;
   }
 }
 
@@ -216,7 +216,7 @@
         p{font-size: 14px;}
       }
     }
-    .event-price-info-wrap{width: 100%;position: relative;margin-top: 30px;}
+    .event-price-info-wrap{width: 100%;position: relative;margin-top: 30px;min-height: 331px;}
     .event-price-info{
       margin: 0;border-top: 1px solid $border-color;padding-top: 30px;background: #fff;position: absolute;width: 100%;
       .bottom-buttons{
@@ -260,7 +260,8 @@
     }
   }
   [id^=spy-]{
-    padding-top: 130px;
+    padding-top: 160px;
+    .section-title{margin-top: 0;}
   }
 }
 

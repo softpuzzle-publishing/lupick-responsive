@@ -1,5 +1,11 @@
 @font-face {
   font-family: 'NanumBarunGothic';
+  font-weight: 200;
+  src: url(../fonts/NanumBarunGothic/NanumBarunGothicLight.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: 'NanumBarunGothic';
   font-weight: 400;
   src: url(../fonts/NanumBarunGothic/NanumBarunGothic.eot);
   src: url(../fonts/NanumBarunGothic/NanumBarunGothic.eot?#iefix) format("embedded-opentype"),

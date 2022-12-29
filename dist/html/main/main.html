@@ -181,9 +181,9 @@
               <!-- 로그인 후 -->
               <button type="button" aria-label="알림" data-bs-toggle="modal" data-bs-target="#modal-alarm"><i class="icon-bell"></i></button>
               <div class="btn-mypage-wrap">
-                <button type="button" class="btn-mypage" aria-label="마이페이지">
-                  <div class="img"><img src=" ../../assets/images/profile-after-login-1.svg" alt="프로필 사진 없음(로그인 후)" class="default" /></div>
-                </button>
+                <!-- <button type="button" class="btn-mypage" aria-label="마이페이지">
+            <div class="img"><img src=" ../../assets/images/profile-after-login-1.svg" alt="프로필 사진 없음(로그인 후)" class="default"></div>
+          </button> -->
                 <button type="button" class="btn-mypage" aria-label="마이페이지">
                   <!-- <img src=" ../../assets/images/profile-after-login-1.svg" alt="프로필 사진 없음(로그인 후)" class="default"> -->
                   <div class="img"><img src="../../assets/images/@profile.jpg" alt="{{유저 닉네임}} 프로필 사진" /></div>
@@ -192,7 +192,7 @@
                   <ul>
                     <li><a href="../../html/my/my_event_order_history.html">주문 및 참여 내역</a></li>
                     <li><a href="../../html/my/my_event_reviews.html">나의 리뷰</a></li>
-                    <li><a href="../../html/customer/my_qna.html">문의 내역</a></li>
+                    <li><a href="../../html/customer/customer_my_qna.html">문의 내역</a></li>
                     <li><a href="../../html/my/my_info_password.html">내 정보 관리</a></li>
                     <li><a href="../../html/notice/notice.html">공지사항</a></li>
                     <li><a href="#none">로그아웃</a></li>
@@ -367,7 +367,7 @@
             <!-- 브랜드관 -->
             <div class="main-brands">
               <h2 class="main-brands-title d-lg-none">Only Lupick.</h2>
-              <h2 class="section-title d-none d-lg-block">오직 루픽, 브랜드관</h2>
+              <h2 class="section-title d-none d-lg-block">브랜드 모아보기</h2>
               <div class="swiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
@@ -382,24 +382,13 @@
                       <div class="title">리춘수 주먹감자</div>
                     </a>
                   </div>
-                  <div class="swiper-slide">
-                    <a href="../brand/brand.html" class="item">
-                      <div class="img"><img src="../../assets/images/bg-brand-comming-soon.svg" alt="" /></div>
-                      <div class="title">준비중</div>
-                    </a>
-                  </div>
-                  <div class="swiper-slide">
-                    <a href="../brand/brand.html" class="item">
-                      <div class="img"><img src="../../assets/images/bg-brand-comming-soon.svg" alt="" /></div>
-                      <div class="title">준비중</div>
-                    </a>
-                  </div>
                 </div>
               </div>
               <script>
+                var itemLength = $('.main-brands .swiper-slide').length;
                 const mainBrandSwiper = new Swiper('.main-brands .swiper', {
                   // eslint-disable-line
-                  slidesPerView: 4.4,
+                  slidesPerView: 4.5,
                   freeMode: true,
                   spaceBetween: 5,
                   slidesOffsetBefore: 20,
@@ -413,6 +402,19 @@
                     },
                   },
                 });
+
+                var maxLength = 0;
+                if (window.matchMedia('(min-width:992px)').matches) {
+                  maxLength = 6; //pc
+                } else {
+                  maxLength = 4; //mobile
+                }
+
+                const emptyLength = maxLength - itemLength;
+                console.log(itemLength, maxLength, emptyLength);
+                for (var i = 0; i < emptyLength; i++) {
+                  mainBrandSwiper.appendSlide('<div class="swiper-slide"><a href="#modal-brand-ready" data-bs-toggle="modal" class="item"><div class="img"><img src="../../assets/images/bg-brand-comming-soon.svg" alt=""></div><div class="title">준비중</div></a></div>');
+                }
               </script>
             </div>
             <!-- //브랜드관 -->
@@ -465,7 +467,7 @@
               <div class="order-lg-1">
                 <div class="row align-items-center justify-content-between mb-15px mt-30px mt-lg-80px mb-lg-15px d-none d-lg-flex">
                   <div class="col-auto">
-                    <h2 class="section-title mb-0 mt-0">쇼핑 이벤트</h2>
+                    <h2 class="section-title mb-0 mt-0">쇼핑과 이벤트를 한 번에!</h2>
                   </div>
                   <div class="col-auto">
                     <a href="#none" class="text-secondary font-14px fw-bold font-lg-18px">더보기</a>
@@ -473,6 +475,67 @@
                 </div>
                 <div class="section-title-desc d-none d-lg-block">모든 이벤트 상품에 리워드가 포함되어 있어 즐겁게 이벤트를 쇼핑할 수 있습니다.</div>
                 <div class="main-events">
+                  <div class="event-item">
+                    <div class="event-state">
+                      <a href="../event/event_detail.html" class="inner">
+                        <div class="img round"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                        <div class="state">
+                          <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 88%" data-percent="88"></div>
+                          </div>
+                          <div class="row align-items-center justify-content-between px-3">
+                            <div class="col-auto">
+                              <div class="d-flex align-items-center"><i class="icon-clock-white"></i> <span>12일 남음</span></div>
+                            </div>
+                            <div class="col-auto">
+                              <span>67% 참여 중</span>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="event-gift">
+                      <div class="swiper">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <div class="item">
+                              <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="item">
+                              <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="item">
+                              <div class="img"><img src="../../assets/images/@landscape.jpg" alt="" /></div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="item">
+                              <div class="img"><img src="../../assets/images/@portrait.jpg" alt="" /></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="event-information">
+                      <div class="title">[하이브로우] 미니캐리어 테이블 구매하고 랜드로버 뉴 디펜더 타고 캠핑가자!</div>
+                      <div class="desc">1명 8000만원 랜드로버 지급, 2명에게는 200,000포인트</div>
+                      <div class="price">
+                        <del>67,350원</del>
+                        <div class="d-flex align-items-center">
+                          <div class="discount">15%</div>
+                          <div class="final">57,000원</div>
+                        </div>
+                      </div>
+                      <div class="badges">
+                        <span class="badge outline-gray">3차 오픈</span>
+                        <span class="badge outline-gray">1,342,432개 누적 구매</span>
+                      </div>
+                    </div>
+                  </div>
                   <div class="event-item">
                     <div class="event-state">
                       <a href="../event/event_detail.html" class="inner">
@@ -707,7 +770,7 @@
             </div>
             <!-- //통이미지 배너 -->
             <!-- 퀴즈 -->
-            <h2 class="section-title mb-0 mt-0 mt-lg-80px mb-lg-15px d-none d-lg-block">루픽 질문</h2>
+            <h2 class="section-title mb-0 mt-0 mt-lg-80px mb-lg-15px d-none d-lg-block">질문 답하고 포인트 받자!</h2>
             <div class="main-quiz">
               <div class="quiz">
                 <div class="img">
@@ -791,7 +854,7 @@
                 </div>
               </div>
 
-              <div class="quiz">
+              <div class="quiz ended">
                 <div class="img">
                   <img src="../../assets/images/img-main-question.png" alt="" />
                   <span>질문</span>
@@ -836,7 +899,7 @@
             <!-- 실제 구매자 리뷰 -->
             <div class="d-none d-lg-block">
               <div class="main-reviews">
-                <h2 class="section-title mt-lg-80px mb-lg-15px">실제 구매자 리뷰</h2>
+                <h2 class="section-title mt-lg-80px mb-lg-15px">리얼 리뷰</h2>
                 <div class="main-review-list">
                   <div class="review-item">
                     <a href="javascript:;">
@@ -998,6 +1061,23 @@
         </div>
       </div>
     </div>
+    <div class="modal alert" tabindex="-1" id="modal-brand-ready">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="alert-text">해당 브랜드관은 준비중입니다.</div>
+          </div>
+          <div class="modal-footer">
+            <div class="row gx-0">
+              <div class="col">
+                <button type="button" class="btn btn-outline-light btn-lg w-100 fw-bold" data-bs-dismiss="modal">확인</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- alert: 새 비밀번호 등록 확인  -->
     <div class="modal alert" tabindex="-1" id="alert-confirm">
       <div class="modal-dialog">

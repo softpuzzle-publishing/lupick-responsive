@@ -10,7 +10,7 @@
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: 7px;
-  padding: 0 7px;
+  padding: 0 6px;
 
   &:empty {
     display: none;
@@ -53,7 +53,7 @@
   }
 
   @include media-breakpoint-up(lg){
-    height: 28px;line-height: 28px;font-size: 16px;
+    font-size: 14px;
     &.event{
       font-size: 12px;
     }

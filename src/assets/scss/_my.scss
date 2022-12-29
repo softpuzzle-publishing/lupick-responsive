@@ -622,7 +622,7 @@
     .event-count{
       background: transparent;order: 2;
       padding-bottom: 0;height: auto;margin-top: 5px;
-      span{position: static;font-size: 30px;display: block;text-align: center;transform: none;text-decoration: underline;}
+      span{position: static;font-size: 30px;display: block;text-align: center;transform: none;}
     }
     .event-order{
       font-size: 18px;order: 1;margin-top: 0;
@@ -653,4 +653,19 @@
 
 @include media-breakpoint-up(lg){
   .form-wrap{border-top: 1px solid #000;border-bottom: 1px solid $border-color;padding: 30px 100px 50px;}
+}
+
+.my-social-account{
+
+  li{border-bottom: 1px solid $border-color;padding: 15px 0;display: flex;align-items: center;justify-content: space-between;}
+  .social-account{
+    display: flex;align-items: center;
+    span{font-size: 14px;margin-left: 6px;}
+  }
+  @include media-breakpoint-up(lg){
+    li{padding: 25px 0;}
+    .social-account{
+      span{font-size: 16px;}
+    }
+  }
 }
