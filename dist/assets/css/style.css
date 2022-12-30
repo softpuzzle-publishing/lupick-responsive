@@ -8342,6 +8342,16 @@ html.scroll-down body.body-main #header {
     opacity: 1;
   }
 }
+@media (min-width: 1400px) {
+  .main-top-banner .swiper-button-prev {
+    left: calc((100% - 1194px) / 2);
+    transform: translateX(-100px);
+  }
+  .main-top-banner .swiper-button-next {
+    right: calc((100% - 1194px) / 2);
+    transform: translateX(100px);
+  }
+}
 
 .main-brands {
   margin-top: 25px;
