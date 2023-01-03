@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  @@include('@@webRoot/html/_include/_head.html')
+</head>
+
+<body>
+  <div id="wrap">
+    @@include('@@webRoot/html/_include/_header.html', { "title": "쇼핑" })
+    <div id="container">
+      <div id="layout">
+        <main id="main" class="max-width-100">
+          <!-- 실컨텐츠 -->
+          <h1 class="page-title d-none d-lg-block mb-5">쇼핑 이벤트</h1>
+          <div class="container">
+            <div class="main-events">
+              @@for (var i = 5; i > 0; i--) {
+              <div class="event-item">
+                <div class="event-state">
+                  <a href="../event/event_detail.html" class="inner">
+                    <div class="img round"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
+                    <div class="state">
+                      <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 88%" data-percent="88">
+                        </div>
+                      </div>
+                      <div class="row align-items-center justify-content-between px-3">
+                        <div class="col-auto">
+                          <div class="d-flex align-items-center">
+                            <i class="icon-clock-white"></i> <span>12일 남음</span>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <span>67% 참여 중</span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="event-gift">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="item">
+                          <div class="img"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="item">
+                          <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="item">
+                          <div class="img"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="item">
+                          <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="event-information">
+                  <div class="title">[하이브로우] 미니캐리어 테이블 구매하고 랜드로버 뉴 디펜더 타고 캠핑가자!</div>
+                  <div class="desc">1명 8000만원 랜드로버 지급, 2명에게는 200,000포인트</div>
+                  <div class="price">
+                    <del>67,350원</del>
+                    <div class="d-flex align-items-center">
+                      <div class="discount">15%</div>
+                      <div class="final">57,000원</div>
+                    </div>
+                  </div>
+                  <div class="badges">
+                    <span class="badge outline-gray">3차 오픈</span>
+                    <span class="badge outline-gray">1,342,432개 누적 구매</span>
+                  </div>
+                </div>
+              </div>
+              }
+              <div class="event-item ended">
+                <!-- 종료 이벤트 .ended 추가 -->
+                <div class="event-state">
+                  <a href="../event/event_detail.html" class="inner">
+                    <div class="img round"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
+                    <div class="state">
+                      <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 67%" data-percent="67">
+                        </div>
+                      </div>
+                      <div class="row align-items-center justify-content-between px-3">
+                        <div class="col-auto">
+                          <div class="d-flex align-items-center">
+                            <i class="icon-clock-white"></i> <span>이벤트 종료</span>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <span>67% 참여 완료</span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="event-gift">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="item">
+                          <div class="img"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="item">
+                          <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="item">
+                          <div class="img"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="item">
+                          <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="item">
+                          <div class="img"><img src="@@webRoot/assets/images/@landscape.jpg" alt=""></div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="item">
+                          <div class="img"><img src="@@webRoot/assets/images/@portrait.jpg" alt=""></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="event-information">
+                  <div class="title">[하이브로우] 미니캐리어 테이블 구매하고 랜드로버 뉴 디펜더 타고 캠핑가자!</div>
+                  <div class="desc">1명 8000만원 랜드로버 지급, 2명에게는 200,000포인트</div>
+                  <div class="price">
+                    <del>67,350원</del>
+                    <div class="d-flex align-items-center">
+                      <div class="discount">15%</div>
+                      <div class="final">57,000원</div>
+                    </div>
+                  </div>
+                  <div class="badges">
+                    <span class="badge outline-gray">3차 오픈</span>
+                    <span class="badge outline-gray">1,342,432개 누적 구매</span>
+                  </div>
+                </div>
+              </div>
+              <script>
+                var mainEventGiftSwiper = [];
+                $('.event-gift .swiper').each(function (i) {
+                  mainEventGiftSwiper[i] = new Swiper($(this)[0], {// eslint-disable-line
+                    slidesPerView: 4.4,
+                    freeMode: true,
+                    spaceBetween: 5,
+                    slidesOffsetBefore: 20,
+                    slidesOffsetAfter: 20,
+                    breakpoints: {
+                      992: {
+                        slidesOffsetBefore: 0,
+                        slidesOffsetAfter: 0,
+                      }
+                    },
+                  });
+                });
+              </script>
+            </div>
+          </div>
+          <!-- //실컨텐츠 -->
+        </main>
+      </div>
+    </div>
+    @@include('@@webRoot/html/_include/_footer.html')
+  </div>
+
+</body>
+
+</html>
